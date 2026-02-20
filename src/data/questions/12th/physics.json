@@ -1,0 +1,284 @@
+{
+  "class": "12th",
+  "subject": "Physics",
+  "chapters": [
+    {
+      "id": "12_phy_ch1",
+      "number": 1,
+      "name": "Electrostatics",
+      "mcqs": [
+        {
+          "id": "12_phy_ch1_mcq_1",
+          "questionText": "Which law describes the force between two point charges?",
+          "options": ["Gauss's Law", "Coulomb's Law", "Ohm's Law", "Faraday's Law"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch1_mcq_2",
+          "questionText": "The SI unit of electric charge is:",
+          "options": ["Volt", "Ampere", "Coulomb", "Watt"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch1_mcq_3",
+          "questionText": "The electric field inside a conductor is:",
+          "options": ["Maximum", "Zero", "Infinite", "Variable"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch1_mcq_4",
+          "questionText": "1 statcoulomb = ___ Coulomb",
+          "options": ["3.336 × 10⁻¹⁰", "9 × 10⁹", "1.6 × 10⁻¹⁹", "8.85 × 10⁻¹²"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch1_mcq_5",
+          "questionText": "Electric flux through a closed surface depends on:",
+          "options": ["Surface area", "Charge enclosed", "Shape of surface", "All of these"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch1_mcq_6",
+          "questionText": "The potential at a point due to charge Q at distance r is proportional to:",
+          "options": ["r", "r²", "1/r", "1/r²"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch1_mcq_7",
+          "questionText": "Capacitance of parallel plate capacitor with dielectric constant K is:",
+          "options": ["C = ε₀A/d", "C = Kε₀A/d", "C = ε₀A/Kd", "C = d/ε₀A"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch1_mcq_8",
+          "questionText": "Energy stored in capacitor is given by:",
+          "options": ["½CV²", "CV²", "½QV", "Both A and C"],
+          "correctOption": 3,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch1_mcq_9",
+          "questionText": "Electric field at the center of uniformly charged ring of radius R is:",
+          "options": ["Zero", "kQ/R²", "kQ/R", "Infinite"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch1_mcq_10",
+          "questionText": "The electric potential at a point x from the center of dipole on its axis is proportional to:",
+          "options": ["1/x", "1/x²", "1/x³", "1/x⁴"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_phy_ch1_short_1",
+          "questionText": "State Coulomb's law of electrostatics and write its mathematical expression.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_phy_ch1_short_2",
+          "questionText": "Define electric field intensity. Derive its expression for a point charge.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_phy_ch1_short_3",
+          "questionText": "Explain Gauss's law. Calculate electric field due to an infinite plane sheet of charge.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_phy_ch1_short_4",
+          "questionText": "What is electric potential? Derive an expression for electric potential at a point due to a point charge.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_phy_ch1_short_5",
+          "questionText": "Explain the concept of electric dipole. Calculate electric field on axial line of a dipole.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_phy_ch1_long_1",
+          "questionText": "Derive an expression for the electric field intensity at a point due to an electric dipole. Show that on the axial line, the field is twice as strong as on the equatorial line.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_phy_ch1_long_2",
+          "questionText": "State and prove Gauss's law. Apply it to find the electric field due to: (i) a uniformly charged spherical shell (ii) an infinite line charge.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_phy_ch1_long_3",
+          "questionText": "What is a capacitor? Derive expressions for the capacitance of a parallel plate capacitor with and without dielectric. Discuss the effect of dielectric on capacitance.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    },
+    {
+      "id": "12_phy_ch2",
+      "number": 2,
+      "name": "Current Electricity",
+      "mcqs": [
+        {
+          "id": "12_phy_ch2_mcq_1",
+          "questionText": "Ohm's law is applicable for:",
+          "options": ["Semiconductors", "Metals", "Electrolytes", "All materials"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch2_mcq_2",
+          "questionText": "The unit of electrical resistance is:",
+          "options": ["Ampere", "Volt", "Ohm", "Watt"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch2_mcq_3",
+          "questionText": "Drift velocity of electrons in a conductor is of the order of:",
+          "options": ["10⁸ m/s", "10⁶ m/s", "10⁻⁴ m/s", "10⁴ m/s"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch2_mcq_4",
+          "questionText": "Kirchhoff's first law is based on:",
+          "options": ["Conservation of energy", "Conservation of charge", "Conservation of momentum", "None of these"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch2_mcq_5",
+          "questionText": "The temperature coefficient of resistance for conductors is:",
+          "options": ["Positive", "Negative", "Zero", "Infinite"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch2_mcq_6",
+          "questionText": "For n resistances in parallel, the effective resistance R is given by:",
+          "options": ["R = R₁ + R₂ + ... + Rₙ", "1/R = 1/R₁ + 1/R₂ + ... + 1/Rₙ", "R = R₁R₂/(R₁+R₂)", "R = √(R₁² + R₂²)"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch2_mcq_7",
+          "questionText": "The resistance of a wire is R. If length is doubled and radius is halved, new resistance is:",
+          "options": ["2R", "4R", "8R", "R/2"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch2_mcq_8",
+          "questionText": "The SI unit of current density is:",
+          "options": ["A/m", "A/m²", "V/m", "Ω/m"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch2_mcq_9",
+          "questionText": "In a meter bridge experiment, the balance point is obtained at 40 cm from one end. If resistances are interchanged, new balance point will be at:",
+          "options": ["40 cm", "60 cm", "20 cm", "80 cm"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_phy_ch2_mcq_10",
+          "questionText": "The electromotive force (emf) of a cell is:",
+          "options": ["Potential difference across terminals", "Work done in moving unit charge", "Resistance of cell", "Current in cell"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_phy_ch2_short_1",
+          "questionText": "State Ohm's law. Define electrical resistance and its unit. What are ohmic and non-ohmic conductors?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_phy_ch2_short_2",
+          "questionText": "Derive an expression for drift velocity of electrons in a conductor. How is it related to electric current?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_phy_ch2_short_3",
+          "questionText": "State and explain Kirchhoff's laws for electrical circuits. Write their mathematical forms.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_phy_ch2_short_4",
+          "questionText": "Explain the principle of potentiometer. How is it used to compare emfs of two cells?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_phy_ch2_short_5",
+          "questionText": "Describe the construction and working of Wheatstone bridge. Derive the condition for balanced bridge.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_phy_ch2_long_1",
+          "questionText": "Derive a relation between current and drift velocity of electrons in a conductor. Using this, derive Ohm's law and define electrical conductivity.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_phy_ch2_long_2",
+          "questionText": "Describe the principle, construction, and working of a potentiometer. Explain how it can be used to measure internal resistance of a cell and compare emfs of two cells.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_phy_ch2_long_3",
+          "questionText": "Explain the heating effect of current. Derive Joule's law of heating. Discuss electrical power and energy. Calculate the cost of electrical energy consumption.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    }
+  ]
+}

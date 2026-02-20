@@ -1,0 +1,284 @@
+{
+  "class": "10th",
+  "subject": "Computer",
+  "chapters": [
+    {
+      "id": "10_comp_ch1",
+      "number": 1,
+      "name": "Programming Techniques",
+      "mcqs": [
+        {
+          "id": "10_comp_ch1_mcq_1",
+          "questionText": "Which of the following is NOT a programming paradigm?",
+          "options": ["Procedural", "Object-oriented", "Assembly", "Functional"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch1_mcq_2",
+          "questionText": "A flowchart symbol used for decision-making is:",
+          "options": ["Rectangle", "Oval", "Diamond", "Parallelogram"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch1_mcq_3",
+          "questionText": "Pseudocode is:",
+          "options": ["Actual code", "Informal description of algorithm", "Machine language", "Assembly language"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch1_mcq_4",
+          "questionText": "Which loop executes at least once?",
+          "options": ["For loop", "While loop", "Do-while loop", "Nested loop"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch1_mcq_5",
+          "questionText": "The symbol used for processing in a flowchart is:",
+          "options": ["Rectangle", "Oval", "Diamond", "Arrow"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch1_mcq_6",
+          "questionText": "In structured programming, a program is divided into:",
+          "options": ["Variables", "Functions/Modules", "Comments", "Headers"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch1_mcq_7",
+          "questionText": "Which of the following is an advantage of top-down design?",
+          "options": ["More complex code", "Easier to debug", "Harder to modify", "More errors"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch1_mcq_8",
+          "questionText": "The process of breaking down a problem into smaller parts is called:",
+          "options": ["Compilation", "Decomposition", "Debugging", "Execution"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch1_mcq_9",
+          "questionText": "Which control structure allows selection among multiple alternatives?",
+          "options": ["If-else", "Switch/Case", "For loop", "While loop"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch1_mcq_10",
+          "questionText": "The Big O notation O(n²) represents:",
+          "options": ["Constant time", "Linear time", "Quadratic time", "Logarithmic time"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_comp_ch1_short_1",
+          "questionText": "Define algorithm. List the characteristics of a good algorithm.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_comp_ch1_short_2",
+          "questionText": "What is a flowchart? Draw and label any three flowchart symbols.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_comp_ch1_short_3",
+          "questionText": "Differentiate between top-down and bottom-up design approaches.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_comp_ch1_short_4",
+          "questionText": "Explain the three basic control structures used in structured programming.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_comp_ch1_short_5",
+          "questionText": "Write pseudocode to find the factorial of a given number N.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_comp_ch1_long_1",
+          "questionText": "Define programming techniques. Explain the structured programming approach with its advantages. Describe the three fundamental control structures: sequence, selection, and iteration. Draw flowcharts to illustrate each structure.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_comp_ch1_long_2",
+          "questionText": "What is an algorithm? Explain the steps involved in algorithm design and analysis. Write an algorithm and draw a flowchart to find the largest of three numbers. Explain the importance of pseudocode in program development.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_comp_ch1_long_3",
+          "questionText": "Explain modular programming. What are the advantages of dividing a program into modules? Write pseudocode and draw a detailed flowchart for a program that calculates the sum of first N natural numbers, then finds and displays whether the sum is even or odd. Include input validation.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "10_comp_ch2",
+      "number": 2,
+      "name": "Programming in C",
+      "mcqs": [
+        {
+          "id": "10_comp_ch2_mcq_1",
+          "questionText": "Which of the following is the correct header file for input/output operations in C?",
+          "options": ["<conio.h>", "<stdio.h>", "<math.h>", "<string.h>"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch2_mcq_2",
+          "questionText": "The correct syntax for declaring an integer variable is:",
+          "options": ["int x;", "integer x;", "Int x;", "num x;"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch2_mcq_3",
+          "questionText": "Which function is used to print output in C?",
+          "options": ["scanf()", "printf()", "print()", "input()"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch2_mcq_4",
+          "questionText": "The format specifier for float is:",
+          "options": ["%d", "%f", "%c", "%s"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch2_mcq_5",
+          "questionText": "Which operator is used for getting the address of a variable?",
+          "options": ["*", "&", "%", "$"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch2_mcq_6",
+          "questionText": "What is the output of: int a = 5, b = 2; printf(\"%d\", a/b);?",
+          "options": ["2.5", "2", "3", "2.0"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch2_mcq_7",
+          "questionText": "The switch statement can be used with data type:",
+          "options": ["float", "double", "int", "All of these"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch2_mcq_8",
+          "questionText": "Which loop is best when the number of iterations is known?",
+          "options": ["While", "Do-while", "For", "Goto"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch2_mcq_9",
+          "questionText": "What will be the value of x after: int x = 5; x += 3;?",
+          "options": ["5", "3", "8", "15"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_comp_ch2_mcq_10",
+          "questionText": "Which of the following is NOT a valid variable name in C?",
+          "options": ["_value", "value1", "1value", "Value_1"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_comp_ch2_short_1",
+          "questionText": "List any five data types available in C language with their format specifiers.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_comp_ch2_short_2",
+          "questionText": "Differentiate between printf() and scanf() functions with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_comp_ch2_short_3",
+          "questionText": "Explain the if-else statement with a suitable example.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_comp_ch2_short_4",
+          "questionText": "What is the difference between break and continue statements?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_comp_ch2_short_5",
+          "questionText": "Write a C program to check whether a given number is even or odd.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_comp_ch2_long_1",
+          "questionText": "Explain the structure of a C program with a simple example. Describe the basic data types available in C. Write a program to input two numbers and display their sum, difference, product, and quotient. Include comments explaining each part of the program.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_comp_ch2_long_2",
+          "questionText": "Explain different types of operators in C: arithmetic, relational, logical, and assignment operators. Write a C program to find the largest of three numbers using if-else statements. Include proper variable declarations and comments.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_comp_ch2_long_3",
+          "questionText": "Explain the different types of loops in C (for, while, do-while) with their syntax and examples. Compare and contrast these loops. Write a complete C program to print the multiplication table of a given number using all three types of loops separately. Also include a program to calculate the factorial of a number using a loop.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

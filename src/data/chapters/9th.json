@@ -1,0 +1,83 @@
+{
+  "class": "9th",
+  "subjects": [
+    {
+      "name": "Physics",
+      "chapters": [
+        { "id": "9_phy_ch1", "number": 1, "name": "Physical Quantities and Measurement" },
+        { "id": "9_phy_ch2", "number": 2, "name": "Kinematics" },
+        { "id": "9_phy_ch3", "number": 3, "name": "Dynamics" },
+        { "id": "9_phy_ch4", "number": 4, "name": "Turning Effect of Forces" },
+        { "id": "9_phy_ch5", "number": 5, "name": "Gravitation" },
+        { "id": "9_phy_ch6", "number": 6, "name": "Work and Energy" },
+        { "id": "9_phy_ch7", "number": 7, "name": "Properties of Matter" },
+        { "id": "9_phy_ch8", "number": 8, "name": "Thermal Properties of Matter" }
+      ]
+    },
+    {
+      "name": "Chemistry",
+      "chapters": [
+        { "id": "9_chem_ch1", "number": 1, "name": "Fundamentals of Chemistry" },
+        { "id": "9_chem_ch2", "number": 2, "name": "Structure of Atoms" },
+        { "id": "9_chem_ch3", "number": 3, "name": "Periodic Table and Periodicity of Properties" },
+        { "id": "9_chem_ch4", "number": 4, "name": "Structure of Molecules" },
+        { "id": "9_chem_ch5", "number": 5, "name": "Physical States of Matter" },
+        { "id": "9_chem_ch6", "number": 6, "name": "Solutions" },
+        { "id": "9_chem_ch7", "number": 7, "name": "Electrochemistry" },
+        { "id": "9_chem_ch8", "number": 8, "name": "Chemical Reactivity" }
+      ]
+    },
+    {
+      "name": "Biology",
+      "chapters": [
+        { "id": "9_bio_ch1", "number": 1, "name": "Introduction to Biology" },
+        { "id": "9_bio_ch2", "number": 2, "name": "Solving a Biological Problem" },
+        { "id": "9_bio_ch3", "number": 3, "name": "Biodiversity" },
+        { "id": "9_bio_ch4", "number": 4, "name": "Cells and Tissues" },
+        { "id": "9_bio_ch5", "number": 5, "name": "Cell Cycle" },
+        { "id": "9_bio_ch6", "number": 6, "name": "Enzymes" },
+        { "id": "9_bio_ch7", "number": 7, "name": "Bioenergetics" },
+        { "id": "9_bio_ch8", "number": 8, "name": "Nutrition" }
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "chapters": [
+        { "id": "9_math_ch1", "number": 1, "name": "Matrices and Determinants" },
+        { "id": "9_math_ch2", "number": 2, "name": "Real and Complex Numbers" },
+        { "id": "9_math_ch3", "number": 3, "name": "Logarithms" },
+        { "id": "9_math_ch4", "number": 4, "name": "Algebraic Expressions and Algebraic Formulas" },
+        { "id": "9_math_ch5", "number": 5, "name": "Factorization" },
+        { "id": "9_math_ch6", "number": 6, "name": "Algebraic Manipulation" },
+        { "id": "9_math_ch7", "number": 7, "name": "Linear Equations and Inequalities" },
+        { "id": "9_math_ch8", "number": 8, "name": "Linear Graphs and Their Application" }
+      ]
+    },
+    {
+      "name": "Computer",
+      "chapters": [
+        { "id": "9_comp_ch1", "number": 1, "name": "Introduction to Computers" },
+        { "id": "9_comp_ch2", "number": 2, "name": "Computer Components" },
+        { "id": "9_comp_ch3", "number": 3, "name": "Input and Output Devices" },
+        { "id": "9_comp_ch4", "number": 4, "name": "Storage Devices" },
+        { "id": "9_comp_ch5", "number": 5, "name": "Number Systems" },
+        { "id": "9_comp_ch6", "number": 6, "name": "Boolean Algebra" },
+        { "id": "9_comp_ch7", "number": 7, "name": "Computer Software" },
+        { "id": "9_comp_ch8", "number": 8, "name": "Operating Systems" }
+      ]
+    },
+    {
+      "name": "English",
+      "chapters": [
+        { "id": "9_eng_ch1", "number": 1, "name": "The Saviour of Mankind" },
+        { "id": "9_eng_ch2", "number": 2, "name": "Patriotism" },
+        { "id": "9_eng_ch3", "number": 3, "name": "Media and Its Impact" },
+        { "id": "9_eng_ch4", "number": 4, "name": "Hazrat Asma (RA)" },
+        { "id": "9_eng_ch5", "number": 5, "name": "Daffodils" },
+        { "id": "9_eng_ch6", "number": 6, "name": "The Quaid's Vision and Pakistan" },
+        { "id": "9_eng_ch7", "number": 7, "name": "Sultan Ahmad Masjid" },
+        { "id": "9_eng_ch8", "number": 8, "name": "Stopping by Woods on a Snowy Evening" }
+      ]
+    }
+  ]
+}

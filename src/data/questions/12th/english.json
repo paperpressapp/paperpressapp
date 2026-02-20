@@ -1,0 +1,284 @@
+{
+  "class": "12th",
+  "subject": "English",
+  "chapters": [
+    {
+      "id": "12_eng_ch1",
+      "number": 1,
+      "name": "The Dying Sun",
+      "mcqs": [
+        {
+          "id": "12_eng_ch1_mcq_1",
+          "questionText": "'The Dying Sun' is written by:",
+          "options": ["Sir James Jeans", "J.C. Hill", "Bertrand Russell", "Huxley"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch1_mcq_2",
+          "questionText": "The essay discusses the formation of:",
+          "options": ["Earth", "Moon", "Solar System", "Stars"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch1_mcq_3",
+          "questionText": "According to the essay, the universe is:",
+          "options": ["Very small", "Infinite", "Finite but large", "Impossible to measure"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch1_mcq_4",
+          "questionText": "The sun is described as a member of the:",
+          "options": ["Galaxy", "Milky Way", "Solar System", "Universe"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch1_mcq_5",
+          "questionText": "The planets were formed from:",
+          "options": ["Hot gases", "Cold matter", "Debris of stars", "Nebular material"],
+          "correctOption": 3,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch1_mcq_6",
+          "questionText": "The distance from sun to earth is approximately:",
+          "options": ["93 million miles", "100 million miles", "50 million miles", "150 million miles"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch1_mcq_7",
+          "questionText": "The essay suggests that life is possible on earth due to:",
+          "options": ["Its size", "Its distance from sun", "Its atmosphere", "All of these"],
+          "correctOption": 3,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch1_mcq_8",
+          "questionText": "The sun is gradually:",
+          "options": ["Expanding", "Cooling down", "Getting hotter", "Shrinking"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch1_mcq_9",
+          "questionText": "The essay describes the earth's atmosphere as a:",
+          "options": ["Protection", "Burden", "Blessing", "Necessity"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch1_mcq_10",
+          "questionText": "The tone of the essay is:",
+          "options": ["Pessimistic", "Optimistic", "Scientific and factual", "Emotional"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_eng_ch1_short_1",
+          "questionText": "Who wrote 'The Dying Sun'? Give a brief introduction to the essay.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_eng_ch1_short_2",
+          "questionText": "Describe the vastness of the universe as discussed in the essay.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_eng_ch1_short_3",
+          "questionText": "How was the solar system formed according to Sir James Jeans?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_eng_ch1_short_4",
+          "questionText": "Why is life possible on Earth? What conditions make Earth suitable for life?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_eng_ch1_short_5",
+          "questionText": "Discuss the significance of the title 'The Dying Sun'. What does it suggest about the future?",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_eng_ch1_long_1",
+          "questionText": "Give a detailed summary of 'The Dying Sun' by Sir James Jeans. What does the essay tell us about the formation of the solar system and the position of Earth in the universe?",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_eng_ch1_long_2",
+          "questionText": "Discuss the main theme and central idea of 'The Dying Sun'. How does the author explain the vastness of space and the unique position of Earth? Explain with reference to the text.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_eng_ch1_long_3",
+          "questionText": "Critically analyze 'The Dying Sun' as a scientific essay. Discuss the literary devices used by the author, the writing style, and how the author makes complex scientific concepts understandable to general readers. What is the significance of the essay in understanding our place in the universe?",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    },
+    {
+      "id": "12_eng_ch2",
+      "number": 2,
+      "name": "Using the Scientific Method",
+      "mcqs": [
+        {
+          "id": "12_eng_ch2_mcq_1",
+          "questionText": "'Using the Scientific Method' is written by:",
+          "options": ["Sir James Jeans", "J.C. Hill", "Carlyle", "Addison"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch2_mcq_2",
+          "questionText": "The scientific method is based on:",
+          "options": ["Imagination", "Observation and experimentation", "Beliefs", "Traditions"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch2_mcq_3",
+          "questionText": "The first step in the scientific method is:",
+          "options": ["Conclusion", "Hypothesis", "Observation", "Experimentation"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch2_mcq_4",
+          "questionText": "A hypothesis is:",
+          "options": ["A proven fact", "An educated guess", "A law", "A theory"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch2_mcq_5",
+          "questionText": "The example of wheat grain illustrates:",
+          "options": ["Plant growth", "Need for water", "Scientific method", "Agriculture"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch2_mcq_6",
+          "questionText": "In the experiment, the controlled variable was:",
+          "options": ["Temperature", "Type of seed", "Light", "Amount of water"],
+          "correctOption": 3,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch2_mcq_7",
+          "questionText": "The essay shows that the scientific method requires:",
+          "options": ["Special equipment only", "Laboratory only", "Systematic approach", "Expensive resources"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch2_mcq_8",
+          "questionText": "The results of the experiment proved that:",
+          "options": ["Seeds don't need water", "Seeds need water to germinate", "Light is necessary", "Temperature is most important"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch2_mcq_9",
+          "questionText": "The purpose of using identical seeds was to:",
+          "options": ["Save money", "Ensure fair test", "Make it easier", "Show variety"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_eng_ch2_mcq_10",
+          "questionText": "The essay primarily aims to:",
+          "options": ["Teach agriculture", "Explain scientific thinking", "Criticize old methods", "Promote experiments"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_eng_ch2_short_1",
+          "questionText": "Who wrote 'Using the Scientific Method'? What is the main purpose of this essay?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_eng_ch2_short_2",
+          "questionText": "What is the scientific method? List and explain its main steps.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_eng_ch2_short_3",
+          "questionText": "Describe the wheat grain experiment discussed in the essay. What variables were controlled?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_eng_ch2_short_4",
+          "questionText": "What is the difference between a hypothesis and a conclusion? Illustrate with examples.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_eng_ch2_short_5",
+          "questionText": "Why is it important to control variables in a scientific experiment? What would happen if variables are not controlled?",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_eng_ch2_long_1",
+          "questionText": "Summarize the essay 'Using the Scientific Method' by J.C. Hill. Explain the wheat grain experiment and how it demonstrates the scientific method. What conclusion was drawn from this experiment?",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_eng_ch2_long_2",
+          "questionText": "Explain the scientific method in detail. Describe each step with examples. How does J.C. Hill illustrate the scientific method through the wheat grain experiment? Discuss the importance of controlled variables in scientific investigation.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_eng_ch2_long_3",
+          "questionText": "Critically analyze 'Using the Scientific Method' as an educational essay. How does the author simplify the concept of scientific method for students? Discuss the clarity of explanation, use of examples, and the educational value of this essay. How can the scientific method be applied in daily life situations?",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    }
+  ]
+}

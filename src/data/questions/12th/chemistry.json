@@ -1,0 +1,284 @@
+{
+  "class": "12th",
+  "subject": "Chemistry",
+  "chapters": [
+    {
+      "id": "12_chem_ch1",
+      "number": 1,
+      "name": "Periodic Classification of Elements",
+      "mcqs": [
+        {
+          "id": "12_chem_ch1_mcq_1",
+          "questionText": "Which scientist proposed the Modern Periodic Law?",
+          "options": ["Mendeleev", "Newlands", "Moseley", "Dobereiner"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch1_mcq_2",
+          "questionText": "Modern Periodic Law is based on:",
+          "options": ["Atomic mass", "Atomic number", "Mass number", "Number of neutrons"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch1_mcq_3",
+          "questionText": "The long form of periodic table consists of ___ periods.",
+          "options": ["6", "7", "8", "18"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch1_mcq_4",
+          "questionText": "Which block elements are known as transition elements?",
+          "options": ["s-block", "p-block", "d-block", "f-block"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch1_mcq_5",
+          "questionText": "The ionization energy generally ___ across a period from left to right.",
+          "options": ["Decreases", "Increases", "Remains constant", "First increases then decreases"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch1_mcq_6",
+          "questionText": "Which has the largest atomic radius?",
+          "options": ["Li", "Na", "K", "Cs"],
+          "correctOption": 3,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch1_mcq_7",
+          "questionText": "The most electronegative element is:",
+          "options": ["Oxygen", "Nitrogen", "Fluorine", "Chlorine"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch1_mcq_8",
+          "questionText": "Shielding effect of electrons follows the order:",
+          "options": ["s > p > d > f", "f > d > p > s", "p > d > s > f", "s > f > d > p"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch1_mcq_9",
+          "questionText": "The element with electronic configuration [Ar] 3d⁵ 4s¹ belongs to:",
+          "options": ["Group 5, Period 4", "Group 6, Period 4", "Group 7, Period 3", "Group 4, Period 4"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch1_mcq_10",
+          "questionText": "Diagonal relationship is shown between:",
+          "options": ["Li and Mg", "Na and Ca", "Be and Al", "Both A and C"],
+          "correctOption": 3,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_chem_ch1_short_1",
+          "questionText": "State Modern Periodic Law. Describe the features of long form of periodic table.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_chem_ch1_short_2",
+          "questionText": "Define ionization energy and electron affinity. How do they vary in a group and period?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_chem_ch1_short_3",
+          "questionText": "Explain the variation of atomic radius in a period and in a group with reasons.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_chem_ch1_short_4",
+          "questionText": "What is electronegativity? Discuss its periodic trends. How does it affect bond polarity?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_chem_ch1_short_5",
+          "questionText": "Explain the factors affecting ionization energy. Why do inert gases have highest ionization energies?",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_chem_ch1_long_1",
+          "questionText": "Define ionization energy and electron affinity. Explain the factors affecting these properties. How do they vary in the periodic table?",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_chem_ch1_long_2",
+          "questionText": "Discuss the classification of elements into s, p, d, and f blocks. Give examples of each and explain their general electronic configurations and properties.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_chem_ch1_long_3",
+          "questionText": "Explain the periodic trends of atomic radius, ionic radius, and electronegativity. Discuss the anomalous behavior of first elements of each group (Li, Be, B) with reference to their diagonal relationships.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    },
+    {
+      "id": "12_chem_ch2",
+      "number": 2,
+      "name": "s-Block Elements",
+      "mcqs": [
+        {
+          "id": "12_chem_ch2_mcq_1",
+          "questionText": "Which element has the highest ionization energy in Group 1?",
+          "options": ["Na", "K", "Li", "Cs"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch2_mcq_2",
+          "questionText": "The general electronic configuration of s-block elements is:",
+          "options": ["ns¹⁻²", "ns² np¹⁻⁶", "(n-1)d¹⁻¹⁰ ns¹⁻²", "(n-2)f¹⁻¹⁴"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch2_mcq_3",
+          "questionText": "Which compound is known as caustic soda?",
+          "options": ["Na₂CO₃", "NaOH", "NaHCO₃", "Na₂SO₄"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch2_mcq_4",
+          "questionText": "Quick lime is chemically:",
+          "options": ["Ca(OH)₂", "CaO", "CaCO₃", "CaSO₄"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch2_mcq_5",
+          "questionText": "Aqueous solution of Na₂CO₃ is:",
+          "options": ["Acidic", "Basic", "Neutral", "Amphoteric"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch2_mcq_6",
+          "questionText": "Plaster of Paris is obtained from gypsum by:",
+          "options": ["Hydration", "Dehydration", "Oxidation", "Reduction"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch2_mcq_7",
+          "questionText": "Which alkali metal reacts most vigorously with water?",
+          "options": ["Li", "Na", "K", "Cs"],
+          "correctOption": 3,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch2_mcq_8",
+          "questionText": "The formula of bleaching powder is:",
+          "options": ["CaOCl₂", "Ca(OCl)₂", "CaCl₂", "Ca(ClO₃)₂"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch2_mcq_9",
+          "questionText": "The solubility of hydroxides of alkaline earth metals in water increases down the group because:",
+          "options": ["Lattice energy decreases more than hydration energy", "Hydration energy decreases more than lattice energy", "Both decrease equally", "Bond strength increases"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_chem_ch2_mcq_10",
+          "questionText": "Li shows diagonal relationship with:",
+          "options": ["Na", "Ca", "Mg", "Al"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_chem_ch2_short_1",
+          "questionText": "Describe the general characteristics of alkali metals. Why are they called alkali metals?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_chem_ch2_short_2",
+          "questionText": "Write preparation and uses of NaOH (caustic soda) by Castner-Kellner process.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_chem_ch2_short_3",
+          "questionText": "Explain the diagonal relationship between Li and Mg. Give examples of similarities.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_chem_ch2_short_4",
+          "questionText": "How is Plaster of Paris prepared? Write its uses and the chemical reaction when mixed with water.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_chem_ch2_short_5",
+          "questionText": "Discuss the anomalous behavior of lithium compared to other alkali metals. Explain with examples.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_chem_ch2_long_1",
+          "questionText": "Describe the general characteristics of Group 1 (alkali metals) and Group 2 (alkaline earth metals). Compare their physical and chemical properties.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_chem_ch2_long_2",
+          "questionText": "Describe the manufacture of sodium carbonate by Solvay process with chemical equations. What are the advantages of this process?",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_chem_ch2_long_3",
+          "questionText": "Explain why lithium and its compounds show anomalous behavior compared to other alkali metals. Discuss the diagonal relationship between Li-Mg and Be-Al with suitable examples.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    }
+  ]
+}

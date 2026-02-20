@@ -1,0 +1,284 @@
+{
+  "class": "10th",
+  "subject": "Chemistry",
+  "chapters": [
+    {
+      "id": "10_chem_ch1",
+      "number": 1,
+      "name": "Chemical Equilibrium",
+      "mcqs": [
+        {
+          "id": "10_chem_ch1_mcq_1",
+          "questionText": "A reversible reaction is one which:",
+          "options": ["Proceeds only in forward direction", "Proceeds only in backward direction", "Proceeds in both forward and backward directions", "Never reaches equilibrium"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch1_mcq_2",
+          "questionText": "At equilibrium, the concentrations of reactants and products:",
+          "options": ["Become zero", "Become constant", "Keep increasing", "Keep decreasing"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch1_mcq_3",
+          "questionText": "The equilibrium constant (K) is the ratio of:",
+          "options": ["Product of concentrations of reactants to products", "Product of concentrations of products to reactants", "Sum of concentrations", "Difference of concentrations"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch1_mcq_4",
+          "questionText": "According to Le Chatelier's principle, if pressure is increased on a gaseous equilibrium system:",
+          "options": ["Equilibrium shifts towards more moles", "Equilibrium shifts towards fewer moles", "Equilibrium does not shift", "Temperature increases"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch1_mcq_5",
+          "questionText": "For the reaction N₂(g) + 3H₂(g) ⇌ 2NH₃(g), the equilibrium constant expression is:",
+          "options": ["K = [N₂][H₂]³/[NH₃]²", "K = [NH₃]²/[N₂][H₂]³", "K = [NH₃]/[N₂][H₂]", "K = [N₂][H₂]/[NH₃]"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch1_mcq_6",
+          "questionText": "The unit of equilibrium constant for the reaction H₂(g) + I₂(g) ⇌ 2HI(g) is:",
+          "options": ["mol/L", "(mol/L)⁻¹", "No unit", "L/mol"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch1_mcq_7",
+          "questionText": "If a catalyst is added to an equilibrium system:",
+          "options": ["Equilibrium shifts to right", "Equilibrium shifts to left", "Equilibrium position does not change", "K value changes"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch1_mcq_8",
+          "questionText": "For an endothermic reaction at equilibrium, if temperature is increased:",
+          "options": ["K decreases", "K increases", "K remains unchanged", "K becomes zero"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch1_mcq_9",
+          "questionText": "The equilibrium constant Kp and Kc are related by the equation Kp = Kc(RT)^Δn. For which reaction will Kp ≠ Kc?",
+          "options": ["H₂ + Cl₂ ⇌ 2HCl", "N₂ + O₂ ⇌ 2NO", "N₂ + 3H₂ ⇌ 2NH₃", "2HI ⇌ H₂ + I₂"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch1_mcq_10",
+          "questionText": "The ionic product of water (Kw) at 25°C is:",
+          "options": ["1 × 10⁻¹⁴", "1 × 10⁻⁷", "14", "7"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_chem_ch1_short_1",
+          "questionText": "Define reversible reaction and give two examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_chem_ch1_short_2",
+          "questionText": "What is chemical equilibrium? State the characteristics of a system at equilibrium.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_chem_ch1_short_3",
+          "questionText": "State and explain Le Chatelier's principle with an example.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_chem_ch1_short_4",
+          "questionText": "How does temperature affect the equilibrium position of an exothermic reaction? Explain.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_chem_ch1_short_5",
+          "questionText": "For the equilibrium 2SO₂(g) + O₂(g) ⇌ 2SO₃(g) ΔH = -ve, predict the effect of: (a) increasing pressure, (b) adding a catalyst, (c) increasing temperature on the equilibrium position.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_chem_ch1_long_1",
+          "questionText": "Explain what is meant by chemical equilibrium. Derive the expression for equilibrium constant (Kc) for a general reversible reaction aA + bB ⇌ cC + dD. Also, explain why equilibrium is called a dynamic equilibrium.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_chem_ch1_long_2",
+          "questionText": "State and explain Le Chatelier's principle. Apply this principle to explain the effect of change in concentration, pressure, and temperature on the following equilibrium: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) ΔH = -92.4 kJ/mol",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_chem_ch1_long_3",
+          "questionText": "For the reaction PCl₅(g) ⇌ PCl₃(g) + Cl₂(g), the equilibrium concentrations at 500K are: [PCl₅] = 0.20 M, [PCl₃] = 0.30 M, [Cl₂] = 0.30 M. Calculate (a) the equilibrium constant Kc, (b) Kp at 500K, (c) Predict the effect of increasing pressure on this equilibrium. Given: R = 0.0821 L·atm/(mol·K)",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "10_chem_ch2",
+      "number": 2,
+      "name": "Acids Bases and Salts",
+      "mcqs": [
+        {
+          "id": "10_chem_ch2_mcq_1",
+          "questionText": "According to Arrhenius theory, an acid is a substance that:",
+          "options": ["Accepts protons", "Donates protons", "Produces H⁺ ions in water", "Produces OH⁻ ions in water"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch2_mcq_2",
+          "questionText": "The pH of pure water at 25°C is:",
+          "options": ["0", "7", "14", "1"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch2_mcq_3",
+          "questionText": "Which of the following is a strong acid?",
+          "options": ["Acetic acid", "Carbonic acid", "Hydrochloric acid", "Citric acid"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch2_mcq_4",
+          "questionText": "A solution with pH = 9 is:",
+          "options": ["Strongly acidic", "Weakly acidic", "Neutral", "Weakly basic"],
+          "correctOption": 3,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch2_mcq_5",
+          "questionText": "According to Bronsted-Lowry theory, NH₃ is a:",
+          "options": ["Strong acid", "Weak acid", "Strong base", "Proton acceptor"],
+          "correctOption": 3,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch2_mcq_6",
+          "questionText": "The salt formed by the reaction of strong acid and strong base has pH:",
+          "options": ["Less than 7", "Equal to 7", "Greater than 7", "Between 5-6"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch2_mcq_7",
+          "questionText": "Which indicator turns pink in basic solution?",
+          "options": ["Methyl orange", "Phenolphthalein", "Litmus", "Methyl red"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch2_mcq_8",
+          "questionText": "The conjugate base of H₂O is:",
+          "options": ["H₃O⁺", "OH⁻", "H⁺", "O²⁻"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch2_mcq_9",
+          "questionText": "The pOH of a solution is 3. What is its pH?",
+          "options": ["3", "7", "11", "14"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_chem_ch2_mcq_10",
+          "questionText": "In the reaction H₂O + NH₃ ⇌ NH₄⁺ + OH⁻, the conjugate acid-base pairs are:",
+          "options": ["H₂O/OH⁻ and NH₃/NH₄⁺", "H₂O/NH₄⁺ and NH₃/OH⁻", "H₂O/NH₃ and NH₄⁺/OH⁻", "OH⁻/NH₃ and H₂O/NH₄⁺"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_chem_ch2_short_1",
+          "questionText": "Define acids and bases according to Arrhenius theory. Give one example of each.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_chem_ch2_short_2",
+          "questionText": "What is pH scale? Explain how pH is related to hydrogen ion concentration.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_chem_ch2_short_3",
+          "questionText": "Define conjugate acid-base pair with suitable examples.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_chem_ch2_short_4",
+          "questionText": "Classify the following salts as acidic, basic, or neutral: NaCl, NH₄Cl, CH₃COONa. Explain your answer.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_chem_ch2_short_5",
+          "questionText": "Calculate the pH of a solution containing 0.01 M HCl. Also calculate the pOH of this solution.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_chem_ch2_long_1",
+          "questionText": "Define acids and bases according to: (a) Arrhenius theory, (b) Bronsted-Lowry theory. Compare the two theories with suitable examples. Identify the conjugate acid-base pairs in the reaction: HCl + H₂O ⇌ H₃O⁺ + Cl⁻",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_chem_ch2_long_2",
+          "questionText": "Explain the pH scale. Calculate the pH of: (a) 0.001 M NaOH solution, (b) 0.05 M H₂SO₄ solution, (c) A solution containing [H⁺] = 2 × 10⁻⁵ M. Also explain the significance of pH in daily life with three examples.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_chem_ch2_long_3",
+          "questionText": "What are salts? How are they classified on the basis of their pH? Explain with examples. Describe how you would prepare: (a) Sodium sulfate from NaOH and H₂SO₄, (b) Ammonium chloride from NH₃ and HCl. Write balanced chemical equations for both reactions.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

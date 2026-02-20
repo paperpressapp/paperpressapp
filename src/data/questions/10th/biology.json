@@ -1,0 +1,284 @@
+{
+  "class": "10th",
+  "subject": "Biology",
+  "chapters": [
+    {
+      "id": "10_bio_ch1",
+      "number": 1,
+      "name": "Gaseous Exchange",
+      "mcqs": [
+        {
+          "id": "10_bio_ch1_mcq_1",
+          "questionText": "The primary site of gaseous exchange in humans is:",
+          "options": ["Trachea", "Bronchi", "Alveoli", "Pharynx"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch1_mcq_2",
+          "questionText": "Oxygen enters the blood from alveoli by the process of:",
+          "options": ["Active transport", "Diffusion", "Osmosis", "Filtration"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch1_mcq_3",
+          "questionText": "The respiratory pigment present in human blood is:",
+          "options": ["Chlorophyll", "Hemoglobin", "Myoglobin", "Cytochrome"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch1_mcq_4",
+          "questionText": "Which of the following has the highest percentage of CO₂?",
+          "options": ["Inspired air", "Expired air", "Alveolar air", "Blood entering lungs"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch1_mcq_5",
+          "questionText": "The structure that prevents food from entering the trachea during swallowing is:",
+          "options": ["Epiglottis", "Larynx", "Glottis", "Uvula"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch1_mcq_6",
+          "questionText": "The volume of air that remains in lungs after forceful expiration is called:",
+          "options": ["Tidal volume", "Vital capacity", "Residual volume", "Inspiratory capacity"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch1_mcq_7",
+          "questionText": "In fish, gaseous exchange occurs through:",
+          "options": ["Lungs", "Gills", "Skin", "Air bladder"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch1_mcq_8",
+          "questionText": "During vigorous exercise, breathing rate may increase up to:",
+          "options": ["10-12 breaths/min", "15-18 breaths/min", "25-30 breaths/min", "40-50 breaths/min"],
+          "correctOption": 3,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch1_mcq_9",
+          "questionText": "Oxygen dissociation curve shifts to the left when:",
+          "options": ["Temperature increases", "pH decreases", "CO₂ concentration decreases", "Pressure increases"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch1_mcq_10",
+          "questionText": "Which of the following is NOT a component of the respiratory membrane?",
+          "options": ["Squamous epithelium of alveolus", "Basement membrane", "Capillary endothelium", "Cartilage"],
+          "correctOption": 3,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_bio_ch1_short_1",
+          "questionText": "Describe the structure and function of alveoli.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_bio_ch1_short_2",
+          "questionText": "What is the role of hemoglobin in respiration?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_bio_ch1_short_3",
+          "questionText": "Explain the process of inhalation and mention the muscles involved.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_bio_ch1_short_4",
+          "questionText": "Compare the composition of inspired air and expired air. List three differences.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_bio_ch1_short_5",
+          "questionText": "Explain Bohr's effect and its significance in oxygen transport.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_bio_ch1_long_1",
+          "questionText": "Describe the human respiratory system with a labeled diagram. Explain the passage of air from the external environment to the alveoli. Mention the functions of each part of the respiratory system.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_bio_ch1_long_2",
+          "questionText": "Explain the mechanism of breathing (ventilation) in humans. Describe the role of diaphragm and intercostal muscles in inhalation and exhalation. Calculate the vital capacity if tidal volume is 500 ml, inspiratory reserve volume is 3000 ml, and expiratory reserve volume is 1100 ml.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_bio_ch1_long_3",
+          "questionText": "Describe the process of gaseous exchange at the alveolar level. Explain with a diagram the structure of the respiratory membrane. Discuss the factors affecting the rate of diffusion of gases across the respiratory membrane. Also explain how oxygen is transported in the blood.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "10_bio_ch2",
+      "number": 2,
+      "name": "Homeostasis",
+      "mcqs": [
+        {
+          "id": "10_bio_ch2_mcq_1",
+          "questionText": "Homeostasis refers to:",
+          "options": ["Change in internal environment", "Maintenance of constant internal environment", "External changes", "Growth of organisms"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch2_mcq_2",
+          "questionText": "The main organ responsible for osmoregulation in humans is:",
+          "options": ["Liver", "Skin", "Kidney", "Lungs"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch2_mcq_3",
+          "questionText": "Normal human body temperature is approximately:",
+          "options": ["35°C", "37°C", "40°C", "42°C"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch2_mcq_4",
+          "questionText": "The functional unit of kidney is called:",
+          "options": ["Neuron", "Nephron", "Alveolus", "Villus"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch2_mcq_5",
+          "questionText": "Which hormone regulates water reabsorption in kidney tubules?",
+          "options": ["Insulin", "Glucagon", "ADH (Antidiuretic hormone)", "Thyroxine"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch2_mcq_6",
+          "questionText": "Sweating helps in:",
+          "options": ["Osmoregulation only", "Thermoregulation only", "Both osmoregulation and thermoregulation", "Neither osmoregulation nor thermoregulation"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch2_mcq_7",
+          "questionText": "The process of ultrafiltration occurs in:",
+          "options": ["Proximal convoluted tubule", "Bowman's capsule", "Loop of Henle", "Collecting duct"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch2_mcq_8",
+          "questionText": "The average daily urine output in a healthy adult is approximately:",
+          "options": ["0.5-1.0 L", "1.0-1.5 L", "2.0-2.5 L", "3.0-4.0 L"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch2_mcq_9",
+          "questionText": "Which of the following is NOT reabsorbed in the proximal convoluted tubule?",
+          "options": ["Glucose", "Amino acids", "Urea", "Water"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_bio_ch2_mcq_10",
+          "questionText": "Diabetes insipidus is caused by:",
+          "options": ["Excess insulin", "Deficiency of ADH", "Excess glucagon", "Deficiency of thyroxine"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_bio_ch2_short_1",
+          "questionText": "Define homeostasis and explain why it is important for living organisms.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_bio_ch2_short_2",
+          "questionText": "Describe the structure of a nephron with a simple diagram.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_bio_ch2_short_3",
+          "questionText": "Explain the role of ADH in osmoregulation.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_bio_ch2_short_4",
+          "questionText": "How does the skin help in thermoregulation? Explain any three mechanisms.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_bio_ch2_short_5",
+          "questionText": "Compare the composition of blood plasma and glomerular filtrate. What substances are absent in the filtrate?",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_bio_ch2_long_1",
+          "questionText": "Describe the structure and functions of the human urinary system. Draw a labeled diagram of the urinary system. Explain the role of kidneys in maintaining homeostasis.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_bio_ch2_long_2",
+          "questionText": "Explain the process of urine formation in the kidney. Describe the three main processes: (a) Ultrafiltration, (b) Selective reabsorption, and (c) Tubular secretion. Mention where each process occurs in the nephron.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_bio_ch2_long_3",
+          "questionText": "Describe the mechanism of thermoregulation in humans. Explain how the body responds to: (a) Hot environmental conditions, (b) Cold environmental conditions. Discuss the role of hypothalamus, skin, and blood vessels in temperature regulation.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

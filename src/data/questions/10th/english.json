@@ -1,0 +1,284 @@
+{
+  "class": "10th",
+  "subject": "English",
+  "chapters": [
+    {
+      "id": "10_eng_ch1",
+      "number": 1,
+      "name": "Hazrat Muhammad (PBUH) an Embodiment of Justice",
+      "mcqs": [
+        {
+          "id": "10_eng_ch1_mcq_1",
+          "questionText": "What does the word 'embodiment' mean in the context of the chapter title?",
+          "options": ["Opposition to", "Physical representation of", "Disagreement with", "Rejection of"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch1_mcq_2",
+          "questionText": "Which quality of Hazrat Muhammad (PBUH) is primarily highlighted in this chapter?",
+          "options": ["Generosity", "Justice", "Courage", "Patience"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch1_mcq_3",
+          "questionText": "The chapter teaches us that justice should be administered:",
+          "options": ["Only to Muslims", "Only to powerful people", "To all without discrimination", "Only to those who can pay"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch1_mcq_4",
+          "questionText": "Hazrat Muhammad (PBUH) declared that even if his own daughter committed theft:",
+          "options": ["He would forgive her", "Fatima would be spared", "She would be punished", "He would pay compensation"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch1_mcq_5",
+          "questionText": "The incident of the Quraish woman shows that Hazrat Muhammad (PBUH):",
+          "options": ["Favored his own tribe", "Applied justice equally to all", "Ignored minor crimes", "Punished only enemies"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch1_mcq_6",
+          "questionText": "What was Hazrat Muhammad's (PBUH) response when people suggested showing mercy to the Quraish woman?",
+          "options": ["He agreed", "He rejected the suggestion", "He compromised", "He ignored them"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch1_mcq_7",
+          "questionText": "The phrase 'even if Fatima had committed theft' demonstrates:",
+          "options": ["Favoritism", "Absolute commitment to justice", "Harshness", "Indifference"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch1_mcq_8",
+          "questionText": "The lesson we learn from this chapter about leadership is that a leader should be:",
+          "options": ["Partial", "Strict only with enemies", "Just and impartial", "Lenient with relatives"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch1_mcq_9",
+          "questionText": "The word 'discrimination' in the context of this chapter means:",
+          "options": ["Fair treatment", "Unfair treatment based on prejudice", "Equal treatment", "Proper judgment"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch1_mcq_10",
+          "questionText": "The incident described in the chapter primarily illustrates which Islamic principle?",
+          "options": ["Charity", "Justice and equality before law", "Forgiveness", "Patience"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_eng_ch1_short_1",
+          "questionText": "What does the title of the chapter suggest about Hazrat Muhammad (PBUH)?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_eng_ch1_short_2",
+          "questionText": "What happened when a Quraish woman was found guilty of theft?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_eng_ch1_short_3",
+          "questionText": "What did Hazrat Muhammad (PBUH) say about punishing even his own daughter?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_eng_ch1_short_4",
+          "questionText": "Why did some people object to punishing the Quraish woman?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_eng_ch1_short_5",
+          "questionText": "How does this incident reflect the principle of equality in Islam? Explain with reference to the text.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_eng_ch1_long_1",
+          "questionText": "Describe the incident of the Quraish woman who committed theft. How did Hazrat Muhammad (PBUH) handle this situation? What does this incident teach us about the concept of justice in Islam?",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_eng_ch1_long_2",
+          "questionText": "Explain the meaning of the title 'Hazrat Muhammad (PBUH) an Embodiment of Justice'. Discuss how the Prophet's handling of the theft incident demonstrated his commitment to justice. Why is it important for leaders to be just and impartial?",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_eng_ch1_long_3",
+          "questionText": "Analyze the character of Hazrat Muhammad (PBUH) as portrayed in this chapter. Discuss the challenges he faced in administering justice and how he overcame them. What lessons can modern leaders learn from his example? Support your answer with references from the text.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "10_eng_ch2",
+      "number": 2,
+      "name": "Chinese New Year",
+      "mcqs": [
+        {
+          "id": "10_eng_ch2_mcq_1",
+          "questionText": "Chinese New Year is also known as:",
+          "options": ["Spring Festival", "Autumn Festival", "Summer Festival", "Winter Festival"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch2_mcq_2",
+          "questionText": "The Chinese calendar is based on:",
+          "options": ["Solar cycle", "Lunar cycle", "Weekly cycle", "Daily cycle"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch2_mcq_3",
+          "questionText": "The color traditionally associated with Chinese New Year celebrations is:",
+          "options": ["Blue", "Green", "Red", "Black"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch2_mcq_4",
+          "questionText": "The Chinese zodiac consists of how many animals?",
+          "options": ["10", "12", "14", "8"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch2_mcq_5",
+          "questionText": "Red envelopes (Hongbao) given during Chinese New Year usually contain:",
+          "options": ["Letters", "Money", "Sweets", "Flowers"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch2_mcq_6",
+          "questionText": "What is the traditional food eaten during Chinese New Year that symbolizes wealth?",
+          "options": ["Rice", "Noodles", "Dumplings", "Bread"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch2_mcq_7",
+          "questionText": "Dragon dances are performed during Chinese New Year to:",
+          "options": ["Entertain children", "Bring good luck and prosperity", "Honor ancestors", "Celebrate harvest"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch2_mcq_8",
+          "questionText": "The Lantern Festival marks the end of Chinese New Year celebrations and falls on:",
+          "options": ["The 10th day", "The 15th day", "The 20th day", "The 5th day"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch2_mcq_9",
+          "questionText": "Why do people clean their houses before Chinese New Year?",
+          "options": ["To prepare for guests", "To sweep away bad luck", "To decorate", "To welcome spring"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_eng_ch2_mcq_10",
+          "questionText": "The Chinese character 'Fu' means:",
+          "options": ["Wealth", "Longevity", "Good fortune/happiness", "Peace"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_eng_ch2_short_1",
+          "questionText": "What is Chinese New Year and why is it celebrated?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_eng_ch2_short_2",
+          "questionText": "Describe the importance of the color red in Chinese New Year celebrations.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_eng_ch2_short_3",
+          "questionText": "What are red envelopes (Hongbao) and who receives them?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_eng_ch2_short_4",
+          "questionText": "Explain the significance of the Chinese zodiac in New Year celebrations.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_eng_ch2_short_5",
+          "questionText": "Compare Chinese New Year celebrations with any festival celebrated in your country. Mention three similarities or differences.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_eng_ch2_long_1",
+          "questionText": "Describe the Chinese New Year celebrations. What preparations are made before the festival? What activities take place during the celebration? Explain the significance of any three traditions associated with this festival.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_eng_ch2_long_2",
+          "questionText": "Discuss the cultural significance of Chinese New Year. Why is it the most important festival for Chinese people? Describe the role of food, decorations, and family gatherings in these celebrations. How does this festival strengthen family bonds?",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_eng_ch2_long_3",
+          "questionText": "Analyze the symbolism in Chinese New Year traditions. Explain the meaning behind: (a) the color red, (b) dragon and lion dances, (c) firecrackers, (d) specific foods like dumplings and noodles, and (e) the character 'Fu'. How do these symbols reflect Chinese cultural values and beliefs?",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

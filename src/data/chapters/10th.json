@@ -1,0 +1,83 @@
+{
+  "class": "10th",
+  "subjects": [
+    {
+      "name": "Physics",
+      "chapters": [
+        { "id": "10_phy_ch1", "number": 1, "name": "Wave Motion" },
+        { "id": "10_phy_ch2", "number": 2, "name": "Sound" },
+        { "id": "10_phy_ch3", "number": 3, "name": "Light" },
+        { "id": "10_phy_ch4", "number": 4, "name": "Electrostatics" },
+        { "id": "10_phy_ch5", "number": 5, "name": "Current Electricity" },
+        { "id": "10_phy_ch6", "number": 6, "name": "Magnetism" },
+        { "id": "10_phy_ch7", "number": 7, "name": "Electronics" },
+        { "id": "10_phy_ch8", "number": 8, "name": "Atomic and Nuclear Physics" }
+      ]
+    },
+    {
+      "name": "Chemistry",
+      "chapters": [
+        { "id": "10_chem_ch1", "number": 1, "name": "Chemical Equilibrium" },
+        { "id": "10_chem_ch2", "number": 2, "name": "Acids, Bases and Salts" },
+        { "id": "10_chem_ch3", "number": 3, "name": "Organic Chemistry" },
+        { "id": "10_chem_ch4", "number": 4, "name": "Hydrocarbons" },
+        { "id": "10_chem_ch5", "number": 5, "name": "Biochemistry" },
+        { "id": "10_chem_ch6", "number": 6, "name": "Environmental Chemistry" },
+        { "id": "10_chem_ch7", "number": 7, "name": "Water" },
+        { "id": "10_chem_ch8", "number": 8, "name": "Chemical Industries" }
+      ]
+    },
+    {
+      "name": "Biology",
+      "chapters": [
+        { "id": "10_bio_ch1", "number": 1, "name": "Gaseous Exchange" },
+        { "id": "10_bio_ch2", "number": 2, "name": "Homeostasis" },
+        { "id": "10_bio_ch3", "number": 3, "name": "Coordination and Control" },
+        { "id": "10_bio_ch4", "number": 4, "name": "Support and Movement" },
+        { "id": "10_bio_ch5", "number": 5, "name": "Reproduction" },
+        { "id": "10_bio_ch6", "number": 6, "name": "Genetics" },
+        { "id": "10_bio_ch7", "number": 7, "name": "Evolution" },
+        { "id": "10_bio_ch8", "number": 8, "name": "Man and His Environment" }
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "chapters": [
+        { "id": "10_math_ch1", "number": 1, "name": "Quadratic Equations" },
+        { "id": "10_math_ch2", "number": 2, "name": "Theory of Quadratic Equations" },
+        { "id": "10_math_ch3", "number": 3, "name": "Variations" },
+        { "id": "10_math_ch4", "number": 4, "name": "Partial Fractions" },
+        { "id": "10_math_ch5", "number": 5, "name": "Sets and Functions" },
+        { "id": "10_math_ch6", "number": 6, "name": "Basic Statistics" },
+        { "id": "10_math_ch7", "number": 7, "name": "Introduction to Trigonometry" },
+        { "id": "10_math_ch8", "number": 8, "name": "Projection of a Side of a Triangle" }
+      ]
+    },
+    {
+      "name": "Computer",
+      "chapters": [
+        { "id": "10_comp_ch1", "number": 1, "name": "Programming Techniques" },
+        { "id": "10_comp_ch2", "number": 2, "name": "Programming in C" },
+        { "id": "10_comp_ch3", "number": 3, "name": "Data Types and Control Structures" },
+        { "id": "10_comp_ch4", "number": 4, "name": "Functions in C" },
+        { "id": "10_comp_ch5", "number": 5, "name": "Arrays and Strings" },
+        { "id": "10_comp_ch6", "number": 6, "name": "Pointers in C" },
+        { "id": "10_comp_ch7", "number": 7, "name": "File Handling" },
+        { "id": "10_comp_ch8", "number": 8, "name": "Data Structures" }
+      ]
+    },
+    {
+      "name": "English",
+      "chapters": [
+        { "id": "10_eng_ch1", "number": 1, "name": "Hazrat Muhammad (PBUH) an Embodiment of Justice" },
+        { "id": "10_eng_ch2", "number": 2, "name": "Chinese New Year" },
+        { "id": "10_eng_ch3", "number": 3, "name": "Try Again" },
+        { "id": "10_eng_ch4", "number": 4, "name": "First Aid" },
+        { "id": "10_eng_ch5", "number": 5, "name": "The Rain" },
+        { "id": "10_eng_ch6", "number": 6, "name": "Television vs. Newspapers" },
+        { "id": "10_eng_ch7", "number": 7, "name": "Little by Little One Walks Far!" },
+        { "id": "10_eng_ch8", "number": 8, "name": "Peace" }
+      ]
+    }
+  ]
+}

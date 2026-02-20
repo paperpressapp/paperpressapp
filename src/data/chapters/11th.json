@@ -1,0 +1,83 @@
+{
+  "class": "11th",
+  "subjects": [
+    {
+      "name": "Physics",
+      "chapters": [
+        { "id": "11_phy_ch1", "number": 1, "name": "Measurements" },
+        { "id": "11_phy_ch2", "number": 2, "name": "Vectors and Equilibrium" },
+        { "id": "11_phy_ch3", "number": 3, "name": "Motion and Force" },
+        { "id": "11_phy_ch4", "number": 4, "name": "Work and Energy" },
+        { "id": "11_phy_ch5", "number": 5, "name": "Circular Motion" },
+        { "id": "11_phy_ch6", "number": 6, "name": "Fluid Dynamics" },
+        { "id": "11_phy_ch7", "number": 7, "name": "Oscillations" },
+        { "id": "11_phy_ch8", "number": 8, "name": "Waves" }
+      ]
+    },
+    {
+      "name": "Chemistry",
+      "chapters": [
+        { "id": "11_chem_ch1", "number": 1, "name": "Stoichiometry" },
+        { "id": "11_chem_ch2", "number": 2, "name": "Atomic Structure" },
+        { "id": "11_chem_ch3", "number": 3, "name": "Theories of Covalent Bonding" },
+        { "id": "11_chem_ch4", "number": 4, "name": "States of Matter" },
+        { "id": "11_chem_ch5", "number": 5, "name": "Chemical Energetics" },
+        { "id": "11_chem_ch6", "number": 6, "name": "Chemical Equilibrium" },
+        { "id": "11_chem_ch7", "number": 7, "name": "Electrochemistry" },
+        { "id": "11_chem_ch8", "number": 8, "name": "Reaction Kinetics" }
+      ]
+    },
+    {
+      "name": "Biology",
+      "chapters": [
+        { "id": "11_bio_ch1", "number": 1, "name": "Cell Structure and Function" },
+        { "id": "11_bio_ch2", "number": 2, "name": "Biological Molecules" },
+        { "id": "11_bio_ch3", "number": 3, "name": "Enzymes" },
+        { "id": "11_bio_ch4", "number": 4, "name": "Bioenergetics" },
+        { "id": "11_bio_ch5", "number": 5, "name": "Nutrition in Plants" },
+        { "id": "11_bio_ch6", "number": 6, "name": "Animal Nutrition" },
+        { "id": "11_bio_ch7", "number": 7, "name": "Gaseous Exchange in Plants" },
+        { "id": "11_bio_ch8", "number": 8, "name": "Transport in Plants" }
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "chapters": [
+        { "id": "11_math_ch1", "number": 1, "name": "Number Systems" },
+        { "id": "11_math_ch2", "number": 2, "name": "Sets, Functions and Groups" },
+        { "id": "11_math_ch3", "number": 3, "name": "Matrices and Determinants" },
+        { "id": "11_math_ch4", "number": 4, "name": "Quadratic Equations" },
+        { "id": "11_math_ch5", "number": 5, "name": "Partial Fractions" },
+        { "id": "11_math_ch6", "number": 6, "name": "Sequences and Series" },
+        { "id": "11_math_ch7", "number": 7, "name": "Permutation, Combination and Probability" },
+        { "id": "11_math_ch8", "number": 8, "name": "Mathematical Induction and Binomial Theorem" }
+      ]
+    },
+    {
+      "name": "Computer",
+      "chapters": [
+        { "id": "11_comp_ch1", "number": 1, "name": "Basics of Information Technology" },
+        { "id": "11_comp_ch2", "number": 2, "name": "Computer Systems" },
+        { "id": "11_comp_ch3", "number": 3, "name": "Data Communication and Networks" },
+        { "id": "11_comp_ch4", "number": 4, "name": "Internet and Web Technology" },
+        { "id": "11_comp_ch5", "number": 5, "name": "Database Management Systems" },
+        { "id": "11_comp_ch6", "number": 6, "name": "Microsoft Access" },
+        { "id": "11_comp_ch7", "number": 7, "name": "HTML and Web Design" },
+        { "id": "11_comp_ch8", "number": 8, "name": "Cyber Security" }
+      ]
+    },
+    {
+      "name": "English",
+      "chapters": [
+        { "id": "11_eng_ch1", "number": 1, "name": "Button Button" },
+        { "id": "11_eng_ch2", "number": 2, "name": "Clearing in the Sky" },
+        { "id": "11_eng_ch3", "number": 3, "name": "Dark They Were, and Golden-Eyed" },
+        { "id": "11_eng_ch4", "number": 4, "name": "Thank You, M'am" },
+        { "id": "11_eng_ch5", "number": 5, "name": "The Piece of String" },
+        { "id": "11_eng_ch6", "number": 6, "name": "The Reward" },
+        { "id": "11_eng_ch7", "number": 7, "name": "The Use of Force" },
+        { "id": "11_eng_ch8", "number": 8, "name": "The Gulistan of Saadi" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "class": "9th",
+  "subject": "Computer",
+  "chapters": [
+    {
+      "id": "9_comp_ch1",
+      "number": 1,
+      "name": "Introduction to Computers",
+      "mcqs": [
+        {
+          "id": "9_comp_ch1_mcq_1",
+          "questionText": "Computer is a word derived from:",
+          "options": ["English", "Latin", "Greek", "French"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch1_mcq_2",
+          "questionText": "Who is known as the father of computers?",
+          "options": ["Charles Babbage", "Bill Gates", "Steve Jobs", "Alan Turing"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch1_mcq_3",
+          "questionText": "The brain of the computer is:",
+          "options": ["Monitor", "CPU", "Keyboard", "Mouse"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch1_mcq_4",
+          "questionText": "Which generation of computers used vacuum tubes?",
+          "options": ["First", "Second", "Third", "Fourth"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch1_mcq_5",
+          "questionText": "Which generation used transistors?",
+          "options": ["First", "Second", "Third", "Fourth"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch1_mcq_6",
+          "questionText": "IC stands for:",
+          "options": ["Internal Component", "Integrated Circuit", "Input Component", "Internet Connection"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch1_mcq_7",
+          "questionText": "Which generation uses microprocessors?",
+          "options": ["Third", "Fourth", "Fifth", "Second"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch1_mcq_8",
+          "questionText": "Supercomputer is an example of:",
+          "options": ["Microcomputer", "Minicomputer", "Mainframe", "Supercomputer"],
+          "correctOption": 3,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch1_mcq_9",
+          "questionText": "Laptop is a type of:",
+          "options": ["Microcomputer", "Minicomputer", "Mainframe", "Supercomputer"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch1_mcq_10",
+          "questionText": "Full form of ENIAC is:",
+          "options": ["Electronic Numerical Integrator and Computer", "Electronic Network Integrated and Calculated", "Electronic Numerical Integrated and Computer", "Electrical Numerical Integrator and Calculator"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_comp_ch1_short_1",
+          "questionText": "Define computer. List any five characteristics of computers.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_comp_ch1_short_2",
+          "questionText": "Differentiate between hardware and software with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_comp_ch1_short_3",
+          "questionText": "What are the five generations of computers? Write one characteristic of each generation.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_comp_ch1_short_4",
+          "questionText": "Differentiate between microcomputer and minicomputer.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_comp_ch1_short_5",
+          "questionText": "Write a short note on the history of computers. Mention Charles Babbage's contributions.",
+          "difficulty": "medium",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_comp_ch1_long_1",
+          "questionText": "Explain the five generations of computers in detail. Write the technology used, characteristics, and examples of each generation.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_comp_ch1_long_2",
+          "questionText": "Describe the classification of computers. Explain the following types: (a) Microcomputers (b) Minicomputers (c) Mainframes (d) Supercomputers",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_comp_ch1_long_3",
+          "questionText": "What are the applications of computers in different fields? Describe uses of computers in: (a) Education (b) Medicine (c) Business (d) Entertainment (e) Communication",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "9_comp_ch2",
+      "number": 2,
+      "name": "Computer Components",
+      "mcqs": [
+        {
+          "id": "9_comp_ch2_mcq_1",
+          "questionText": "ALU stands for:",
+          "options": ["Arithmetic Logic Unit", "Arithmetic Local Unit", "Array Logic Unit", "Automatic Logic Unit"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch2_mcq_2",
+          "questionText": "Which component stores data permanently?",
+          "options": ["RAM", "ROM", "CPU", "Cache"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch2_mcq_3",
+          "questionText": "RAM stands for:",
+          "options": ["Read Access Memory", "Random Access Memory", "Read Arithmetic Memory", "Random Arithmetic Memory"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch2_mcq_4",
+          "questionText": "Which is the fastest memory in a computer?",
+          "options": ["RAM", "Hard Disk", "Cache", "DVD"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch2_mcq_5",
+          "questionText": "ROM stands for:",
+          "options": ["Read Only Memory", "Read Output Memory", "Random Output Memory", "Random Only Memory"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch2_mcq_6",
+          "questionText": "CPU consists of:",
+          "options": ["ALU and CU", "RAM and ROM", "Monitor and Keyboard", "ALU and RAM"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch2_mcq_7",
+          "questionText": "CU stands for:",
+          "options": ["Central Unit", "Control Unit", "Computer Unit", "Cache Unit"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch2_mcq_8",
+          "questionText": "Which memory loses data when power is turned off?",
+          "options": ["ROM", "Hard Disk", "RAM", "DVD"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch2_mcq_9",
+          "questionText": "The main circuit board of a computer is called:",
+          "options": ["CPU", "Motherboard", "Hard Drive", "RAM"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_comp_ch2_mcq_10",
+          "questionText": "BIOS is stored in:",
+          "options": ["RAM", "ROM", "Hard Disk", "Cache"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_comp_ch2_short_1",
+          "questionText": "What is CPU? Draw a diagram showing its components and explain the function of each.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_comp_ch2_short_2",
+          "questionText": "Differentiate between RAM and ROM.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_comp_ch2_short_3",
+          "questionText": "What is motherboard? Name any four components found on a motherboard.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_comp_ch2_short_4",
+          "questionText": "Explain the function of ALU with examples.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_comp_ch2_short_5",
+          "questionText": "What is cache memory? Why is it important?",
+          "difficulty": "medium",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_comp_ch2_long_1",
+          "questionText": "Describe the components of CPU in detail. Explain the functions of ALU, CU, and Registers with examples.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_comp_ch2_long_2",
+          "questionText": "Explain different types of memory in a computer. Describe: (a) RAM and its types (b) ROM and its types (c) Cache memory (d) Virtual memory",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_comp_ch2_long_3",
+          "questionText": "What is a motherboard? Explain the main components of a motherboard including: CPU socket, RAM slots, expansion slots, chipset, and BIOS.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

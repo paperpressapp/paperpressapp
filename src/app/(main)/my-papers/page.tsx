@@ -1,0 +1,294 @@
+"use client";
+
+/**
+ * My Papers Page - Redesigned with Glassmorphism
+ * 
+ * Lists all previously generated papers with search and filter options.
+ */
+
+import { useEffect, useState, useCallback, useMemo } from "react";
+import { useRouter } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { Search, Filter, FileText, Plus, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { MainLayout, ScrollView } from "@/components/layout";
+import { PaperListCard, EmptyPapers, PapersTabs } from "@/components/my-papers";
+import { AppLoader } from "@/components/shared";
+import { useDebounce, useToast } from "@/hooks";
+import { getPapers, deletePaper } from "@/lib/storage/papers";
+import { fetchAndDownloadPDF } from "@/lib/pdf/download";
+import { getQuestionsByIds } from "@/data";
+import type { GeneratedPaper, MCQQuestion, ShortQuestion, LongQuestion } from "@/types";
+
+export default function MyPapersPage() {
+  const router = useRouter();
+  const { toast } = useToast();
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [papers, setPapers] = useState<GeneratedPaper[]>([]);
+  const [activeTab, setActiveTab] = useState<"all" | "month">("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
+
+  const debouncedSearch = useDebounce(searchQuery, 300);
+
+  // Load papers
+  const loadPapers = useCallback(() => {
+    const loadedPapers = getPapers();
+    setPapers(loadedPapers);
+    setIsLoading(false);
+  }, []);
+
+  useEffect(() => {
+    loadPapers();
+  }, [loadPapers]);
+
+  // Filter papers
+  const filteredPapers = useMemo(() => {
+    let filtered = [...papers];
+
+    // Tab filter
+    if (activeTab === "month") {
+      const now = new Date();
+      filtered = filtered.filter((paper) => {
+        const paperDate = new Date(paper.createdAt);
+        return (
+          paperDate.getMonth() === now.getMonth() &&
+          paperDate.getFullYear() === now.getFullYear()
+        );
+      });
+    }
+
+    // Search filter
+    if (debouncedSearch) {
+      const query = debouncedSearch.toLowerCase();
+      filtered = filtered.filter((paper) =>
+        paper.title.toLowerCase().includes(query) ||
+        paper.subject.toLowerCase().includes(query) ||
+        paper.classId.toLowerCase().includes(query)
+      );
+    }
+
+    return filtered;
+  }, [papers, activeTab, debouncedSearch]);
+
+  // Handle view paper
+  const handleView = useCallback((paperId: string) => {
+    router.push(`/paper?id=${paperId}`);
+  }, [router]);
+
+  // Handle download
+  const handleDownload = useCallback(async (paper: GeneratedPaper) => {
+    try {
+      const mcqs: MCQQuestion[] = [];
+      const shorts: ShortQuestion[] = [];
+      const longs: LongQuestion[] = [];
+
+      const allQuestions = getQuestionsByIds(
+        paper.classId,
+        paper.subject,
+        [...paper.mcqIds, ...paper.shortIds, ...paper.longIds]
+      );
+
+      allQuestions.forEach((q) => {
+        if ('options' in q && paper.mcqIds.includes(q.id)) {
+          mcqs.push(q as MCQQuestion);
+        } else if (paper.shortIds.includes(q.id)) {
+          shorts.push(q as ShortQuestion);
+        } else if (paper.longIds.includes(q.id)) {
+          longs.push(q as LongQuestion);
+        }
+      });
+
+      const settings = {
+        classId: paper.classId,
+        subject: paper.subject,
+        instituteName: paper.instituteName || "Institution",
+        instituteLogo: paper.instituteLogo || null,
+        examType: paper.examType,
+        date: paper.date,
+        timeAllowed: paper.timeAllowed,
+        customHeader: paper.customHeader || '',
+        customSubHeader: paper.customSubHeader || '',
+        showLogo: paper.showLogo && !!paper.instituteLogo,
+      };
+
+      const result = await fetchAndDownloadPDF(settings, mcqs, shorts, longs);
+
+      if (result.success) {
+        toast.success("PDF downloaded successfully!");
+      } else {
+        toast.error(result.error || "Failed to download PDF");
+      }
+    } catch (error) {
+      toast.error("Failed to download PDF");
+    }
+  }, [toast]);
+
+  // Handle share
+  const handleShare = useCallback(async (paper: GeneratedPaper) => {
+    toast.info("Share feature coming soon!");
+  }, [toast]);
+
+  // Handle delete
+  const handleDelete = useCallback((paperId: string) => {
+    deletePaper(paperId);
+    setPapers((prev) => prev.filter((p) => p.id !== paperId));
+    toast.success("Paper deleted");
+  }, [toast]);
+
+  // Handle favorites tab
+  const handleTabChange = useCallback((tab: "all" | "month") => {
+    setActiveTab(tab);
+  }, []);
+
+  if (isLoading) {
+    return <AppLoader message="Loading papers..." />;
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-[#1E88E5] via-[#1976D2] to-[#1565C0]">
+      {/* Background decorations */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
+      </div>
+
+      <MainLayout showBottomNav>
+        <div className="min-h-screen pb-24">
+          {/* App Bar */}
+          <div className="fixed top-0 left-0 right-0 z-50">
+            <div className="mx-auto max-w-[428px]">
+              <div className="bg-white/90 backdrop-blur-xl border-b border-gray-100">
+                <div className="px-4 h-14 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                      onClick={() => router.push("/home")}
+                    >
+                      <ArrowLeft className="w-5 h-5 text-gray-700" />
+                    </Button>
+                    <h1 className="font-bold text-lg text-gray-900">My Papers</h1>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                      onClick={() => setShowSearch(!showSearch)}
+                    >
+                      <Search className="w-5 h-5 text-gray-700" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                      onClick={() => toast.info("Filters coming soon!")}
+                    >
+                      <Filter className="w-5 h-5 text-gray-700" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Search Bar */}
+          <AnimatePresence>
+            {showSearch && (
+              <motion.div
+                className="fixed top-14 left-0 right-0 z-40 px-4 py-3 bg-white/95 backdrop-blur-xl border-b border-gray-100"
+                initial={{ height: 0, opacity: 0, y: -10 }}
+                animate={{ height: "auto", opacity: 1, y: 0 }}
+              >
+                <div className="mx-auto max-w-[428px]">
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <Input
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search papers..."
+                      className="pl-10 h-12 rounded-xl border-gray-200 bg-gray-50"
+                      autoFocus
+                    />
+                    {searchQuery && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="absolute right-1 top-1/2 -translate-y-1/2 h-8"
+                        onClick={() => setSearchQuery("")}
+                      >
+                        Clear
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Content */}
+          <ScrollView className={`pt-14 ${showSearch ? "pt-[120px]" : ""}`}>
+            {/* Stats Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="px-5 py-4"
+            >
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 border border-gray-100 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg shadow-[#1E88E5]/30">
+                      <FileText className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-gray-900">{papers.length}</p>
+                      <p className="text-sm text-gray-500">Total Papers</p>
+                    </div>
+                  </div>
+                  <Button
+                    onClick={() => router.push("/home")}
+                    className="h-10 rounded-xl bg-gradient-to-r from-[#1E88E5] to-[#1565C0] font-semibold"
+                  >
+                    <Plus className="w-4 h-4 mr-1" />
+                    Create
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Tabs */}
+            <div className="px-5 mb-4">
+              <PapersTabs activeTab={activeTab} onChange={handleTabChange} />
+            </div>
+
+            {/* Papers List */}
+            {filteredPapers.length === 0 ? (
+              <EmptyPapers onCreate={() => router.push("/home")} />
+            ) : (
+              <div className="px-5 space-y-3">
+                <AnimatePresence mode="popLayout">
+                  {filteredPapers.map((paper) => (
+                    <PaperListCard
+                      key={paper.id}
+                      paper={paper}
+                      onView={() => handleView(paper.id)}
+                      onDownload={() => handleDownload(paper)}
+                      onShare={() => handleShare(paper)}
+                      onDelete={() => handleDelete(paper.id)}
+                    />
+                  ))}
+                </AnimatePresence>
+              </div>
+            )}
+
+            <div className="h-24" />
+          </ScrollView>
+        </div>
+      </MainLayout>
+    </div>
+  );
+}

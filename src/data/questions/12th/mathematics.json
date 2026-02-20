@@ -1,0 +1,284 @@
+{
+  "class": "12th",
+  "subject": "Mathematics",
+  "chapters": [
+    {
+      "id": "12_math_ch1",
+      "number": 1,
+      "name": "Functions and Limits",
+      "mcqs": [
+        {
+          "id": "12_math_ch1_mcq_1",
+          "questionText": "Which of the following is a function?",
+          "options": ["x = y²", "y = x²", "x² + y² = 1", "y² = x"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch1_mcq_2",
+          "questionText": "The domain of f(x) = √(x - 2) is:",
+          "options": ["x ≥ 0", "x ≥ 2", "x ≤ 2", "all real numbers"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch1_mcq_3",
+          "questionText": "lim(x→0) sin(x)/x = ",
+          "options": ["0", "1", "∞", "undefined"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch1_mcq_4",
+          "questionText": "If f(x) = x², then f(-x) = ",
+          "options": ["-f(x)", "f(x)", "1/f(x)", "f(-x)"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch1_mcq_5",
+          "questionText": "lim(x→∞) (1 + 1/x)ˣ = ",
+          "options": ["0", "1", "e", "∞"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch1_mcq_6",
+          "questionText": "The range of f(x) = sin(x) is:",
+          "options": ["[0, 1]", "[-1, 1]", "(-∞, ∞)", "[0, ∞)"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch1_mcq_7",
+          "questionText": "lim(x→0) tan(x)/x = ",
+          "options": ["0", "1", "∞", "undefined"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch1_mcq_8",
+          "questionText": "If f(x) = |x|, then at x = 0, the function is:",
+          "options": ["Continuous and differentiable", "Continuous but not differentiable", "Discontinuous", "None"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch1_mcq_9",
+          "questionText": "lim(x→0) (eˣ - 1)/x = ",
+          "options": ["0", "1", "e", "∞"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch1_mcq_10",
+          "questionText": "The period of f(x) = sin(2x) is:",
+          "options": ["π", "2π", "π/2", "4π"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_math_ch1_short_1",
+          "questionText": "Define function, domain, and range. Find the domain and range of f(x) = √(9 - x²).",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_math_ch1_short_2",
+          "questionText": "Define limit of a function. Evaluate lim(x→2) (x² - 4)/(x - 2).",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_math_ch1_short_3",
+          "questionText": "Prove that lim(x→0) sin(x)/x = 1 using geometric method.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_math_ch1_short_4",
+          "questionText": "Evaluate lim(x→∞) (3x² + 2x - 1)/(2x² - x + 5).",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_math_ch1_short_5",
+          "questionText": "Find lim(x→0) (1 - cos(x))/x² using trigonometric identities.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_math_ch1_long_1",
+          "questionText": "Define function and its types (one-one, onto, bijective). Explain domain, codomain, and range with examples. Find the domain and range of f(x) = (x - 1)/(x + 2).",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_math_ch1_long_2",
+          "questionText": "State and prove the fundamental theorems on limits. Evaluate the following limits: (i) lim(x→0) sin(3x)/x (ii) lim(x→0) (1 - cos(x))/x² (iii) lim(x→∞) (1 + 2/x)ˣ",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_math_ch1_long_3",
+          "questionText": "Discuss the continuity of functions. Define limit, left-hand limit, and right-hand limit. Prove that f(x) = |x| is continuous at x = 0 but not differentiable. Evaluate lim(x→0) (aˣ - 1)/x = ln(a).",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    },
+    {
+      "id": "12_math_ch2",
+      "number": 2,
+      "name": "Differentiation",
+      "mcqs": [
+        {
+          "id": "12_math_ch2_mcq_1",
+          "questionText": "If y = x⁵, then dy/dx = ",
+          "options": ["5x⁴", "x⁴", "5x⁶", "x⁶/6"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch2_mcq_2",
+          "questionText": "The derivative of sin(x) is:",
+          "options": ["cos(x)", "-cos(x)", "-sin(x)", "tan(x)"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch2_mcq_3",
+          "questionText": "If y = eˣ, then dy/dx = ",
+          "options": ["xeˣ⁻¹", "eˣ", "x", "1"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch2_mcq_4",
+          "questionText": "The derivative of ln(x) is:",
+          "options": ["1/x", "x", "eˣ", "ln(x)"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch2_mcq_5",
+          "questionText": "If y = tan(x), then dy/dx = ",
+          "options": ["sec²(x)", "-sec²(x)", "sec(x)", "cot(x)"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch2_mcq_6",
+          "questionText": "The derivative of sec(x) is:",
+          "options": ["sec(x)tan(x)", "-sec(x)tan(x)", "sec²(x)", "tan²(x)"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch2_mcq_7",
+          "questionText": "If y = u·v, then by product rule dy/dx = ",
+          "options": ["u(dv/dx)", "v(du/dx)", "u(dv/dx) + v(du/dx)", "u(dv/dx) - v(du/dx)"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch2_mcq_8",
+          "questionText": "The second derivative of y = x³ is:",
+          "options": ["3x²", "6x", "6", "x"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch2_mcq_9",
+          "questionText": "If y = xˣ, then dy/dx = ",
+          "options": ["xˣ", "xˣ(1 + ln(x))", "xˣ⁻¹", "xˣln(x)"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_math_ch2_mcq_10",
+          "questionText": "The derivative of sin⁻¹(x) is:",
+          "options": ["1/√(1-x²)", "-1/√(1-x²)", "1/(1+x²)", "1/√(x²-1)"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_math_ch2_short_1",
+          "questionText": "Define derivative of a function. Differentiate y = 3x⁴ - 2x³ + 5x - 7 with respect to x.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_math_ch2_short_2",
+          "questionText": "State and prove the product rule for differentiation. Differentiate y = x²·sin(x).",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_math_ch2_short_3",
+          "questionText": "Find dy/dx if y = (x² + 1)/(x + 1) using quotient rule.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_math_ch2_short_4",
+          "questionText": "Find the derivative of y = tan⁻¹(x) using first principles.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_math_ch2_short_5",
+          "questionText": "Differentiate y = xˣ with respect to x using logarithmic differentiation.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_math_ch2_long_1",
+          "questionText": "Define derivative of a function using first principles. Derive the power rule d/dx(xⁿ) = nxⁿ⁻¹. Find the derivative of f(x) = 3x⁴ - 2x² + 5x - 7.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_math_ch2_long_2",
+          "questionText": "State and prove product rule and quotient rule of differentiation. Differentiate the following: (i) y = x²·eˣ (ii) y = sin(x)/cos(x) (iii) y = (x+1)/(x-1)",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_math_ch2_long_3",
+          "questionText": "Explain chain rule of differentiation with proof. Differentiate using chain rule: (i) y = sin(x²) (ii) y = (3x² + 2)⁵ (iii) y = e^(sin(x)). Also differentiate y = xˣ + (sin(x))^cos(x) using logarithmic differentiation.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    }
+  ]
+}

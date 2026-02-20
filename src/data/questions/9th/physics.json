@@ -1,0 +1,284 @@
+{
+  "class": "9th",
+  "subject": "Physics",
+  "chapters": [
+    {
+      "id": "9_phy_ch1",
+      "number": 1,
+      "name": "Physical Quantities and Measurement",
+      "mcqs": [
+        {
+          "id": "9_phy_ch1_mcq_1",
+          "questionText": "The SI unit of length is:",
+          "options": ["Meter", "Centimeter", "Kilometer", "Millimeter"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch1_mcq_2",
+          "questionText": "The SI unit of mass is:",
+          "options": ["Gram", "Kilogram", "Pound", "Ounce"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch1_mcq_3",
+          "questionText": "The SI unit of time is:",
+          "options": ["Hour", "Minute", "Second", "Day"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch1_mcq_4",
+          "questionText": "The prefix 'kilo' represents:",
+          "options": ["10", "100", "1000", "0.001"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch1_mcq_5",
+          "questionText": "1 nanometer is equal to:",
+          "options": ["10⁻⁶ m", "10⁻⁹ m", "10⁻³ m", "10⁻¹² m"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch1_mcq_6",
+          "questionText": "Which instrument is used to measure length accurately?",
+          "options": ["Ruler", "Vernier Calipers", "Measuring tape", "All of these"],
+          "correctOption": 3,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch1_mcq_7",
+          "questionText": "The least count of vernier calipers is usually:",
+          "options": ["0.1 mm", "0.01 mm", "0.001 mm", "1 mm"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch1_mcq_8",
+          "questionText": "The SI unit of temperature is:",
+          "options": ["Celsius", "Fahrenheit", "Kelvin", "Joule"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch1_mcq_9",
+          "questionText": "A physical quantity that has both magnitude and direction is called:",
+          "options": ["Scalar", "Vector", "Derived quantity", "Base quantity"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch1_mcq_10",
+          "questionText": "The number of base units in SI system is:",
+          "options": ["5", "6", "7", "8"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_phy_ch1_short_1",
+          "questionText": "Define physical quantities. Give three examples of base quantities and their SI units.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_phy_ch1_short_2",
+          "questionText": "Differentiate between scalar and vector quantities with two examples of each.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_phy_ch1_short_3",
+          "questionText": "What are vernier calipers? How do you read a measurement using vernier calipers?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_phy_ch1_short_4",
+          "questionText": "Convert the following: (a) 5 km to meters (b) 2500 g to kg (c) 2 hours to seconds",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_phy_ch1_short_5",
+          "questionText": "Explain the method to measure the diameter of a wire using a screw gauge.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_phy_ch1_long_1",
+          "questionText": "Explain the International System of Units (SI). Describe the seven base quantities with their SI units and symbols. Give examples of derived quantities.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_phy_ch1_long_2",
+          "questionText": "Describe the construction and working of vernier calipers. How do you calculate the least count of vernier calipers? Give its two uses.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_phy_ch1_long_3",
+          "questionText": "What is a screw gauge? Describe its construction and working. Explain how to find the pitch and least count of a screw gauge.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "9_phy_ch2",
+      "number": 2,
+      "name": "Kinematics",
+      "mcqs": [
+        {
+          "id": "9_phy_ch2_mcq_1",
+          "questionText": "The branch of physics dealing with motion without considering its cause is:",
+          "options": ["Dynamics", "Kinematics", "Mechanics", "Statics"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch2_mcq_2",
+          "questionText": "The rate of change of displacement is called:",
+          "options": ["Speed", "Velocity", "Acceleration", "Distance"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch2_mcq_3",
+          "questionText": "The SI unit of velocity is:",
+          "options": ["m/s", "m/s²", "km/h", "m²/s"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch2_mcq_4",
+          "questionText": "A body moving with uniform velocity has:",
+          "options": ["Constant speed", "Constant direction", "Both constant speed and direction", "Changing acceleration"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch2_mcq_5",
+          "questionText": "Acceleration is defined as the rate of change of:",
+          "options": ["Distance", "Displacement", "Velocity", "Time"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch2_mcq_6",
+          "questionText": "The SI unit of acceleration is:",
+          "options": ["m/s", "m/s²", "km/h²", "m²/s"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch2_mcq_7",
+          "questionText": "A car accelerates from rest to 20 m/s in 4 seconds. Its acceleration is:",
+          "options": ["5 m/s²", "4 m/s²", "80 m/s²", "0.2 m/s²"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch2_mcq_8",
+          "questionText": "The slope of distance-time graph gives:",
+          "options": ["Velocity", "Acceleration", "Speed", "Force"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch2_mcq_9",
+          "questionText": "The slope of velocity-time graph gives:",
+          "options": ["Distance", "Displacement", "Acceleration", "Speed"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_phy_ch2_mcq_10",
+          "questionText": "A body thrown vertically upward with velocity 'u' reaches maximum height when its velocity becomes:",
+          "options": ["u/2", "2u", "0", "u"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_phy_ch2_short_1",
+          "questionText": "Define kinematics. Differentiate between distance and displacement with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_phy_ch2_short_2",
+          "questionText": "Differentiate between speed and velocity. Can a body have constant speed but variable velocity?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_phy_ch2_short_3",
+          "questionText": "Define acceleration. A car starts from rest and reaches a velocity of 30 m/s in 6 seconds. Calculate its acceleration.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_phy_ch2_short_4",
+          "questionText": "Derive the first equation of motion: v = u + at",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_phy_ch2_short_5",
+          "questionText": "A train accelerates uniformly from 20 m/s to 40 m/s in 10 seconds. Calculate its acceleration and distance covered.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_phy_ch2_long_1",
+          "questionText": "State and explain the three equations of motion for uniformly accelerated motion. Derive any two of them graphically.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_phy_ch2_long_2",
+          "questionText": "Explain the different types of motion graphs: (a) Distance-time graph (b) Velocity-time graph. What information can be obtained from the slope and area under these graphs?",
+          "difficulty": "hard",
+          "marks": 10
+        },
+        {
+          "id": "9_phy_ch2_long_3",
+          "questionText": "A ball is thrown vertically upward with a velocity of 20 m/s. Calculate: (a) Maximum height reached (b) Time taken to reach maximum height (c) Time of flight (d) Velocity when it hits the ground (Take g = 10 m/s²)",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

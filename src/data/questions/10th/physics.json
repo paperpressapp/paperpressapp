@@ -1,0 +1,284 @@
+{
+  "class": "10th",
+  "subject": "Physics",
+  "chapters": [
+    {
+      "id": "10_phy_ch1",
+      "number": 1,
+      "name": "Wave Motion",
+      "mcqs": [
+        {
+          "id": "10_phy_ch1_mcq_1",
+          "questionText": "What is the distance between two consecutive crests of a wave called?",
+          "options": ["Amplitude", "Wavelength", "Frequency", "Period"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch1_mcq_2",
+          "questionText": "The SI unit of frequency is:",
+          "options": ["Meter", "Second", "Hertz", "Newton"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch1_mcq_3",
+          "questionText": "What type of waves require a medium to travel?",
+          "options": ["Electromagnetic waves", "Mechanical waves", "Radio waves", "X-rays"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch1_mcq_4",
+          "questionText": "The formula v = fλ represents:",
+          "options": ["Wave speed", "Wave amplitude", "Wave energy", "Wave intensity"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch1_mcq_5",
+          "questionText": "If the frequency of a wave is 50 Hz and its wavelength is 2 m, what is its speed?",
+          "options": ["25 m/s", "52 m/s", "100 m/s", "200 m/s"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch1_mcq_6",
+          "questionText": "Which property of a wave determines its pitch?",
+          "options": ["Amplitude", "Wavelength", "Frequency", "Speed"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch1_mcq_7",
+          "questionText": "In a transverse wave, the particles vibrate:",
+          "options": ["Parallel to the direction of wave propagation", "Perpendicular to the direction of wave propagation", "In circular motion", "In random directions"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch1_mcq_8",
+          "questionText": "The time taken for one complete oscillation is called:",
+          "options": ["Frequency", "Period", "Wavelength", "Velocity"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch1_mcq_9",
+          "questionText": "A wave travels through a string with velocity 200 m/s. If the frequency is doubled while keeping tension constant, the new wavelength will be:",
+          "options": ["Doubled", "Halved", "Same", "Quadrupled"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch1_mcq_10",
+          "questionText": "The energy of a wave is directly proportional to the square of its:",
+          "options": ["Wavelength", "Frequency", "Speed", "Amplitude"],
+          "correctOption": 3,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_phy_ch1_short_1",
+          "questionText": "Define wavelength and state its SI unit.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_phy_ch1_short_2",
+          "questionText": "What is the difference between transverse and longitudinal waves? Give one example of each.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_phy_ch1_short_3",
+          "questionText": "Derive the relationship between wave speed (v), frequency (f), and wavelength (λ).",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_phy_ch1_short_4",
+          "questionText": "Explain the terms amplitude and time period with suitable diagrams.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_phy_ch1_short_5",
+          "questionText": "A wave completes 20 oscillations in 4 seconds. Calculate its frequency and time period.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_phy_ch1_long_1",
+          "questionText": "Define wave motion. Explain with a neat diagram the formation of transverse waves in a stretched string. Also, describe the characteristics of transverse waves.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_phy_ch1_long_2",
+          "questionText": "Derive the equation of a progressive wave. Explain all the terms involved in the equation y = A sin(ωt - kx).",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_phy_ch1_long_3",
+          "questionText": "A tuning fork produces sound waves of frequency 440 Hz in air. Calculate: (a) the wavelength of sound waves if the speed of sound in air is 330 m/s, (b) the distance traveled by the wave in 5 seconds, (c) the number of waves produced in 0.1 second.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "10_phy_ch2",
+      "number": 2,
+      "name": "Sound",
+      "mcqs": [
+        {
+          "id": "10_phy_ch2_mcq_1",
+          "questionText": "Sound waves are:",
+          "options": ["Transverse waves", "Longitudinal waves", "Electromagnetic waves", "Stationary waves"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch2_mcq_2",
+          "questionText": "The speed of sound is maximum in:",
+          "options": ["Air", "Water", "Iron", "Vacuum"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch2_mcq_3",
+          "questionText": "What is the audible range of frequency for human ear?",
+          "options": ["20 Hz - 20,000 Hz", "0 Hz - 20 Hz", "20,000 Hz - 50,000 Hz", "50 Hz - 50,000 Hz"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch2_mcq_4",
+          "questionText": "The property of sound that determines its loudness is:",
+          "options": ["Frequency", "Amplitude", "Wavelength", "Speed"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch2_mcq_5",
+          "questionText": "Echo is heard when the time interval between original sound and reflected sound is at least:",
+          "options": ["0.01 s", "0.1 s", "1 s", "10 s"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch2_mcq_6",
+          "questionText": "The speed of sound in air at 0°C is approximately:",
+          "options": ["300 m/s", "330 m/s", "360 m/s", "400 m/s"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch2_mcq_7",
+          "questionText": "Sound cannot travel through:",
+          "options": ["Air", "Water", "Steel", "Vacuum"],
+          "correctOption": 3,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch2_mcq_8",
+          "questionText": "The pitch of sound depends on:",
+          "options": ["Amplitude", "Frequency", "Intensity", "Quality"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch2_mcq_9",
+          "questionText": "A man standing between two parallel cliffs claps his hands. He hears the first echo after 1 second and the second echo after 2 seconds. If the speed of sound is 330 m/s, the distance between the cliffs is:",
+          "options": ["330 m", "495 m", "660 m", "990 m"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_phy_ch2_mcq_10",
+          "questionText": "In a stationary wave, the distance between two consecutive nodes is:",
+          "options": ["λ/4", "λ/2", "λ", "2λ"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_phy_ch2_short_1",
+          "questionText": "What is sound? Why is it called a mechanical wave?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_phy_ch2_short_2",
+          "questionText": "Distinguish between loudness and pitch of sound.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_phy_ch2_short_3",
+          "questionText": "What is an echo? State the conditions necessary for hearing an echo.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_phy_ch2_short_4",
+          "questionText": "Explain why the speed of sound is greater in solids than in gases.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_phy_ch2_short_5",
+          "questionText": "Calculate the minimum distance required to hear a clear echo if the speed of sound is 340 m/s.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_phy_ch2_long_1",
+          "questionText": "Describe the production and propagation of sound waves. Explain with a diagram how sound travels through air. Also, discuss why sound is considered a longitudinal wave.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_phy_ch2_long_2",
+          "questionText": "What are the factors affecting the speed of sound in a medium? Derive the formula for the speed of sound in air and explain how temperature affects the speed of sound.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_phy_ch2_long_3",
+          "questionText": "Explain the phenomena of reflection of sound. A man standing 660 m away from a cliff fires a gun. After how long will he hear the echo? If the speed of sound is 330 m/s. Also, describe two practical applications of reflection of sound.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

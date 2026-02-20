@@ -1,0 +1,284 @@
+{
+  "class": "11th",
+  "subject": "Mathematics",
+  "chapters": [
+    {
+      "id": "11_math_ch1",
+      "number": 1,
+      "name": "Number Systems",
+      "mcqs": [
+        {
+          "id": "11_math_ch1_mcq_1",
+          "questionText": "The multiplicative inverse of 5 is:",
+          "options": ["5", "-5", "1/5", "0"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch1_mcq_2",
+          "questionText": "Which of the following is an irrational number?",
+          "options": ["√4", "√9", "√2", "√16"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch1_mcq_3",
+          "questionText": "The value of i² is:",
+          "options": ["1", "-1", "i", "-i"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch1_mcq_4",
+          "questionText": "The modulus of complex number z = 3 + 4i is:",
+          "options": ["3", "4", "5", "7"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch1_mcq_5",
+          "questionText": "The conjugate of z = a + bi is:",
+          "options": ["a - bi", "a + bi", "-a + bi", "-a - bi"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch1_mcq_6",
+          "questionText": "If z₁ = 2 + 3i and z₂ = 1 - 2i, then z₁ + z₂ equals:",
+          "options": ["3 + i", "3 - i", "1 + 5i", "3 + 5i"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch1_mcq_7",
+          "questionText": "The polar form of a complex number z = x + iy is:",
+          "options": ["r(cos θ + i sin θ)", "r(cos θ - i sin θ)", "r(sin θ + i cos θ)", "r(cos θ + sin θ)"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch1_mcq_8",
+          "questionText": "The multiplicative inverse of 1 + i is:",
+          "options": ["(1 - i)/2", "(1 + i)/2", "1 - i", "1 + i"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch1_mcq_9",
+          "questionText": "If |z - 3| = |z + 3|, then z lies on:",
+          "options": ["Real axis", "Imaginary axis", "Circle", "Ellipse"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch1_mcq_10",
+          "questionText": "The value of (1 + i)⁴ is:",
+          "options": ["4", "-4", "4i", "-4i"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_math_ch1_short_1",
+          "questionText": "Define rational and irrational numbers with examples. Show that √2 is irrational.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_math_ch1_short_2",
+          "questionText": "Define complex number. Find the real and imaginary parts of z = (3 + 2i)(2 - 3i).",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_math_ch1_short_3",
+          "questionText": "Find the modulus and argument of z = 1 + √3i. Express it in polar form.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_math_ch1_short_4",
+          "questionText": "If z₁ = 3 + 4i and z₂ = 1 - 2i, find: (a) z₁/z₂ (b) |z₁|² - |z₂|²",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_math_ch1_short_5",
+          "questionText": "Prove that for any complex number z, z.z̄ = |z|². Hence find the multiplicative inverse of 2 + 5i.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_math_ch1_long_1",
+          "questionText": "Define different types of number systems: Natural numbers, Whole numbers, Integers, Rational numbers, Irrational numbers, and Real numbers. Give examples and properties of each. Represent √2 on the number line geometrically.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_math_ch1_long_2",
+          "questionText": "Explain the algebraic operations on complex numbers: addition, subtraction, multiplication, and division. Define modulus and conjugate of a complex number. Prove that |z₁.z₂| = |z₁|.|z₂| and |z₁/z₂| = |z₁|/|z₂|.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_math_ch1_long_3",
+          "questionText": "Derive the polar form and exponential form of complex numbers. State and prove De Moivre's theorem. Use it to find the cube roots of unity and show that they form a geometric progression.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "11_math_ch2",
+      "number": 2,
+      "name": "Sets Functions and Groups",
+      "mcqs": [
+        {
+          "id": "11_math_ch2_mcq_1",
+          "questionText": "The set {x : x is an even prime number} is:",
+          "options": ["Empty set", "Singleton set", "Infinite set", "Universal set"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch2_mcq_2",
+          "questionText": "If A ⊆ B and B ⊆ A, then:",
+          "options": ["A ⊂ B", "B ⊂ A", "A = B", "A ∩ B = φ"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch2_mcq_3",
+          "questionText": "The number of subsets of a set with n elements is:",
+          "options": ["n", "2n", "2ⁿ", "n²"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch2_mcq_4",
+          "questionText": "If f(x) = x², then f(-2) equals:",
+          "options": ["-4", "4", "2", "-2"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch2_mcq_5",
+          "questionText": "The inverse of an element a in a group is denoted by:",
+          "options": ["a²", "a⁻¹", "1/a", "-a"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch2_mcq_6",
+          "questionText": "If A = {1, 2, 3} and B = {2, 3, 4}, then A ∩ B equals:",
+          "options": ["{1, 2, 3, 4}", "{2, 3}", "{1, 4}", "{}"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch2_mcq_7",
+          "questionText": "A function f: A → B is injective (one-one) if:",
+          "options": ["Every element of B has a pre-image", "Different elements of A have different images", "Range = Co-domain", "f(x) = f(y) for all x, y"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch2_mcq_8",
+          "questionText": "The order of the identity element in a group is:",
+          "options": ["0", "1", "2", "Infinite"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch2_mcq_9",
+          "questionText": "If (G, *) is a group and a, b ∈ G, then (a * b)⁻¹ equals:",
+          "options": ["a⁻¹ * b⁻¹", "b⁻¹ * a⁻¹", "a * b", "a⁻¹ * b"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_math_ch2_mcq_10",
+          "questionText": "The number of elements in the power set of A = {a, b, c, d} is:",
+          "options": ["4", "8", "16", "32"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_math_ch2_short_1",
+          "questionText": "Define set and describe different methods of representing sets with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_math_ch2_short_2",
+          "questionText": "If A = {1, 2, 3, 4} and B = {3, 4, 5, 6}, find A ∪ B, A ∩ B, A - B, and B - A.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_math_ch2_short_3",
+          "questionText": "Define function. Explain injective, surjective, and bijective functions with examples.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_math_ch2_short_4",
+          "questionText": "State and prove De Morgan's laws for sets.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_math_ch2_short_5",
+          "questionText": "Define binary operation. Show that the set of integers Z forms a group under addition.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_math_ch2_long_1",
+          "questionText": "Define sets and operations on sets. Explain union, intersection, complement, and difference of sets with examples. Prove the following set identities: (a) A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C) (b) (A ∩ B)' = A' ∪ B'",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_math_ch2_long_2",
+          "questionText": "Define function and explain its types: injective, surjective, and bijective functions with examples. Discuss composition of functions and inverse functions. If f(x) = 2x + 3 and g(x) = x² - 1, find (f∘g)(x) and (g∘f)(x).",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_math_ch2_long_3",
+          "questionText": "Define group and explain group axioms with examples. Prove that the set of non-zero rational numbers Q* forms a group under multiplication. Show that in any group G, the identity element is unique and each element has a unique inverse.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

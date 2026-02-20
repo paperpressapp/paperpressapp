@@ -1,0 +1,284 @@
+{
+  "class": "11th",
+  "subject": "Biology",
+  "chapters": [
+    {
+      "id": "11_bio_ch1",
+      "number": 1,
+      "name": "Cell Structure and Function",
+      "mcqs": [
+        {
+          "id": "11_bio_ch1_mcq_1",
+          "questionText": "The cell theory was proposed by:",
+          "options": ["Robert Hooke", "Schleiden and Schwann", "Virchow", "Robert Brown"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch1_mcq_2",
+          "questionText": "The power house of the cell is:",
+          "options": ["Nucleus", "Mitochondria", "Ribosome", "Golgi apparatus"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch1_mcq_3",
+          "questionText": "Prokaryotic cells lack:",
+          "options": ["Cell membrane", "Ribosomes", "Membrane-bound nucleus", "Cytoplasm"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch1_mcq_4",
+          "questionText": "The site of protein synthesis in a cell is:",
+          "options": ["Nucleus", "Mitochondria", "Ribosome", "Lysosome"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch1_mcq_5",
+          "questionText": "The fluid mosaic model of plasma membrane was proposed by:",
+          "options": ["Robertson", "Singer and Nicolson", "Gorter and Grendel", "Danielli and Davson"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch1_mcq_6",
+          "questionText": "Which organelle is responsible for detoxification in liver cells?",
+          "options": ["Golgi apparatus", "Smooth endoplasmic reticulum", "Rough endoplasmic reticulum", "Lysosome"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch1_mcq_7",
+          "questionText": "The double membrane-bound organelles in plant cells are:",
+          "options": ["Mitochondria and chloroplasts", "Nucleus and ribosomes", "Golgi and lysosomes", "Vacuoles and peroxisomes"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch1_mcq_8",
+          "questionText": "Plasmodesmata are present in:",
+          "options": ["Animal cells", "Plant cells", "Bacterial cells", "Fungal cells"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch1_mcq_9",
+          "questionText": "The 80S ribosomes are found in:",
+          "options": ["Prokaryotes", "Eukaryotes", "Bacteria", "Both prokaryotes and eukaryotes"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch1_mcq_10",
+          "questionText": "The nuclear envelope has:",
+          "options": ["3 layers", "1 layer", "2 layers with pores", "4 layers"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_bio_ch1_short_1",
+          "questionText": "Describe the cell theory and its modern modifications.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_bio_ch1_short_2",
+          "questionText": "Differentiate between prokaryotic and eukaryotic cells with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_bio_ch1_short_3",
+          "questionText": "Explain the structure and functions of mitochondria. Why is it called the 'power house' of the cell?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_bio_ch1_short_4",
+          "questionText": "Describe the fluid mosaic model of plasma membrane. List the functions of plasma membrane.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_bio_ch1_short_5",
+          "questionText": "Compare the structure and function of rough and smooth endoplasmic reticulum. How do they differ in different cell types?",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_bio_ch1_long_1",
+          "questionText": "Describe the structure of a typical animal cell with a labeled diagram. Explain the functions of major organelles: nucleus, mitochondria, ribosomes, Golgi apparatus, and lysosomes.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_bio_ch1_long_2",
+          "questionText": "Describe the ultrastructure of chloroplast with a diagram. Explain the endosymbiotic theory and evidence supporting it. Compare the structure of chloroplasts with mitochondria.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_bio_ch1_long_3",
+          "questionText": "Give a detailed account of the cytoskeleton including microtubules, microfilaments, and intermediate filaments. Explain their role in cell shape, movement, and intracellular transport. Discuss the importance of cytoskeleton in cell division.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "11_bio_ch2",
+      "number": 2,
+      "name": "Biological Molecules",
+      "mcqs": [
+        {
+          "id": "11_bio_ch2_mcq_1",
+          "questionText": "The most abundant biomolecule in living organisms is:",
+          "options": ["Proteins", "Carbohydrates", "Lipids", "Nucleic acids"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch2_mcq_2",
+          "questionText": "The monomer unit of proteins is:",
+          "options": ["Glucose", "Amino acid", "Fatty acid", "Nucleotide"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch2_mcq_3",
+          "questionText": "Starch is a polymer of:",
+          "options": ["Fructose", "Galactose", "Glucose", "Sucrose"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch2_mcq_4",
+          "questionText": "The bond formed between two amino acids is called:",
+          "options": ["Glycosidic bond", "Peptide bond", "Ester bond", "Phosphodiester bond"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch2_mcq_5",
+          "questionText": "Which of the following is a saturated fatty acid?",
+          "options": ["Oleic acid", "Linoleic acid", "Palmitic acid", "Arachidonic acid"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch2_mcq_6",
+          "questionText": "The secondary structure of protein is maintained by:",
+          "options": ["Peptide bonds", "Disulfide bonds", "Hydrogen bonds", "Ionic bonds"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch2_mcq_7",
+          "questionText": "DNA and RNA differ in:",
+          "options": ["Sugar and one base", "Only sugar", "Only bases", "Phosphate group"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch2_mcq_8",
+          "questionText": "Enzymes are:",
+          "options": ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch2_mcq_9",
+          "questionText": "The optimum pH for pepsin enzyme is:",
+          "options": ["2", "7", "8", "10"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_bio_ch2_mcq_10",
+          "questionText": "Which vitamin is water-soluble?",
+          "options": ["Vitamin A", "Vitamin D", "Vitamin E", "Vitamin C"],
+          "correctOption": 3,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_bio_ch2_short_1",
+          "questionText": "Classify carbohydrates with examples. Differentiate between monosaccharides, disaccharides, and polysaccharides.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_bio_ch2_short_2",
+          "questionText": "Describe the structure and functions of proteins. What are essential amino acids?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_bio_ch2_short_3",
+          "questionText": "Explain the lock and key model of enzyme action. What are the factors affecting enzyme activity?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_bio_ch2_short_4",
+          "questionText": "Compare the structure of DNA and RNA. List their functions in the cell.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_bio_ch2_short_5",
+          "questionText": "Describe the different levels of protein structure (primary, secondary, tertiary, and quaternary) with examples.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_bio_ch2_long_1",
+          "questionText": "Describe the structure and functions of lipids. Differentiate between saturated and unsaturated fatty acids. Explain the structure of triglycerides and phospholipids with their biological significance.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_bio_ch2_long_2",
+          "questionText": "Explain the Watson and Crick model of DNA structure. Describe the chemical composition of nucleotides and explain how DNA forms a double helix. Discuss the different forms of DNA (A, B, and Z).",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_bio_ch2_long_3",
+          "questionText": "Give a comprehensive account of enzymes including their nature, properties, and mechanism of action. Explain competitive and non-competitive inhibition with examples. Discuss factors affecting enzyme activity with graphs.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

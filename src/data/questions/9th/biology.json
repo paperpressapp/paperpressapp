@@ -1,0 +1,284 @@
+{
+  "class": "9th",
+  "subject": "Biology",
+  "chapters": [
+    {
+      "id": "9_bio_ch1",
+      "number": 1,
+      "name": "Introduction to Biology",
+      "mcqs": [
+        {
+          "id": "9_bio_ch1_mcq_1",
+          "questionText": "The word 'Biology' is derived from:",
+          "options": ["Latin bios meaning life and logos meaning study", "Greek bios meaning study and logos meaning life", "English bio meaning study", "French biology meaning nature"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch1_mcq_2",
+          "questionText": "The branch of biology dealing with the study of animals is called:",
+          "options": ["Botany", "Zoology", "Microbiology", "Ecology"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch1_mcq_3",
+          "questionText": "The father of modern biology is:",
+          "options": ["Aristotle", "Charles Darwin", "Gregor Mendel", "Louis Pasteur"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch1_mcq_4",
+          "questionText": "The study of living organisms in their environment is called:",
+          "options": ["Genetics", "Ecology", "Physiology", "Morphology"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch1_mcq_5",
+          "questionText": "Which of the following is NOT a branch of biology?",
+          "options": ["Anatomy", "Geology", "Genetics", "Physiology"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch1_mcq_6",
+          "questionText": "The study of heredity and variation is called:",
+          "options": ["Ecology", "Genetics", "Evolution", "Taxonomy"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch1_mcq_7",
+          "questionText": "The branch of biology dealing with microorganisms is:",
+          "options": ["Botany", "Zoology", "Microbiology", "Entomology"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch1_mcq_8",
+          "questionText": "The study of internal structures of organisms is called:",
+          "options": ["Anatomy", "Morphology", "Histology", "Cytology"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch1_mcq_9",
+          "questionText": "Who proposed the theory of evolution by natural selection?",
+          "options": ["Gregor Mendel", "Charles Darwin", "Lamarck", "Linnaeus"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch1_mcq_10",
+          "questionText": "The study of tissues is called:",
+          "options": ["Cytology", "Histology", "Anatomy", "Morphology"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_bio_ch1_short_1",
+          "questionText": "Define biology. Name any five branches of biology and briefly explain each.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_bio_ch1_short_2",
+          "questionText": "Differentiate between zoology and botany with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_bio_ch1_short_3",
+          "questionText": "What is the importance of studying biology? List at least five reasons.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_bio_ch1_short_4",
+          "questionText": "Differentiate between anatomy and morphology.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_bio_ch1_short_5",
+          "questionText": "Write short notes on: (a) Genetics (b) Ecology (c) Physiology",
+          "difficulty": "medium",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_bio_ch1_long_1",
+          "questionText": "Explain the scope and importance of biology in our daily life. Describe how biology has contributed to medicine, agriculture, and industry.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_bio_ch1_long_2",
+          "questionText": "Describe the main branches of biology. Explain the following branches with examples: (a) Zoology (b) Botany (c) Microbiology (d) Genetics (e) Ecology",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_bio_ch1_long_3",
+          "questionText": "Discuss the contributions of Muslim scientists to biology. Write about the work of: (a) Ibn Sina (Avicenna) (b) Al-Jahiz (c) Ibn al-Nafis",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "9_bio_ch2",
+      "number": 2,
+      "name": "Solving a Biological Problem",
+      "mcqs": [
+        {
+          "id": "9_bio_ch2_mcq_1",
+          "questionText": "The first step in biological method is:",
+          "options": ["Observation", "Hypothesis", "Experimentation", "Conclusion"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch2_mcq_2",
+          "questionText": "A tentative explanation for an observation is called:",
+          "options": ["Law", "Theory", "Hypothesis", "Fact"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch2_mcq_3",
+          "questionText": "Which instrument is used to observe microscopic organisms?",
+          "options": ["Telescope", "Microscope", "Stethoscope", "Barometer"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch2_mcq_4",
+          "questionText": "The scientific method involves:",
+          "options": ["Random guessing", "Systematic approach", "Personal opinion", "Tradition"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch2_mcq_5",
+          "questionText": "A well-tested explanation that is supported by evidence is called:",
+          "options": ["Hypothesis", "Theory", "Guess", "Assumption"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch2_mcq_6",
+          "questionText": "Data collected through experiments is called:",
+          "options": ["Qualitative data", "Quantitative data", "Experimental data", "All of these"],
+          "correctOption": 3,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch2_mcq_7",
+          "questionText": "Which of the following is NOT a step in biological method?",
+          "options": ["Observation", "Religious belief", "Experimentation", "Conclusion"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch2_mcq_8",
+          "questionText": "A control group in an experiment is:",
+          "options": ["The group being tested", "The group for comparison", "The group with the treatment", "None of these"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch2_mcq_9",
+          "questionText": "Malaria was discovered by:",
+          "options": ["Pasteur", "Ronald Ross", "Robert Koch", "Fleming"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_bio_ch2_mcq_10",
+          "questionText": "Deductive reasoning moves from:",
+          "options": ["Specific to general", "General to specific", "Hypothesis to theory", "Theory to law"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_bio_ch2_short_1",
+          "questionText": "What is biological method? List the steps involved in solving a biological problem.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_bio_ch2_short_2",
+          "questionText": "Differentiate between hypothesis and theory with examples.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_bio_ch2_short_3",
+          "questionText": "What is the role of control group in an experiment? Why is it necessary?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_bio_ch2_short_4",
+          "questionText": "Differentiate between inductive and deductive reasoning.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_bio_ch2_short_5",
+          "questionText": "How did Ronald Ross discover the cause of malaria? Explain the biological method he used.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_bio_ch2_long_1",
+          "questionText": "Explain the biological method in detail. Describe each step from observation to conclusion with a suitable example.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_bio_ch2_long_2",
+          "questionText": "Describe the work of Ronald Ross on malaria. How did he use the biological method to discover that malaria is transmitted by mosquitoes?",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_bio_ch2_long_3",
+          "questionText": "What are the characteristics of a good hypothesis? Differentiate between qualitative and quantitative data with examples. Explain how experiments help test hypotheses.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

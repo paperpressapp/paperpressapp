@@ -1,0 +1,284 @@
+{
+  "class": "11th",
+  "subject": "Chemistry",
+  "chapters": [
+    {
+      "id": "11_chem_ch1",
+      "number": 1,
+      "name": "Stoichiometry",
+      "mcqs": [
+        {
+          "id": "11_chem_ch1_mcq_1",
+          "questionText": "The number of moles in 18g of water (H₂O) is:",
+          "options": ["0.5 mol", "1 mol", "2 mol", "18 mol"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch1_mcq_2",
+          "questionText": "1 mole of any substance contains:",
+          "options": ["6.022 × 10²³ particles", "6.022 × 10²² particles", "6.022 × 10²⁴ particles", "6.022 × 10²¹ particles"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch1_mcq_3",
+          "questionText": "The molar mass of CO₂ is:",
+          "options": ["28 g/mol", "32 g/mol", "44 g/mol", "48 g/mol"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch1_mcq_4",
+          "questionText": "At STP, 1 mole of gas occupies:",
+          "options": ["22.4 L", "22.4 mL", "2.24 L", "224 L"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch1_mcq_5",
+          "questionText": "The limiting reactant in a chemical reaction is the one that:",
+          "options": ["Is present in excess", "Is completely consumed", "Has highest molar mass", "Has lowest molar mass"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch1_mcq_6",
+          "questionText": "The empirical formula of a compound containing C, H, and O in ratio 1:2:1 is:",
+          "options": ["CH₂O", "C₂H₄O₂", "CH₂O₂", "CHO"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch1_mcq_7",
+          "questionText": "Percentage yield is calculated as:",
+          "options": ["(Actual yield/Theoretical yield) × 100%", "(Theoretical yield/Actual yield) × 100%", "(Actual yield - Theoretical yield) × 100%", "(Actual yield + Theoretical yield) × 100%"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch1_mcq_8",
+          "questionText": "The number of molecules in 11.2 L of O₂ at STP is:",
+          "options": ["3.011 × 10²³", "6.022 × 10²³", "1.204 × 10²³", "6.022 × 10²²"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch1_mcq_9",
+          "questionText": "A compound has empirical formula CH₂O and molecular mass 180 g/mol. Its molecular formula is:",
+          "options": ["CH₂O", "C₂H₄O₂", "C₃H₆O₃", "C₆H₁₂O₆"],
+          "correctOption": 3,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch1_mcq_10",
+          "questionText": "In the reaction: 2H₂ + O₂ → 2H₂O, if 4g H₂ reacts with 32g O₂, the mass of H₂O formed is:",
+          "options": ["18g", "36g", "9g", "72g"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_chem_ch1_short_1",
+          "questionText": "Define mole, Avogadro's number, and molar mass. Write their units and significance.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_chem_ch1_short_2",
+          "questionText": "Distinguish between empirical formula and molecular formula with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_chem_ch1_short_3",
+          "questionText": "Explain the concept of limiting reactant with a suitable example.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_chem_ch1_short_4",
+          "questionText": "Calculate the number of atoms in 56g of iron (Fe). (Atomic mass of Fe = 56 g/mol)",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_chem_ch1_short_5",
+          "questionText": "A compound contains 40% carbon, 6.67% hydrogen, and 53.33% oxygen. Determine its empirical formula.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_chem_ch1_long_1",
+          "questionText": "State and explain the laws of chemical combination: Law of Conservation of Mass, Law of Definite Proportions, and Law of Multiple Proportions. Illustrate each law with examples.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_chem_ch1_long_2",
+          "questionText": "What is stoichiometry? Explain mole-mole, mole-mass, and mass-mass relationships in chemical reactions with examples. Calculate how many grams of CaO are produced when 50g of CaCO₃ decomposes thermally.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_chem_ch1_long_3",
+          "questionText": "Derive the relationship between molecular formula and empirical formula. A compound contains 52.17% carbon, 13.04% hydrogen, and 34.78% oxygen. Its vapor density is 23. Determine its molecular formula and name the compound.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "11_chem_ch2",
+      "number": 2,
+      "name": "Atomic Structure",
+      "mcqs": [
+        {
+          "id": "11_chem_ch2_mcq_1",
+          "questionText": "The fundamental particle not present in a hydrogen atom is:",
+          "options": ["Proton", "Neutron", "Electron", "Nucleus"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch2_mcq_2",
+          "questionText": "The charge on an electron is:",
+          "options": ["+1.6 × 10⁻¹⁹ C", "-1.6 × 10⁻¹⁹ C", "0", "+1.6 × 10⁻¹⁹ A"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch2_mcq_3",
+          "questionText": "Rutherford's gold foil experiment led to the discovery of:",
+          "options": ["Electron", "Proton", "Neutron", "Nucleus"],
+          "correctOption": 3,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch2_mcq_4",
+          "questionText": "The maximum number of electrons in the third shell (n=3) is:",
+          "options": ["2", "8", "18", "32"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch2_mcq_5",
+          "questionText": "The atomic number of an element is equal to the number of:",
+          "options": ["Neutrons", "Protons", "Nucleons", "Mass number"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch2_mcq_6",
+          "questionText": "Isotopes have same number of:",
+          "options": ["Protons but different neutrons", "Neutrons but different protons", "Electrons and neutrons", "Protons and neutrons"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch2_mcq_7",
+          "questionText": "The energy of electron in the nth orbit of hydrogen atom is given by:",
+          "options": ["E = -13.6/n² eV", "E = -13.6/n eV", "E = -13.6 × n² eV", "E = -13.6 × n eV"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch2_mcq_8",
+          "questionText": "According to Bohr's model, angular momentum of electron is quantized as:",
+          "options": ["mvr = nh", "mvr = nh/2π", "mvr = 2πnh", "mvr = n/h"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch2_mcq_9",
+          "questionText": "The de Broglie wavelength of a particle is given by:",
+          "options": ["λ = h/mv", "λ = mv/h", "λ = h × mv", "λ = m/hv"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_chem_ch2_mcq_10",
+          "questionText": "The number of orbitals in a p-subshell is:",
+          "options": ["1", "3", "5", "7"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_chem_ch2_short_1",
+          "questionText": "Describe Rutherford's nuclear model of atom. What were its limitations?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_chem_ch2_short_2",
+          "questionText": "Explain the terms: atomic number, mass number, and isotopes with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_chem_ch2_short_3",
+          "questionText": "State the postulates of Bohr's atomic model. Explain how it explained the hydrogen spectrum.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_chem_ch2_short_4",
+          "questionText": "Differentiate between orbits and orbitals. Explain the shapes of s and p orbitals.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_chem_ch2_short_5",
+          "questionText": "Explain Heisenberg's uncertainty principle and its significance. Calculate the uncertainty in position of an electron moving with velocity 2 × 10⁶ m/s with uncertainty of 0.01%.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_chem_ch2_long_1",
+          "questionText": "Describe the Thomson's plum pudding model and Rutherford's nuclear model of atom. Discuss the α-particle scattering experiment and its conclusions. What were the shortcomings of Rutherford's model?",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_chem_ch2_long_2",
+          "questionText": "State and explain the postulates of Bohr's atomic model. Derive the expression for the radius of nth orbit and energy of electron in hydrogen atom. Calculate the radius of first Bohr orbit and ionization energy of hydrogen.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_chem_ch2_long_3",
+          "questionText": "Explain quantum mechanical model of atom. Describe the significance of quantum numbers (n, l, m, s). State and explain Pauli's exclusion principle, Aufbau principle, and Hund's rule with examples.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

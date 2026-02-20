@@ -1,0 +1,284 @@
+{
+  "class": "9th",
+  "subject": "Mathematics",
+  "chapters": [
+    {
+      "id": "9_math_ch1",
+      "number": 1,
+      "name": "Matrices and Determinants",
+      "mcqs": [
+        {
+          "id": "9_math_ch1_mcq_1",
+          "questionText": "A matrix with only one row is called:",
+          "options": ["Column matrix", "Row matrix", "Square matrix", "Diagonal matrix"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch1_mcq_2",
+          "questionText": "A matrix with equal number of rows and columns is called:",
+          "options": ["Rectangular matrix", "Square matrix", "Row matrix", "Null matrix"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch1_mcq_3",
+          "questionText": "The determinant of a 2×2 matrix [a b; c d] is:",
+          "options": ["ad + bc", "ad - bc", "ab - cd", "ac - bd"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch1_mcq_4",
+          "questionText": "If A is a matrix of order 2×3 and B is of order 3×2, then AB is of order:",
+          "options": ["2×2", "3×3", "2×3", "3×2"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch1_mcq_5",
+          "questionText": "The matrix [1 0; 0 1] is called:",
+          "options": ["Null matrix", "Identity matrix", "Diagonal matrix", "Symmetric matrix"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch1_mcq_6",
+          "questionText": "The determinant of [2 3; 4 5] is:",
+          "options": ["22", "-2", "2", "-22"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch1_mcq_7",
+          "questionText": "A matrix with all elements zero is called:",
+          "options": ["Unit matrix", "Zero matrix", "Identity matrix", "Scalar matrix"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch1_mcq_8",
+          "questionText": "If |A| = 0 for a square matrix A, then A is called:",
+          "options": ["Non-singular", "Singular", "Identity", "Diagonal"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch1_mcq_9",
+          "questionText": "The transpose of a row matrix is:",
+          "options": ["Row matrix", "Column matrix", "Square matrix", "Diagonal matrix"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch1_mcq_10",
+          "questionText": "If A = [1 2; 3 4], then the trace of A is:",
+          "options": ["5", "10", "7", "3"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_math_ch1_short_1",
+          "questionText": "Define matrix. Give an example of a 2×3 matrix and state its order.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_math_ch1_short_2",
+          "questionText": "Differentiate between row matrix and column matrix with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_math_ch1_short_3",
+          "questionText": "Calculate the determinant of: $\\begin{pmatrix} 3 & 4 \\\\ 2 & 5 \\end{pmatrix}$ and $\\begin{pmatrix} 2 & -1 \\\\ 3 & 2 \\end{pmatrix}$",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_math_ch1_short_4",
+          "questionText": "Define singular and non-singular matrices. Give one example of each.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_math_ch1_short_5",
+          "questionText": "If $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$ and $B = \\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}$, find $2A + B$.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_math_ch1_long_1",
+          "questionText": "Define matrix and explain its types with examples: (a) Row and Column matrices (b) Square matrix (c) Diagonal matrix (d) Identity matrix (e) Null matrix",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_math_ch1_long_2",
+          "questionText": "Explain the operations on matrices. If A = [1 2 3; 4 5 6] and B = [2 4 6; 1 3 5], find: (a) A + B (b) A - B (c) 3A (d) 2A + 3B",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_math_ch1_long_3",
+          "questionText": "What is a determinant? Explain the properties of determinants. Calculate the determinant of: [1 2 3; 4 5 6; 7 8 9]",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "9_math_ch2",
+      "number": 2,
+      "name": "Real and Complex Numbers",
+      "mcqs": [
+        {
+          "id": "9_math_ch2_mcq_1",
+          "questionText": "If $x^2 = 16$, then x equals:",
+          "options": ["$\\pm 4$", "4", "-4", "8"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch2_mcq_2",
+          "questionText": "The value of $\\sqrt{144}$ is:",
+          "options": ["12", "14", "11", "13"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch2_mcq_3",
+          "questionText": "The imaginary unit 'i' is equal to:",
+          "options": ["$\\sqrt{1}$", "$\\sqrt{-1}$", "-1", "1"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch2_mcq_4",
+          "questionText": "Which of the following is a rational number?",
+          "options": ["$\\pi$", "$\\sqrt{2}$", "$0.\\overline{3}$", "$\\sqrt{3}$"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch2_mcq_5",
+          "questionText": "The decimal form of $\\frac{3}{8}$ is:",
+          "options": ["0.375", "0.38", "0.4", "0.35"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch2_mcq_6",
+          "questionText": "A number that cannot be expressed as $\\frac{p}{q}$ where p, q are integers is called:",
+          "options": ["Rational", "Irrational", "Integer", "Whole"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch2_mcq_7",
+          "questionText": "The conjugate of $3 + 4i$ is:",
+          "options": ["$3 - 4i$", "$-3 + 4i$", "$-3 - 4i$", "$4 + 3i$"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch2_mcq_8",
+          "questionText": "If $z = 2 + 3i$, then $|z|$ equals:",
+          "options": ["5", "$\\sqrt{5}$", "$\\sqrt{13}$", "13"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch2_mcq_9",
+          "questionText": "The value of $i^2$ is:",
+          "options": ["1", "-1", "$i$", "$-i$"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_math_ch2_mcq_10",
+          "questionText": "Which of the following is an irrational number?",
+          "options": ["0.5", "$\\sqrt{9}$", "$\\pi$", "0.75"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_math_ch2_short_1",
+          "questionText": "Define real numbers. Differentiate between rational and irrational numbers with two examples of each.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_math_ch2_short_2",
+          "questionText": "What is a complex number? Write the real and imaginary parts of $5 - 3i$.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_math_ch2_short_3",
+          "questionText": "Simplify: $(3 + 2i) + (4 - 5i)$ and $(2 + i)(3 - 2i)$",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_math_ch2_short_4",
+          "questionText": "Find the conjugate and modulus of the complex number $4 + 3i$.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_math_ch2_short_5",
+          "questionText": "Convert $0.\\overline{3}$ to a rational number $\\frac{p}{q}$ form.",
+          "difficulty": "medium",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_math_ch2_long_1",
+          "questionText": "Explain the number system with examples. Differentiate between: (a) Natural and Whole numbers (b) Rational and Irrational numbers (c) Real and Complex numbers",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_math_ch2_long_2",
+          "questionText": "What are complex numbers? Explain with examples: (a) Real part and Imaginary part (b) Conjugate of a complex number (c) Modulus of a complex number (d) Operations on complex numbers",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_math_ch2_long_3",
+          "questionText": "Prove that √2 is an irrational number. Also, express 0.125125... in the form p/q where p and q are integers.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

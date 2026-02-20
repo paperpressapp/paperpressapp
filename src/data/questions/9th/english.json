@@ -1,0 +1,284 @@
+{
+  "class": "9th",
+  "subject": "English",
+  "chapters": [
+    {
+      "id": "9_eng_ch1",
+      "number": 1,
+      "name": "The Saviour of Mankind",
+      "mcqs": [
+        {
+          "id": "9_eng_ch1_mcq_1",
+          "questionText": "The Saviour of Mankind is about:",
+          "options": ["Hazrat Muhammad (PBUH)", "Hazrat Isa (AS)", "Hazrat Musa (AS)", "Hazrat Ibrahim (AS)"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch1_mcq_2",
+          "questionText": "The Arabs used to worship:",
+          "options": ["One Allah", "Idols", "Angels", "Prophets"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch1_mcq_3",
+          "questionText": "The Holy Prophet (PBUH) was born in:",
+          "options": ["Madinah", "Makkah", "Taif", "Jerusalem"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch1_mcq_4",
+          "questionText": "The year of the Holy Prophet's birth is called:",
+          "options": ["Year of the Elephant", "Year of Light", "Year of Peace", "Year of Victory"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch1_mcq_5",
+          "questionText": "Hazrat Muhammad (PBUH) was raised by:",
+          "options": ["His father", "His mother", "His grandfather", "Halima Sadia"],
+          "correctOption": 3,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch1_mcq_6",
+          "questionText": "The Holy Prophet (PBUH) preached the message of:",
+          "options": ["Idol worship", "Oneness of Allah", "Wealth", "War"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch1_mcq_7",
+          "questionText": "The first revelation came to the Holy Prophet in:",
+          "options": ["Makkah", "Madinah", "Cave Hira", "Cave Thawr"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch1_mcq_8",
+          "questionText": "The Holy Prophet migrated from Makkah to:",
+          "options": ["Taif", "Madinah", "Jerusalem", "Yemen"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch1_mcq_9",
+          "questionText": "The Holy Prophet's message was based on:",
+          "options": ["Love and equality", "Hatred", "Discrimination", "Violence"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch1_mcq_10",
+          "questionText": "The Holy Prophet (PBUH) is called 'Rahmat-ul-lil-Alameen' which means:",
+          "options": ["Mercy for the worlds", "Leader of the worlds", "Guide for the worlds", "Teacher of the worlds"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_eng_ch1_short_1",
+          "questionText": "Describe the condition of Arabia before the birth of the Holy Prophet (PBUH).",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_eng_ch1_short_2",
+          "questionText": "What message did the Holy Prophet (PBUH) preach? Why did the Quraish oppose him?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_eng_ch1_short_3",
+          "questionText": "Write a short note on the first revelation received by the Holy Prophet (PBUH).",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_eng_ch1_short_4",
+          "questionText": "Describe the Holy Prophet's character with reference to forgiveness and justice.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_eng_ch1_short_5",
+          "questionText": "Why is Hazrat Muhammad (PBUH) called the 'Saviour of Mankind'? Explain with examples.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_eng_ch1_long_1",
+          "questionText": "Describe the early life of the Holy Prophet (PBUH). How was he brought up and what qualities did he possess?",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_eng_ch1_long_2",
+          "questionText": "Explain how the Holy Prophet (PBUH) changed the lives of the Arabs. What was the condition of Arabia before and after Islam?",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_eng_ch1_long_3",
+          "questionText": "Write an essay on 'The Holy Prophet (PBUH) as a Model of Perfect Character'. Discuss his honesty, forgiveness, justice, and kindness.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "9_eng_ch2",
+      "number": 2,
+      "name": "Patriotism",
+      "mcqs": [
+        {
+          "id": "9_eng_ch2_mcq_1",
+          "questionText": "Patriotism means:",
+          "options": ["Love for one's country", "Love for money", "Love for travel", "Love for war"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch2_mcq_2",
+          "questionText": "A patriot is ready to:",
+          "options": ["Sacrifice for his country", "Leave his country", "Criticize his country", "Ignore his country"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch2_mcq_3",
+          "questionText": "The poet of the poem 'Patriotism' is:",
+          "options": ["Allama Iqbal", "Sir Walter Scott", "William Wordsworth", "John Keats"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch2_mcq_4",
+          "questionText": "According to the poem, 'breathes there the man with soul so dead' means:",
+          "options": ["A man without patriotism", "A dead man", "A sleeping man", "A sick man"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch2_mcq_5",
+          "questionText": "A patriot loves his country's:",
+          "options": ["Rivers and mountains", "People and traditions", "Both a and b", "None of these"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch2_mcq_6",
+          "questionText": "The poem 'Patriotism' highlights:",
+          "options": ["Importance of wealth", "Importance of love for country", "Importance of travel", "Importance of war"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch2_mcq_7",
+          "questionText": "According to the poet, a person without love for his native land is:",
+          "options": ["Honorable", "Respectable", "Without honor", "Wealthy"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch2_mcq_8",
+          "questionText": "The poem tells us that a patriot feels joy in:",
+          "options": ["Wealth", "His country's glory", "Foreign countries", "War"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch2_mcq_9",
+          "questionText": "Who is the writer of the prose lesson 'Patriotism'?",
+          "options": ["Sir Walter Scott", "Allama Iqbal", "Not mentioned in lesson", "Quaid-e-Azam"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_eng_ch2_mcq_10",
+          "questionText": "The main theme of the lesson is:",
+          "options": ["Love for wealth", "Love for country", "Love for travel", "Love for power"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_eng_ch2_short_1",
+          "questionText": "What is patriotism? How can we show patriotism?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_eng_ch2_short_2",
+          "questionText": "Write the central idea of the poem 'Patriotism' by Sir Walter Scott.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_eng_ch2_short_3",
+          "questionText": "How does the poet describe a person who has no love for his country?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_eng_ch2_short_4",
+          "questionText": "What are the qualities of a true patriot?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_eng_ch2_short_5",
+          "questionText": "Explain the line: 'Breathes there the man with soul so dead, Who never to himself hath said, This is my own, my native land!'",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_eng_ch2_long_1",
+          "questionText": "Write a detailed summary of the poem 'Patriotism'. What message does the poet convey about love for one's country?",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_eng_ch2_long_2",
+          "questionText": "Describe the qualities of a true patriot. How can we serve our country? Give examples of Pakistani patriots.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_eng_ch2_long_3",
+          "questionText": "Write an essay on 'Importance of Patriotism in Today's World'. How can patriotism lead to the development of a nation?",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

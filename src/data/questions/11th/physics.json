@@ -1,0 +1,284 @@
+{
+  "class": "11th",
+  "subject": "Physics",
+  "chapters": [
+    {
+      "id": "11_phy_ch1",
+      "number": 1,
+      "name": "Measurements",
+      "mcqs": [
+        {
+          "id": "11_phy_ch1_mcq_1",
+          "questionText": "The SI unit of length is:",
+          "options": ["Meter (m)", "Centimeter (cm)", "Kilometer (km)", "Millimeter (mm)"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch1_mcq_2",
+          "questionText": "Which of the following is a derived unit?",
+          "options": ["Kilogram", "Second", "Newton", "Meter"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch1_mcq_3",
+          "questionText": "The number of significant figures in 0.00450 is:",
+          "options": ["2", "3", "4", "5"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch1_mcq_4",
+          "questionText": "1 nanometer is equal to:",
+          "options": ["10⁻³ m", "10⁻⁶ m", "10⁻⁹ m", "10⁻¹² m"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch1_mcq_5",
+          "questionText": "The dimensional formula for force is:",
+          "options": ["[MLT⁻²]", "[ML²T⁻²]", "[MLT⁻¹]", "[M⁰L⁰T⁰]"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch1_mcq_6",
+          "questionText": "The percentage error in the measurement of resistance R = V/I is given by:",
+          "options": ["(ΔV/V + ΔI/I) × 100%", "(ΔV/V - ΔI/I) × 100%", "(ΔV/V × ΔI/I) × 100%", "(ΔV/V ÷ ΔI/I) × 100%"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch1_mcq_7",
+          "questionText": "If x = a + b, the maximum absolute error in x is:",
+          "options": ["Δa + Δb", "Δa - Δb", "√(Δa² + Δb²)", "Δa × Δb"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch1_mcq_8",
+          "questionText": "The dimension of Planck's constant is:",
+          "options": ["[ML²T⁻¹]", "[MLT⁻¹]", "[ML²T⁻²]", "[ML⁻¹T⁻²]"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch1_mcq_9",
+          "questionText": "Using dimensional analysis, the time period T of a simple pendulum depends on length l and acceleration due to gravity g as:",
+          "options": ["T ∝ √(l/g)", "T ∝ l/g", "T ∝ l²/g", "T ∝ √(g/l)"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch1_mcq_10",
+          "questionText": "The velocity of sound in a gas depends on pressure P and density ρ. The correct formula is v = k√(P/ρ). The value of k using dimensional analysis is:",
+          "options": ["1/√γ", "√γ", "γ", "1/γ"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_phy_ch1_short_1",
+          "questionText": "Define the terms: (a) Fundamental quantities (b) Derived quantities. Give two examples of each.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_phy_ch1_short_2",
+          "questionText": "What are the advantages of using the SI system of units?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_phy_ch1_short_3",
+          "questionText": "Explain the rules for determining significant figures with examples.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_phy_ch1_short_4",
+          "questionText": "Distinguish between precision and accuracy in measurements.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_phy_ch1_short_5",
+          "questionText": "Derive the dimensional formula for: (a) Gravitational constant G (b) Coefficient of viscosity η",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_phy_ch1_long_1",
+          "questionText": "Define significant figures. State and explain the rules for rounding off numbers. How do you determine significant figures in calculations involving multiplication, division, addition, and subtraction?",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_phy_ch1_long_2",
+          "questionText": "What are dimensions? Explain dimensional analysis. Discuss its applications and limitations. Use dimensional analysis to derive an expression for the time period of a simple pendulum.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_phy_ch1_long_3",
+          "questionText": "Explain the types of errors in measurements: systematic errors and random errors. Discuss methods to minimize errors and derive expressions for error propagation in addition, subtraction, multiplication, division, and power functions.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "11_phy_ch2",
+      "number": 2,
+      "name": "Vectors and Equilibrium",
+      "mcqs": [
+        {
+          "id": "11_phy_ch2_mcq_1",
+          "questionText": "Which of the following is a vector quantity?",
+          "options": ["Mass", "Speed", "Displacement", "Time"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch2_mcq_2",
+          "questionText": "The magnitude of resultant of two perpendicular vectors A and B is:",
+          "options": ["A + B", "√(A² + B²)", "A² + B²", "A × B"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch2_mcq_3",
+          "questionText": "The scalar product of two perpendicular vectors is:",
+          "options": ["1", "0", "AB", "-1"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch2_mcq_4",
+          "questionText": "The cross product of two parallel vectors is:",
+          "options": ["AB", "A²B²", "0", "1"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch2_mcq_5",
+          "questionText": "If A = 3i + 4j and B = 4i - 3j, then A · B equals:",
+          "options": ["0", "25", "7", "-7"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch2_mcq_6",
+          "questionText": "The torque τ is given by:",
+          "options": ["r × F", "r · F", "r/F", "r + F"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch2_mcq_7",
+          "questionText": "For a body to be in equilibrium, the vector sum of all forces must be:",
+          "options": ["Maximum", "Minimum", "Zero", "Constant"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch2_mcq_8",
+          "questionText": "The moment of a force about a point is zero when:",
+          "options": ["Force is maximum", "Force is minimum", "Line of action passes through the point", "Force is perpendicular"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch2_mcq_9",
+          "questionText": "Three forces act on a particle. For equilibrium, the forces must be:",
+          "options": ["Collinear", "Coplanar", "Perpendicular", "Parallel"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_phy_ch2_mcq_10",
+          "questionText": "If |A × B| = |A · B|, then the angle between A and B is:",
+          "options": ["0°", "45°", "90°", "180°"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_phy_ch2_short_1",
+          "questionText": "Differentiate between scalar and vector quantities with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_phy_ch2_short_2",
+          "questionText": "State the triangle law and parallelogram law of vector addition.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_phy_ch2_short_3",
+          "questionText": "Explain the rectangular components of a vector. Find the components of a vector A making angle θ with x-axis.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_phy_ch2_short_4",
+          "questionText": "Define torque and derive its expression in terms of position vector and force vector.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_phy_ch2_short_5",
+          "questionText": "State and prove Lami's theorem for three forces in equilibrium.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_phy_ch2_long_1",
+          "questionText": "Define scalar and vector products. Derive expressions for A · B and A × B in terms of their components. Explain the physical significance of both products with examples.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_phy_ch2_long_2",
+          "questionText": "What are rectangular components of a vector? Derive expressions for magnitude and direction of resultant of two vectors. A force of 10N acts at 30° to horizontal. Find its horizontal and vertical components.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_phy_ch2_long_3",
+          "questionText": "State and explain the conditions for equilibrium of a rigid body. Discuss the first and second conditions of equilibrium. Explain how to determine unknown forces in a system using equilibrium conditions with a solved example.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

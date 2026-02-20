@@ -1,0 +1,284 @@
+{
+  "class": "12th",
+  "subject": "Biology",
+  "chapters": [
+    {
+      "id": "12_bio_ch1",
+      "number": 1,
+      "name": "Homeostasis",
+      "mcqs": [
+        {
+          "id": "12_bio_ch1_mcq_1",
+          "questionText": "Homeostasis refers to:",
+          "options": ["Internal balance", "External balance", "Growth", "Reproduction"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch1_mcq_2",
+          "questionText": "Which organ is primarily responsible for osmoregulation in humans?",
+          "options": ["Liver", "Kidneys", "Lungs", "Skin"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch1_mcq_3",
+          "questionText": "The functional unit of kidney is:",
+          "options": ["Neuron", "Nephrons", "Alveoli", "Nephrons"],
+          "correctOption": 3,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch1_mcq_4",
+          "questionText": "ADH (Antidiuretic hormone) is secreted by:",
+          "options": ["Thyroid gland", "Adrenal gland", "Posterior pituitary", "Anterior pituitary"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch1_mcq_5",
+          "questionText": "The glomerular filtrate is first collected in:",
+          "options": ["Bowman's capsule", "Proximal convoluted tubule", "Loop of Henle", "Distal convoluted tubule"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch1_mcq_6",
+          "questionText": "Which part of nephron is responsible for maximum reabsorption?",
+          "options": ["Glomerulus", "PCT", "DCT", "Collecting duct"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch1_mcq_7",
+          "questionText": "Thermoregulation is controlled by which part of the brain?",
+          "options": ["Cerebrum", "Cerebellum", "Hypothalamus", "Medulla oblongata"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch1_mcq_8",
+          "questionText": "Normal blood pH in humans is maintained at approximately:",
+          "options": ["6.8", "7.0", "7.4", "8.0"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch1_mcq_9",
+          "questionText": "Counter-current multiplier mechanism occurs in:",
+          "options": ["Glomerulus", "Proximal tubule", "Loop of Henle", "Collecting duct"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch1_mcq_10",
+          "questionText": "Which buffer system is most important in blood plasma?",
+          "options": ["Phosphate buffer", "Bicarbonate buffer", "Protein buffer", "Hemoglobin buffer"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_bio_ch1_short_1",
+          "questionText": "Define homeostasis. Explain why it is essential for living organisms.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_bio_ch1_short_2",
+          "questionText": "Describe the structure and function of nephron. Label its main parts.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_bio_ch1_short_3",
+          "questionText": "Explain the process of urine formation including filtration, reabsorption, and secretion.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_bio_ch1_short_4",
+          "questionText": "How does ADH regulate water balance in the body? Explain its mechanism of action.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_bio_ch1_short_5",
+          "questionText": "Describe the counter-current mechanism in kidney. How does it help in urine concentration?",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_bio_ch1_long_1",
+          "questionText": "Define homeostasis. Describe the role of kidneys in maintaining homeostasis. Explain the structure of kidney and nephron with diagram.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_bio_ch1_long_2",
+          "questionText": "Describe the process of urine formation in detail. Explain the role of glomerular filtration, tubular reabsorption, and tubular secretion.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_bio_ch1_long_3",
+          "questionText": "Explain the hormonal regulation of kidney function. Discuss the role of ADH, aldosterone, and ANP in osmoregulation. Describe the counter-current multiplier system.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    },
+    {
+      "id": "12_bio_ch2",
+      "number": 2,
+      "name": "Support and Movement",
+      "mcqs": [
+        {
+          "id": "12_bio_ch2_mcq_1",
+          "questionText": "The human skeleton is made of ___ bones.",
+          "options": ["106", "206", "306", "406"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch2_mcq_2",
+          "questionText": "Which is the longest bone in human body?",
+          "options": ["Humerus", "Femur", "Tibia", "Fibula"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch2_mcq_3",
+          "questionText": "The basic unit of contraction in skeletal muscle is:",
+          "options": ["Myofibril", "Sarcomere", "Actin", "Myosin"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch2_mcq_4",
+          "questionText": "Which mineral is most abundant in bones?",
+          "options": ["Iron", "Calcium", "Potassium", "Sodium"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch2_mcq_5",
+          "questionText": "Sliding filament theory of muscle contraction was proposed by:",
+          "options": ["Watson and Crick", "Huxley and Hanson", "Mendel", "Darwin"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch2_mcq_6",
+          "questionText": "Muscle fatigue is caused by accumulation of:",
+          "options": ["Oxygen", "Lactic acid", "Glucose", "ATP"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch2_mcq_7",
+          "questionText": "Which joint allows movement in all directions?",
+          "options": ["Hinge joint", "Ball and socket joint", "Pivot joint", "Gliding joint"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch2_mcq_8",
+          "questionText": "The neurotransmitter released at neuromuscular junction is:",
+          "options": ["Dopamine", "Acetylcholine", "Serotonin", "Adrenaline"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch2_mcq_9",
+          "questionText": "Rigor mortis occurs due to lack of:",
+          "options": ["Calcium", "ATP", "Oxygen", "Glucose"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_bio_ch2_mcq_10",
+          "questionText": "Which protein covers the binding site on actin in relaxed muscle?",
+          "options": ["Myosin", "Tropomyosin", "Troponin", "Actinin"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_bio_ch2_short_1",
+          "questionText": "Describe the structure of a typical long bone. Name the different types of bones.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_bio_ch2_short_2",
+          "questionText": "What are joints? Classify joints based on structure and give one example of each.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_bio_ch2_short_3",
+          "questionText": "Describe the structure of sarcomere. Explain the arrangement of actin and myosin filaments.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_bio_ch2_short_4",
+          "questionText": "Explain the role of calcium ions in muscle contraction. How is it regulated?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_bio_ch2_short_5",
+          "questionText": "Describe the sliding filament theory of muscle contraction. Include the role of ATP.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_bio_ch2_long_1",
+          "questionText": "Describe the human skeleton. Classify bones based on shape and location. Explain the functions of skeleton with examples.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_bio_ch2_long_2",
+          "questionText": "Explain the sliding filament theory of muscle contraction. Describe the structure of skeletal muscle fiber and the role of different proteins in contraction.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_bio_ch2_long_3",
+          "questionText": "Describe the mechanism of muscle contraction at molecular level. Explain the role of neuromuscular junction, action potential, calcium ions, and cross-bridge cycle in detail.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    }
+  ]
+}

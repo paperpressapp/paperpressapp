@@ -1,0 +1,284 @@
+{
+  "class": "12th",
+  "subject": "Computer Science",
+  "chapters": [
+    {
+      "id": "12_comp_ch1",
+      "number": 1,
+      "name": "Object Oriented Programming",
+      "mcqs": [
+        {
+          "id": "12_comp_ch1_mcq_1",
+          "questionText": "OOP stands for:",
+          "options": ["Object Oriented Procedure", "Object Oriented Programming", "Objective Oriented Process", "Object Operational Programming"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch1_mcq_2",
+          "questionText": "Which is not a principle of OOP?",
+          "options": ["Encapsulation", "Inheritance", "Compilation", "Polymorphism"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch1_mcq_3",
+          "questionText": "Wrapping data and functions together is called:",
+          "options": ["Inheritance", "Encapsulation", "Polymorphism", "Abstraction"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch1_mcq_4",
+          "questionText": "The ability to take multiple forms is called:",
+          "options": ["Inheritance", "Encapsulation", "Polymorphism", "Abstraction"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch1_mcq_5",
+          "questionText": "Which access specifier allows members to be accessible only within the class?",
+          "options": ["public", "private", "protected", "default"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch1_mcq_6",
+          "questionText": "Function overloading is an example of:",
+          "options": ["Compile-time polymorphism", "Run-time polymorphism", "Inheritance", "Encapsulation"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch1_mcq_7",
+          "questionText": "Which type of inheritance has one base class and multiple derived classes?",
+          "options": ["Single inheritance", "Multiple inheritance", "Hierarchical inheritance", "Multilevel inheritance"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch1_mcq_8",
+          "questionText": "A class that cannot be instantiated is called:",
+          "options": ["Static class", "Abstract class", "Sealed class", "Final class"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch1_mcq_9",
+          "questionText": "The process of hiding implementation details is called:",
+          "options": ["Encapsulation", "Data hiding", "Abstraction", "Inheritance"],
+          "correctOption": 2,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch1_mcq_10",
+          "questionText": "Virtual functions are used to achieve:",
+          "options": ["Compile-time polymorphism", "Run-time polymorphism", "Data hiding", "Encapsulation"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_comp_ch1_short_1",
+          "questionText": "What is Object Oriented Programming? List and explain the four main principles of OOP.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_comp_ch1_short_2",
+          "questionText": "Define encapsulation and data hiding. Explain how they are implemented in C++ with example.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_comp_ch1_short_3",
+          "questionText": "Explain polymorphism and its types with examples. Differentiate between compile-time and run-time polymorphism.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_comp_ch1_short_4",
+          "questionText": "What is abstraction? How is it different from encapsulation? Give examples.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_comp_ch1_short_5",
+          "questionText": "Describe different types of inheritance with diagrams and code examples.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_comp_ch1_long_1",
+          "questionText": "Define Object Oriented Programming and compare it with procedural programming. Explain the four pillars of OOP: Encapsulation, Inheritance, Polymorphism, and Abstraction with proper examples and code.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_comp_ch1_long_2",
+          "questionText": "Explain inheritance in detail. Discuss single, multiple, multilevel, hierarchical, and hybrid inheritance with examples and diagrams. What are the advantages of using inheritance?",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_comp_ch1_long_3",
+          "questionText": "Explain polymorphism in C++ with complete examples. Differentiate between function overloading, operator overloading, function overriding, and virtual functions. Write a program demonstrating run-time polymorphism using virtual functions.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    },
+    {
+      "id": "12_comp_ch2",
+      "number": 2,
+      "name": "Classes and Objects",
+      "mcqs": [
+        {
+          "id": "12_comp_ch2_mcq_1",
+          "questionText": "A class is a:",
+          "options": ["Variable", "Function", "Blueprint/template", "Data type"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch2_mcq_2",
+          "questionText": "An object is:",
+          "options": ["A class", "An instance of class", "A function", "A variable"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch2_mcq_3",
+          "questionText": "A constructor has:",
+          "options": ["Return type void", "Return type int", "No return type", "Return type class"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch2_mcq_4",
+          "questionText": "Which operator is used to access class members through pointer?",
+          "options": [".", "->", "::", "*"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch2_mcq_5",
+          "questionText": "A destructor is called when:",
+          "options": ["Object is created", "Object is destroyed", "Function is called", "Program starts"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch2_mcq_6",
+          "questionText": "Copy constructor takes parameter as:",
+          "options": ["Value", "Pointer", "Reference", "Constant"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch2_mcq_7",
+          "questionText": "The default access specifier for class members in C++ is:",
+          "options": ["public", "private", "protected", "none"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch2_mcq_8",
+          "questionText": "Static members of a class are shared by:",
+          "options": ["All objects", "One object", "Base class only", "Derived class only"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch2_mcq_9",
+          "questionText": "Which of the following is not a constructor type?",
+          "options": ["Default constructor", "Parameterized constructor", "Copy constructor", "Virtual constructor"],
+          "correctOption": 3,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "12_comp_ch2_mcq_10",
+          "questionText": "The 'this' pointer in C++:",
+          "options": ["Points to base class", "Points to current object", "Points to derived class", "Is a static pointer"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "12_comp_ch2_short_1",
+          "questionText": "Define class and object. Write the syntax for declaring a class in C++ with example.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_comp_ch2_short_2",
+          "questionText": "What is a constructor? Explain default, parameterized, and copy constructors with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "12_comp_ch2_short_3",
+          "questionText": "What is a destructor? When is it called? Write a program demonstrating destructor.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_comp_ch2_short_4",
+          "questionText": "Explain the 'this' pointer. When and why is it used? Give an example.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "12_comp_ch2_short_5",
+          "questionText": "What are static members in a class? Explain static data members and static member functions with example.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "12_comp_ch2_long_1",
+          "questionText": "Explain classes and objects in C++. Write a complete program to define a class 'Student' with data members (roll, name, marks) and member functions (input, display, calculate average). Create objects and demonstrate all operations.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "12_comp_ch2_long_2",
+          "questionText": "Explain constructors and destructors in detail. Discuss default constructor, parameterized constructor, copy constructor, and constructor overloading with complete programs. Explain the role of destructors in memory management.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "12_comp_ch2_long_3",
+          "questionText": "Explain friend function and friend class in C++. What are the characteristics of friend functions? Write a program to demonstrate friend function accessing private members of a class. Also explain operator overloading using friend function with example.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+        ]
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "class": "11th",
+  "subject": "Computer",
+  "chapters": [
+    {
+      "id": "11_comp_ch1",
+      "number": 1,
+      "name": "Basics of Information Technology",
+      "mcqs": [
+        {
+          "id": "11_comp_ch1_mcq_1",
+          "questionText": "Which of the following is an input device?",
+          "options": ["Monitor", "Printer", "Keyboard", "Speaker"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch1_mcq_2",
+          "questionText": "The full form of CPU is:",
+          "options": ["Central Processing Unit", "Computer Processing Unit", "Central Program Unit", "Computer Program Unit"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch1_mcq_3",
+          "questionText": "Which of the following is volatile memory?",
+          "options": ["ROM", "Hard Disk", "RAM", "CD-ROM"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch1_mcq_4",
+          "questionText": "1 KB (Kilobyte) is equal to:",
+          "options": ["1000 bytes", "1024 bytes", "100 bytes", "2048 bytes"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch1_mcq_5",
+          "questionText": "The binary equivalent of decimal 5 is:",
+          "options": ["101", "110", "111", "100"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch1_mcq_6",
+          "questionText": "Which logic gate produces output 1 only when all inputs are 1?",
+          "options": ["OR", "AND", "NOT", "XOR"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch1_mcq_7",
+          "questionText": "HTTP stands for:",
+          "options": ["Hyper Text Transfer Protocol", "High Text Transfer Protocol", "Hyper Text Transfer Process", "High Transfer Text Protocol"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch1_mcq_8",
+          "questionText": "The decimal equivalent of binary 1010 is:",
+          "options": ["8", "9", "10", "11"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch1_mcq_9",
+          "questionText": "In two's complement representation, the range of 8-bit numbers is:",
+          "options": ["0 to 255", "-128 to 127", "-127 to 128", "-256 to 255"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch1_mcq_10",
+          "questionText": "The hexadecimal number A3 in binary is:",
+          "options": ["10100011", "10100010", "1010011", "10100111"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_comp_ch1_short_1",
+          "questionText": "Define computer and explain its characteristics. Differentiate between hardware and software.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_comp_ch1_short_2",
+          "questionText": "Explain different types of computers based on size and processing power.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_comp_ch1_short_3",
+          "questionText": "Convert the following: (a) (45)₁₀ to binary (b) (101101)₂ to decimal (c) (2A)₁₆ to binary",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_comp_ch1_short_4",
+          "questionText": "Explain Boolean algebra and truth tables for AND, OR, and NOT gates.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_comp_ch1_short_5",
+          "questionText": "Explain the difference between analog and digital signals. Why are digital systems preferred over analog systems?",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_comp_ch1_long_1",
+          "questionText": "Describe the components of a computer system with a block diagram. Explain the functions of CPU, memory, input devices, and output devices. Discuss primary memory (RAM and ROM) and secondary memory devices.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_comp_ch1_long_2",
+          "questionText": "Explain different number systems: Binary, Octal, Decimal, and Hexadecimal. Show conversion methods between these systems with examples. Convert (125)₁₀ to binary, octal, and hexadecimal. Also convert (1011101)₂ to decimal and hexadecimal.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_comp_ch1_long_3",
+          "questionText": "Explain the concept of data representation in computers. Discuss binary arithmetic including addition, subtraction using 1's and 2's complement. Explain ASCII and Unicode encoding schemes. Why is binary system used in computers?",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "11_comp_ch2",
+      "number": 2,
+      "name": "Computer Systems",
+      "mcqs": [
+        {
+          "id": "11_comp_ch2_mcq_1",
+          "questionText": "The brain of the computer is:",
+          "options": ["RAM", "ROM", "CPU", "Hard Disk"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch2_mcq_2",
+          "questionText": "Which of the following is system software?",
+          "options": ["MS Word", "Windows", "Photoshop", "Chrome"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch2_mcq_3",
+          "questionText": "The ALU performs:",
+          "options": ["Logical operations only", "Arithmetic operations only", "Both arithmetic and logical operations", "Control operations"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch2_mcq_4",
+          "questionText": "Cache memory is used to:",
+          "options": ["Store permanent data", "Speed up CPU operations", "Store backup data", "Connect to internet"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch2_mcq_5",
+          "questionText": "The control unit of CPU controls:",
+          "options": ["Only input devices", "Only output devices", "All operations of computer", "Only arithmetic operations"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch2_mcq_6",
+          "questionText": "Which register holds the address of the next instruction to be executed?",
+          "options": ["Accumulator", "Program Counter", "Memory Address Register", "Instruction Register"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch2_mcq_7",
+          "questionText": "DMA stands for:",
+          "options": ["Direct Memory Access", "Data Memory Address", "Direct Memory Address", "Data Management Access"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch2_mcq_8",
+          "questionText": "The speed of CPU is measured in:",
+          "options": ["Bytes", "Hertz", "Watts", "Volts"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch2_mcq_9",
+          "questionText": "In pipelining, the number of instructions that can be processed simultaneously is called:",
+          "options": ["Clock speed", "Pipeline depth", "Throughput", "Latency"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_comp_ch2_mcq_10",
+          "questionText": "The interrupt handling mechanism is managed by:",
+          "options": ["ALU", "Control Unit", "Operating System", "Application Software"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_comp_ch2_short_1",
+          "questionText": "Describe the components of CPU with a diagram. Explain the functions of ALU, CU, and registers.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_comp_ch2_short_2",
+          "questionText": "Differentiate between system software and application software with examples.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_comp_ch2_short_3",
+          "questionText": "Explain the memory hierarchy in computer systems. Why is cache memory important?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_comp_ch2_short_4",
+          "questionText": "Describe the instruction cycle (fetch-decode-execute). What happens in each stage?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_comp_ch2_short_5",
+          "questionText": "Explain different types of buses in computer architecture: data bus, address bus, and control bus.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_comp_ch2_long_1",
+          "questionText": "Explain the structure and functions of Central Processing Unit (CPU). Describe its main components: Arithmetic Logic Unit (ALU), Control Unit (CU), and Registers. Discuss different types of registers and their functions.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_comp_ch2_long_2",
+          "questionText": "Describe computer memory hierarchy from registers to secondary storage. Explain RAM, ROM, Cache memory, and virtual memory. Discuss the characteristics of each type and why different memory types are needed in a computer system.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_comp_ch2_long_3",
+          "questionText": "Explain the instruction execution cycle with a flowchart. Describe different addressing modes. Discuss pipelining and its advantages. Explain interrupt handling and its importance in modern computer systems.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

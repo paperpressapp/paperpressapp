@@ -1,0 +1,284 @@
+{
+  "class": "11th",
+  "subject": "English",
+  "chapters": [
+    {
+      "id": "11_eng_ch1",
+      "number": 1,
+      "name": "Button Button",
+      "mcqs": [
+        {
+          "id": "11_eng_ch1_mcq_1",
+          "questionText": "Who is the author of the story 'Button Button'?",
+          "options": ["William Shakespeare", "Richard Matheson", "O. Henry", "Mark Twain"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch1_mcq_2",
+          "questionText": "What does Mr. Steward offer Norma and Arthur?",
+          "options": ["A job", "A house", "A box with a button", "A car"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch1_mcq_3",
+          "questionText": "How much money is offered for pushing the button?",
+          "options": ["$10,000", "$50,000", "$100,000", "$1,000,000"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch1_mcq_4",
+          "questionText": "Who pushes the button in the end?",
+          "options": ["Arthur", "Norma", "Mr. Steward", "Nobody"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch1_mcq_5",
+          "questionText": "What is the consequence of pushing the button?",
+          "options": ["Winning money", "Someone unknown dies", "The box breaks", "Nothing happens"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch1_mcq_6",
+          "questionText": "What happens to Arthur after Norma pushes the button?",
+          "options": ["He wins lottery", "He dies in an accident", "He leaves Norma", "He becomes rich"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch1_mcq_7",
+          "questionText": "The story 'Button Button' is a commentary on:",
+          "options": ["Technology", "Human greed and moral choices", "Education", "Friendship"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch1_mcq_8",
+          "questionText": "What is Arthur's initial reaction to the offer?",
+          "options": ["He is excited", "He is suspicious and refuses", "He immediately agrees", "He doesn't care"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch1_mcq_9",
+          "questionText": "The story belongs to which literary genre?",
+          "options": ["Romance", "Science fiction/Thriller", "Comedy", "Historical fiction"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch1_mcq_10",
+          "questionText": "What is the main theme of the story?",
+          "options": ["Love conquers all", "Greed leads to tragedy", "Hard work pays off", "Technology is dangerous"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_eng_ch1_short_1",
+          "questionText": "Describe the character of Norma. What are her motivations and how do they change throughout the story?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_eng_ch1_short_2",
+          "questionText": "Why does Arthur refuse to push the button? What does this tell us about his character?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_eng_ch1_short_3",
+          "questionText": "Explain the irony in the story. How does the ending surprise the reader?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_eng_ch1_short_4",
+          "questionText": "Discuss the moral dilemma presented in the story. What would you do if you were in Norma's position?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_eng_ch1_short_5",
+          "questionText": "Analyze the symbolism of 'the button' in the story. What does it represent in modern society?",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_eng_ch1_long_1",
+          "questionText": "Write a detailed character sketch of Norma and Arthur. Compare and contrast their personalities, values, and decision-making processes. How do their different approaches to the button reveal their true nature? Support your answer with evidence from the text.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_eng_ch1_long_2",
+          "questionText": "Discuss the major themes in the story 'Button Button': greed, morality, and the value of human life. How does Richard Matheson use the story to comment on human nature? Analyze specific scenes and dialogues that support these themes.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_eng_ch1_long_3",
+          "questionText": "Critically analyze the plot structure and narrative techniques used in 'Button Button.' Discuss the use of suspense, foreshadowing, and irony. How does the author build tension throughout the story? Evaluate the effectiveness of the twist ending and its impact on the overall message.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "11_eng_ch2",
+      "number": 2,
+      "name": "Clearing in the Sky",
+      "mcqs": [
+        {
+          "id": "11_eng_ch2_mcq_1",
+          "questionText": "Who wrote the story 'Clearing in the Sky'?",
+          "options": ["Jesse Stuart", "William Wordsworth", "Robert Frost", "John Keats"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch2_mcq_2",
+          "questionText": "What is the relationship between the narrator and the old man?",
+          "options": ["Father and son", "Friends", "Grandfather and grandson", "Neighbors"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch2_mcq_3",
+          "questionText": "Why does the old man climb the mountain?",
+          "options": ["To hunt", "To visit his old farm clearing", "To exercise", "To escape"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch2_mcq_4",
+          "questionText": "The old man is suffering from:",
+          "options": ["Heart disease", "Cancer", "Diabetes", "Arthritis"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch2_mcq_5",
+          "questionText": "What does the clearing in the sky symbolize?",
+          "options": ["Death", "Hope and memories", "Fear", "Success"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch2_mcq_6",
+          "questionText": "How old is the narrator's father?",
+          "options": ["50 years", "60 years", "70 years", "80 years"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch2_mcq_7",
+          "questionText": "The story is set in which region?",
+          "options": ["Urban city", "Appalachian Mountains", "Desert", "Beach"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch2_mcq_8",
+          "questionText": "What does the father plant in the clearing?",
+          "options": ["Flowers", "Wheat", "Corn", "Potatoes"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch2_mcq_9",
+          "questionText": "The narrative technique used in the story is:",
+          "options": ["Third person", "First person", "Second person", "Omniscient"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "11_eng_ch2_mcq_10",
+          "questionText": "What is the central message of the story?",
+          "options": ["Wealth is important", "Love of land and perseverance", "City life is better", "Youth is wasted on young"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "11_eng_ch2_short_1",
+          "questionText": "Describe the character of the narrator's father. What qualities does he display despite his old age and illness?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_eng_ch2_short_2",
+          "questionText": "What is the significance of the title 'Clearing in the Sky'? Explain with reference to the story.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "11_eng_ch2_short_3",
+          "questionText": "Describe the setting of the story. How does the natural environment contribute to the story's theme?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_eng_ch2_short_4",
+          "questionText": "Explain the bond between the father and son. How does the narrator view his father?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "11_eng_ch2_short_5",
+          "questionText": "Discuss the theme of perseverance and determination in the story. How does the father embody these qualities?",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "11_eng_ch2_long_1",
+          "questionText": "Write a detailed character sketch of the narrator's father. Discuss his physical condition, mental strength, love for the land, and determination. How does he defy his age and illness? Cite specific incidents from the story to support your answer.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "11_eng_ch2_long_2",
+          "questionText": "Discuss the themes in 'Clearing in the Sky': man's relationship with nature, perseverance, the cycle of life, and the dignity of labor. How does Jesse Stuart use the Appalachian setting to enhance these themes? Analyze the symbolism used in the story.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "11_eng_ch2_long_3",
+          "questionText": "Critically analyze the narrative style and literary devices used in 'Clearing in the Sky.' Discuss the use of imagery, symbolism, flashback, and first-person narration. How does the author create an emotional connection with the reader? Evaluate the story's message about human resilience.",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "class": "9th",
+  "subject": "Chemistry",
+  "chapters": [
+    {
+      "id": "9_chem_ch1",
+      "number": 1,
+      "name": "Fundamentals of Chemistry",
+      "mcqs": [
+        {
+          "id": "9_chem_ch1_mcq_1",
+          "questionText": "The chemical formula of water is:",
+          "options": ["$H_2O$", "$H_2O_2$", "$HO$", "$H_3O$"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch1_mcq_2",
+          "questionText": "Which element has atomic number 6?",
+          "options": ["Carbon", "Oxygen", "Nitrogen", "Hydrogen"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch1_mcq_3",
+          "questionText": "The chemical formula of carbon dioxide is:",
+          "options": ["$CO$", "$CO_2$", "$C_2O$", "$C_2O_2$"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch1_mcq_4",
+          "questionText": "How many elements are known naturally?",
+          "options": ["92", "108", "118", "90"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch1_mcq_5",
+          "questionText": "The formula of sulfuric acid is:",
+          "options": ["$H_2SO_3$", "$H_2SO_4$", "$HSO_4$", "$H_2S$"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch1_mcq_6",
+          "questionText": "Chemistry is the branch of science which deals with the study of:",
+          "options": ["Composition of matter", "Properties of matter", "Changes in matter", "All of these"],
+          "correctOption": 3,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch1_mcq_7",
+          "questionText": "The chemical formula of sodium chloride is:",
+          "options": ["$NaCl$", "$Na_2Cl$", "$NaCl_2$", "$Na_2Cl_2$"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch1_mcq_8",
+          "questionText": "Molecular mass of water ($H_2O$) is:",
+          "options": ["16 amu", "17 amu", "18 amu", "20 amu"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch1_mcq_9",
+          "questionText": "Which of the following is a compound?",
+          "options": ["Iron", "Oxygen", "Water", "Copper"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch1_mcq_10",
+          "questionText": "The molecular formula of glucose is $C_6H_{12}O_6$. Its empirical formula is:",
+          "options": ["$CH_2O$", "$C_2H_4O_2$", "$CH_4O$", "$C_3H_6O_3$"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_chem_ch1_short_1",
+          "questionText": "Define chemistry. Name its main branches.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_chem_ch1_short_2",
+          "questionText": "Differentiate between element and compound with two examples of each.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_chem_ch1_short_3",
+          "questionText": "What is molecular formula? Calculate the molecular mass of H₂SO₄.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_chem_ch1_short_4",
+          "questionText": "Define atomic mass unit (amu). Why is C-12 used as standard?",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_chem_ch1_short_5",
+          "questionText": "Differentiate between empirical formula and molecular formula with examples.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_chem_ch1_long_1",
+          "questionText": "Explain the different branches of chemistry with examples. How is chemistry important in our daily life?",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_chem_ch1_long_2",
+          "questionText": "Define and explain with examples: (a) Elements (b) Compounds (c) Mixtures (d) Atomic number (e) Mass number",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_chem_ch1_long_3",
+          "questionText": "What is a chemical formula? Write the formulas of the following compounds and calculate their molecular masses: (a) Water (b) Carbon dioxide (c) Sodium chloride (d) Calcium carbonate (CaCO₃) (e) Sulfuric acid (H₂SO₄)",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "9_chem_ch2",
+      "number": 2,
+      "name": "Structure of Atoms",
+      "mcqs": [
+        {
+          "id": "9_chem_ch2_mcq_1",
+          "questionText": "Who discovered the electron?",
+          "options": ["Rutherford", "Thomson", "Bohr", "Chadwick"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch2_mcq_2",
+          "questionText": "The charge on an electron is:",
+          "options": ["Positive", "Negative", "Neutral", "Variable"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch2_mcq_3",
+          "questionText": "Rutherford's experiment led to the discovery of:",
+          "options": ["Electron", "Proton", "Nucleus", "Neutron"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch2_mcq_4",
+          "questionText": "The mass of a proton is approximately:",
+          "options": ["1 amu", "2 amu", "0.5 amu", "1.5 amu"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch2_mcq_5",
+          "questionText": "Neutron was discovered by:",
+          "options": ["Rutherford", "Thomson", "Chadwick", "Bohr"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch2_mcq_6",
+          "questionText": "The maximum number of electrons in the first shell (K) is:",
+          "options": ["2", "8", "18", "32"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch2_mcq_7",
+          "questionText": "Isotopes have same number of:",
+          "options": ["Protons", "Neutrons", "Nucleons", "Electrons"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch2_mcq_8",
+          "questionText": "The atomic number of an element is equal to the number of:",
+          "options": ["Protons", "Neutrons", "Electrons", "Nucleons"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch2_mcq_9",
+          "questionText": "The mass number of an element is equal to:",
+          "options": ["Protons + Neutrons", "Protons - Neutrons", "Protons × Neutrons", "Electrons + Protons"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "9_chem_ch2_mcq_10",
+          "questionText": "An atom has 6 protons and 8 neutrons. Its mass number is:",
+          "options": ["6", "8", "14", "2"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "9_chem_ch2_short_1",
+          "questionText": "Define atom. What are its three subatomic particles?",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "9_chem_ch2_short_2",
+          "questionText": "Describe Rutherford's gold foil experiment and its conclusions.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_chem_ch2_short_3",
+          "questionText": "Differentiate between isotopes and isobars with examples.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_chem_ch2_short_4",
+          "questionText": "State the maximum number of electrons that can be accommodated in K, L, and M shells.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "9_chem_ch2_short_5",
+          "questionText": "Calculate the number of protons, neutrons, and electrons in the following atoms: (a) ¹²₆C (b) ²³₁₁Na",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "9_chem_ch2_long_1",
+          "questionText": "Explain the structure of an atom with the help of a diagram. Describe the properties (charge, mass, and location) of protons, neutrons, and electrons.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "9_chem_ch2_long_2",
+          "questionText": "Describe the contributions of Thomson, Rutherford, and Bohr to the atomic theory. What are the postulates of Bohr's atomic model?",
+          "difficulty": "hard",
+          "marks": 10
+        },
+        {
+          "id": "9_chem_ch2_long_3",
+          "questionText": "What are isotopes? Give three examples of isotopes and explain their uses. How do isotopes differ from isobars?",
+          "difficulty": "medium",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}

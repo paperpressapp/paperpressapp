@@ -1,0 +1,83 @@
+{
+  "class": "12th",
+  "subjects": [
+    {
+      "name": "Physics",
+      "chapters": [
+        { "id": "12_phy_ch1", "number": 1, "name": "Electrostatics" },
+        { "id": "12_phy_ch2", "number": 2, "name": "Current Electricity" },
+        { "id": "12_phy_ch3", "number": 3, "name": "Electromagnetism" },
+        { "id": "12_phy_ch4", "number": 4, "name": "Electromagnetic Induction" },
+        { "id": "12_phy_ch5", "number": 5, "name": "Alternating Current" },
+        { "id": "12_phy_ch6", "number": 6, "name": "Physics of Solids" },
+        { "id": "12_phy_ch7", "number": 7, "name": "Electronics" },
+        { "id": "12_phy_ch8", "number": 8, "name": "Nuclear Physics" }
+      ]
+    },
+    {
+      "name": "Chemistry",
+      "chapters": [
+        { "id": "12_chem_ch1", "number": 1, "name": "Periodic Classification of Elements" },
+        { "id": "12_chem_ch2", "number": 2, "name": "s-Block Elements" },
+        { "id": "12_chem_ch3", "number": 3, "name": "p-Block Elements" },
+        { "id": "12_chem_ch4", "number": 4, "name": "d and f-Block Elements" },
+        { "id": "12_chem_ch5", "number": 5, "name": "Organic Chemistry Basics" },
+        { "id": "12_chem_ch6", "number": 6, "name": "Alcohols, Phenols and Ethers" },
+        { "id": "12_chem_ch7", "number": 7, "name": "Aldehydes and Ketones" },
+        { "id": "12_chem_ch8", "number": 8, "name": "Carboxylic Acids and Derivatives" }
+      ]
+    },
+    {
+      "name": "Biology",
+      "chapters": [
+        { "id": "12_bio_ch1", "number": 1, "name": "Homeostasis" },
+        { "id": "12_bio_ch2", "number": 2, "name": "Support and Movement" },
+        { "id": "12_bio_ch3", "number": 3, "name": "Coordination and Control" },
+        { "id": "12_bio_ch4", "number": 4, "name": "Reproduction" },
+        { "id": "12_bio_ch5", "number": 5, "name": "Growth and Development" },
+        { "id": "12_bio_ch6", "number": 6, "name": "Chromosomes and DNA" },
+        { "id": "12_bio_ch7", "number": 7, "name": "Cell Cycle" },
+        { "id": "12_bio_ch8", "number": 8, "name": "Variation and Genetics" }
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "chapters": [
+        { "id": "12_math_ch1", "number": 1, "name": "Functions and Limits" },
+        { "id": "12_math_ch2", "number": 2, "name": "Differentiation" },
+        { "id": "12_math_ch3", "number": 3, "name": "Integration" },
+        { "id": "12_math_ch4", "number": 4, "name": "Introduction to Analytic Geometry" },
+        { "id": "12_math_ch5", "number": 5, "name": "Linear Inequalities and Linear Programming" },
+        { "id": "12_math_ch6", "number": 6, "name": "Conic Sections" },
+        { "id": "12_math_ch7", "number": 7, "name": "Vectors" },
+        { "id": "12_math_ch8", "number": 8, "name": "Statics" }
+      ]
+    },
+    {
+      "name": "Computer",
+      "chapters": [
+        { "id": "12_comp_ch1", "number": 1, "name": "Object Oriented Programming" },
+        { "id": "12_comp_ch2", "number": 2, "name": "Classes and Objects" },
+        { "id": "12_comp_ch3", "number": 3, "name": "Constructor and Destructor" },
+        { "id": "12_comp_ch4", "number": 4, "name": "Inheritance" },
+        { "id": "12_comp_ch5", "number": 5, "name": "Polymorphism" },
+        { "id": "12_comp_ch6", "number": 6, "name": "Data Structures" },
+        { "id": "12_comp_ch7", "number": 7, "name": "File Handling in C++" },
+        { "id": "12_comp_ch8", "number": 8, "name": "Modern Programming Concepts" }
+      ]
+    },
+    {
+      "name": "English",
+      "chapters": [
+        { "id": "12_eng_ch1", "number": 1, "name": "The Dying Sun" },
+        { "id": "12_eng_ch2", "number": 2, "name": "Using the Scientific Method" },
+        { "id": "12_eng_ch3", "number": 3, "name": "Why Boys Fail in College" },
+        { "id": "12_eng_ch4", "number": 4, "name": "End of Term" },
+        { "id": "12_eng_ch5", "number": 5, "name": "On Destroying Books" },
+        { "id": "12_eng_ch6", "number": 6, "name": "The Man Who Was a Hospital" },
+        { "id": "12_eng_ch7", "number": 7, "name": "My Financial Career" },
+        { "id": "12_eng_ch8", "number": 8, "name": "China's Way to Progress" }
+      ]
+    }
+  ]
+}

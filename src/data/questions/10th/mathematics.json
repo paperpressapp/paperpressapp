@@ -1,0 +1,284 @@
+{
+  "class": "10th",
+  "subject": "Mathematics",
+  "chapters": [
+    {
+      "id": "10_math_ch1",
+      "number": 1,
+      "name": "Quadratic Equations",
+      "mcqs": [
+        {
+          "id": "10_math_ch1_mcq_1",
+          "questionText": "The standard form of a quadratic equation is:",
+          "options": ["ax² + bx + c = 0, a ≠ 0", "ax + b = 0", "ax³ + bx² + c = 0", "a/x + b = 0"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch1_mcq_2",
+          "questionText": "The degree of a quadratic equation is:",
+          "options": ["0", "1", "2", "3"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch1_mcq_3",
+          "questionText": "Which of the following is a quadratic equation?",
+          "options": ["x + 3 = 0", "x² - 5x + 6 = 0", "x³ + 2x = 0", "1/x + 2 = 0"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch1_mcq_4",
+          "questionText": "The roots of x² - 9 = 0 are:",
+          "options": ["±3", "±9", "3 only", "-3 only"],
+          "correctOption": 0,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch1_mcq_5",
+          "questionText": "If x² + kx + 12 = 0 has roots 3 and 4, then k equals:",
+          "options": ["7", "-7", "12", "-12"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch1_mcq_6",
+          "questionText": "The sum of roots of 2x² - 5x + 3 = 0 is:",
+          "options": ["5/2", "-5/2", "3/2", "-3/2"],
+          "correctOption": 0,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch1_mcq_7",
+          "questionText": "Which method is used to solve x² + 6x + 9 = 0 by factorization?",
+          "options": ["(x+3)(x-3)", "(x+3)²", "(x-3)²", "Cannot be factorized"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch1_mcq_8",
+          "questionText": "If discriminant D < 0, the roots are:",
+          "options": ["Real and equal", "Real and distinct", "Not real (imaginary)", "Rational"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch1_mcq_9",
+          "questionText": "For what value of k will the equation x² - kx + 4 = 0 have equal roots?",
+          "options": ["±2", "±4", "±8", "±16"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch1_mcq_10",
+          "questionText": "If α and β are roots of ax² + bx + c = 0, then (α - β)² equals:",
+          "options": ["b²-4ac/a²", "(b²-4ac)/a²", "b²/a²", "4ac/a²"],
+          "correctOption": 1,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_math_ch1_short_1",
+          "questionText": "Define a quadratic equation. Identify if 2x² - 5x + 3 = 0 is a quadratic equation.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_math_ch1_short_2",
+          "questionText": "Solve by factorization: x² - 7x + 12 = 0",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_math_ch1_short_3",
+          "questionText": "Find the discriminant of x² - 6x + 9 = 0 and determine the nature of roots.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_math_ch1_short_4",
+          "questionText": "If the sum of roots of x² - px + q = 0 is 5 and product is 6, find p and q.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_math_ch1_short_5",
+          "questionText": "Form a quadratic equation whose roots are 2 + √3 and 2 - √3.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_math_ch1_long_1",
+          "questionText": "Solve the following quadratic equations by factorization method: (a) x² - 9x + 20 = 0, (b) 2x² - 5x - 3 = 0. Verify your answers by substituting the roots back into the equations.",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_math_ch1_long_2",
+          "questionText": "Derive the quadratic formula for solving ax² + bx + c = 0. Use it to solve: (a) 3x² - 2x - 8 = 0, (b) x² - 4x + 1 = 0. Express your answers to 2 decimal places where necessary.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_math_ch1_long_3",
+          "questionText": "If α and β are the roots of the equation 2x² - 3x + 1 = 0, find the value of: (a) α² + β², (b) 1/α + 1/β, (c) α³ + β³, (d) (α - β)². Without finding the actual values of α and β, form a new quadratic equation whose roots are (2α + 1) and (2β + 1).",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "id": "10_math_ch2",
+      "number": 2,
+      "name": "Theory of Quadratic Equations",
+      "mcqs": [
+        {
+          "id": "10_math_ch2_mcq_1",
+          "questionText": "For ax² + bx + c = 0, the discriminant is:",
+          "options": ["b² + 4ac", "b² - 4ac", "b² × 4ac", "b²/4ac"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch2_mcq_2",
+          "questionText": "If b² - 4ac > 0, the roots are:",
+          "options": ["Real and equal", "Real and unequal", "Imaginary", "Zero"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch2_mcq_3",
+          "questionText": "The sum of roots of ax² + bx + c = 0 is:",
+          "options": ["b/a", "-b/a", "c/a", "-c/a"],
+          "correctOption": 1,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch2_mcq_4",
+          "questionText": "The product of roots of ax² + bx + c = 0 is:",
+          "options": ["b/a", "-b/a", "c/a", "-c/a"],
+          "correctOption": 2,
+          "difficulty": "easy",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch2_mcq_5",
+          "questionText": "If roots are real and equal, then b² - 4ac equals:",
+          "options": ["Positive", "Negative", "Zero", "Infinity"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch2_mcq_6",
+          "questionText": "The quadratic equation with roots 3 and -4 is:",
+          "options": ["x² - x - 12 = 0", "x² + x - 12 = 0", "x² - 7x - 12 = 0", "x² + 7x - 12 = 0"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch2_mcq_7",
+          "questionText": "If α and β are roots, then α² + β² equals:",
+          "options": ["(α+β)²", "(α+β)² - 2αβ", "(α+β)² + 2αβ", "αβ"],
+          "correctOption": 1,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch2_mcq_8",
+          "questionText": "For what value of k does 4x² + kx + 9 = 0 have equal roots?",
+          "options": ["±6", "±9", "±12", "±18"],
+          "correctOption": 2,
+          "difficulty": "medium",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch2_mcq_9",
+          "questionText": "If α and β are roots of x² - 5x + 6 = 0, then the equation with roots 1/α and 1/β is:",
+          "options": ["6x² - 5x + 1 = 0", "x² - 5x + 6 = 0", "x² - 6x + 5 = 0", "5x² - 6x + 1 = 0"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        },
+        {
+          "id": "10_math_ch2_mcq_10",
+          "questionText": "If one root of x² - px + q = 0 is twice the other, then:",
+          "options": ["2p² = 9q", "p² = 9q", "9p² = 2q", "9p² = q"],
+          "correctOption": 0,
+          "difficulty": "hard",
+          "marks": 1
+        }
+      ],
+      "shortQuestions": [
+        {
+          "id": "10_math_ch2_short_1",
+          "questionText": "State the discriminant of a quadratic equation and explain how it determines the nature of roots.",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_math_ch2_short_2",
+          "questionText": "Without solving, determine the nature of roots of: (a) 2x² - 3x + 1 = 0, (b) x² + x + 1 = 0",
+          "difficulty": "easy",
+          "marks": 5
+        },
+        {
+          "id": "10_math_ch2_short_3",
+          "questionText": "If α and β are roots of x² - 4x + 1 = 0, find the value of α/β + β/α.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_math_ch2_short_4",
+          "questionText": "Find the condition that one root of ax² + bx + c = 0 may be reciprocal of the other.",
+          "difficulty": "medium",
+          "marks": 5
+        },
+        {
+          "id": "10_math_ch2_short_5",
+          "questionText": "For what value of m will the equation (m+1)x² - 2(m-1)x + (m-2) = 0 have equal roots? Find the roots also.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ],
+      "longQuestions": [
+        {
+          "id": "10_math_ch2_long_1",
+          "questionText": "State and prove the relationships between roots and coefficients of a quadratic equation. If α and β are roots of 3x² - 4x - 7 = 0, find: (a) α + β, (b) αβ, (c) α² + β², (d) (α - β)². Form a quadratic equation whose roots are (α + 2) and (β + 2).",
+          "difficulty": "easy",
+          "marks": 10
+        },
+        {
+          "id": "10_math_ch2_long_2",
+          "questionText": "Discuss the nature of roots of a quadratic equation based on the discriminant. Find the value of k for which the equation (k+2)x² - 2kx + (k-1) = 0 has: (a) real and distinct roots, (b) real and equal roots, (c) imaginary roots.",
+          "difficulty": "medium",
+          "marks": 10
+        },
+        {
+          "id": "10_math_ch2_long_3",
+          "questionText": "If α and β are roots of x² + px + q = 0, prove that: (a) α² + β² = p² - 2q, (b) α³ + β³ = -p³ + 3pq. Find the equation whose roots are α²/β and β²/α. Also, if α and β are roots of ax² + bx + c = 0, find the equation with roots (α+1/β) and (β+1/α).",
+          "difficulty": "hard",
+          "marks": 10
+        }
+      ]
+    }
+  ]
+}
