@@ -204,7 +204,7 @@ export default function SettingsPage() {
       <MainLayout showBottomNav>
         <div className="min-h-screen pb-24">
           {/* Header */}
-          <div className="fixed top-0 left-0 right-0 z-50">
+          <div className="fixed top-0 left-0 right-0 z-50 pt-safe">
             <div className="mx-auto max-w-[428px]">
               <div className="glass-panel border-b border-gray-100/50">
                 <div className="px-4 h-14 flex items-center justify-between">
@@ -237,7 +237,7 @@ export default function SettingsPage() {
             </div>
           </div>
 
-          <ScrollView className="pt-20">
+          <ScrollView className="pt-[56px]">
             {/* Auth Status Section */}
             <motion.div 
               className="px-5 mb-6" 

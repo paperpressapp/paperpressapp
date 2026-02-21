@@ -8,6 +8,7 @@
 
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import logger from '@/lib/utils/logger';
 import type { ClassName, SubjectName, PaperSettings } from '@/types';
 import { format } from 'date-fns';
 
@@ -295,7 +296,7 @@ export const usePaperStore = create<PaperState>()(
             try {
               localStorage.setItem(name, JSON.stringify(value));
             } catch (error) {
-              console.warn('Error saving to localStorage:', error);
+              logger.warn('Error saving to localStorage:', error);
             }
           }
         },

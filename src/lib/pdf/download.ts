@@ -15,7 +15,9 @@ import { Capacitor } from '@capacitor/core';
 import type { MCQQuestion, ShortQuestion, LongQuestion } from '@/types';
 import { generateProfessionalPDF, generateFilename as profFilename } from './professionalPDF';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://paperpress.vercel.app';
+// Always use the deployed API URL for PDF generation
+// The app makes HTTP calls to the Vercel server for Puppeteer PDF
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://paperpressapp.vercel.app';
 
 export interface PDFSettings {
   instituteName: string;

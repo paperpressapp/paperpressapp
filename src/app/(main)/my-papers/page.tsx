@@ -158,7 +158,7 @@ export default function MyPapersPage() {
       <MainLayout showBottomNav>
         <div className="min-h-screen pb-24">
           {/* App Bar */}
-          <div className="fixed top-0 left-0 right-0 z-50">
+          <div className="fixed top-0 left-0 right-0 z-50 pt-safe">
             <div className="mx-auto max-w-[428px]">
               <div className="bg-white/90 backdrop-blur-xl border-b border-gray-100">
                 <div className="px-4 h-14 flex items-center justify-between">
@@ -231,7 +231,7 @@ export default function MyPapersPage() {
           </AnimatePresence>
 
           {/* Content */}
-          <ScrollView className={`pt-14 ${showSearch ? "pt-[120px]" : ""}`}>
+          <ScrollView className={`pt-[56px] ${showSearch ? "pt-[120px]" : ""}`}>
             {/* Stats Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

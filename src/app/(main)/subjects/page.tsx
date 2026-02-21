@@ -85,7 +85,7 @@ export default function SubjectsPage() {
             </div>
           </header>
 
-          <ScrollView className="pt-[56px] pt-safe flex-1">
+          <ScrollView className="pt-[56px] flex-1">
             <div className="px-5 py-6">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold text-white mb-2">Choose a Subject</h2>

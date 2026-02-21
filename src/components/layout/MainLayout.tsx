@@ -36,25 +36,27 @@ export function MainLayout({
     }
   }, [router, loadUser, requireOnboarding]);
 
-  // Use inline style so both 88px nav height + safe-area-inset-bottom are combined.
-  // Two pb-* Tailwind classes can't stack — only one wins in the stylesheet.
-  const paddingBottomStyle = showBottomNav
-    ? { paddingBottom: "calc(88px + env(safe-area-inset-bottom, 0px))" }
-    : { paddingBottom: "env(safe-area-inset-bottom, 0px)" };
-
   return (
     <AppLayout>
       <div
         className={cn(
-          "flex flex-col min-h-screen gpu-accelerate",
+          "relative min-h-screen",
           className
         )}
-        style={paddingBottomStyle}
       >
-        <main className="flex-1 overflow-x-hidden smooth-scroll">
+        {/* Main content area */}
+        <div 
+          className="min-h-screen"
+          style={{ 
+            paddingBottom: showBottomNav 
+              ? "calc(90px + env(safe-area-inset-bottom, 0px))" 
+              : "env(safe-area-inset-bottom, 0px)" 
+          }}
+        >
           {children}
-        </main>
+        </div>
 
+        {/* Fixed bottom navigation */}
         {showBottomNav && <BottomNavigation />}
       </div>
     </AppLayout>

@@ -3,26 +3,15 @@
 import { useEffect, useState, useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  ArrowLeft, RotateCcw, FileText, Sparkles, BookOpen, Layers, Crown,
-  CheckCircle2, AlertCircle, Clock, Hash, ChevronRight
-} from "lucide-react";
+import { ArrowLeft, RotateCcw, FileText, Sparkles, BookOpen, Layers, Crown, Plus, Minus } from "lucide-react";
 import { ScrollView, MainLayout } from "@/components/layout";
 import { ConfirmDialog, AppLoader } from "@/components/shared";
 import { PremiumModal } from "@/components/premium/PremiumModal";
-import {
-  PaperSettings,
-  QuestionTypeCard,
-  QuickFillCard,
-  QuestionModal,
-} from "@/components/paper";
+import { PaperSettings, QuickFillCard } from "@/components/paper";
 import { usePaperStore } from "@/stores";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks";
-import {
-  getAvailableQuestionCounts,
-  getRandomQuestions,
-} from "@/data";
+import { getAvailableQuestionCounts, getRandomQuestions, getQuestionsByIds } from "@/data";
 import { savePaper } from "@/lib/storage/papers";
 import { generatePaperId } from "@/lib/utils/id";
 import { canGeneratePaper, incrementPaperUsage, checkPremiumStatus } from "@/lib/premium";
@@ -33,18 +22,9 @@ export default function CreatePaperPage() {
   const router = useRouter();
   const { toast } = useToast();
   const {
-    selectedClass,
-    selectedSubject,
-    selectedChapters,
-    paperSettings,
-    selectedMcqIds,
-    selectedShortIds,
-    selectedLongIds,
-    setMcqs,
-    setShorts,
-    setLongs,
-    updateSettings,
-    resetQuestions,
+    selectedClass, selectedSubject, selectedChapters, paperSettings,
+    selectedMcqIds, selectedShortIds, selectedLongIds,
+    setMcqs, setShorts, setLongs, updateSettings, resetQuestions,
   } = usePaperStore();
 
   const [isValidating, setIsValidating] = useState(true);
@@ -52,55 +32,17 @@ export default function CreatePaperPage() {
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [statusMessage, setStatusMessage] = useState("Creating paper...");
-  const [activeModal, setActiveModal] = useState<"mcq" | "short" | "long" | null>(null);
   const [availableCounts, setAvailableCounts] = useState({ mcqs: 0, shorts: 0, longs: 0 });
-  
   const [showPremiumModal, setShowPremiumModal] = useState(false);
   const [premiumStatus, setPremiumStatus] = useState({ isPremium: false, remaining: 0 });
-  
-  const hasUnsavedChanges = selectedMcqIds.length > 0 || selectedShortIds.length > 0 || selectedLongIds.length > 0;
 
-  const currentTime = useMemo(() => {
-    const now = new Date();
-    return now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
-  }, []);
+  const hasUnsavedChanges = selectedMcqIds.length > 0 || selectedShortIds.length > 0 || selectedLongIds.length > 0;
 
   useEffect(() => {
     const status = checkPremiumStatus();
     const paperCheck = canGeneratePaper();
-    setPremiumStatus({
-      isPremium: status.isPremium,
-      remaining: paperCheck.remaining,
-    });
+    setPremiumStatus({ isPremium: status.isPremium, remaining: paperCheck.remaining });
   }, []);
-
-  useEffect(() => {
-    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (hasUnsavedChanges && !isGenerating) {
-        e.preventDefault();
-        e.returnValue = "";
-        return "";
-      }
-    };
-
-    window.addEventListener("beforeunload", handleBeforeUnload);
-    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
-  }, [hasUnsavedChanges, isGenerating]);
-
-  useEffect(() => {
-    const handlePopState = () => {
-      if (hasUnsavedChanges && !isGenerating) {
-        if (window.confirm("You have unsaved changes. Are you sure you want to go back?")) {
-          resetQuestions();
-        } else {
-          window.history.pushState(null, "", window.location.href);
-        }
-      }
-    };
-
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
-  }, [hasUnsavedChanges, isGenerating, resetQuestions]);
 
   useEffect(() => {
     const validate = () => {
@@ -114,7 +56,7 @@ export default function CreatePaperPage() {
         const savedLogo = localStorage.getItem("paperpress_user_logo") || null;
         updateSettings({
           title: `${selectedClass} ${selectedSubject} Test Paper`,
-          instituteName: instituteName,
+          instituteName,
           instituteLogo: savedLogo,
           showLogo: !!savedLogo,
         });
@@ -128,20 +70,8 @@ export default function CreatePaperPage() {
     validate();
   }, [selectedClass, selectedSubject, selectedChapters]);
 
-  useEffect(() => {
-    if (hasUnsavedChanges && !isGenerating) {
-      window.history.pushState(null, "", window.location.href);
-    }
-  }, [hasUnsavedChanges, isGenerating]);
-
   const totalQuestions = selectedMcqIds.length + selectedShortIds.length + selectedLongIds.length;
   const totalMarks = (selectedMcqIds.length * QUESTION_MARKS.mcq) + (selectedShortIds.length * QUESTION_MARKS.short) + (selectedLongIds.length * QUESTION_MARKS.long);
-
-  const questionBreakdown = useMemo(() => [
-    { type: "MCQ", count: selectedMcqIds.length, marks: selectedMcqIds.length * QUESTION_MARKS.mcq, color: "bg-blue-500" },
-    { type: "Short", count: selectedShortIds.length, marks: selectedShortIds.length * QUESTION_MARKS.short, color: "bg-green-500" },
-    { type: "Long", count: selectedLongIds.length, marks: selectedLongIds.length * QUESTION_MARKS.long, color: "bg-purple-500" },
-  ], [selectedMcqIds.length, selectedShortIds.length, selectedLongIds.length]);
 
   const handleBack = useCallback(() => {
     if (hasUnsavedChanges) {
@@ -171,45 +101,21 @@ export default function CreatePaperPage() {
     toast.success("Selections cleared");
   }, [resetQuestions, toast]);
 
-  const handleModalSave = useCallback((type: "mcq" | "short" | "long", ids: string[]) => {
-    switch (type) {
-      case "mcq": setMcqs(ids); break;
-      case "short": setShorts(ids); break;
-      case "long": setLongs(ids); break;
-    }
-    setActiveModal(null);
-  }, [setMcqs, setShorts, setLongs]);
-
-  const handleAutoSelect = useCallback((
-    mcqCount: number,
-    shortCount: number,
-    longCount: number,
-    difficulty: string
-  ) => {
+  const handleAutoSelect = useCallback((mcqCount: number, shortCount: number, longCount: number, difficulty: string) => {
     if (!selectedClass || !selectedSubject) return;
 
     const diffMap: Record<string, Difficulty | "mixed"> = {
       mixed: "mixed", easy: "easy", medium: "medium", hard: "hard",
     };
 
-    const result = getRandomQuestions(
-      selectedClass, selectedSubject, selectedChapters,
-      mcqCount, shortCount, longCount, diffMap[difficulty] || "mixed"
-    );
+    const result = getRandomQuestions(selectedClass, selectedSubject, selectedChapters, mcqCount, shortCount, longCount, diffMap[difficulty] || "mixed");
 
     setMcqs(result.mcqs.map((q) => q.id));
     setShorts(result.shorts.map((q) => q.id));
     setLongs(result.longs.map((q) => q.id));
 
     const totalSelected = result.mcqs.length + result.shorts.length + result.longs.length;
-    
-    if (totalSelected === 0) {
-      toast.warning("No questions available in selected chapters");
-    } else if (totalSelected < mcqCount + shortCount + longCount) {
-      toast.success(`Selected ${totalSelected} questions (some unavailable)`);
-    } else {
-      toast.success(`Auto-selected ${totalSelected} questions`);
-    }
+    toast.success(`Selected ${totalSelected} questions`);
   }, [selectedClass, selectedSubject, selectedChapters, setMcqs, setShorts, setLongs, toast]);
 
   const handleGenerate = useCallback(async () => {
@@ -252,7 +158,7 @@ export default function CreatePaperPage() {
         examType: paperSettings.examType,
         date: paperSettings.date,
         timeAllowed: paperSettings.timeAllowed,
-        totalMarks: totalMarks,
+        totalMarks,
         questionCount: totalQuestions,
         mcqCount: selectedMcqIds.length,
         shortCount: selectedShortIds.length,
@@ -269,297 +175,275 @@ export default function CreatePaperPage() {
       };
 
       savePaper(paper);
-      
-      if (!paperCheck.isPremium) {
-        incrementPaperUsage();
-      }
+      if (!paperCheck.isPremium) incrementPaperUsage();
 
       setStatusMessage("Redirecting...");
       router.push(`/paper?id=${paperId}`);
     } catch (error) {
-      console.error("Paper creation error:", error);
-      toast.error("Failed to create paper. Please try again.");
+      toast.error("Failed to create paper");
       setIsGenerating(false);
     }
   }, [totalQuestions, selectedClass, selectedSubject, selectedMcqIds, selectedShortIds, selectedLongIds, paperSettings, totalMarks, router, toast]);
 
-  if (isValidating) {
-    return <AppLoader message="Preparing..." />;
-  }
+  if (isValidating) return <AppLoader message="Preparing..." />;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1E88E5] via-[#1976D2] to-[#1565C0]">
+    <MainLayout showBottomNav={false} className="bg-gradient-to-br from-[#1E88E5] via-[#1976D2] to-[#1565C0]">
+      {/* Background decoration */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-white/5 blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
       </div>
 
-      <MainLayout showBottomNav={!activeModal}>
-        <div className="relative z-10 min-h-screen flex flex-col">
-          <header className="fixed top-0 left-0 right-0 z-40 pt-safe">
-            <div className="mx-auto max-w-[428px]">
-              <div className="glass-panel border-b border-gray-100/50">
-                <div className="px-4 h-14 flex items-center justify-between">
-                  <Button variant="ghost" size="icon" className="h-10 w-10 rounded-xl active:bg-gray-100" onClick={handleBack}>
-                    <ArrowLeft className="w-5 h-5 text-gray-700" />
-                  </Button>
-                  <div className="text-center">
-                    <h1 className="font-bold text-lg text-gray-900">Create Paper</h1>
-                    <p className="text-[10px] text-gray-400">{currentTime}</p>
-                  </div>
-                  <Button variant="ghost" size="icon" className={`h-10 w-10 rounded-xl ${hasUnsavedChanges ? 'text-red-500 active:bg-red-50' : 'text-gray-400'}`} onClick={handleReset}>
-                    <RotateCcw className="w-5 h-5" />
-                  </Button>
-                </div>
+      <div className="relative z-10 min-h-screen flex flex-col">
+        {/* Header */}
+        <header className="fixed top-0 left-0 right-0 z-40">
+          <div className="mx-auto max-w-[428px]">
+            <div className="glass-panel border-b border-white/10">
+              <div className="px-4 h-14 flex items-center justify-between">
+                <Button variant="ghost" size="icon" className="h-10 w-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20" onClick={handleBack}>
+                  <ArrowLeft className="w-5 h-5 text-white" />
+                </Button>
+                <h1 className="font-bold text-lg text-white">Create Paper</h1>
+                <Button variant="ghost" size="icon" className={`h-10 w-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 ${hasUnsavedChanges ? 'text-red-300' : 'text-white/60'}`} onClick={handleReset}>
+                  <RotateCcw className="w-5 h-5" />
+                </Button>
               </div>
             </div>
-          </header>
+          </div>
+        </header>
 
-          <ScrollView className="pt-[56px] pt-safe flex-1 pb-32">
-            {!premiumStatus.isPremium && (
-              <div className="px-5 py-3">
-                <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
-                      <Crown className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-amber-800">
-                        {premiumStatus.remaining} free papers left
-                      </p>
-                      <p className="text-xs text-amber-600">Upgrade for unlimited access</p>
-                    </div>
+        <ScrollView className="pt-[56px] flex-1 pb-40">
+          {/* Premium Banner */}
+          {!premiumStatus.isPremium && (
+            <div className="px-5 py-3">
+              <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 backdrop-blur-md border border-amber-400/30 rounded-2xl p-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-lg shadow-amber-500/30">
+                    <Crown className="w-5 h-5 text-white" />
                   </div>
-                  <Button
-                    size="sm"
-                    onClick={() => setShowPremiumModal(true)}
-                    className="h-9 px-4 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-white font-semibold"
-                  >
-                    Upgrade
-                  </Button>
-                </div>
-              </div>
-            )}
-
-            <div className="px-5 py-4">
-              <div className="glass-panel rounded-2xl p-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center">
-                      <BookOpen className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 font-medium">Class {selectedClass}</p>
-                      <p className="text-lg font-bold text-gray-900">{selectedSubject}</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="flex items-center gap-1 text-gray-500">
-                      <Layers className="w-4 h-4" />
-                      <span className="text-sm font-medium">{selectedChapters.length} chapters</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="px-5 mb-4">
-              <div 
-                className="bg-gradient-to-r from-[#1E88E5] to-[#1565C0] rounded-2xl p-5 shadow-xl shadow-[#1E88E5]/30"
-              >
-                <div className="flex items-center justify-between text-white mb-4">
-                  <div className="text-center">
-                    <p className="text-4xl font-bold">
-                      {totalQuestions}
-                    </p>
-                    <p className="text-xs opacity-80">Questions</p>
-                  </div>
-                  <div className="w-px h-12 bg-white/20" />
-                  <div className="text-center">
-                    <p className="text-4xl font-bold">
-                      {totalMarks}
-                    </p>
-                    <p className="text-xs opacity-80">Total Marks</p>
-                  </div>
-                  <div className="w-px h-12 bg-white/20" />
-                  <div className="text-center">
-                    <p className="text-lg font-bold">{selectedChapters.length}</p>
-                    <p className="text-xs opacity-80">Chapters</p>
-                  </div>
-                </div>
-                
-                <div className="bg-white/10 rounded-xl p-3">
-                  <div className="flex justify-between items-center">
-                    {questionBreakdown.map((item) => (
-                      <div key={item.type} className="text-center">
-                        <div className="flex items-center justify-center gap-1">
-                          <div className={`w-2 h-2 rounded-full ${item.color}`} />
-                          <span className="text-white/80 text-xs">{item.type}</span>
-                        </div>
-                        <p className="text-white font-semibold text-sm mt-1">
-                          {item.count} ({item.marks}m)
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="px-5 mb-4">
-              <PaperSettings 
-                settings={paperSettings} 
-                onUpdate={updateSettings} 
-                defaultInstituteName={paperSettings.instituteName || ""} 
-              />
-            </div>
-
-            <div className="px-5 mb-4">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center">
-                  <FileText className="w-4 h-4 text-white" />
-                </div>
-                <h2 className="text-base font-semibold text-gray-800">Select Questions</h2>
-              </div>
-
-              <div className="space-y-3">
-                <QuestionTypeCard 
-                  type="mcq" 
-                  selectedCount={selectedMcqIds.length} 
-                  availableCount={availableCounts.mcqs} 
-                  marksPerQuestion={QUESTION_MARKS.mcq} 
-                  onAddClick={() => setActiveModal("mcq")} 
-                />
-                <QuestionTypeCard 
-                  type="short" 
-                  selectedCount={selectedShortIds.length} 
-                  availableCount={availableCounts.shorts} 
-                  marksPerQuestion={QUESTION_MARKS.short} 
-                  onAddClick={() => setActiveModal("short")} 
-                />
-                <QuestionTypeCard 
-                  type="long" 
-                  selectedCount={selectedLongIds.length} 
-                  availableCount={availableCounts.longs} 
-                  marksPerQuestion={QUESTION_MARKS.long} 
-                  onAddClick={() => setActiveModal("long")} 
-                />
-              </div>
-            </div>
-
-            <div className="px-5 mb-4">
-              <QuickFillCard 
-                availableMcqs={availableCounts.mcqs} 
-                availableShorts={availableCounts.shorts} 
-                availableLongs={availableCounts.longs} 
-                onAutoSelect={handleAutoSelect} 
-              />
-            </div>
-
-            {totalQuestions === 0 && (
-              <div className="px-5 mb-4">
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3">
-                  <AlertCircle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm font-medium text-amber-800">No questions selected</p>
-                    <p className="text-xs text-amber-600 mt-1">Add questions from the options above or use Quick Fill</p>
+                    <p className="text-sm font-semibold text-amber-100">{premiumStatus.remaining} free papers left</p>
+                    <p className="text-xs text-amber-200/70">Upgrade for unlimited access</p>
+                  </div>
+                </div>
+                <Button size="sm" onClick={() => setShowPremiumModal(true)} className="h-9 px-4 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-white font-semibold shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 transition-shadow">
+                  Upgrade
+                </Button>
+              </div>
+            </div>
+          )}
+
+          {/* Subject Card */}
+          <div className="px-5 py-4">
+            <div className="glass-panel rounded-2xl p-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg shadow-blue-500/30">
+                    <BookOpen className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 font-medium">Class {selectedClass}</p>
+                    <p className="text-lg font-bold text-gray-900">{selectedSubject}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1.5 text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full">
+                  <Layers className="w-4 h-4" />
+                  <span className="text-sm font-medium">{selectedChapters.length}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Card */}
+          <div className="px-5 mb-4">
+            <div className="bg-gradient-to-r from-[#1E88E5] to-[#1565C0] rounded-2xl p-5 shadow-xl shadow-blue-500/30">
+              <div className="flex items-center justify-between text-white">
+                <div className="text-center flex-1">
+                  <p className="text-4xl font-bold">{totalQuestions}</p>
+                  <p className="text-xs opacity-80 mt-1">Questions</p>
+                </div>
+                <div className="w-px h-12 bg-white/20" />
+                <div className="text-center flex-1">
+                  <p className="text-4xl font-bold">{totalMarks}</p>
+                  <p className="text-xs opacity-80 mt-1">Total Marks</p>
+                </div>
+                <div className="w-px h-12 bg-white/20" />
+                <div className="text-center flex-1">
+                  <p className="text-4xl font-bold">{selectedChapters.length}</p>
+                  <p className="text-xs opacity-80 mt-1">Chapters</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Paper Settings */}
+          <div className="px-5">
+            <PaperSettings settings={paperSettings} onUpdate={updateSettings} defaultInstituteName={paperSettings.instituteName || ""} />
+          </div>
+
+          {/* Question Selection */}
+          <div className="px-5 mt-4">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg shadow-violet-500/30">
+                <FileText className="w-4 h-4 text-white" />
+              </div>
+              <h2 className="text-base font-bold text-gray-900">Select Questions</h2>
+            </div>
+
+            <div className="space-y-3">
+              {/* MCQ */}
+              <div className="glass-panel rounded-xl p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-gray-900">MCQs</p>
+                    <p className="text-xs text-gray-500">{availableCounts.mcqs} available</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl font-bold text-[#1E88E5]">{selectedMcqIds.length}</span>
+                    <div className="flex items-center gap-1">
+                      <button onClick={() => setMcqs(selectedMcqIds.slice(0, -1))} className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center active:scale-95 transition-transform">
+                        <Minus className="w-4 h-4 text-red-600" />
+                      </button>
+                      <button onClick={() => setMcqs([...selectedMcqIds, `mcq_${Date.now()}`])} className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg shadow-blue-500/30 active:scale-95 transition-transform">
+                        <Plus className="w-4 h-4 text-white" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            )}
 
-            <div className="h-24" />
-          </ScrollView>
-
-          <AnimatePresence>
-            {!activeModal && (
-              <div
-                className="fixed left-0 right-0 z-30 px-5 bottom-safe"
-                style={{ bottom: 'calc(72px + env(safe-area-inset-bottom, 0px))' }}
-              >
-                <div className="mx-auto max-w-[428px]">
-                  <div className="glass-panel rounded-2xl p-4">
-                    <Button
-                      onClick={handleGenerate}
-                      disabled={totalQuestions === 0 || isGenerating}
-                      className="w-full h-14 rounded-xl font-semibold text-base bg-gradient-to-r from-[#1E88E5] to-[#1565C0] active:opacity-90 shadow-lg shadow-[#1E88E5]/30 disabled:opacity-50 transition-opacity"
-                    >
-                      {isGenerating ? (
-                        <span className="flex items-center gap-2">
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          {statusMessage}
-                        </span>
-                      ) : (
-                        <span className="flex items-center gap-2">
-                          <Sparkles className="w-5 h-5" />
-                          Generate Paper
-                          {totalQuestions > 0 && (
-                            <span className="bg-white/20 px-2 py-0.5 rounded-lg text-sm">
-                              {totalQuestions}Q / {totalMarks}M
-                            </span>
-                          )}
-                        </span>
-                      )}
-                    </Button>
+              {/* Short */}
+              <div className="glass-panel rounded-xl p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-gray-900">Short Questions</p>
+                    <p className="text-xs text-gray-500">{availableCounts.shorts} available</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl font-bold text-emerald-500">{selectedShortIds.length}</span>
+                    <div className="flex items-center gap-1">
+                      <button onClick={() => setShorts(selectedShortIds.slice(0, -1))} className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center active:scale-95 transition-transform">
+                        <Minus className="w-4 h-4 text-red-600" />
+                      </button>
+                      <button onClick={() => setShorts([...selectedShortIds, `short_${Date.now()}`])} className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center shadow-lg shadow-emerald-500/30 active:scale-95 transition-transform">
+                        <Plus className="w-4 h-4 text-white" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            )}
-          </AnimatePresence>
 
-          <AnimatePresence>
-            {activeModal && selectedClass && selectedSubject && (
-              <QuestionModal
-                isOpen={!!activeModal}
-                onClose={() => setActiveModal(null)}
-                type={activeModal}
-                classId={selectedClass}
-                subject={selectedSubject}
-                chapterIds={selectedChapters}
-                selectedIds={activeModal === "mcq" ? selectedMcqIds : activeModal === "short" ? selectedShortIds : selectedLongIds}
-                onSave={(ids) => handleModalSave(activeModal, ids)}
-              />
-            )}
-          </AnimatePresence>
-
-          <ConfirmDialog 
-            isOpen={showBackConfirm} 
-            onClose={() => setShowBackConfirm(false)} 
-            onConfirm={confirmBack} 
-            title="Discard Changes?" 
-            message="Your question selections will be lost if you go back." 
-            confirmText="Discard" 
-            cancelText="Keep Editing" 
-            variant="destructive" 
-          />
-          <ConfirmDialog 
-            isOpen={showResetConfirm} 
-            onClose={() => setShowResetConfirm(false)} 
-            onConfirm={confirmReset} 
-            title="Clear All Questions?" 
-            message="This will remove all selected questions from your paper." 
-            confirmText="Clear All" 
-            cancelText="Cancel" 
-            variant="destructive" 
-          />
-           
-          <AnimatePresence>
-            {isGenerating && (
-              <div className="fixed inset-0 z-50">
-                <AppLoader message={statusMessage} fullScreen />
+              {/* Long */}
+              <div className="glass-panel rounded-xl p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-gray-900">Long Questions</p>
+                    <p className="text-xs text-gray-500">{availableCounts.longs} available</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl font-bold text-violet-500">{selectedLongIds.length}</span>
+                    <div className="flex items-center gap-1">
+                      <button onClick={() => setLongs(selectedLongIds.slice(0, -1))} className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center active:scale-95 transition-transform">
+                        <Minus className="w-4 h-4 text-red-600" />
+                      </button>
+                      <button onClick={() => setLongs([...selectedLongIds, `long_${Date.now()}`])} className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg shadow-violet-500/30 active:scale-95 transition-transform">
+                        <Plus className="w-4 h-4 text-white" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
-            )}
-          </AnimatePresence>
-           
-          <PremiumModal
-            isOpen={showPremiumModal}
-            onClose={() => setShowPremiumModal(false)}
-            onSuccess={(status) => {
-              setPremiumStatus({ isPremium: status.isPremium, remaining: -1 });
-            }}
-          />
-        </div>
-      </MainLayout>
-    </div>
+            </div>
+          </div>
+
+          {/* Quick Fill */}
+          <div className="px-5 mt-4">
+            <QuickFillCard availableMcqs={availableCounts.mcqs} availableShorts={availableCounts.shorts} availableLongs={availableCounts.longs} onAutoSelect={handleAutoSelect} />
+          </div>
+
+          <div className="h-8" />
+        </ScrollView>
+
+        {/* Generate Button */}
+        <AnimatePresence>
+          {!isGenerating && (
+            <motion.div
+              className="fixed left-0 right-0 z-30 px-5"
+              style={{ bottom: 'calc(24px + env(safe-area-inset-bottom, 0px))' }}
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 100, opacity: 0 }}
+            >
+              <div className="mx-auto max-w-[428px]">
+                <Button
+                  onClick={handleGenerate}
+                  disabled={totalQuestions === 0}
+                  className="w-full h-14 rounded-2xl font-semibold text-base bg-gradient-to-r from-white to-gray-100 text-[#1565C0] shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-black/30 transition-all disabled:opacity-50 disabled:shadow-lg"
+                >
+                  <span className="flex items-center justify-center gap-2">
+                    <Sparkles className="w-5 h-5" />
+                    Generate Paper
+                    {totalQuestions > 0 && (
+                      <span className="bg-[#1565C0] text-white px-2.5 py-0.5 rounded-lg text-sm font-bold">
+                        {totalQuestions}Q
+                      </span>
+                    )}
+                  </span>
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Confirm Dialogs */}
+      <ConfirmDialog isOpen={showBackConfirm} onClose={() => setShowBackConfirm(false)} onConfirm={confirmBack} title="Discard Changes?" message="Your question selections will be lost." confirmText="Discard" variant="destructive" />
+      <ConfirmDialog isOpen={showResetConfirm} onClose={() => setShowResetConfirm(false)} onConfirm={confirmReset} title="Clear All?" message="Remove all selected questions?" confirmText="Clear" variant="destructive" />
+      
+      <PremiumModal isOpen={showPremiumModal} onClose={() => setShowPremiumModal(false)} onSuccess={(status) => setPremiumStatus({ isPremium: status.isPremium, remaining: -1 })} />
+
+      {/* Loading Overlay */}
+      <AnimatePresence>
+        {isGenerating && (
+          <motion.div
+            className="fixed inset-0 z-[100]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1E88E5] via-[#1976D2] to-[#1565C0]" />
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-white/5 blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
+            </div>
+            <div className="relative h-full flex items-center justify-center">
+              <div className="flex flex-col items-center">
+                <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center shadow-2xl mb-6">
+                  <div className="w-10 h-10 border-4 border-[#1E88E5]/30 border-t-[#1E88E5] rounded-full animate-spin" />
+                </div>
+                <motion.p
+                  className="text-white font-semibold text-lg"
+                  animate={{ opacity: [1, 0.7, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  {statusMessage}
+                </motion.p>
+                <div className="flex gap-1 mt-4">
+                  {[0, 1, 2].map((i) => (
+                    <motion.div
+                      key={i}
+                      className="w-2 h-2 rounded-full bg-white/60"
+                      animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+                      transition={{ duration: 0.8, repeat: Infinity, delay: i * 0.15 }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </MainLayout>
   );
 }

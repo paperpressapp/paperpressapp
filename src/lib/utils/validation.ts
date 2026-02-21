@@ -23,6 +23,36 @@ export function isValidPassword(password: string): boolean {
   return password.length >= 8;
 }
 
+export interface PasswordStrength {
+  valid: boolean;
+  score: number;
+  requirements: {
+    length: boolean;
+    uppercase: boolean;
+    lowercase: boolean;
+    number: boolean;
+    special: boolean;
+  };
+}
+
+export function validatePasswordStrength(password: string): PasswordStrength {
+  const requirements = {
+    length: password.length >= 8,
+    uppercase: /[A-Z]/.test(password),
+    lowercase: /[a-z]/.test(password),
+    number: /\d/.test(password),
+    special: /[!@#$%^&*(),.?":{}|<>]/.test(password),
+  };
+  
+  const score = Object.values(requirements).filter(Boolean).length;
+  
+  return {
+    valid: requirements.length && requirements.uppercase && requirements.lowercase && requirements.number,
+    score,
+    requirements,
+  };
+}
+
 /**
  * Validate Pakistani phone number format
  * @param phone - Phone number to validate

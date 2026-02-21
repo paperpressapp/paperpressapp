@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { User, Session, Subscription } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase/client';
+import logger from '@/lib/utils/logger';
 
 export type UserRole = 'guest' | 'user' | 'premium' | 'admin';
 
@@ -184,9 +185,9 @@ export const useAuthStore = create<AuthState>()(
 
           if (error) {
             if (error.message?.includes('infinite recursion')) {
-              console.warn('RLS policy issue - run supabase/fix-rls-recursion.sql to fix');
+              logger.warn('RLS policy issue - run supabase/fix-rls-recursion.sql to fix');
             } else {
-              console.error('Error fetching profile:', error.message || error.code);
+              logger.error('Error fetching profile:', error.message || error.code);
             }
             return null;
           }
@@ -206,7 +207,7 @@ export const useAuthStore = create<AuthState>()(
               .maybeSingle();
 
             if (createError) {
-              console.error('Error creating profile:', createError.message || createError.code);
+              logger.error('Error creating profile:', createError.message || createError.code);
               return null;
             }
 
@@ -232,7 +233,7 @@ export const useAuthStore = create<AuthState>()(
 
           return profile;
         } catch (error) {
-          console.error('Error in fetchProfile:', error);
+          logger.error('Error in fetchProfile:', error);
           return null;
         }
       },
@@ -254,15 +255,26 @@ export const useAuthStore = create<AuthState>()(
           set({ isLoading: true });
           incrementRateLimit(rateLimitKey);
 
-          const { data, error } = await withRetry(async () => {
-            return await supabase.auth.signInWithPassword({
-              email,
-              password,
-            });
+          const { data, error } = await supabase.auth.signInWithPassword({
+            email: email.trim().toLowerCase(),
+            password,
           });
 
           if (error) {
             set({ isLoading: false });
+            logger.error('Supabase login error:', error);
+            
+            // Handle specific error cases
+            if (error.message.includes('Invalid login credentials')) {
+              return { error: 'Invalid email or password. Please check your credentials and try again.' };
+            }
+            if (error.message.includes('Email not confirmed')) {
+              return { error: 'Please verify your email address first. Check your inbox for a confirmation link.' };
+            }
+            if (error.message.includes('Too many requests')) {
+              return { error: 'Too many login attempts. Please wait a few minutes and try again.' };
+            }
+            
             return { error: error.message };
           }
 
@@ -281,18 +293,20 @@ export const useAuthStore = create<AuthState>()(
           // Fetch profile
           await get().fetchProfile();
 
-          // Update last login
-          await supabase
+          // Update last login (non-blocking)
+          supabase
             .from('profiles')
             .update({ last_login: new Date().toISOString() })
-            .eq('id', data.user.id);
+            .eq('id', data.user.id)
+            .then(() => {})
+            .then(() => {}, () => {});
 
           set({ isLoading: false });
           return { user: data.user, session: data.session };
         } catch (error) {
-          console.error('Sign in error:', error);
+          logger.error('Sign in error:', error);
           set({ isLoading: false });
-          return { error: 'An unexpected error occurred' };
+          return { error: 'An unexpected error occurred. Please try again.' };
         }
       },
 
@@ -327,7 +341,7 @@ export const useAuthStore = create<AuthState>()(
 
           return { message: 'OTP sent successfully. Please check your email.' };
         } catch (error) {
-          console.error('OTP request error:', error);
+          logger.error('OTP request error:', error);
           return { error: 'Failed to send OTP. Please try again.' };
         }
       },
@@ -377,7 +391,7 @@ export const useAuthStore = create<AuthState>()(
           set({ isLoading: false });
           return { user: data.user, session: data.session };
         } catch (error) {
-          console.error('OTP verification error:', error);
+          logger.error('OTP verification error:', error);
           set({ isLoading: false });
           return { error: 'Invalid OTP. Please try again.' };
         }
@@ -417,7 +431,7 @@ export const useAuthStore = create<AuthState>()(
 
           return { message: 'Verification code sent. Please check your email.' };
         } catch (error) {
-          console.error('Signup OTP error:', error);
+          logger.error('Signup OTP error:', error);
           return { error: 'Failed to send verification code. Please try again.' };
         }
       },
@@ -451,7 +465,7 @@ export const useAuthStore = create<AuthState>()(
 
           return { message: 'Code resent successfully.' };
         } catch (error) {
-          console.error('Resend OTP error:', error);
+          logger.error('Resend OTP error:', error);
           return { error: 'Failed to resend code. Please try again.' };
         }
       },
@@ -471,7 +485,7 @@ export const useAuthStore = create<AuthState>()(
             isPremium: false,
           });
         } catch (error) {
-          console.error('Error signing out:', error);
+          logger.error('Error signing out:', error);
         }
       },
 
@@ -498,7 +512,7 @@ export const useAuthStore = create<AuthState>()(
 
           return { success: false, error: data?.error || 'Unknown error' };
         } catch (error) {
-          console.error('Redeem code error:', error);
+          logger.error('Redeem code error:', error);
           return { success: false, error: 'An unexpected error occurred' };
         }
       },
@@ -540,7 +554,7 @@ export const useAuthStore = create<AuthState>()(
             message: data?.message,
           };
         } catch (error) {
-          console.error('Check paper limit error:', error);
+          logger.error('Check paper limit error:', error);
           return { allowed: false, remaining: 0, message: 'Error checking limit' };
         }
       },
@@ -576,7 +590,7 @@ export const useAuthStore = create<AuthState>()(
 
           return true;
         } catch (error) {
-          console.error('Session validation error:', error);
+          logger.error('Session validation error:', error);
           return false;
         }
       },
@@ -602,7 +616,7 @@ export const useAuthStore = create<AuthState>()(
 
           return true;
         } catch (error) {
-          console.error('Token refresh error:', error);
+          logger.error('Token refresh error:', error);
           return false;
         }
       },

@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { Menu, FileText, Settings, BookOpen, Home, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 const menuItems = [
   { icon: Home, label: "Home", href: "/home" },
@@ -44,6 +43,7 @@ export function HomeHeader() {
   const router = useRouter();
   const [userName, setUserName] = useState("User");
   const [showMenu, setShowMenu] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const name = localStorage.getItem("paperpress_user_name") || "User";
@@ -72,9 +72,18 @@ export function HomeHeader() {
           </Button>
 
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center">
-              <FileText className="w-4 h-4 text-white" />
-            </div>
+            {!logoError ? (
+              <img
+                src="/logo.png"
+                alt="PaperPress"
+                className="w-8 h-8 object-contain"
+                onError={() => setLogoError(true)}
+              />
+            ) : (
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center">
+                <span className="text-white text-sm font-bold">P</span>
+              </div>
+            )}
             <span className="font-bold text-lg text-gray-900">PaperPress</span>
           </div>
 
@@ -116,8 +125,12 @@ export function HomeHeader() {
               <div className="p-4 pt-safe pb-6 bg-gradient-to-br from-[#1E88E5] to-[#1565C0]">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <span className="text-white text-xl font-bold">{userInitial}</span>
+                    <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center overflow-hidden">
+                      {!logoError ? (
+                        <img src="/logo.png" alt="" className="w-8 h-8 object-contain" onError={() => setLogoError(true)} />
+                      ) : (
+                        <span className="text-white text-xl font-bold">P</span>
+                      )}
                     </div>
                     <div>
                       <p className="text-white font-semibold">{userName}</p>
@@ -136,12 +149,7 @@ export function HomeHeader() {
 
               <nav className="p-4 space-y-1">
                 {menuItems.map((item, index) => (
-                  <MenuItem
-                    key={item.label}
-                    item={item}
-                    index={index}
-                    onClick={() => handleMenuItemClick(item.href)}
-                  />
+                  <MenuItem key={item.label} item={item} index={index} onClick={() => handleMenuItemClick(item.href)} />
                 ))}
               </nav>
             </motion.div>

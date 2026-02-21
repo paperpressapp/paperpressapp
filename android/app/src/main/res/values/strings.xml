@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PaperPress</string>
+    <string name="title_activity_main">PaperPress</string>
+    <string name="package_name">com.paperpress.app</string>
+    <string name="custom_url_scheme">com.paperpress.app</string>
+</resources>

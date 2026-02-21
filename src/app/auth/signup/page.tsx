@@ -1,24 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Mail, Lock, User, ArrowRight, Loader2, Eye, EyeOff, 
-  Check, WifiOff, ShieldCheck
-} from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
+import { Mail, Lock, User, ArrowRight, Loader2, Eye, EyeOff, Check, ShieldCheck, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useAuthStore } from "@/stores/authStore";
-import { AppLoader } from "@/components/shared";
+import { useAuthStore, initializeAuth } from "@/stores/authStore";
+import { validatePasswordStrength } from "@/lib/utils/validation";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase/client";
+
+// Always use the deployed API URL for auth
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://paperpressapp.vercel.app';
 
 export default function SignUpPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const { isLoading: storeLoading, isOffline, resendOtp } = useAuthStore();
+  const { isLoading: storeLoading, isAuthenticated } = useAuthStore();
   
   const [step, setStep] = useState<"signup" | "verify">("signup");
   const [fullName, setFullName] = useState("");
@@ -31,27 +28,31 @@ export default function SignUpPage() {
   const [success, setSuccess] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [resendTimer, setResendTimer] = useState(0);
-  const [logoError, setLogoError] = useState(false);
+  const hasRedirected = useRef(false);
+  const [mounted, setMounted] = useState(false);
 
-  // Check if coming back from email link
   useEffect(() => {
-    const token = searchParams.get('token');
-    const type = searchParams.get('type');
-    const emailParam = searchParams.get('email');
+    setMounted(true);
+    initializeAuth();
+  }, []);
+
+  useEffect(() => {
+    if (!mounted || storeLoading) return;
     
-    if (token && type === 'signup' && emailParam) {
-      setEmail(emailParam);
-      setStep('verify');
+    if (isAuthenticated && !hasRedirected.current) {
+      hasRedirected.current = true;
+      router.replace("/home");
     }
-  }, [searchParams]);
+  }, [mounted, storeLoading, isAuthenticated, router]);
 
+  const passwordStrength = validatePasswordStrength(password);
+  
   const passwordRequirements = [
-    { label: "At least 8 characters", met: password.length >= 8 },
-    { label: "Contains a number", met: /\d/.test(password) },
-    { label: "Contains uppercase letter", met: /[A-Z]/.test(password) },
+    { label: "At least 8 characters", met: passwordStrength.requirements.length },
+    { label: "Contains a number", met: passwordStrength.requirements.number },
+    { label: "Contains uppercase letter", met: passwordStrength.requirements.uppercase },
+    { label: "Contains lowercase letter", met: passwordStrength.requirements.lowercase },
   ];
-
-  const otpRefs = Array(6).fill(0).map((_, i) => i);
 
   const startResendTimer = () => {
     setResendTimer(60);
@@ -81,14 +82,13 @@ export default function SignUpPage() {
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("Please enter a valid email address");
       return;
     }
 
-    if (password.length < 8) {
-      setError("Password must be at least 8 characters");
+    if (!passwordStrength.valid) {
+      setError("Password does not meet requirements");
       return;
     }
 
@@ -100,55 +100,40 @@ export default function SignUpPage() {
     setIsLoading(true);
 
     try {
-      // Store password temporarily for after OTP verification
-      sessionStorage.setItem('paperpress_signup_password', password);
-      sessionStorage.setItem('paperpress_signup_name', fullName);
-      sessionStorage.setItem('paperpress_signup_email', email);
-
-      // Sign up with email and password - Supabase will send OTP
-      const { data, error: signUpError } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          data: {
-            full_name: fullName,
-          },
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
-        },
+      const response = await fetch(`${API_URL}/api/auth/send-otp`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, fullName }),
       });
 
-      if (signUpError) {
-        setError(signUpError.message);
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || 'Failed to send OTP');
         setIsLoading(false);
         return;
       }
 
-      // If user is created but needs email confirmation
-      if (data.user && !data.session) {
-        setStep("verify");
-        startResendTimer();
+      setStep("verify");
+      startResendTimer();
+      
+      // In development, show the OTP directly
+      if (data.devOtp) {
+        setSuccess(`Verification code: ${data.devOtp} (shown for testing)`);
+        setOtp(data.devOtp.split(''));
+      } else {
         setSuccess("Verification code sent to your email!");
-      } else if (data.session) {
-        // Auto-confirmed (rare case)
-        localStorage.setItem("paperpress_user_name", fullName);
-        localStorage.setItem("paperpress_user_email", email);
-        router.push("/home");
       }
-
       setIsLoading(false);
     } catch (err) {
-      console.error('Signup error:', err);
-      setError("An unexpected error occurred. Please try again.");
+      setError("Failed to send verification code. Please try again.");
       setIsLoading(false);
     }
   };
 
   const handleOtpChange = (index: number, value: string) => {
-    if (!/^\d*$/.test(value)) return; // Only allow digits
-    
-    if (value.length > 1) {
-      value = value.slice(0, 1);
-    }
+    if (!/^\d*$/.test(value)) return;
+    if (value.length > 1) value = value.slice(0, 1);
     
     const newOtp = [...otp];
     newOtp[index] = value;
@@ -159,7 +144,6 @@ export default function SignUpPage() {
       nextInput?.focus();
     }
 
-    // Auto-submit when all digits entered
     if (index === 5 && value) {
       const fullOtp = [...newOtp.slice(0, 5), value].join("");
       if (fullOtp.length === 6) {
@@ -187,40 +171,60 @@ export default function SignUpPage() {
     setError("");
 
     try {
-      const { data, error: verifyError } = await supabase.auth.verifyOtp({
-        email,
-        token: code,
-        type: 'signup',
+      // First verify OTP with server
+      const verifyResponse = await fetch(`${API_URL}/api/auth/send-otp`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, otp: code }),
       });
 
-      if (verifyError) {
-        setError(verifyError.message);
+      const verifyData = await verifyResponse.json();
+
+      if (!verifyResponse.ok || !verifyData.valid) {
+        setError(verifyData.error || "Invalid verification code");
         setIsLoading(false);
         return;
       }
 
-      if (data.session) {
-        // Clear temporary storage
-        sessionStorage.removeItem('paperpress_signup_password');
-        sessionStorage.removeItem('paperpress_signup_name');
-        sessionStorage.removeItem('paperpress_signup_email');
+      // OTP verified - create account using our API (auto-confirms email)
+      const signupResponse = await fetch(`${API_URL}/api/auth/signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, fullName }),
+      });
 
-        // Store user info
-        localStorage.setItem("paperpress_user_name", fullName);
-        localStorage.setItem("paperpress_user_email", email);
-        
-        setSuccess("Account verified successfully!");
-        
-        setTimeout(() => {
-          router.push("/home");
-        }, 500);
-      } else {
-        setError("Verification failed. Please try again.");
+      const signupData = await signupResponse.json();
+
+      if (!signupResponse.ok) {
+        setError(signupData.error || "Failed to create account");
         setIsLoading(false);
+        return;
       }
+
+      // Store user info
+      localStorage.setItem("paperpress_user_name", fullName);
+      localStorage.setItem("paperpress_user_email", email);
+
+      setSuccess("Account created successfully!");
+
+      // Now sign in the user
+      const { supabase } = await import('@/lib/supabase/client');
+      const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (signInError) {
+        // Account created but auto-login failed - redirect to login
+        setSuccess("Account created! Please login.");
+        setTimeout(() => router.push("/auth/login"), 1500);
+      } else {
+        // Logged in successfully - redirect to home
+        setTimeout(() => router.push("/home"), 500);
+      }
+      setIsLoading(false);
     } catch (err) {
-      console.error('OTP verification error:', err);
-      setError("Invalid OTP. Please try again.");
+      setError("Verification failed. Please try again.");
       setIsLoading(false);
     }
   };
@@ -230,15 +234,18 @@ export default function SignUpPage() {
 
     setIsLoading(true);
     setError("");
-    
+
     try {
-      const { error: resendError } = await supabase.auth.resend({
-        type: 'signup',
-        email,
+      const response = await fetch(`${API_URL}/api/auth/send-otp`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, fullName }),
       });
 
-      if (resendError) {
-        setError(resendError.message);
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || 'Failed to resend code');
       } else {
         setSuccess("New code sent!");
         startResendTimer();
@@ -246,342 +253,258 @@ export default function SignUpPage() {
         document.getElementById('otp-0')?.focus();
       }
     } catch (err) {
-      console.error('Resend error:', err);
-      setError("Failed to resend code. Please try again.");
+      setError("Failed to resend code.");
     }
     setIsLoading(false);
   };
 
   useEffect(() => {
     if (step === "verify") {
-      setTimeout(() => {
-        document.getElementById('otp-0')?.focus();
-      }, 100);
+      setTimeout(() => document.getElementById('otp-0')?.focus(), 100);
     }
   }, [step]);
 
-  if (storeLoading) {
-    return <AppLoader message="Loading..." />;
+  if (!mounted || storeLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#1565C0] to-[#1E88E5] flex items-center justify-center">
+        <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-xl">
+          <span className="text-2xl font-bold text-[#1E88E5]">P</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#1565C0] to-[#1E88E5] flex items-center justify-center">
+        <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-xl">
+          <span className="text-2xl font-bold text-[#1E88E5]">P</span>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1565C0] via-[#1976D2] to-[#1E88E5] flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
-      </div>
-
-      <motion.div
-        className="w-full max-w-sm relative z-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="glass-panel rounded-2xl p-6 shadow-2xl bg-white/95 backdrop-blur-xl">
-          {/* Offline Warning */}
-          {isOffline && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-4 p-3 rounded-lg bg-yellow-50 border border-yellow-200 text-yellow-700 text-xs flex items-center gap-2"
-            >
-              <WifiOff className="w-4 h-4 flex-shrink-0" />
-              <span>No internet connection</span>
-            </motion.div>
-          )}
-
-          {/* Logo */}
-          <motion.div 
-            className="text-center mb-6"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
-          >
-            <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-              {!logoError ? (
-                <img 
-                  src="/logo.png" 
-                  alt="PaperPress"
-                  className="w-full h-full object-contain drop-shadow-lg"
-                  onError={() => setLogoError(true)}
-                />
-              ) : (
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg">
-                  <span className="text-2xl font-bold text-white">P</span>
-                </div>
-              )}
+    <div className="min-h-screen bg-gradient-to-br from-[#1565C0] to-[#1E88E5] flex items-center justify-center p-4">
+      <div className="w-full max-w-sm">
+        <div className="bg-white rounded-2xl p-6 shadow-xl">
+          <div className="text-center mb-6">
+            <div className="w-16 h-16 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg">
+              <span className="text-2xl font-bold text-white">P</span>
             </div>
-            <h1 className="text-lg font-bold text-gray-900">
+            <h1 className="text-xl font-bold text-gray-900">
               {step === "signup" ? "Create Account" : "Verify Email"}
             </h1>
             <p className="text-gray-500 text-sm mt-1">
-              {step === "signup" 
-                ? "Sign up with email and password" 
-                : `Enter the code sent to ${email}`}
+              {step === "signup" ? "Sign up to get started" : `Enter code sent to ${email}`}
             </p>
-          </motion.div>
+          </div>
 
-          {/* Error Message */}
-          <AnimatePresence>
-            {error && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-xs"
-              >
-                {error}
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {error && (
+            <div className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-sm flex items-start gap-2">
+              <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+              <span>{error}</span>
+            </div>
+          )}
 
-          {/* Success Message */}
-          <AnimatePresence>
-            {success && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                className="mb-4 p-3 rounded-lg bg-green-50 border border-green-200 text-green-600 text-xs flex items-center gap-2"
-              >
-                <ShieldCheck className="w-4 h-4" />
-                {success}
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {success && (
+            <div className="mb-4 p-3 rounded-lg bg-green-50 border border-green-200 text-green-600 text-sm flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4" />
+              {success}
+            </div>
+          )}
 
-          <AnimatePresence mode="wait">
-            {step === "signup" ? (
-              <motion.form
-                key="signup"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                onSubmit={handleSignup}
-                className="space-y-4"
-              >
-                <div className="space-y-2">
-                  <Label htmlFor="fullName" className="text-gray-700 text-sm font-medium">Full Name</Label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <Input
-                      id="fullName"
-                      type="text"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
-                      placeholder="Hamza Maqsood"
-                      className="pl-10 h-11 rounded-xl border-gray-200 text-sm focus:border-[#1E88E5] focus:ring-[#1E88E5]"
-                      disabled={isLoading || isOffline}
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-gray-700 text-sm font-medium">Email</Label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <Input
-                      id="email"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="you@example.com"
-                      className="pl-10 h-11 rounded-xl border-gray-200 text-sm focus:border-[#1E88E5] focus:ring-[#1E88E5]"
-                      disabled={isLoading || isOffline}
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="password" className="text-gray-700 text-sm font-medium">Password</Label>
-                  <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <Input
-                      id="password"
-                      type={showPassword ? "text" : "password"}
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Create a strong password"
-                      className="pl-10 pr-10 h-11 rounded-xl border-gray-200 text-sm focus:border-[#1E88E5] focus:ring-[#1E88E5]"
-                      disabled={isLoading || isOffline}
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                    >
-                      {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                    </button>
-                  </div>
-                  
-                  {password && (
-                    <div className="space-y-1">
-                      {passwordRequirements.map((req, i) => (
-                        <div key={i} className="flex items-center gap-2 text-xs">
-                          <div className={`w-4 h-4 rounded-full flex items-center justify-center ${req.met ? 'bg-green-100' : 'bg-gray-100'}`}>
-                            {req.met && <Check className="w-3 h-3 text-green-500" />}
-                          </div>
-                          <span className={req.met ? 'text-green-600' : 'text-gray-400'}>{req.label}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="confirmPassword" className="text-gray-700 text-sm font-medium">Confirm Password</Label>
-                  <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <Input
-                      id="confirmPassword"
-                      type={showPassword ? "text" : "password"}
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                      placeholder="Confirm your password"
-                      className="pl-10 h-11 rounded-xl border-gray-200 text-sm focus:border-[#1E88E5] focus:ring-[#1E88E5]"
-                      disabled={isLoading || isOffline}
-                    />
-                    {confirmPassword && (
-                      <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                        {password === confirmPassword ? (
-                          <Check className="w-5 h-5 text-green-500" />
-                        ) : null}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2 pt-2">
-                  <input 
-                    type="checkbox" 
-                    id="terms"
-                    className="mt-1 w-4 h-4 rounded border-gray-300 text-[#1E88E5] focus:ring-[#1E88E5]" 
-                    required
-                    disabled={isLoading || isOffline}
+          {step === "signup" ? (
+            <form onSubmit={handleSignup} className="space-y-4">
+              <div>
+                <Label className="text-gray-700 text-sm">Full Name</Label>
+                <div className="relative mt-1">
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Input
+                    type="text"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    placeholder="Hamza Maqsood"
+                    className="pl-10 h-11 rounded-xl"
+                    disabled={isLoading}
                   />
-                  <label htmlFor="terms" className="text-sm text-gray-600">
-                    I agree to the{" "}
-                    <Link href="/terms" className="text-[#1E88E5] hover:underline">Terms</Link>
-                    {" "}&{" "}
-                    <Link href="/privacy" className="text-[#1E88E5] hover:underline">Privacy Policy</Link>
-                  </label>
                 </div>
+              </div>
 
-                <Button
-                  type="submit"
-                  disabled={isLoading || isOffline}
-                  className="w-full h-11 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#1E88E5] to-[#1565C0] hover:opacity-90 shadow-lg shadow-[#1E88E5]/30 disabled:opacity-50 transition-all"
-                >
-                  {isLoading ? (
-                    <span className="flex items-center gap-2">
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Creating account...
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      Create Account
-                      <ArrowRight className="w-4 h-4" />
-                    </span>
-                  )}
-                </Button>
-              </motion.form>
-            ) : (
-              <motion.form
-                key="verify"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                onSubmit={(e) => { e.preventDefault(); handleVerifyOTP(); }}
-                className="space-y-5"
-              >
-                <div className="text-center mb-4">
-                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[#1E88E5]/10 flex items-center justify-center">
-                    <Mail className="w-8 h-8 text-[#1E88E5]" />
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    We've sent a 6-digit code to
-                  </p>
-                  <p className="font-semibold text-gray-900">{email}</p>
+              <div>
+                <Label className="text-gray-700 text-sm">Email</Label>
+                <div className="relative mt-1">
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    className="pl-10 h-11 rounded-xl"
+                    disabled={isLoading}
+                  />
                 </div>
+              </div>
 
-                <div className="space-y-3">
-                  <Label className="text-gray-700 text-sm font-medium text-center block">Enter verification code</Label>
-                  <div className="flex justify-center gap-2">
-                    {otpRefs.map((_, index) => (
-                      <Input
-                        key={index}
-                        id={`otp-${index}`}
-                        type="text"
-                        inputMode="numeric"
-                        pattern="[0-9]*"
-                        value={otp[index]}
-                        onChange={(e) => handleOtpChange(index, e.target.value)}
-                        onKeyDown={(e) => handleOtpKeyDown(index, e)}
-                        onPaste={(e) => {
-                          e.preventDefault();
-                          const pastedData = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
-                          if (pastedData.length === 6) {
-                            setOtp(pastedData.split(''));
-                          }
-                        }}
-                        maxLength={1}
-                        className="w-11 h-12 text-center text-xl font-bold rounded-xl border-gray-200 focus:border-[#1E88E5] focus:ring-[#1E88E5] p-0"
-                        disabled={isLoading}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={isLoading || otp.join("").length !== 6}
-                  className="w-full h-11 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#1E88E5] to-[#1565C0] hover:opacity-90 shadow-lg shadow-[#1E88E5]/30 disabled:opacity-50 transition-all"
-                >
-                  {isLoading ? (
-                    <span className="flex items-center gap-2">
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Verifying...
-                    </span>
-                  ) : (
-                    "Verify & Continue"
-                  )}
-                </Button>
-
-                <div className="text-center space-y-3">
-                  {resendTimer > 0 ? (
-                    <p className="text-sm text-gray-500">
-                      Resend code in <span className="font-semibold text-gray-700">{resendTimer}s</span>
-                    </p>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={handleResendOTP}
-                      disabled={isLoading}
-                      className="text-sm text-[#1E88E5] hover:underline font-medium disabled:opacity-50"
-                    >
-                      Resend code
-                    </button>
-                  )}
-                </div>
-
-                <div className="text-center pt-2 border-t border-gray-100">
+              <div>
+                <Label className="text-gray-700 text-sm">Password</Label>
+                <div className="relative mt-1">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Input
+                    type={showPassword ? "text" : "password"}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Create a strong password"
+                    className="pl-10 pr-10 h-11 rounded-xl"
+                    disabled={isLoading}
+                  />
                   <button
                     type="button"
-                    onClick={() => {
-                      setStep("signup");
-                      setOtp(["", "", "", "", "", ""]);
-                      setError("");
-                      setSuccess("");
-                    }}
-                    className="text-sm text-gray-500 hover:text-gray-700"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
                   >
-                    ← Use different email
+                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
                 </div>
-              </motion.form>
-            )}
-          </AnimatePresence>
+                {password && (
+                  <div className="mt-2 space-y-1">
+                    {passwordRequirements.map((req, i) => (
+                      <div key={i} className="flex items-center gap-2 text-xs">
+                        <div className={`w-4 h-4 rounded-full flex items-center justify-center ${req.met ? 'bg-green-100' : 'bg-gray-100'}`}>
+                          {req.met && <Check className="w-3 h-3 text-green-500" />}
+                        </div>
+                        <span className={req.met ? 'text-green-600' : 'text-gray-400'}>{req.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div>
+                <Label className="text-gray-700 text-sm">Confirm Password</Label>
+                <div className="relative mt-1">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Input
+                    type={showPassword ? "text" : "password"}
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    placeholder="Confirm your password"
+                    className="pl-10 h-11 rounded-xl"
+                    disabled={isLoading}
+                  />
+                </div>
+                {confirmPassword && password !== confirmPassword && (
+                  <p className="text-xs text-red-500 mt-1">Passwords do not match</p>
+                )}
+              </div>
+
+              <div className="flex items-start gap-2 pt-2">
+                <input type="checkbox" id="terms" className="mt-1 w-4 h-4 rounded" required disabled={isLoading} />
+                <label htmlFor="terms" className="text-sm text-gray-600">
+                  I agree to the <Link href="/terms" className="text-[#1E88E5]">Terms</Link> & <Link href="/privacy" className="text-[#1E88E5]">Privacy Policy</Link>
+                </label>
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isLoading}
+                className="w-full h-11 rounded-xl font-semibold bg-gradient-to-r from-[#1E88E5] to-[#1565C0] text-white"
+              >
+                {isLoading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Sending code...
+                  </span>
+                ) : (
+                  <span className="flex items-center justify-center gap-2">
+                    Create Account
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                )}
+              </Button>
+            </form>
+          ) : (
+            <div className="space-y-5">
+              <div className="text-center mb-4">
+                <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[#1E88E5]/10 flex items-center justify-center">
+                  <Mail className="w-8 h-8 text-[#1E88E5]" />
+                </div>
+                <p className="text-sm text-gray-600">We've sent a 6-digit code to</p>
+                <p className="font-semibold text-gray-900">{email}</p>
+              </div>
+
+              <div>
+                <Label className="text-gray-700 text-sm text-center block">Enter verification code</Label>
+                <div className="flex justify-center gap-2 mt-2">
+                  {[0, 1, 2, 3, 4, 5].map((index) => (
+                    <Input
+                      key={index}
+                      id={`otp-${index}`}
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
+                      value={otp[index]}
+                      onChange={(e) => handleOtpChange(index, e.target.value)}
+                      onKeyDown={(e) => handleOtpKeyDown(index, e)}
+                      onPaste={(e) => {
+                        e.preventDefault();
+                        const pastedData = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
+                        if (pastedData.length === 6) setOtp(pastedData.split(''));
+                      }}
+                      maxLength={1}
+                      className="w-11 h-12 text-center text-xl font-bold rounded-xl p-0"
+                      disabled={isLoading}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <Button
+                onClick={() => handleVerifyOTP()}
+                disabled={isLoading || otp.join("").length !== 6}
+                className="w-full h-11 rounded-xl font-semibold bg-gradient-to-r from-[#1E88E5] to-[#1565C0] text-white"
+              >
+                {isLoading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Verifying...
+                  </span>
+                ) : (
+                  "Verify & Continue"
+                )}
+              </Button>
+
+              <div className="text-center">
+                {resendTimer > 0 ? (
+                  <p className="text-sm text-gray-500">
+                    Resend code in <span className="font-semibold">{resendTimer}s</span>
+                  </p>
+                ) : (
+                  <button
+                    onClick={handleResendOTP}
+                    disabled={isLoading}
+                    className="text-sm text-[#1E88E5] font-medium"
+                  >
+                    Resend code
+                  </button>
+                )}
+              </div>
+
+              <div className="text-center pt-2 border-t border-gray-100">
+                <button
+                  onClick={() => {
+                    setStep("signup");
+                    setOtp(["", "", "", "", "", ""]);
+                    setError("");
+                    setSuccess("");
+                  }}
+                  className="text-sm text-gray-500 hover:text-gray-700"
+                >
+                  ← Use different email
+                </button>
+              </div>
+            </div>
+          )}
 
           {step === "signup" && (
             <>
@@ -594,15 +517,11 @@ export default function SignUpPage() {
               <div className="text-center space-y-3">
                 <p className="text-gray-600 text-sm">
                   Already have an account?{" "}
-                  <Link href="/auth/login" className="text-[#1E88E5] font-semibold hover:underline">
+                  <Link href="/auth/login" className="text-[#1E88E5] font-semibold">
                     Sign in
                   </Link>
                 </p>
-
-                <Link 
-                  href="/home" 
-                  className="text-sm text-gray-400 hover:text-gray-600 inline-block"
-                >
+                <Link href="/home" className="text-sm text-gray-400">
                   Continue as Guest
                 </Link>
               </div>
@@ -610,16 +529,10 @@ export default function SignUpPage() {
           )}
         </div>
 
-        {/* Footer */}
-        <motion.p 
-          className="text-center mt-6 text-white/40 text-xs font-light tracking-wider"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
+        <p className="text-center mt-4 text-white/60 text-xs">
           PaperPress By Hamza Khan
-        </motion.p>
-      </motion.div>
+        </p>
+      </div>
     </div>
   );
 }

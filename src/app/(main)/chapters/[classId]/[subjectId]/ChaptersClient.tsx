@@ -157,7 +157,7 @@ export default function ChaptersClient() {
       <MainLayout showBottomNav>
         <div className="relative z-10 min-h-screen flex flex-col">
           {/* App Bar */}
-          <div className="fixed top-0 left-0 right-0 z-50">
+          <div className="fixed top-0 left-0 right-0 z-50 pt-safe">
             <div className="mx-auto max-w-[428px]">
               <div className="glass-panel border-b border-white/50">
                 <div className="px-4 h-14 flex items-center justify-between">
@@ -194,7 +194,7 @@ export default function ChaptersClient() {
           </div>
 
           {/* Content */}
-          <ScrollView className="pt-14 pb-32 flex-1">
+          <ScrollView className="pt-[56px] pb-32 flex-1">
             {/* Subject Hero Section */}
             <motion.div
               initial={{ opacity: 0 }}
