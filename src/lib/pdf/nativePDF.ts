@@ -5,7 +5,7 @@
  * and saves them to the device's Documents/PaperPress folder.
  */
 
-import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 import { Toast } from '@capacitor/toast';
 import { Capacitor } from '@capacitor/core';
@@ -181,5 +181,3 @@ export async function deleteSavedPaper(filename: string): Promise<void> {
   }
 }
 
-// Import Encoding from Filesystem
-import { Encoding } from '@capacitor/filesystem';

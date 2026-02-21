@@ -14,6 +14,8 @@
 import { Capacitor } from '@capacitor/core';
 import type { MCQQuestion, ShortQuestion, LongQuestion } from '@/types';
 import { generateProfessionalPDF, generateFilename as profFilename } from './professionalPDF';
+import { generatePaperHTML, generatePDFFilename } from './htmlGenerator';
+import PDFPrinter from '@/lib/plugins/PDFPrinter';
 
 // Always use the deployed API URL for PDF generation
 // The app makes HTTP calls to the Vercel server for Puppeteer PDF
@@ -61,7 +63,9 @@ export async function fetchAndPreviewPDF(
 }
 
 // ─────────────────────────────────────────────
-// ANDROID: Server API (Primary) + Fallback
+// ANDROID: Native WebView PrintManager (Best Quality)
+// Uses PDFPrinterPlugin.java — same engine as Chrome print-to-PDF
+// Works offline, perfect KaTeX, 300 DPI — no server needed
 // ─────────────────────────────────────────────
 
 async function downloadPDFAndroid(
@@ -71,40 +75,44 @@ async function downloadPDFAndroid(
   longs: LongQuestion[],
   openAfterSave = false
 ): Promise<{ success: boolean; error?: string }> {
-  const filename = profFilename(settings);
-  
-  // Check internet connection
-  if (!navigator.onLine) {
-    return {
-      success: false,
-      error: 'No internet connection. Please connect to WiFi or mobile data to generate PDF.',
-    };
-  }
-  
   showToast('Generating PDF...');
-  
+
   try {
-    // Call Vercel API for Puppeteer PDF
-    console.log('[PDF] Calling server API:', `${API_BASE_URL}/api/generate-pdf`);
-    
-    const pdfBase64 = await fetchPDFFromServer(settings, mcqs, shorts, longs);
-    
-    // Save to device
-    await savePDFToDevice(pdfBase64, filename, openAfterSave);
-    
-    showToast('PDF saved successfully!');
+    // Generate HTML locally — no internet needed
+    const html = generatePaperHTML(
+      {
+        instituteName: settings.instituteName,
+        instituteLogo: settings.instituteLogo,
+        examType: settings.examType,
+        date: settings.date,
+        timeAllowed: settings.timeAllowed,
+        classId: settings.classId,
+        subject: settings.subject,
+      },
+      mcqs,
+      shorts,
+      longs
+    );
+
+    const filename = generatePDFFilename(settings.classId, settings.subject, settings.date);
+
+    // → Android WebView renders HTML (KaTeX renders perfectly)
+    // → Android PrintManager converts to PDF at 300 DPI
+    // → Opens Android print dialog → user saves as PDF
+    console.log('[PDF] Using native WebView PrintManager...');
+    const result = await PDFPrinter.printToPDF({ html, filename });
+
+    if (!result.success) {
+      throw new Error(result.message || 'Print failed');
+    }
+
+    showToast('PDF ready — tap "Save as PDF" in the print dialog');
     return { success: true };
-    
+
   } catch (error) {
-    console.error('[PDF] Server API failed:', error);
-    
+    console.error('[PDF] Native print failed:', error);
     const errorMessage = error instanceof Error ? error.message : 'Failed to generate PDF';
-    
-    // Don't silently fallback - inform user of the issue
-    return {
-      success: false,
-      error: `${errorMessage}. Please check your internet connection and try again.`,
-    };
+    return { success: false, error: errorMessage };
   }
 }
 
@@ -117,7 +125,7 @@ async function fetchPDFFromServer(
   const controller = new AbortController();
   const timeout = 60000; // 60 seconds
   const timeoutId = setTimeout(() => controller.abort(), timeout);
-  
+
   try {
     const response = await fetch(`${API_BASE_URL}/api/generate-pdf`, {
       method: 'POST',
@@ -128,9 +136,9 @@ async function fetchPDFFromServer(
       body: JSON.stringify({ settings, mcqs, shorts, longs }),
       signal: controller.signal,
     });
-    
+
     clearTimeout(timeoutId);
-    
+
     if (!response.ok) {
       let errorMsg = `Server error (${response.status})`;
       try {
@@ -141,24 +149,24 @@ async function fetchPDFFromServer(
       }
       throw new Error(errorMsg);
     }
-    
+
     const blob = await response.blob();
-    
+
     if (blob.size === 0) {
       throw new Error('Server returned empty PDF');
     }
-    
+
     console.log('[PDF] Received:', blob.size, 'bytes');
-    
+
     return await blobToBase64(blob);
-    
+
   } catch (error) {
     clearTimeout(timeoutId);
-    
+
     if (error instanceof Error && error.name === 'AbortError') {
       throw new Error('Server timeout - request took too long');
     }
-    
+
     throw error;
   }
 }
@@ -182,7 +190,7 @@ async function savePDFToDevice(
   openAfterSave: boolean
 ): Promise<void> {
   const { Filesystem, Directory } = await import('@capacitor/filesystem');
-  
+
   // Create directory
   try {
     await Filesystem.mkdir({
@@ -193,24 +201,24 @@ async function savePDFToDevice(
   } catch {
     // Directory exists
   }
-  
+
   const filePath = `PaperPress/${filename}`;
-  
+
   await Filesystem.writeFile({
     path: filePath,
     data: pdfBase64,
     directory: Directory.Documents,
   });
-  
+
   console.log('[PDF] Saved: Documents/PaperPress/' + filename);
-  
+
   if (openAfterSave) {
     try {
       const fileUri = await Filesystem.getUri({
         path: filePath,
         directory: Directory.Documents,
       });
-      
+
       const { FileOpener } = await import('@capacitor-community/file-opener');
       await FileOpener.open({
         filePath: fileUri.uri,
@@ -243,12 +251,12 @@ export async function generatePDFOffline(
   openAfterSave = false
 ): Promise<{ success: boolean; error?: string }> {
   console.log('[PDF] Generating offline with jsPDF...');
-  
+
   try {
     const filename = profFilename(settings);
     const pdfBase64 = await generateProfessionalPDF(settings, mcqs, shorts, longs);
     await savePDFToDevice(pdfBase64, filename, openAfterSave);
-    
+
     showToast('PDF saved (offline mode)');
     return { success: true };
   } catch (error) {
@@ -275,7 +283,7 @@ async function downloadPDFWeb(
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ settings, mcqs, shorts, longs }),
     });
-    
+
     if (!response.ok) {
       let errMsg = `Server error (${response.status})`;
       try {
@@ -285,10 +293,10 @@ async function downloadPDFWeb(
       } catch { }
       return { success: false, error: errMsg };
     }
-    
+
     const blob = await response.blob();
     if (blob.size === 0) return { success: false, error: 'Empty PDF received' };
-    
+
     triggerBrowserDownload(blob, profFilename(settings));
     return { success: true };
   } catch (error) {
@@ -311,9 +319,9 @@ async function previewPDFWeb(
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ settings, mcqs, shorts, longs }),
     });
-    
+
     if (!response.ok) return { success: false, error: 'Server error' };
-    
+
     const blob = await response.blob();
     const objectUrl = URL.createObjectURL(blob);
     window.open(objectUrl, '_blank');
