@@ -2,36 +2,24 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
 
+// Service-role client — bypasses RLS, safe for server-only API routes
+const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
 function getResendClient() {
     const apiKey = process.env.RESEND_API_KEY || process.env.NEXT_PUBLIC_RESEND_API_KEY;
     if (!apiKey) return null;
     return new Resend(apiKey);
 }
 
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
-
-// Suppress unused variable warning
-void supabase;
-
-const OTP_STORE: Map<string, { otp: string; expiresAt: number; attempts: number }> = new Map();
-
 function generateOTP(): string {
     return Math.floor(100000 + Math.random() * 900000).toString();
 }
 
-function cleanupExpiredOTPs() {
-    const now = Date.now();
-    for (const [key, value] of OTP_STORE.entries()) {
-        if (value.expiresAt < now) OTP_STORE.delete(key);
-    }
-}
-
 export async function POST(request: NextRequest) {
     try {
-        cleanupExpiredOTPs();
         const body = await request.json();
         const { email } = body;
 
@@ -40,9 +28,21 @@ export async function POST(request: NextRequest) {
         }
 
         const normalizedEmail = email.toLowerCase().trim();
-        const existingOTP = OTP_STORE.get(normalizedEmail);
 
-        if (existingOTP && existingOTP.attempts >= 3 && existingOTP.expiresAt > Date.now()) {
+        // Cleanup expired OTPs (fire-and-forget)
+        supabase.rpc('cleanup_expired_otps').then(() => { });
+
+        // Check existing OTP for rate limiting
+        const { data: existing } = await supabase
+            .from('otp_verifications')
+            .select('attempts, expires_at')
+            .eq('email', normalizedEmail)
+            .maybeSingle();
+
+        const now = new Date();
+        const isStillValid = existing && new Date(existing.expires_at) > now;
+
+        if (isStillValid && existing.attempts >= 3) {
             return NextResponse.json(
                 { error: 'Too many requests. Please wait before requesting a new code.' },
                 { status: 429 }
@@ -50,13 +50,23 @@ export async function POST(request: NextRequest) {
         }
 
         const otp = generateOTP();
-        const expiresAt = Date.now() + 10 * 60 * 1000;
+        const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString(); // 10 minutes
 
-        OTP_STORE.set(normalizedEmail, {
-            otp,
-            expiresAt,
-            attempts: (existingOTP?.attempts || 0) + 1,
-        });
+        // Upsert OTP into Supabase — persists across serverless cold starts
+        const { error: upsertError } = await supabase
+            .from('otp_verifications')
+            .upsert({
+                email: normalizedEmail,
+                otp,
+                expires_at: expiresAt,
+                attempts: isStillValid ? (existing.attempts + 1) : 1,
+                created_at: now.toISOString(),
+            });
+
+        if (upsertError) {
+            console.error('OTP upsert error:', upsertError);
+            return NextResponse.json({ error: 'Failed to generate OTP' }, { status: 500 });
+        }
 
         const resend = getResendClient();
 
@@ -68,7 +78,7 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'Email service not configured.' }, { status: 503 });
         }
 
-        const { error } = await resend.emails.send({
+        const { error: sendError } = await resend.emails.send({
             from: 'PaperPress <noreply@darulfalah.site>',
             to: email,
             subject: 'Your PaperPress Verification Code',
@@ -96,13 +106,15 @@ export async function POST(request: NextRequest) {
       `,
         });
 
-        if (error) {
-            OTP_STORE.delete(normalizedEmail);
-            return NextResponse.json({ error: `Failed to send OTP: ${error.message}` }, { status: 500 });
+        if (sendError) {
+            // Roll back OTP if email failed
+            await supabase.from('otp_verifications').delete().eq('email', normalizedEmail);
+            return NextResponse.json({ error: `Failed to send OTP: ${sendError.message}` }, { status: 500 });
         }
 
         return NextResponse.json({ success: true, message: 'OTP sent successfully', expiresIn: 600 });
     } catch (error) {
+        console.error('Send OTP error:', error);
         return NextResponse.json({ error: 'Failed to send OTP' }, { status: 500 });
     }
 }
@@ -117,14 +129,20 @@ export async function PUT(request: NextRequest) {
         }
 
         const normalizedEmail = email.toLowerCase().trim();
-        const storedData = OTP_STORE.get(normalizedEmail);
 
-        if (!storedData) {
+        // Fetch OTP from Supabase — works across all serverless instances
+        const { data: storedData, error: fetchError } = await supabase
+            .from('otp_verifications')
+            .select('otp, expires_at')
+            .eq('email', normalizedEmail)
+            .maybeSingle();
+
+        if (fetchError || !storedData) {
             return NextResponse.json({ valid: false, error: 'No OTP found. Please request a new one.' }, { status: 400 });
         }
 
-        if (storedData.expiresAt < Date.now()) {
-            OTP_STORE.delete(normalizedEmail);
+        if (new Date(storedData.expires_at) < new Date()) {
+            await supabase.from('otp_verifications').delete().eq('email', normalizedEmail);
             return NextResponse.json({ valid: false, error: 'OTP expired. Please request a new one.' }, { status: 400 });
         }
 
@@ -132,9 +150,11 @@ export async function PUT(request: NextRequest) {
             return NextResponse.json({ valid: false, error: 'Invalid OTP.' }, { status: 400 });
         }
 
-        OTP_STORE.delete(normalizedEmail);
+        // OTP is valid — delete it (single-use)
+        await supabase.from('otp_verifications').delete().eq('email', normalizedEmail);
         return NextResponse.json({ valid: true, message: 'OTP verified successfully' });
-    } catch {
+    } catch (error) {
+        console.error('Verify OTP error:', error);
         return NextResponse.json({ error: 'Failed to verify OTP' }, { status: 500 });
     }
 }

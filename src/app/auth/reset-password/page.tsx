@@ -22,8 +22,15 @@ export default function ResetPasswordPage() {
   const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
+    // Support both flows:
+    // • PKCE flow (newer): Supabase appends ?code= to the URL
+    // • Implicit flow (older): Supabase appends #type=recovery to the URL
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = searchParams.get('code');
     const hash = window.location.hash;
-    if (!hash || !hash.includes('type=recovery')) {
+    const hasRecoveryHash = hash.includes('type=recovery');
+
+    if (!code && !hasRecoveryHash) {
       setIsValidLink(false);
       setError("Invalid or expired reset link. Please request a new one.");
     }
@@ -52,9 +59,20 @@ export default function ResetPasswordPage() {
     setIsLoading(true);
 
     try {
-      const { error } = await supabase.auth.updateUser({
-        password: password,
-      });
+      // PKCE flow: exchange the code for a session before updating the password
+      const searchParams = new URLSearchParams(window.location.search);
+      const code = searchParams.get('code');
+      if (code) {
+        const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
+        if (exchangeError) {
+          setError("Reset link is invalid or has expired. Please request a new one.");
+          setIsValidLink(false);
+          setIsLoading(false);
+          return;
+        }
+      }
+
+      const { error } = await supabase.auth.updateUser({ password });
 
       if (error) {
         setError(error.message);
@@ -102,7 +120,7 @@ export default function ResetPasswordPage() {
             </Link>
           </div>
 
-          <motion.p 
+          <motion.p
             className="text-center mt-6 text-white/40 text-xs font-light tracking-wider"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -154,7 +172,7 @@ export default function ResetPasswordPage() {
             </Link>
           </div>
 
-          <motion.p 
+          <motion.p
             className="text-center mt-6 text-white/40 text-xs font-light tracking-wider"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -183,7 +201,7 @@ export default function ResetPasswordPage() {
       >
         <div className="glass-panel rounded-2xl p-6 shadow-2xl bg-white/95 backdrop-blur-xl">
           {/* Logo */}
-          <motion.div 
+          <motion.div
             className="text-center mb-6"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -191,8 +209,8 @@ export default function ResetPasswordPage() {
           >
             <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
               {!logoError ? (
-                <img 
-                  src="/logo.png" 
+                <img
+                  src="/logo.png"
                   alt="PaperPress"
                   className="w-full h-full object-contain drop-shadow-lg"
                   onError={() => setLogoError(true)}
@@ -242,7 +260,7 @@ export default function ResetPasswordPage() {
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
               </div>
-              
+
               {/* Password requirements */}
               {password && (
                 <div className="space-y-1 mt-2">
@@ -291,7 +309,7 @@ export default function ResetPasswordPage() {
         </div>
 
         {/* Footer */}
-        <motion.p 
+        <motion.p
           className="text-center mt-6 text-white/40 text-xs font-light tracking-wider"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
