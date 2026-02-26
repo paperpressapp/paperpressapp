@@ -1178,7 +1178,260 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch1_short_1",
+          "questionText": "Define a system. What are its basic components?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_2",
+          "questionText": "What are the main components of the Von Neumann architecture?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_3",
+          "questionText": "What is the Von Neumann computer architecture? List its key components.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_4",
+          "questionText": "What are the four main steps in the Von Neumann architecture's instruction cycle?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_5",
+          "questionText": "What is the Von Neumann bottleneck?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_6",
+          "questionText": "What is a key advantage of the Von Neumann architecture?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_7",
+          "questionText": "What are the three main requirements for a computing system to function?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_8",
+          "questionText": "What is the primary function of a system according to general system theory?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_9",
+          "questionText": "What are the basic components that describe any system?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_10",
+          "questionText": "Why is communication important among system components?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_11",
+          "questionText": "How does a system interact with its environment?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_12",
+          "questionText": "What are natural systems? Give two examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_13",
+          "questionText": "What are artificial systems? Give two examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_14",
+          "questionText": "What are physical systems? Give an example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_15",
+          "questionText": "What are chemical systems? Give an example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_16",
+          "questionText": "What are biological systems? Give an example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_17",
+          "questionText": "What are psychological systems? Give an example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_18",
+          "questionText": "What are knowledge systems? Give two examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_19",
+          "questionText": "What are engineering systems? List five types.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_20",
+          "questionText": "What are social systems? Give three examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_21",
+          "questionText": "How does computer science use both natural and design science approaches?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_22",
+          "questionText": "What is the main objective of a computer as a system?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_23",
+          "questionText": "What are communication components in a computer?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_24",
+          "questionText": "What is the role of the motherboard in a computer system?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_25",
+          "questionText": "What is a system bus? Name its three types.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_26",
+          "questionText": "What are the characteristics of Von Neumann architecture?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_27",
+          "questionText": "What is sequential execution in Von Neumann architecture?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_28",
+          "questionText": "What is the difference between hardware and software?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_29",
+          "questionText": "What is system software? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_30",
+          "questionText": "What is application software? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_31",
+          "questionText": "What is a computer network as a system?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_32",
+          "questionText": "What are the objectives of a computer network?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_33",
+          "questionText": "What is the Internet as a system?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_34",
+          "questionText": "How fast does data travel on the internet?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_35",
+          "questionText": "How many websites exist on the internet today?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_36",
+          "questionText": "How many people are connected to the internet globally?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_37",
+          "questionText": "What is the difference between LAN and WAN?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_38",
+          "questionText": "What is the role of a router in a network?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_39",
+          "questionText": "What is the role of a switch in a network?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_40",
+          "questionText": "What are network protocols? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_41",
+          "questionText": "What is TCP/IP and why is it important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch1_short_42",
+          "questionText": "What is UDP and how is it different from TCP?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     },
     {
@@ -2357,7 +2610,308 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch2_short_1",
+          "questionText": "What is the primary purpose of the ASCII encoding scheme?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_2",
+          "questionText": "How does Unicode handle characters from different languages?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_3",
+          "questionText": "What is the range of values for an unsigned 2-byte integer?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_4",
+          "questionText": "What is the benefit of using unsigned integers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_5",
+          "questionText": "How does the number of bits affect the range of integer values?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_6",
+          "questionText": "Why are whole numbers commonly used in computing for quantities that cannot be negative?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_7",
+          "questionText": "How is the range of floating-point numbers calculated for single precision?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_8",
+          "questionText": "Why is it important to understand the limitations of floating-point representation in scientific computing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_9",
+          "questionText": "What is the decimal number system and what is its base?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_10",
+          "questionText": "What is the binary number system and why do computers use it?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_11",
+          "questionText": "What is the octal number system and what is its base?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_12",
+          "questionText": "Why does each octal digit represent three binary digits?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_13",
+          "questionText": "What is the hexadecimal number system and what is its base?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_14",
+          "questionText": "Why does each hexadecimal digit represent four binary bits?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_15",
+          "questionText": "What are whole numbers (W) in mathematics and computing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_16",
+          "questionText": "What is the maximum value for a 1-byte whole number?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_17",
+          "questionText": "What is the maximum value for a 2-byte whole number?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_18",
+          "questionText": "What is the maximum value for a 4-byte whole number?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_19",
+          "questionText": "What are integers (Z) and how do they differ from whole numbers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_20",
+          "questionText": "What is the maximum positive value in a 1-byte signed integer?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_21",
+          "questionText": "What is the minimum value in a 1-byte signed integer?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_22",
+          "questionText": "What is the formula for minimum value in n-bit signed integer?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_23",
+          "questionText": "What are floating-point numbers used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_24",
+          "questionText": "What is single precision floating-point format?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_25",
+          "questionText": "How many bits are used in single precision and how are they allocated?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_26",
+          "questionText": "What is the approximate range of single precision values?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_27",
+          "questionText": "What is double precision floating-point format?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_28",
+          "questionText": "How many bits are used in double precision and how are they allocated?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_29",
+          "questionText": "What is the bias value in double precision?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_30",
+          "questionText": "What is ASCII and how many characters does it represent?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_31",
+          "questionText": "What is the ASCII code for 'A' and 'a'?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_32",
+          "questionText": "What is Extended ASCII and how many bits does it use?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_33",
+          "questionText": "What is Unicode and why was it developed?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_34",
+          "questionText": "What does UTF stand for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_35",
+          "questionText": "How many bytes does UTF-8 use for 'A' and for Urdu letter 'ب'?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_36",
+          "questionText": "How many bytes in a Kilobyte, Megabyte, Gigabyte, Terabyte?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_37",
+          "questionText": "How are images stored in computers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_38",
+          "questionText": "What are pixels and RGB values?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_39",
+          "questionText": "What are JPEG, PNG, and GIF formats used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_40",
+          "questionText": "How are audio files stored in computers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_41",
+          "questionText": "What are MP3, WAV, and AAC audio formats?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_42",
+          "questionText": "How are videos stored in computers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_43",
+          "questionText": "What is frame rate and how is it measured?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_44",
+          "questionText": "What are MP4, AVI, and MKV video formats?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_45",
+          "questionText": "What are HDD, SSD, and cloud storage?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_46",
+          "questionText": "When was the first hard drive created and how much could it store?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_47",
+          "questionText": "What is the difference between signed and unsigned integers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_48",
+          "questionText": "Why is binary system fundamental to digital computing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_49",
+          "questionText": "What operations can be performed on binary numbers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch2_short_50",
+          "questionText": "How does two's complement simplify subtraction?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     },
     {
@@ -3341,7 +3895,260 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch3_short_1",
+          "questionText": "What is the significance of the truth table in digital logic?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_2",
+          "questionText": "What is the purpose of a Karnaugh map in simplifying Boolean expressions?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_3",
+          "questionText": "What are digital systems?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_4",
+          "questionText": "What is an analog signal? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_5",
+          "questionText": "What is a digital signal? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_6",
+          "questionText": "What is ADC and why is it needed?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_7",
+          "questionText": "What is DAC and why is it needed?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_8",
+          "questionText": "What are logic levels in digital circuits?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_9",
+          "questionText": "What is Boolean algebra?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_10",
+          "questionText": "What are binary variables?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_11",
+          "questionText": "What is the output of AND operation when A=1, B=0?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_12",
+          "questionText": "What is the output of OR operation when A=1, B=0?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_13",
+          "questionText": "How are Boolean functions constructed?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_14",
+          "questionText": "Where are Boolean functions used in computers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_15",
+          "questionText": "How are Boolean functions used in cell phones and calculators?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_16",
+          "questionText": "Who invented Boolean algebra and when?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_17",
+          "questionText": "Where was George Boole born?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_18",
+          "questionText": "What is an AND gate and when does it output true?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_19",
+          "questionText": "What is an OR gate and when does it output true?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_20",
+          "questionText": "What is a NOT gate and what does it output?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_21",
+          "questionText": "What is a NAND gate and how is it created?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_22",
+          "questionText": "What is an XOR gate and when does it output true?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_23",
+          "questionText": "What is a half-adder circuit?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_24",
+          "questionText": "How many inputs and outputs does a half-adder have?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_25",
+          "questionText": "What is a full-adder circuit?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_26",
+          "questionText": "How many inputs and outputs does a full-adder have?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_27",
+          "questionText": "What is a Karnaugh map (K-map)?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_28",
+          "questionText": "What is the size of K-map for 2 variables?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_29",
+          "questionText": "What is the size of K-map for 3 variables?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_30",
+          "questionText": "What is the size of K-map for 4 variables?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_31",
+          "questionText": "What sequence do K-map cells follow?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_32",
+          "questionText": "What is a minterm in Boolean algebra?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_33",
+          "questionText": "How many minterms are possible for 3 variables?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_34",
+          "questionText": "What are the steps to create a K-map?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_35",
+          "questionText": "What size groups should be formed in K-map?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_36",
+          "questionText": "What is the purpose of logic diagrams?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_37",
+          "questionText": "How do you create a logic diagram?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_38",
+          "questionText": "What is duality in Boolean algebra?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_39",
+          "questionText": "What is the difference between analog and digital signals in terms of values?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_40",
+          "questionText": "Why are truth tables important in digital logic?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_41",
+          "questionText": "How does a half-adder differ from a full-adder?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch3_short_42",
+          "questionText": "What practical applications do adder circuits have?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     },
     {
@@ -3935,7 +4742,314 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch4_short_1",
+          "questionText": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_2",
+          "questionText": "Why is it necessary to verify full system functionality after implementing a solution?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_3",
+          "questionText": "What is system troubleshooting?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_4",
+          "questionText": "Why is troubleshooting important for maintaining systems?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_5",
+          "questionText": "What does \"identify problem\" mean in troubleshooting? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_6",
+          "questionText": "What does \"establish a theory of probable cause\" mean? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_7",
+          "questionText": "What does \"test the theory to determine cause\" mean? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_8",
+          "questionText": "What does \"establish a plan of action\" mean? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_9",
+          "questionText": "What does \"implement the solution\" mean? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_10",
+          "questionText": "What does \"verify full system functionality\" mean? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_11",
+          "questionText": "Why is documentation important in troubleshooting?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_12",
+          "questionText": "How does troubleshooting help prevent downtime?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_13",
+          "questionText": "How does troubleshooting ensure data integrity?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_14",
+          "questionText": "How does troubleshooting improve security?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_15",
+          "questionText": "How does troubleshooting enhance performance?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_16",
+          "questionText": "How does troubleshooting extend equipment life?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_17",
+          "questionText": "How does troubleshooting save costs?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_18",
+          "questionText": "How does troubleshooting enhance user experience?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_19",
+          "questionText": "What is application freezing and how can it be fixed?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_20",
+          "questionText": "What are unresponsive peripherals and how can they be fixed?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_21",
+          "questionText": "Why is restarting a computer important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_22",
+          "questionText": "How can you use the power button effectively when computer is unresponsive?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_23",
+          "questionText": "What percentage of software issues can restarting fix?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_24",
+          "questionText": "What are common hardware issues related to cables?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_25",
+          "questionText": "What is overheating and what problems can it cause?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_26",
+          "questionText": "How can you maintain proper cable management?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_27",
+          "questionText": "Why is proper ventilation important for computers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_28",
+          "questionText": "What are symptoms of RAM failures?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_29",
+          "questionText": "What tools can diagnose RAM issues?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_30",
+          "questionText": "What percentage of computer crashes are caused by RAM errors?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_31",
+          "questionText": "What are symptoms of hard drive failures?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_32",
+          "questionText": "What tools can monitor hard drive health?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_33",
+          "questionText": "How can you upgrade RAM?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_34",
+          "questionText": "How can you replace a hard drive?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_35",
+          "questionText": "Why are software updates important for security?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_36",
+          "questionText": "How can you resolve software conflicts?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_37",
+          "questionText": "What was the WannaCry ransomware attack?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_38",
+          "questionText": "How can you identify and remove malware infections?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_39",
+          "questionText": "How can you create strong passwords?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_40",
+          "questionText": "What is two-factor authentication?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_41",
+          "questionText": "Why should you avoid public Wi-Fi for sensitive transactions?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_42",
+          "questionText": "What are common online scams and phishing attempts?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_43",
+          "questionText": "Why is it important to regularly back up data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_44",
+          "questionText": "What are methods for backing up data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_45",
+          "questionText": "What percentage of people have never backed up their data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_46",
+          "questionText": "How can you manage storage space effectively?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_47",
+          "questionText": "What built-in help features are available for troubleshooting?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_48",
+          "questionText": "What internet resources can help with troubleshooting?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_49",
+          "questionText": "Why is effective communication important when assisting others?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_50",
+          "questionText": "How can you share troubleshooting knowledge with others?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch4_short_51",
+          "questionText": "How can collaboration help solve computer problems?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     },
     {
@@ -4464,7 +5578,278 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch5_short_1",
+          "questionText": "What is utility software and why is it important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_2",
+          "questionText": "What are the main functions of spreadsheet software?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_3",
+          "questionText": "How can graphic design software be used in the field of education?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_4",
+          "questionText": "What is the significance of data backups and how can they be performed?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_5",
+          "questionText": "What is software?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_6",
+          "questionText": "What was the first computer virus called and when was it created?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_7",
+          "questionText": "What are the two main types of software?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_8",
+          "questionText": "What is system software designed to do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_9",
+          "questionText": "What is application software designed to do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_10",
+          "questionText": "How do system software and application software differ in purpose?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_11",
+          "questionText": "How do system software and application software differ in installation?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_12",
+          "questionText": "What is an operating system?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_13",
+          "questionText": "What is the role of operating system in managing hardware resources?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_14",
+          "questionText": "What is a user interface?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_15",
+          "questionText": "What is a Graphical User Interface (GUI)? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_16",
+          "questionText": "What is a Command-Line Interface (CLI)? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_17",
+          "questionText": "How does an operating system run applications?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_18",
+          "questionText": "What are utility programs?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_19",
+          "questionText": "What is Disk Cleanup and what does it do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_20",
+          "questionText": "What is antivirus software and what does it do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_21",
+          "questionText": "What is backup software and what does it do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_22",
+          "questionText": "What are file compression tools and what do they do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_23",
+          "questionText": "What are device drivers and what do they do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_24",
+          "questionText": "What is the installation process for a device driver?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_25",
+          "questionText": "How does a device driver facilitate communication?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_26",
+          "questionText": "What is Plug and Play (PnP)?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_27",
+          "questionText": "When was the first operating system created?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_28",
+          "questionText": "What is Microsoft Word and what are its features?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_29",
+          "questionText": "What is Google Docs and what special feature does it have?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_30",
+          "questionText": "What is Apple Pages?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_31",
+          "questionText": "What is LibreOffice Writer?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_32",
+          "questionText": "What is Microsoft Excel and what are its features?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_33",
+          "questionText": "What is Google Sheets and what special feature does it have?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_34",
+          "questionText": "What is Apple Numbers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_35",
+          "questionText": "What is LibreOffice Calc?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_36",
+          "questionText": "What AI-based tools are available in spreadsheet software?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_37",
+          "questionText": "What is Adobe Photoshop used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_38",
+          "questionText": "What is Adobe Illustrator used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_39",
+          "questionText": "What is CorelDRAW used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_40",
+          "questionText": "What is GIMP?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_41",
+          "questionText": "What is Canva?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_42",
+          "questionText": "What AI-based tools are available in graphic design software?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_43",
+          "questionText": "How is application software used in business?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_44",
+          "questionText": "How is application software used in education?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch5_short_45",
+          "questionText": "What is the importance of keeping system software updated?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     },
     {
@@ -5383,7 +6768,380 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch6_short_1",
+          "questionText": "What are the main functions of the Network Layer in the OSI model?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_2",
+          "questionText": "What is the purpose of the Dynamic Host Configuration Protocol (DHCP)?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_3",
+          "questionText": "How does encapsulation ensure secure communication in a network?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_4",
+          "questionText": "What are the advantages of using a star topology in a network?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_5",
+          "questionText": "How do firewalls contribute to network security?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_6",
+          "questionText": "What is a computer network?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_7",
+          "questionText": "What are the primary components of a network?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_8",
+          "questionText": "What are nodes in a network? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_9",
+          "questionText": "What are links in a network?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_10",
+          "questionText": "What is the largest network in the world?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_11",
+          "questionText": "What is a switch and how does it work?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_12",
+          "questionText": "What address does a switch use to forward data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_13",
+          "questionText": "What is a router and how does it work?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_14",
+          "questionText": "What does a router use to decide the best path for data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_15",
+          "questionText": "What is a routing table?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_16",
+          "questionText": "What is an Access Point (AP)?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_17",
+          "questionText": "How does an Access Point work?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_18",
+          "questionText": "What is SIM and what does it do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_19",
+          "questionText": "What is a network topology?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_20",
+          "questionText": "What happens if main cable fails in bus topology?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_21",
+          "questionText": "What is a hub and how does it work?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_22",
+          "questionText": "Why is mesh topology very reliable?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_23",
+          "questionText": "What is Simplex communication? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_24",
+          "questionText": "What is Half-Duplex communication? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_25",
+          "questionText": "What is Full-Duplex communication? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_26",
+          "questionText": "What is the OSI model and how many layers does it have?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_27",
+          "questionText": "What does the Physical Layer do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_28",
+          "questionText": "What does the Data Link Layer do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_29",
+          "questionText": "What does the Network Layer do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_30",
+          "questionText": "What does the Transport Layer do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_31",
+          "questionText": "What does the Session Layer do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_32",
+          "questionText": "What does the Presentation Layer do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_33",
+          "questionText": "What does the Application Layer do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_34",
+          "questionText": "What is IPv4 and how many bits does it use?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_35",
+          "questionText": "How many unique IPv4 addresses are possible?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_36",
+          "questionText": "What is IPv6 and how many bits does it use?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_37",
+          "questionText": "Why was IPv6 developed?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_38",
+          "questionText": "What is DNS and what does it do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_39",
+          "questionText": "What is DHCP and what does it do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_40",
+          "questionText": "What is a protocol? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_41",
+          "questionText": "What is HTTP used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_42",
+          "questionText": "What is FTP used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_43",
+          "questionText": "What is network security and why is it important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_44",
+          "questionText": "What is a firewall?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_45",
+          "questionText": "What is encryption?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_46",
+          "questionText": "What is decryption?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_47",
+          "questionText": "What is malware?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_48",
+          "questionText": "What is phishing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_49",
+          "questionText": "What is a DoS attack?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_50",
+          "questionText": "What is a Man-in-the-Middle attack?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_51",
+          "questionText": "What is a PAN and what is its range?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_52",
+          "questionText": "What is a LAN?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_53",
+          "questionText": "What is a MAN and how far can it cover?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_54",
+          "questionText": "What is a WAN?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_55",
+          "questionText": "What is a CAN?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_56",
+          "questionText": "How are computer networks used in business?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_57",
+          "questionText": "How are computer networks used in education?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_58",
+          "questionText": "How are computer networks used in healthcare?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_59",
+          "questionText": "What was the first message sent over ARPANET?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_60",
+          "questionText": "What is the difference between TCP and UDP?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_61",
+          "questionText": "What is the difference between a switch and a router?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch6_short_62",
+          "questionText": "Why is encapsulation important in network communication?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     },
     {
@@ -6042,7 +7800,332 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch7_short_1",
+          "questionText": "What is decomposition in computational thinking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_2",
+          "questionText": "What is an algorithm?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_3",
+          "questionText": "How does problem understanding help in computational thinking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_4",
+          "questionText": "What are flowcharts and how are they used?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_5",
+          "questionText": "How do you differentiate between flowcharts and pseudocode?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_6",
+          "questionText": "What is a dry run and why is it important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_7",
+          "questionText": "What are the four key components of computational thinking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_8",
+          "questionText": "What is pattern recognition?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_9",
+          "questionText": "What is the pattern in areas of squares from side 1 to 7?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_10",
+          "questionText": "What is abstraction?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_11",
+          "questionText": "What is an algorithm?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_12",
+          "questionText": "What did Albert Einstein say about problem understanding?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_13",
+          "questionText": "Why is problem understanding the first and most important step?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_14",
+          "questionText": "What is problem simplification?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_15",
+          "questionText": "What is solution selection and design?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_16",
+          "questionText": "What are algorithm design methods?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_17",
+          "questionText": "What are flowcharts?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_18",
+          "questionText": "When were flowchart symbols first standardized and by whom?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_19",
+          "questionText": "What does the oval symbol in flowchart represent?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_20",
+          "questionText": "What does the rectangle symbol in flowchart represent?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_21",
+          "questionText": "What does the parallelogram symbol in flowchart represent?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_22",
+          "questionText": "What does the diamond symbol in flowchart represent?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_23",
+          "questionText": "What does the arrow symbol in flowchart represent?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_24",
+          "questionText": "What is pseudocode?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_25",
+          "questionText": "Why is pseudocode useful?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_26",
+          "questionText": "What does the modulo operator (%) do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_27",
+          "questionText": "Why does the prime check loop go only to square root of number?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_28",
+          "questionText": "What are the benefits of using pseudocode?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_29",
+          "questionText": "What is time complexity?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_30",
+          "questionText": "What is Big O notation used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_31",
+          "questionText": "What is space complexity?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_32",
+          "questionText": "What is a dry run of a flowchart?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_33",
+          "questionText": "What is a dry run of pseudocode?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_34",
+          "questionText": "What is simulation?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_35",
+          "questionText": "Why is simulation useful?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_36",
+          "questionText": "What does LARP stand for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_37",
+          "questionText": "Why is LARP important for learning algorithms?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_38",
+          "questionText": "How do you write algorithms in LARP?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_39",
+          "questionText": "What commands are used in LARP for input and output?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_40",
+          "questionText": "What are the three main types of errors?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_41",
+          "questionText": "What are syntax errors?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_42",
+          "questionText": "What are runtime errors?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_43",
+          "questionText": "What are logical errors?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_44",
+          "questionText": "What is debugging?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_45",
+          "questionText": "Where did the term \"debugging\" come from?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_46",
+          "questionText": "What are common error messages in LARP?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_47",
+          "questionText": "What does \"Missing Step\" error mean in LARP?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_48",
+          "questionText": "What does \"Undefined Variable\" error mean in LARP?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_49",
+          "questionText": "What does \"Invalid Operation\" error mean in LARP?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_50",
+          "questionText": "How can you use comments for debugging?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_51",
+          "questionText": "Why should you check conditions when debugging?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_52",
+          "questionText": "How can simplifying the problem help in debugging?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_53",
+          "questionText": "Why should you read error messages carefully?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch7_short_54",
+          "questionText": "How can you verify algorithm correctness through dry run?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     },
     {
@@ -7143,7 +9226,674 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch8_short_1",
+          "questionText": "What is the purpose of the <head> tag in HTML?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_2",
+          "questionText": "How do you add a comment in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_3",
+          "questionText": "What are the different ways to apply CSS to an HTML document?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_4",
+          "questionText": "How can you include JavaScript in an HTML file?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_5",
+          "questionText": "What is the function of the <div> tag in HTML?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_6",
+          "questionText": "How do you link an external CSS file to an HTML document?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_7",
+          "questionText": "What is the use of the <table> tag in HTML?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_8",
+          "questionText": "What is web development?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_9",
+          "questionText": "Why is web development a valuable skill?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_10",
+          "questionText": "Who created Hotmail and what happened to it?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_11",
+          "questionText": "What are the three main components of web development?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_12",
+          "questionText": "What is front-end development?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_13",
+          "questionText": "What is HTML and what does it do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_14",
+          "questionText": "What is CSS and what does it do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_15",
+          "questionText": "What is JavaScript and what does it do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_16",
+          "questionText": "What is back-end development?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_17",
+          "questionText": "What are web servers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_18",
+          "questionText": "What are databases?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_19",
+          "questionText": "What are back-end programming languages? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_20",
+          "questionText": "What is full-stack development?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_21",
+          "questionText": "When was the first website created and by whom?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_22",
+          "questionText": "Where can you still access the first website?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_23",
+          "questionText": "Who created HTML and when?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_24",
+          "questionText": "When was HTML5 released?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_25",
+          "questionText": "What tools do you need to start creating websites?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_26",
+          "questionText": "How do you create a \"Hello, World!\" HTML application?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_27",
+          "questionText": "What file extension should HTML files have?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_28",
+          "questionText": "What does <!DOCTYPE html> tell the browser?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_29",
+          "questionText": "What is the <html> tag?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_30",
+          "questionText": "What is the <head> tag used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_31",
+          "questionText": "What is the <title> tag used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_32",
+          "questionText": "What is the <body> tag used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_33",
+          "questionText": "What is the <h1> tag used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_34",
+          "questionText": "What is the <p> tag used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_35",
+          "questionText": "What are HTML tags?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_36",
+          "questionText": "What are paired tags? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_37",
+          "questionText": "What are unpaired tags? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_38",
+          "questionText": "What are headings in HTML and why are they important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_39",
+          "questionText": "How many levels of headings are there in HTML?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_40",
+          "questionText": "What are paragraphs in HTML used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_41",
+          "questionText": "What are links in HTML and how are they created?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_42",
+          "questionText": "What does href attribute do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_43",
+          "questionText": "How do you create an email link in HTML?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_44",
+          "questionText": "What are images in HTML and how are they added?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_45",
+          "questionText": "What does the src attribute do in <img> tag?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_46",
+          "questionText": "What does the alt attribute do and why is it important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_47",
+          "questionText": "What are lists in HTML?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_48",
+          "questionText": "What is an unordered list and how is it created?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_49",
+          "questionText": "What is an ordered list and how is it created?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_50",
+          "questionText": "What is the <li> tag used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_51",
+          "questionText": "What are tables in HTML used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_52",
+          "questionText": "What does <table> tag do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_53",
+          "questionText": "What does <tr> tag do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_54",
+          "questionText": "What does <td> tag do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_55",
+          "questionText": "What does <th> tag do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_56",
+          "questionText": "How do you add comments in HTML?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_57",
+          "questionText": "What is CSS and why is it important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_58",
+          "questionText": "What is the basic structure of a CSS rule?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_59",
+          "questionText": "What is a selector in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_60",
+          "questionText": "What are declarations in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_61",
+          "questionText": "What are the three ways to integrate CSS in HTML?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_62",
+          "questionText": "What are inline styles?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_63",
+          "questionText": "What are internal styles?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_64",
+          "questionText": "What are external styles?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_65",
+          "questionText": "How do you link an external CSS file?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_66",
+          "questionText": "How do you style fonts in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_67",
+          "questionText": "What properties control font family, size, weight, and style?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_68",
+          "questionText": "How do you set background color in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_69",
+          "questionText": "How do you set background image in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_70",
+          "questionText": "How do you control background repeat?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_71",
+          "questionText": "How do you position a background image?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_72",
+          "questionText": "How do you control background size?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_73",
+          "questionText": "What are <div> and <section> used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_74",
+          "questionText": "What is CSS Grid Layout?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_75",
+          "questionText": "What is CSS Flexbox?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_76",
+          "questionText": "What is positioning in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_77",
+          "questionText": "What are margins in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_78",
+          "questionText": "What is padding in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_79",
+          "questionText": "How do you add animations in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_80",
+          "questionText": "What are keyframes in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_81",
+          "questionText": "How do you apply an animation to an element?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_82",
+          "questionText": "How do you control animation timing and repetition?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_83",
+          "questionText": "How do you add transitions in CSS?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_84",
+          "questionText": "What is JavaScript and what does it do?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_85",
+          "questionText": "How do you display an alert in JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_86",
+          "questionText": "How do you declare variables in JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_87",
+          "questionText": "What are the data types in JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_88",
+          "questionText": "What is a string in JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_89",
+          "questionText": "What is a number in JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_90",
+          "questionText": "What is a boolean in JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_91",
+          "questionText": "What is an array in JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_92",
+          "questionText": "What are functions in JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_93",
+          "questionText": "How do you create a simple function in JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_94",
+          "questionText": "How do you create a function with parameters?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_95",
+          "questionText": "What is an event in JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_96",
+          "questionText": "What is the onclick event?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_97",
+          "questionText": "What is the onload event?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_98",
+          "questionText": "What is the onmouseover event?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_99",
+          "questionText": "What is an event handler?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_100",
+          "questionText": "How do you create an interactive form with JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_101",
+          "questionText": "How do you get element value in JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_102",
+          "questionText": "How do you change background color with JavaScript?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_103",
+          "questionText": "What is debugging in web development?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_104",
+          "questionText": "How can browser developer tools help with debugging?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_105",
+          "questionText": "What is console.log() used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_106",
+          "questionText": "Why is cross-browser testing important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_107",
+          "questionText": "What is responsive design testing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_108",
+          "questionText": "What is user testing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_109",
+          "questionText": "How do you fix broken links?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_110",
+          "questionText": "How do you fix incorrect HTML structure?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch8_short_111",
+          "questionText": "How do you fix CSS issues?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     },
     {
@@ -8192,7 +10942,698 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch9_short_1",
+          "questionText": "What is the difference between qualitative and quantitative data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_2",
+          "questionText": "What type of data is the number of students in your class?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_3",
+          "questionText": "Why is it important to organize data into tables or charts before analyzing it?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_4",
+          "questionText": "What is one advantage of using online tools like Google Forms for collecting survey data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_5",
+          "questionText": "Why might you need to integrate data from different sources when working on a project?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_6",
+          "questionText": "Explain why data visualization is important. How does it help in understanding complex information?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_7",
+          "questionText": "What is data? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_8",
+          "questionText": "How does weather data help meteorologists?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_9",
+          "questionText": "What is qualitative data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_10",
+          "questionText": "What are the key characteristics of qualitative data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_11",
+          "questionText": "What is nominal data? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_12",
+          "questionText": "What operations can be performed on nominal data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_13",
+          "questionText": "What is ordinal data? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_14",
+          "questionText": "What operations can be performed on ordinal data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_15",
+          "questionText": "How much data do people generate every day?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_16",
+          "questionText": "What is quantitative data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_17",
+          "questionText": "What are the key characteristics of quantitative data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_18",
+          "questionText": "What is discrete data? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_19",
+          "questionText": "What operations can be performed on discrete data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_20",
+          "questionText": "What is continuous data? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_21",
+          "questionText": "What operations can be performed on continuous data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_22",
+          "questionText": "Why is organizing data important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_23",
+          "questionText": "What are the main methods of data collection?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_24",
+          "questionText": "What are surveys and how are they conducted?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_25",
+          "questionText": "What are best practices in survey design?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_26",
+          "questionText": "What is Google Forms and what is its link?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_27",
+          "questionText": "What is Microsoft Forms and what is its link?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_28",
+          "questionText": "What is SurveyMonkey and what is its link?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_29",
+          "questionText": "What are questionnaires?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_30",
+          "questionText": "What are interviews?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_31",
+          "questionText": "What are observations?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_32",
+          "questionText": "What are online data sources?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_33",
+          "questionText": "How do you gather data from online sources?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_34",
+          "questionText": "What is data extraction?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_35",
+          "questionText": "What is data integration?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_36",
+          "questionText": "What is structured data? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_37",
+          "questionText": "What is unstructured data? Give example.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_38",
+          "questionText": "What are spreadsheets used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_39",
+          "questionText": "What are databases used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_40",
+          "questionText": "What are data warehouses used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_41",
+          "questionText": "What is NoSQL and what is it used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_42",
+          "questionText": "What is data visualization?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_43",
+          "questionText": "Why is data visualization important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_44",
+          "questionText": "How many times faster does the human brain process visuals compared to text?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_45",
+          "questionText": "Who created the first line graph and when?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_46",
+          "questionText": "What tools are used for data visualization?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_47",
+          "questionText": "What is Microsoft Power BI?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_48",
+          "questionText": "How do you visualize nominal data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_49",
+          "questionText": "How do you visualize ordinal data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_50",
+          "questionText": "How do you visualize discrete data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_51",
+          "questionText": "How do you visualize continuous data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_52",
+          "questionText": "What is data pre-processing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_53",
+          "questionText": "What is data validation?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_54",
+          "questionText": "How do you validate data completeness?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_55",
+          "questionText": "How do you validate data accuracy?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_56",
+          "questionText": "What is data cleaning?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_57",
+          "questionText": "How do you handle missing data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_58",
+          "questionText": "How do you deal with outliers?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_59",
+          "questionText": "What is data analysis?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_60",
+          "questionText": "What is quantitative analysis?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_61",
+          "questionText": "What is statistical analysis?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_62",
+          "questionText": "What are measures of center?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_63",
+          "questionText": "What is mean and how is it calculated?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_64",
+          "questionText": "What is median and how is it found?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_65",
+          "questionText": "What is mode?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_66",
+          "questionText": "When is median more useful than mean?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_67",
+          "questionText": "What are measures of spread?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_68",
+          "questionText": "What is range?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_69",
+          "questionText": "What is variance?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_70",
+          "questionText": "What is standard deviation?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_71",
+          "questionText": "What is qualitative analysis?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_72",
+          "questionText": "What is content analysis?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_73",
+          "questionText": "What is thematic analysis?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_74",
+          "questionText": "What is cloud storage?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_75",
+          "questionText": "What is remote access?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_76",
+          "questionText": "What are data backups?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_77",
+          "questionText": "What is collaborative authoring?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_78",
+          "questionText": "What are the benefits of collaborative tools?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_79",
+          "questionText": "What is data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_80",
+          "questionText": "Why is data science important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_81",
+          "questionText": "What is the interdisciplinary nature of data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_82",
+          "questionText": "What is the data science workflow?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_83",
+          "questionText": "What are the steps in data science workflow?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_84",
+          "questionText": "What is problem identification in data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_85",
+          "questionText": "What is data collection in data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_86",
+          "questionText": "What is data cleaning in data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_87",
+          "questionText": "What is data analysis in data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_88",
+          "questionText": "What is data interpretation in data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_89",
+          "questionText": "What is data visualization in data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_90",
+          "questionText": "What is Big Data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_91",
+          "questionText": "What are the three Vs of Big Data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_92",
+          "questionText": "What does Volume mean in Big Data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_93",
+          "questionText": "What does Velocity mean in Big Data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_94",
+          "questionText": "What does Variety mean in Big Data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_95",
+          "questionText": "How is Big Data used in retail?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_96",
+          "questionText": "How is Big Data used in healthcare?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_97",
+          "questionText": "How is Big Data used in finance?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_98",
+          "questionText": "How is Big Data used in transportation?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_99",
+          "questionText": "What data science tools are commonly used?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_100",
+          "questionText": "What is Excel used for in data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_101",
+          "questionText": "What is Python used for in data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_102",
+          "questionText": "What are Pandas and Matplotlib in Python?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_103",
+          "questionText": "What is R used for in data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_104",
+          "questionText": "What is SQL used for in data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_105",
+          "questionText": "What is predictive modeling?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_106",
+          "questionText": "What is graph analytics?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_107",
+          "questionText": "How is data science used in retail industry?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_108",
+          "questionText": "How is data science used in healthcare?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_109",
+          "questionText": "How is data science used in finance?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_110",
+          "questionText": "How is data science used in sports?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_111",
+          "questionText": "What are future trends in data management?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_112",
+          "questionText": "What is enhanced automation in data tools?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_113",
+          "questionText": "How will data privacy improve in future?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_114",
+          "questionText": "How will AI be integrated with data science?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch9_short_115",
+          "questionText": "What advances in visualization are expected?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     },
     {
@@ -8955,7 +12396,392 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch10_short_1",
+          "questionText": "What is the historical context and evolution of AI?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_2",
+          "questionText": "What are the potential risks associated with AI and IoT?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_3",
+          "questionText": "What is Artificial Intelligence?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_4",
+          "questionText": "Who coined the term AI and when?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_5",
+          "questionText": "What event is regarded as the origin of AI as a research discipline?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_6",
+          "questionText": "What were the key milestones in AI during 1950s-60s?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_7",
+          "questionText": "What happened in AI during 1970s-80s?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_8",
+          "questionText": "What happened in AI during 1990s?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_9",
+          "questionText": "What happened in AI during 2000s?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_10",
+          "questionText": "When were voice assistants introduced?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_11",
+          "questionText": "When was ChatGPT introduced?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_12",
+          "questionText": "What was the first AI program and who created it?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_13",
+          "questionText": "How is AI used in healthcare?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_14",
+          "questionText": "How is AI used in education?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_15",
+          "questionText": "How is AI used in gaming?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_16",
+          "questionText": "How is AI used in transportation?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_17",
+          "questionText": "How is AI used in automobile industry?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_18",
+          "questionText": "How is AI used in finance?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_19",
+          "questionText": "How is AI used in social media?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_20",
+          "questionText": "How is AI used in agriculture?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_21",
+          "questionText": "How is AI used in e-commerce?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_22",
+          "questionText": "What is machine learning?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_23",
+          "questionText": "What is deep learning?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_24",
+          "questionText": "What are neural networks inspired by?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_25",
+          "questionText": "What is Natural Language Processing (NLP)?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_26",
+          "questionText": "What is computer vision?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_27",
+          "questionText": "What is robotics?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_28",
+          "questionText": "What are explainable (whitebox) AI algorithms?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_29",
+          "questionText": "What is a decision tree?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_30",
+          "questionText": "What is linear regression?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_31",
+          "questionText": "What are rule-based systems?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_32",
+          "questionText": "What are unexplainable (blackbox) AI algorithms?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_33",
+          "questionText": "What is Google's AlphaGo?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_34",
+          "questionText": "What is the Internet of Things (IoT)?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_35",
+          "questionText": "Who coined the term IoT and when?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_36",
+          "questionText": "What are the components of IoT systems?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_37",
+          "questionText": "What are sensors in IoT?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_38",
+          "questionText": "What are actuators in IoT?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_39",
+          "questionText": "What are devices in IoT?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_40",
+          "questionText": "What are networks in IoT?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_41",
+          "questionText": "What is data analysis in IoT?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_42",
+          "questionText": "How is IoT used in healthcare?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_43",
+          "questionText": "How is IoT used in transportation?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_44",
+          "questionText": "How many IoT devices were there in 2020?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_45",
+          "questionText": "What are security concerns in IoT?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_46",
+          "questionText": "What are privacy concerns in IoT?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_47",
+          "questionText": "What security measures should be taken for IoT devices?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_48",
+          "questionText": "What is data privacy in context of AI and IoT?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_49",
+          "questionText": "What is algorithmic bias?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_50",
+          "questionText": "How can algorithmic bias lead to unfair outcomes?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_51",
+          "questionText": "What is GDPR?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_52",
+          "questionText": "What ethical guidelines has IEEE developed?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_53",
+          "questionText": "How does AI impact daily life?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_54",
+          "questionText": "How does AI impact work environments?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_55",
+          "questionText": "How does AI impact society at large?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_56",
+          "questionText": "What are smart cities?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_57",
+          "questionText": "How do smart cities use IoT?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_58",
+          "questionText": "What is the role of policy in addressing AI challenges?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_59",
+          "questionText": "What are data protection laws?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_60",
+          "questionText": "Why are security standards important for IoT?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_61",
+          "questionText": "How can bias in AI be mitigated?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_62",
+          "questionText": "What is the difference between whitebox and blackbox AI?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_63",
+          "questionText": "Why is explainable AI important in healthcare and finance?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch10_short_64",
+          "questionText": "How are robots used in Pakistan for medical operations?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     },
     {
@@ -9575,7 +13401,608 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch11_short_1",
+          "questionText": "What is the importance of using computers safely and responsibly?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_2",
+          "questionText": "How does choosing the right hardware and software affect your computer usage?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_3",
+          "questionText": "Why is it important to use antivirus software on your computer?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_4",
+          "questionText": "What are some examples of good practices when selecting hardware and software?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_5",
+          "questionText": "How can choosing compatible hardware and software enhance your computer experience?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_6",
+          "questionText": "Why should you create strong, unique passwords for your accounts?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_7",
+          "questionText": "What is the purpose of regular software updates?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_8",
+          "questionText": "How can you protect yourself from harmful links and downloads?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_9",
+          "questionText": "What is Two-Factor Authentication (2FA), and why is it useful?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_10",
+          "questionText": "Why is it a good idea to avoid using public Wi-Fi for sensitive transactions?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_11",
+          "questionText": "How can you verify if an email or message is a scam?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_12",
+          "questionText": "Why is it important to be careful about what you share on social media?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_13",
+          "questionText": "What should you do if you receive an email from an unknown sender asking for personal information?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_14",
+          "questionText": "What is the purpose of privacy laws regarding your personal information?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_15",
+          "questionText": "How do privacy laws protect you from unauthorized access to your data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_16",
+          "questionText": "What is the difference between copyright, trademarks, and patents?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_17",
+          "questionText": "Why is it important to respect intellectual property rights?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_18",
+          "questionText": "What is software piracy, and why is it harmful?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_19",
+          "questionText": "How can you identify reliable sources when researching online?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_20",
+          "questionText": "What is one way to protect your privacy during online research?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_21",
+          "questionText": "What are some signs that you might be developing an internet addiction?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_22",
+          "questionText": "What is safe and responsible computer usage?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_23",
+          "questionText": "What is online etiquette and why is it important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_24",
+          "questionText": "What is hardware in a computer system?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_25",
+          "questionText": "What is software in a computer system?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_26",
+          "questionText": "Why does choosing the right hardware and software affect safety?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_27",
+          "questionText": "Why does choosing the right hardware and software affect efficiency?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_28",
+          "questionText": "Why does choosing the right hardware and software affect compatibility?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_29",
+          "questionText": "What is cyber hygiene?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_30",
+          "questionText": "How often does Microsoft release major Windows updates?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_31",
+          "questionText": "What are strong passwords and why are they important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_32",
+          "questionText": "Why are regular software updates crucial for safety?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_33",
+          "questionText": "What is malware and how can it harm your device?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_34",
+          "questionText": "Why should you understand privacy settings?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_35",
+          "questionText": "What is oversharing and why should you avoid it?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_36",
+          "questionText": "What is Two-Factor Authentication and when did it become widespread?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_37",
+          "questionText": "Why should you avoid public Wi-Fi for sensitive transactions?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_38",
+          "questionText": "What are online scams and phishing attempts?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_39",
+          "questionText": "Why should you regularly review your account activity?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_40",
+          "questionText": "Why is backing up important data essential?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_41",
+          "questionText": "How should you behave responsibly on social media?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_42",
+          "questionText": "How should you use email safely?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_43",
+          "questionText": "How should you use cloud services safely?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_44",
+          "questionText": "How should you use online applications safely?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_45",
+          "questionText": "Why are privacy settings important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_46",
+          "questionText": "What are data security measures?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_47",
+          "questionText": "What are privacy laws?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_48",
+          "questionText": "Why is understanding privacy laws important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_49",
+          "questionText": "What are the consequences of unauthorized access to personal data?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_50",
+          "questionText": "What is data ethics?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_51",
+          "questionText": "What are the principles of data ethics?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_52",
+          "questionText": "What is informed consent in data collection?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_53",
+          "questionText": "What is data minimization?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_54",
+          "questionText": "What is accountability in data handling?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_55",
+          "questionText": "What was the Yahoo data breach and how many accounts were affected?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_56",
+          "questionText": "What are intellectual property rights?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_57",
+          "questionText": "What is copyright and what does it protect?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_58",
+          "questionText": "What are trademarks and what do they protect?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_59",
+          "questionText": "What are patents and what do they protect?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_60",
+          "questionText": "What are ethical responsibilities regarding intellectual property?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_61",
+          "questionText": "What are legal responsibilities regarding intellectual property?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_62",
+          "questionText": "What is software piracy and how much does it cost the global economy?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_63",
+          "questionText": "What is responsible internet use?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_64",
+          "questionText": "How can you conduct safe data searches?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_65",
+          "questionText": "How can you assess credibility of online information?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_66",
+          "questionText": "Why should you cross-check information from multiple sources?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_67",
+          "questionText": "Why should you be skeptical of sensational headlines?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_68",
+          "questionText": "How can you avoid privacy risks during online research?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_69",
+          "questionText": "What is private browsing or incognito mode?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_70",
+          "questionText": "Why should you avoid suspicious links?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_71",
+          "questionText": "What is internet addiction?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_72",
+          "questionText": "What are signs of internet addiction?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_73",
+          "questionText": "How can you promote balanced internet usage?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_74",
+          "questionText": "What strategies promote digital well-being?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_75",
+          "questionText": "Why should you take regular breaks from internet?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_76",
+          "questionText": "How can you use technology wisely to manage time?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_77",
+          "questionText": "Why should you be mindful of mental health when online?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_78",
+          "questionText": "What are privacy settings on social networking platforms?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_79",
+          "questionText": "What is responsible sharing on social media?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_80",
+          "questionText": "What is online etiquette?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_81",
+          "questionText": "What is cyberbullying?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_82",
+          "questionText": "How should you respond to cyberbullying?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_83",
+          "questionText": "How can you support others who are being bullied online?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_84",
+          "questionText": "How does computing impact the environment?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_85",
+          "questionText": "How does computing raise ethical questions?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_86",
+          "questionText": "What legal issues are involved in computing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_87",
+          "questionText": "How does computing affect society?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_88",
+          "questionText": "How does computing affect the economy?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_89",
+          "questionText": "How does computing affect culture?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_90",
+          "questionText": "How has computing transformed global trade?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_91",
+          "questionText": "How has computing transformed communication?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_92",
+          "questionText": "How has computing influenced cultural evolution?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_93",
+          "questionText": "What are the benefits of social networking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_94",
+          "questionText": "What are the risks of misinformation on social media?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_95",
+          "questionText": "What is the trade-off between privacy and usability?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_96",
+          "questionText": "What is the trade-off between security and usability?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_97",
+          "questionText": "How can you find credible information online?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_98",
+          "questionText": "Why are .edu domains often more reliable?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_99",
+          "questionText": "What was the first computer mouse like?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch11_short_100",
+          "questionText": "Why is it important to respect copyright when using online content?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     },
     {
@@ -10494,7 +14921,590 @@
           "marks": 1
         }
       ],
-      "shortQuestions": [],
+      "shortQuestions": [
+        {
+          "id": "9_cs_ch12_short_1",
+          "questionText": "What is the meaning of the word entrepreneur and its origin?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_2",
+          "questionText": "How do digital technologies help entrepreneurs reach a global audience?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_3",
+          "questionText": "What is an e-commerce platform, and why is it important for businesses?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_4",
+          "questionText": "Why is it important to identify market needs when generating a business idea?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_5",
+          "questionText": "What is the main purpose of using design thinking in creative problem-solving?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_6",
+          "questionText": "What are revenue models, and why are they essential components of a business plan?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_7",
+          "questionText": "How can businesses contribute to environmental sustainability according to the Sustainable Development Goals?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_8",
+          "questionText": "What is entrepreneurship?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_9",
+          "questionText": "What are tech startups? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_10",
+          "questionText": "What are local businesses as examples of entrepreneurship?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_11",
+          "questionText": "Who was Walt Disney and where did he start his company?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_12",
+          "questionText": "What is innovation in entrepreneurship?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_13",
+          "questionText": "What is risk-taking in entrepreneurship?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_14",
+          "questionText": "Why is entrepreneurship important for economic growth?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_15",
+          "questionText": "How does entrepreneurship drive innovation and progress?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_16",
+          "questionText": "What is digital entrepreneurship?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_17",
+          "questionText": "How do digital technologies help entrepreneurs?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_18",
+          "questionText": "How do social media platforms help entrepreneurs?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_19",
+          "questionText": "How do mobile apps help entrepreneurs?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_20",
+          "questionText": "How does cloud computing help entrepreneurs?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_21",
+          "questionText": "How does big data analytics help entrepreneurs?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_22",
+          "questionText": "What is digital marketing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_23",
+          "questionText": "What is SEO and how does it help businesses?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_24",
+          "questionText": "What is social media marketing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_25",
+          "questionText": "What is content marketing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_26",
+          "questionText": "What is email marketing?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_27",
+          "questionText": "What are e-commerce platforms? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_28",
+          "questionText": "What is Daraz and how has it transformed shopping in Pakistan?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_29",
+          "questionText": "What is Bykea and how does it use digital technology?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_30",
+          "questionText": "What opportunities does digital entrepreneurship offer?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_31",
+          "questionText": "What challenges does digital entrepreneurship face?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_32",
+          "questionText": "What are digital tools?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_33",
+          "questionText": "What are market research tools? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_34",
+          "questionText": "What is Google Analytics used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_35",
+          "questionText": "What is SurveyMonkey used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_36",
+          "questionText": "What is SEMrush used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_37",
+          "questionText": "What are online marketing tools? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_38",
+          "questionText": "What is Hootsuite used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_39",
+          "questionText": "What is Yoast SEO used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_40",
+          "questionText": "What is Canva used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_41",
+          "questionText": "What are e-commerce platforms for selling? Give examples.",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_42",
+          "questionText": "What is Shopify used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_43",
+          "questionText": "What is PayPal used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_44",
+          "questionText": "What is Zendesk used for?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_45",
+          "questionText": "What is ideation in business?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_46",
+          "questionText": "What is problem-solving in business?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_47",
+          "questionText": "What is problem identification in business?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_48",
+          "questionText": "What techniques identify market needs?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_49",
+          "questionText": "What is creative problem-solving?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_50",
+          "questionText": "What is design thinking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_51",
+          "questionText": "What are the five steps of design thinking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_52",
+          "questionText": "What does empathizing mean in design thinking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_53",
+          "questionText": "What does defining mean in design thinking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_54",
+          "questionText": "What does ideating mean in design thinking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_55",
+          "questionText": "What does prototyping mean in design thinking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_56",
+          "questionText": "What does testing mean in design thinking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_57",
+          "questionText": "What companies use design thinking?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_58",
+          "questionText": "What is a business plan?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_59",
+          "questionText": "What are the components of a business plan?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_60",
+          "questionText": "What is market analysis in a business plan?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_61",
+          "questionText": "What are revenue models in a business plan?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_62",
+          "questionText": "What are digital marketing strategies in a business plan?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_63",
+          "questionText": "What is prototyping in business?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_64",
+          "questionText": "What is iteration in business?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_65",
+          "questionText": "How did Facebook and Airbnb start?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_66",
+          "questionText": "What is ethical entrepreneurship?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_67",
+          "questionText": "What are the principles of ethics in business?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_68",
+          "questionText": "What are the Sustainable Development Goals (SDGs)?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_69",
+          "questionText": "How many SDGs are there?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_70",
+          "questionText": "What is SDG 7?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_71",
+          "questionText": "What is social sustainability?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_72",
+          "questionText": "What is environmental sustainability?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_73",
+          "questionText": "What is economic sustainability?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_74",
+          "questionText": "What is Pakistan's first certified green building?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_75",
+          "questionText": "How big is Pakistan's freelancing community?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_76",
+          "questionText": "What is the estimated size of Pakistan's e-commerce market?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_77",
+          "questionText": "What is sustainable entrepreneurship?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_78",
+          "questionText": "How can businesses align with SDGs?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_79",
+          "questionText": "Why is ethical entrepreneurship important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_80",
+          "questionText": "How can entrepreneurs in Pakistan leverage digital technologies?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_81",
+          "questionText": "What is the role of PTA in Pakistan's digital landscape?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_82",
+          "questionText": "How can data analysis help entrepreneurs make better decisions?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_83",
+          "questionText": "What is the importance of customer feedback in entrepreneurship?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_84",
+          "questionText": "How can entrepreneurs protect their intellectual property?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_85",
+          "questionText": "What is the difference between a business idea and a business opportunity?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_86",
+          "questionText": "How can entrepreneurs test their business ideas?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_87",
+          "questionText": "What is a minimum viable product (MVP)?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_88",
+          "questionText": "How can entrepreneurs fund their startups?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_89",
+          "questionText": "What is bootstrapping in entrepreneurship?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_90",
+          "questionText": "What are angel investors?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_91",
+          "questionText": "What is venture capital?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_92",
+          "questionText": "How can entrepreneurs scale their businesses?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_93",
+          "questionText": "What is the role of mentorship in entrepreneurship?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_94",
+          "questionText": "How can entrepreneurs build a strong team?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_95",
+          "questionText": "What is company culture and why is it important?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_96",
+          "questionText": "How can entrepreneurs manage business finances?",
+          "difficulty": "medium",
+          "marks": 2
+        },
+        {
+          "id": "9_cs_ch12_short_97",
+          "questionText": "What is cash flow and why is it important?",
+          "difficulty": "medium",
+          "marks": 2
+        }
+      ],
       "longQuestions": []
     }
   ]
