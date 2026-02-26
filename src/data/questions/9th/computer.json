@@ -1432,7 +1432,80 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch1_long_1",
+          "questionText": "Define and describe the concept of a system. Explain the fundamental components, objectives, environment, and methods of communication within a system.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch1_long_2",
+          "questionText": "Differentiate between natural and artificial systems. Discuss their characteristics, functions, and purposes with relevant examples.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch1_long_3",
+          "questionText": "Explore the different types of computing systems such as computers, software systems, computer networks, and the internet.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch1_long_4",
+          "questionText": "Describe the main characteristics of a computer as a system, including its objectives, components, and interactions among these components.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch1_long_5",
+          "questionText": "Explain the Von Neumann architecture of a computer. Include a discussion on the main components, their functions, and the step-by-step process of how the architecture operates.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch1_long_6",
+          "questionText": "Describe the process of retrieving and displaying a file using a computer, based on the interactions among different components. Provide a step-by-step explanation of how input is processed, data is transferred, and results are displayed on the screen.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch1_long_7",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch1_long_8",
+          "questionText": "Explain in detail the concept of general system theory. Discuss the types of systems, their objectives, components, and interactions. How does understanding system theory help in analyzing real-world problems? Provide examples from daily life.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch1_long_9",
+          "questionText": "Compare and contrast natural systems (physical, chemical, biological, psychological) and artificial systems (knowledge, engineering, social). Analyze their characteristics, provide detailed examples of each, and explain how they emerge from simpler systems.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch1_long_10",
+          "questionText": "Describe the Von Neumann computer architecture in comprehensive detail. Explain each component (Memory, CPU with ALU and CU, Input/Output devices, System Bus) with their functions. Discuss the fetch-decode-execute-store cycle with a concrete example like adding two numbers.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch1_long_11",
+          "questionText": "Analyze the advantages and disadvantages of the Von Neumann architecture. Discuss the Von Neumann bottleneck, security risks, and how these limitations have influenced modern computer design. What innovations have been developed to address these limitations?",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch1_long_12",
+          "questionText": "Explain computer networks and the Internet as systems. Discuss their objectives, components, and how they facilitate communication and resource sharing. Include detailed explanations of protocols (TCP/IP, UDP, FTP, POP), networking devices (routers, switches), and how data travels across networks.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     },
     {
       "id": "9_cs_ch2",
@@ -2912,7 +2985,86 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch2_long_1",
+          "questionText": "Explain how characters are encoded using Unicode. Provide examples of characters from different languages and their corresponding Unicode code points.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_2",
+          "questionText": "Describe in detail how integers are stored in computer memory.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_3",
+          "questionText": "Explain the process of converting a decimal integer to its binary representation and vice versa. Include examples of both positive and negative numbers.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_4",
+          "questionText": "Perform the following binary arithmetic operations: a) Multiplication of 101 by 11 b) Division of 1100 by 10",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_5",
+          "questionText": "Add the following binary numbers: a) 101 + 110 b) 1100 + 1011",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_6",
+          "questionText": "Convert the following numbers to 4-bit binary and add them: a) 7 + (-4) b) -5 + 3",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_7",
+          "questionText": "Solve the following: a) 1101₂ - 0100₂ b) 1010₂ - 0011₂ c) 1000₂ - 0110₂ d) 1110₂ - 100₂",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_8",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_9",
+          "questionText": "Explain in detail the decimal, binary, octal, and hexadecimal number systems. For each system, discuss the base, digits used, place values, and provide examples of conversion from decimal to each system and vice versa. Include step-by-step conversion methods.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_10",
+          "questionText": "Describe the representation of whole numbers and integers in computer memory. Explain unsigned integers, signed integers, and the two's complement method for representing negative numbers. Include formulas for maximum and minimum values for 1-byte, 2-byte, and 4-byte representations with examples.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_11",
+          "questionText": "Explain floating-point number representation in detail. Discuss single precision (32-bit) and double precision (64-bit) formats, including sign bit, exponent, mantissa, bias, and range. Provide examples of converting decimal numbers to floating-point representation and explain the limitations including round-off errors.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_12",
+          "questionText": "Describe the binary arithmetic operations (addition, subtraction, multiplication, division) in detail. Explain the rules for each operation, provide multiple examples with step-by-step solutions, and demonstrate how subtraction is performed using two's complement addition.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch2_long_13",
+          "questionText": "Explain text encoding schemes in detail. Compare and contrast ASCII, Extended ASCII, and Unicode (UTF-8, UTF-16, UTF-32). Discuss their history, capabilities, bit usage, character representation, and backward compatibility. Provide examples of encoding English and Urdu characters in different formats.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     },
     {
       "id": "9_cs_ch3",
@@ -4149,7 +4301,86 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch3_long_1",
+          "questionText": "Explain the usage of Boolean functions in computers.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_2",
+          "questionText": "Describe how to construct a truth table for a Boolean expression with an example.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_3",
+          "questionText": "Describe the concept of duality in Boolean algebra and provide an example to illustrate it.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_4",
+          "questionText": "Compare and contrast half-adders and full-adders, including their truth tables, Boolean expressions, and circuit diagrams.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_5",
+          "questionText": "Design a 4-bit binary adder using both half-adders and full-adders. Explain each step with truth tables, Boolean expressions, and circuit diagrams.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_6",
+          "questionText": "Simplify the following Boolean function using Boolean algebra rules: F(A,B) = A·B + A·B̅",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_7",
+          "questionText": "Simplify the following expressions: a) A + B·(A + B) b) (A + B̅)·(Ā + B) c) A + Ā·(B̅ + C) d) Ā·B̅ + A·B̅ e) (A·B) + (Ā·B̅)",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_8",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_9",
+          "questionText": "Explain analog and digital signals in detail. Discuss the differences between them, including continuity, values, and examples. Describe the processes of Analog to Digital Conversion (ADC) and Digital to Analog Conversion (DAC), explaining why they are necessary with real-world examples like sound recording and playback.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_10",
+          "questionText": "Explain Boolean algebra comprehensively. Discuss binary variables, basic logic operations (AND, OR, NOT) with truth tables, and construction of Boolean functions. Explain all Boolean laws (Identity, Null, Idempotent, Complement, Commutative, Associative, Distributive, Absorption, De Morgan's, Double Negation) with examples and proofs.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_11",
+          "questionText": "Describe all logic gates (AND, OR, NOT, NAND, NOR, XOR, XNOR) in detail. For each gate, provide the logic symbol, Boolean expression, truth table, and real-world example or analogy. Explain how these gates are the building blocks of digital circuits.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_12",
+          "questionText": "Explain half-adder and full-adder circuits in comprehensive detail. For each, provide the truth table, derive Boolean expressions, draw the logic circuit diagram, and explain the working principle. Show how multiple full-adders can be connected to create multi-bit adders.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch3_long_13",
+          "questionText": "Explain Karnaugh Maps (K-maps) as a simplification technique. Describe the structure of K-maps for 2, 3, and 4 variables, minterms, grouping rules, and the simplification process. Provide multiple examples with step-by-step simplification, showing how K-maps reduce logic expressions and minimize gate count.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     },
     {
       "id": "9_cs_ch4",
@@ -5050,7 +5281,92 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch4_long_1",
+          "questionText": "Discuss the importance of troubleshooting in maintaining the smooth operation of systems, especially computing systems.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_2",
+          "questionText": "Explain the systematic process of troubleshooting. Describe each step in detail.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_3",
+          "questionText": "Discuss the importance of documenting findings, actions, and outcomes during the troubleshooting process.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_4",
+          "questionText": "Analyze the various ways troubleshooting is vital in computing systems, particularly in preventing downtime, ensuring data integrity, and improving security. Provide specific examples and scenarios to support your analysis.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_5",
+          "questionText": "Describe basic software-related troubleshooting strategies, including handling application freezing and unresponsive peripherals.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_6",
+          "questionText": "Explain how to recognize hardware failures, particularly focusing on RAM and hard drive issues.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_7",
+          "questionText": "Describe common methods for identifying and removing malware infections and applying operating system updates for security.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_8",
+          "questionText": "Describe the different data backup methods, including using external storage devices and cloud solutions.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_9",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_10",
+          "questionText": "Explain the seven-step systematic troubleshooting process in comprehensive detail. For each step (Identify Problem, Establish Theory, Test Theory, Plan Action, Implement Solution, Verify Functionality, Document Findings), provide detailed explanations, examples, and why the step is crucial. Use a real-world scenario like a computer that won't boot to illustrate each step.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_11",
+          "questionText": "Discuss all troubleshooting strategies for common computer issues. Cover software issues (application freezing, unresponsive peripherals, software conflicts, OS crashes) and hardware issues (RAM failures, hard drive failures, overheating, cable problems). For each issue, provide symptoms, diagnostic techniques, and step-by-step solutions.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_12",
+          "questionText": "Explain hardware diagnosis and maintenance in detail. Discuss recognizing hardware failures (RAM, hard drive) with symptoms and diagnostic tools (Windows Memory Diagnostic, MemTest86, SMART, CrystalDiskInfo). Explain component replacements and upgrades (RAM upgrade, hard drive replacement) with complete procedures and precautions.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_13",
+          "questionText": "Describe security and maintenance practices for computer systems. Cover maintaining software (updates, patches, resolving conflicts), addressing security threats (malware identification and removal, OS updates for security), and password management (creating strong passwords, password managers, 2FA). Include real-world examples like the WannaCry ransomware attack.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch4_long_14",
+          "questionText": "Explain data management and backup methods comprehensively. Discuss managing storage space (deleting unnecessary files, moving files to free space), backup methods (external storage devices, cloud solutions), and the importance of regular backups. Include statistics on data loss and best practices for data protection.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     },
     {
       "id": "9_cs_ch5",
@@ -5850,7 +6166,80 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch5_long_1",
+          "questionText": "Discuss the importance of system software in a computing system.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch5_long_2",
+          "questionText": "Describe the roles of operating systems, utility software, and device drivers, providing examples of each.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch5_long_3",
+          "questionText": "Explain the differences between system software and application software.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch5_long_4",
+          "questionText": "Describe the process of using utility software to optimize system performance and maintain security. Provide detailed steps and examples of common utility tools.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch5_long_5",
+          "questionText": "Explain how to install, update, and troubleshoot device drivers for hardware components.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch5_long_6",
+          "questionText": "Discuss the main functions of commonly used application software, such as word processing, spreadsheet, presentation, and graphic design applications.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch5_long_7",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch5_long_8",
+          "questionText": "Explain operating systems in comprehensive detail. Discuss their primary functions (managing hardware resources, providing user interface, running applications), types (Windows, macOS, Linux, Android, iOS), and features. Compare GUI and CLI interfaces with examples. Explain how OS manages CPU, memory, and peripheral devices with real-world scenarios.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch5_long_9",
+          "questionText": "Describe utility software in detail. Explain disk cleanup, antivirus software, backup software, and file compression tools. For each utility, provide functionality, real-life scenarios, step-by-step usage, and importance in system maintenance. Include specific examples like Windows Disk Cleanup, popular antivirus programs, and compression tools like WinZip.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch5_long_10",
+          "questionText": "Explain device drivers comprehensively. Discuss what device drivers are, how they work (installation, communication, operation), and why they are essential. Use real-life analogies like TV remote control. Explain Plug and Play (PnP) technology, driver updates, and troubleshooting driver issues.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch5_long_11",
+          "questionText": "Compare and contrast system software and application software in detail. Discuss their purposes, examples, installation methods, interaction with hardware, and user involvement. Create a comprehensive comparison table and explain how they work together to make a computer functional.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch5_long_12",
+          "questionText": "Explain application software in detail. Discuss word processing (Microsoft Word, Google Docs), spreadsheet (Microsoft Excel, Google Sheets), presentation, and graphic design software (Adobe Photoshop, Illustrator, GIMP, Canva). For each category, provide features, examples, use cases in different domains (business, education, creative industries), and AI-based tools integrated into modern applications.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     },
     {
       "id": "9_cs_ch6",
@@ -7142,7 +7531,74 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch6_long_1",
+          "questionText": "Discuss the objectives of computer networks and provide examples of how they facilitate resource sharing and data communication.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch6_long_2",
+          "questionText": "Describe how data is transmitted across computer networks using packet switching and circuit switching.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch6_long_3",
+          "questionText": "Discuss the role and importance of protocols in data communication. Explain the functions of key protocols such as TCP/IP, HTTP, DNS, and DHCP.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch6_long_4",
+          "questionText": "Describe real-world applications of computer networks in business, education, and healthcare.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch6_long_5",
+          "questionText": "Compare and contrast the different types of network topologies (star, ring, bus, and mesh).",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch6_long_6",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch6_long_7",
+          "questionText": "Explain the OSI (Open Systems Interconnection) model in comprehensive detail. Describe all seven layers (Physical, Data Link, Network, Transport, Session, Presentation, Application), their functions, protocols used at each layer, and how data flows through the layers with encapsulation and decapsulation. Provide real-world analogies for each layer.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch6_long_8",
+          "questionText": "Compare and contrast IPv4 and IPv6 addressing schemes. Discuss the structure, address space, notation, and features of each. Explain why IPv6 was developed, the problem of IPv4 address exhaustion, and the transition mechanisms from IPv4 to IPv6. Provide examples of both address types.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch6_long_9",
+          "questionText": "Explain all network topologies (Bus, Star, Ring, Mesh) in detail. For each topology, describe the structure, advantages, disadvantages, applications, and what happens when a connection fails. Include diagrams in your explanation and compare their performance, reliability, and cost.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch6_long_10",
+          "questionText": "Describe the TCP/IP protocol suite in detail. Explain the four layers (Application, Transport, Internet, Network Access) and the key protocols at each layer (HTTP, FTP, SMTP, DNS, TCP, UDP, IP, ARP). Discuss how these protocols work together to enable internet communication.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch6_long_11",
+          "questionText": "Explain network security comprehensively. Discuss firewalls, encryption, antivirus software, authentication methods, and common threats (malware, phishing, DoS attacks, man-in-the-middle attacks). Provide examples of each security measure and explain how they protect networks and data.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     },
     {
       "id": "9_cs_ch7",
@@ -8126,7 +8582,92 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch7_long_1",
+          "questionText": "Write an algorithm to assign a grade based on the marks obtained by a student. The grading system follows these criteria: 90 and above: A+, 80 to 89: A, 70 to 79: B, 60 to 69: C, Below 60: F",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_2",
+          "questionText": "Explain how you would use algorithm design methods, such as flowcharts and pseudocode, to solve a complex computational problem. Illustrate your explanation with a detailed example.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_3",
+          "questionText": "Define computational thinking and explain its significance in modern problem-solving. Provide examples to illustrate how computational thinking can be applied in different fields.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_4",
+          "questionText": "Discuss the concept of decomposition in computational thinking. Why is it important?",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_5",
+          "questionText": "Explain pattern recognition in the context of computational thinking. How does identifying patterns help in problem-solving?",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_6",
+          "questionText": "Describe what an algorithm is and explain its role in computational thinking. Provide a detailed example of an algorithm for solving a specific problem, and draw the corresponding flowchart.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_7",
+          "questionText": "Compare and contrast flowcharts and pseudocode as methods for algorithm design. Discuss the advantages and disadvantages of each method, and provide examples where one might be preferred over the other.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_8",
+          "questionText": "Explain the concept of a dry run in the context of both flowcharts and pseudocode. How does performing a dry run help in validating the correctness of an algorithm?",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_9",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_10",
+          "questionText": "Explain the four pillars of computational thinking (Decomposition, Pattern Recognition, Abstraction, Algorithm Design) in comprehensive detail. For each component, provide clear definitions, multiple real-world examples, and explain how they work together to solve complex problems.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_11",
+          "questionText": "Design a complete algorithm using both flowchart and pseudocode for a real-world problem such as \"A bank ATM withdrawal system.\" Include decision points for PIN verification, balance check, withdrawal limits, and receipt generation. Provide step-by-step explanation of your design choices.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_12",
+          "questionText": "Explain all types of errors in algorithms (syntax errors, logical errors, runtime errors) with detailed examples of each. Discuss debugging techniques and strategies for identifying and fixing each type of error. Include the origin of the term \"debugging\" and its significance.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_13",
+          "questionText": "Create a detailed algorithm for a login system with maximum 5 attempts. Provide both flowchart and pseudocode representations. Include decision points for username verification, password verification, attempt counting, and account locking after failed attempts. Perform a dry run with sample data.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch7_long_14",
+          "questionText": "Explain time complexity and space complexity in detail. Discuss Big O notation, common complexity classes (O(1), O(log n), O(n), O(n log n), O(n²)), and how to analyze algorithm efficiency. Provide examples of algorithms with different complexities and explain trade-offs between time and space.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     },
     {
       "id": "9_cs_ch8",
@@ -9894,7 +10435,80 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch8_long_1",
+          "questionText": "Discuss the fundamental differences between HTML, CSS, and JavaScript in the context of web development.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch8_long_2",
+          "questionText": "Explain the process of setting up a development environment for web development. Discuss the necessary software and tools.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch8_long_3",
+          "questionText": "Create a basic HTML page that includes a header, a paragraph, an image, and a hyperlink.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch8_long_4",
+          "questionText": "Describe the different CSS selectors and provide examples of each.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch8_long_5",
+          "questionText": "Explain the process of creating a responsive web page using CSS with the help of examples and explanations.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch8_long_6",
+          "questionText": "Write a JavaScript function that changes the background color of a web page when a button is clicked. Provide the complete code and explain how it works.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch8_long_7",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch8_long_8",
+          "questionText": "Explain HTML in comprehensive detail. Discuss the history of HTML, basic structure, all important tags (headings, paragraphs, links, images, lists, tables, forms, div, span), attributes, and comments. Provide complete examples of each tag type with their output.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch8_long_9",
+          "questionText": "Explain CSS in comprehensive detail. Discuss the three ways to integrate CSS (inline, internal, external), CSS syntax, selectors (element, class, id, universal, attribute, pseudo-classes), properties (fonts, colors, backgrounds, margins, padding, borders), and layout techniques (Grid, Flexbox, positioning). Provide examples for each concept.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch8_long_10",
+          "questionText": "Explain JavaScript in comprehensive detail. Discuss variables, data types, operators, functions, events, DOM manipulation, and debugging. Provide complete examples of interactive elements like forms, buttons, and dynamic content. Explain how JavaScript makes web pages interactive.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch8_long_11",
+          "questionText": "Create a complete web page that demonstrates all concepts learned. The page should include: proper HTML structure, headings, paragraphs, images, links, lists, a table, a form with various input types, CSS styling (fonts, colors, backgrounds, layout), and JavaScript functionality (form validation, button click events, dynamic content changes). Provide complete code with explanations.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch8_long_12",
+          "questionText": "Explain responsive web design principles. Discuss viewport, media queries, flexible grids, flexible images, and mobile-first approach. Provide examples of CSS code that makes web pages adapt to different screen sizes (desktop, tablet, mobile). Explain how to test responsive designs.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     },
     {
       "id": "9_cs_ch9",
@@ -11634,7 +12248,104 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch9_long_1",
+          "questionText": "Explain the differences between qualitative and quantitative data. Provide examples of each type.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_2",
+          "questionText": "Describe the process of conducting a survey to gather data about students' favourite extracurricular activities.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_3",
+          "questionText": "Compare and contrast continuous and discrete data. Use examples to show how each type of data might be used in a school setting, such as in measuring student performance or tracking attendance.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_4",
+          "questionText": "Imagine you are tasked with organizing a school event and need to collect data on students' preferences for activities and refreshments. Describe your complete data collection and analysis plan.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_5",
+          "questionText": "Explain the role of tables and charts in data analysis. Provide an example of how you could use a table or chart to present data about students' grades in different subjects.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_6",
+          "questionText": "Describe a situation where non-numeric data is essential. How would you collect, store, and analyse this type of data? Discuss the tools and techniques you would use to ensure the data is accurately interpreted.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_7",
+          "questionText": "Explain the concept of data visualization. How does it help in understanding complex data? Provide examples of different types of visualizations and their applications in real-life scenarios.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_8",
+          "questionText": "Discuss the importance and benefits of data visualization. Why is it essential for businesses and decision-makers to use charts, graphs, and dashboards?",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_9",
+          "questionText": "Differentiate between nominal, ordinal, discrete, and continuous data. For each type, describe a suitable visualization technique and provide a specific example of how this technique can be used to represent that type of data effectively.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_10",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_11",
+          "questionText": "Explain the complete data science workflow in detail. Discuss each step: Problem Identification, Data Collection, Data Cleaning, Data Analysis, Data Interpretation, and Data Visualization. Provide a real-world example (like analyzing student performance) and explain what happens at each step with specific techniques and tools.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_12",
+          "questionText": "Describe all data types comprehensively. Explain qualitative (nominal, ordinal) and quantitative (discrete, continuous) data with multiple examples of each. Discuss the operations that can be performed on each data type and appropriate visualization techniques. Create a comparison table summarizing all data types.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_13",
+          "questionText": "Explain data collection methods in detail. Discuss surveys, questionnaires, interviews, observations, and online data sources. For each method, provide advantages, disadvantages, best practices, and examples. Include information about digital tools like Google Forms, SurveyMonkey, and Microsoft Forms.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_14",
+          "questionText": "Explain data storage techniques comprehensively. Discuss spreadsheets, databases, data warehouses, and NoSQL databases. For each, explain the structure, use cases, advantages, disadvantages, and examples (Excel, MySQL, Amazon Redshift, Google BigQuery, MongoDB, Cassandra).",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_15",
+          "questionText": "Explain data pre-processing and analysis techniques in detail. Discuss data validation, data cleaning, handling missing data, dealing with outliers, measures of center (mean, median, mode), and measures of spread (range, variance, standard deviation). Provide formulas and step-by-step calculations with examples.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch9_long_16",
+          "questionText": "Explain Big Data comprehensively. Discuss the three Vs (Volume, Velocity, Variety), applications in different industries (retail, healthcare, finance, transportation), tools and techniques for Big Data analysis, and future trends. Provide specific examples of how companies use Big Data.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     },
     {
       "id": "9_cs_ch10",
@@ -12782,7 +13493,92 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch10_long_1",
+          "questionText": "Discuss the various applications of AI in the field of education. Provide specific examples and explain how AI can enhance the educational experience.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_2",
+          "questionText": "Differentiate between explainable (whitebox) and unexplainable (blackbox) AI models.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_3",
+          "questionText": "Describe the components of an IoT system. Explain how these components work together to enable IoT applications.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_4",
+          "questionText": "Explore the applications of IoT in the transportation domain.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_5",
+          "questionText": "Analyze the potential privacy concerns associated with IoT deployments.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_6",
+          "questionText": "Explain the role of policy and regulatory frameworks in addressing the challenges of AI and IoT. Provide examples of existing frameworks and discuss their effectiveness.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_7",
+          "questionText": "Describe the concept of algorithmic bias and its implications in AI-powered decision-making processes. Suggest strategies to mitigate the risks of algorithmic bias.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_8",
+          "questionText": "Develop a set of ethical principles and guidelines for the responsible development and deployment of AI and IoT technologies.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_9",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_10",
+          "questionText": "Explain Artificial Intelligence comprehensively. Discuss the history and evolution of AI, key milestones, applications in various domains (healthcare, education, gaming, transportation, finance, agriculture, e-commerce), and subfields (machine learning, deep learning, NLP, computer vision, robotics). Provide specific examples for each application.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_11",
+          "questionText": "Explain machine learning and deep learning in detail. Discuss types of machine learning (supervised, unsupervised, reinforcement learning), neural networks, and how they learn from data. Provide examples of each type and explain real-world applications like image recognition, natural language processing, and recommendation systems.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_12",
+          "questionText": "Compare and contrast explainable (whitebox) and unexplainable (blackbox) AI models in detail. Discuss examples of each (decision trees, linear regression, rule-based systems vs. neural networks, deep learning models), their advantages and disadvantages, and why explainability matters in critical applications like healthcare and finance.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_13",
+          "questionText": "Explain the Internet of Things (IoT) comprehensively. Discuss the definition, components (sensors, actuators, devices, networks, data analysis), applications (smart homes, healthcare, transportation), security and privacy concerns, and future trends. Provide detailed examples of IoT systems in each application domain.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch10_long_14",
+          "questionText": "Analyze the societal impact of AI and IoT technologies. Discuss benefits (efficiency, convenience, innovation) and challenges (job displacement, privacy concerns, algorithmic bias, security risks). Evaluate how these technologies are transforming daily life, work environments, and society at large. Propose strategies to maximize benefits while minimizing risks.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     },
     {
       "id": "9_cs_ch11",
@@ -14003,7 +14799,86 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch11_long_1",
+          "questionText": "Discuss the importance of responsible computer usage in today's digital world. Explain how selecting the right hardware and software can affect safety, efficiency, and compatibility in computer use.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_2",
+          "questionText": "Describe the steps you should take to ensure the safe operation of digital platforms and devices.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_3",
+          "questionText": "Explain the concept of data ethics and its importance in handling personal and sensitive information. Discuss the principles of transparency, respect for privacy, and accountability.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_4",
+          "questionText": "Analyze the impact of privacy laws on protecting personal information in the digital age. How do laws like the Personal Data Protection Bill in Pakistan help safeguard user data?",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_5",
+          "questionText": "Discuss the different types of intellectual property rights, including copyright, trademarks, and patents.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_6",
+          "questionText": "Describe the ethical and legal responsibilities related to intellectual property rights. What are the consequences of violating these rights, such as through software piracy or unauthorized use of copyrighted material?",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_7",
+          "questionText": "Discuss the concept of internet addiction and its potential impact on individuals. How can recognizing the signs of addiction, setting time limits, and finding offline activities help promote balanced internet usage?",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_8",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_9",
+          "questionText": "Explain safe and secure operation of digital platforms in comprehensive detail. Discuss strong passwords, regular software updates, caution with links and downloads, privacy settings, avoiding oversharing, two-factor authentication, public Wi-Fi risks, scam awareness, account activity review, and data backups. Provide specific examples and best practices for each.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_10",
+          "questionText": "Discuss responsible online behavior comprehensively. Cover responsible use of social media, email, cloud services, and online applications. Explain privacy settings, data security measures, online etiquette, cyberbullying prevention, and respectful online interactions. Provide real-world scenarios and appropriate responses.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_11",
+          "questionText": "Explain legal frameworks for privacy in detail. Discuss privacy laws, their purpose, and implications. Explain laws protecting user privacy and consequences of unauthorized access. Discuss data protection regulations like GDPR and their requirements. Include the importance of informed consent, data minimization, and accountability.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_12",
+          "questionText": "Explain intellectual property rights comprehensively. Discuss copyright, trademarks, and patents in detail. For each, provide definition, what it protects, duration, examples, and how to respect these rights. Discuss software piracy, its impact, and legal consequences. Include statistics on global economic impact of piracy.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch11_long_13",
+          "questionText": "Discuss ethical guidelines for data handling in detail. Cover principles of data ethics (transparency, respect for privacy, accountability), ethical considerations in data collection (informed consent), storage (data security), and sharing (need-based sharing). Analyze real-life case studies of data breaches (like Yahoo) and lessons learned.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     },
     {
       "id": "9_cs_ch12",
@@ -15505,7 +16380,74 @@
           "marks": 2
         }
       ],
-      "longQuestions": []
+      "longQuestions": [
+        {
+          "id": "9_cs_ch12_long_1",
+          "questionText": "Explain why entrepreneurship is important for economic growth and innovation. Provide examples from the text to support your answer.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch12_long_2",
+          "questionText": "Explain how market research tools, online marketing tools, and e-commerce platforms can work together to help a business succeed in the digital world.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch12_long_3",
+          "questionText": "Explain the design thinking process and how it can be applied to create a new product or service. Provide an example of how design thinking could be used to help farmers in rural Pakistan.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch12_long_4",
+          "questionText": "Imagine you want to start a small online bookstore catering to students in your area. Develop a comprehensive business plan for your bookstore, including: a) A market analysis focusing on student reading habits and competitors b) A revenue model outlining how you will generate income c) Digital marketing strategies you will use to promote your bookstore online. Ensure your answers are detailed and include practical examples relevant to starting your bookstore in Pakistan.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch12_long_5",
+          "questionText": "Choose a local business in Pakistan and discuss how it aligns with one or more Sustainable Development Goals (SDGs). Include its impact on social, environmental, and economic sustainability.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch12_long_6",
+          "questionText": "Additional Long Questions:",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch12_long_7",
+          "questionText": "Explain entrepreneurship in comprehensive detail. Discuss the definition, types of entrepreneurs (startup founders, social entrepreneurs, intrapreneurs), key characteristics of successful entrepreneurs (innovation, risk-taking), and importance for economic growth. Provide examples of successful entrepreneurs and their journeys.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch12_long_8",
+          "questionText": "Explain digital entrepreneurship in detail. Discuss how digital technologies (social media, mobile apps, cloud computing, big data analytics) have transformed entrepreneurship. Explain digital marketing strategies (SEO, social media marketing, content marketing, email marketing) and e-commerce platforms (Shopify, Daraz, Amazon). Provide case studies of successful digital businesses like Daraz and Bykea in Pakistan.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch12_long_9",
+          "questionText": "Explain digital tools and platforms for entrepreneurs comprehensively. Discuss market research tools (Google Analytics, SurveyMonkey, SEMrush), online marketing tools (Hootsuite, Yoast SEO, Canva), and e-commerce platforms (Shopify, PayPal, Zendesk). For each tool, explain its purpose, features, and how entrepreneurs can use it effectively.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch12_long_10",
+          "questionText": "Explain business idea generation and development in detail. Discuss ideation techniques, problem identification, creative problem-solving, and design thinking (empathize, define, ideate, prototype, test). Provide examples of how successful companies used these techniques to develop innovative products.",
+          "difficulty": "hard",
+          "marks": 5
+        },
+        {
+          "id": "9_cs_ch12_long_11",
+          "questionText": "Explain ethical and sustainable entrepreneurship comprehensively. Discuss ethical practices in business (honesty, integrity, fairness, respect), Sustainable Development Goals (SDGs), and how businesses can align with SDGs. Provide examples of businesses contributing to social, environmental, and economic sustainability. Include Pakistan-specific examples like WWF-Pakistan's green building.",
+          "difficulty": "hard",
+          "marks": 5
+        }
+      ]
     }
   ]
 }
