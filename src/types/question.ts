@@ -55,11 +55,20 @@ export interface MCQQuestion {
   /** Marks for this question (default: 1) */
   marks: number;
   
+  /** Custom marks (override default marks) */
+  customMarks?: number;
+  
   /** Chapter number (optional) */
   chapterNumber?: number;
   
   /** Chapter name (optional) */
   chapterName?: string;
+  
+  /** Topic (optional) */
+  topic?: string;
+  
+  /** Subtopics (optional) */
+  subtopics?: string[];
 }
 
 /**
@@ -78,11 +87,20 @@ export interface ShortQuestion {
   /** Marks for this question (default: 5) */
   marks: number;
   
+  /** Custom marks (override default marks) */
+  customMarks?: number;
+  
   /** Chapter number (optional) */
   chapterNumber?: number;
   
   /** Chapter name (optional) */
   chapterName?: string;
+  
+  /** Topic (optional) */
+  topic?: string;
+  
+  /** Subtopics (optional) */
+  subtopics?: string[];
 }
 
 /**
@@ -101,11 +119,20 @@ export interface LongQuestion {
   /** Marks for this question (default: 10) */
   marks: number;
   
+  /** Custom marks (override default marks) */
+  customMarks?: number;
+  
   /** Chapter number (optional) */
   chapterNumber?: number;
   
   /** Chapter name (optional) */
   chapterName?: string;
+  
+  /** Topic (optional) */
+  topic?: string;
+  
+  /** Subtopics (optional) */
+  subtopics?: string[];
 }
 
 /**

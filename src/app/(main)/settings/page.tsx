@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 import {
   User, LogOut, Trash2, ChevronRight, FileText,
   Edit3, X, Check, Download, ImagePlus, Crown,
-  LogIn, Shield, Mail, Sparkles, UserPlus
+  LogIn, Shield, Mail, Sparkles, UserPlus, ArrowLeft
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,13 +33,13 @@ import Link from "next/link";
 export default function SettingsPage() {
   const router = useRouter();
   const { toast } = useToast();
-  const { 
-    isAuthenticated, 
-    user, 
-    profile, 
+  const {
+    isAuthenticated,
+    user,
+    profile,
     signOut,
     isAdmin,
-    isPremium 
+    isPremium
   } = useAuthStore();
 
   const [userName, setUserName] = useState("Guest User");
@@ -51,7 +51,7 @@ export default function SettingsPage() {
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editForm, setEditForm] = useState({ name: "", institute: "", email: "" });
-  
+
   const [premiumStatus, setPremiumStatus] = useState<PremiumStatus>({ isPremium: false, activatedAt: null, code: null });
   const [showPremiumModal, setShowPremiumModal] = useState(false);
   const [usageStats, setUsageStats] = useState({ used: 0, limit: 30, isPremium: false });
@@ -71,18 +71,18 @@ export default function SettingsPage() {
       setUserName(localName || "Guest User");
       setEmail(localEmail || "");
     }
-    
+
     setInstituteName(localInstitute || "Not set");
     setInstituteLogo(localLogo || null);
-    setEditForm({ 
-      name: localName || "", 
-      institute: localInstitute || "", 
-      email: localEmail || "" 
+    setEditForm({
+      name: localName || "",
+      institute: localInstitute || "",
+      email: localEmail || ""
     });
-    
+
     const status = checkPremiumStatus();
     setPremiumStatus(status);
-    
+
     const stats = getUsageStats();
     setUsageStats(stats);
   }, [isAuthenticated, profile, user]);
@@ -160,18 +160,55 @@ export default function SettingsPage() {
     });
   }, [toast]);
 
-  const handleExportData = useCallback(() => {
+  const handleExportData = useCallback(async () => {
     const data = exportPapers();
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `paperpress-backup-${new Date().toISOString().split("T")[0]}.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    toast.success("Data exported successfully");
+    const json = JSON.stringify(data, null, 2);
+    const filename = `paperpress-backup-${new Date().toISOString().split("T")[0]}.json`;
+
+    // Check if running on Android/Capacitor
+    const { Capacitor } = await import('@capacitor/core');
+    if (Capacitor.isNativePlatform()) {
+      try {
+        const { Filesystem, Directory, Encoding } = await import('@capacitor/filesystem');
+        const { Share } = await import('@capacitor/share');
+
+        await Filesystem.writeFile({
+          path: filename,
+          data: json,
+          directory: Directory.Cache,
+          encoding: Encoding.UTF8,
+        });
+
+        const uri = await Filesystem.getUri({
+          path: filename,
+          directory: Directory.Cache,
+        });
+
+        await Share.share({
+          title: 'PaperPress Backup',
+          text: 'Your PaperPress papers backup',
+          url: uri.uri,
+          dialogTitle: 'Export Papers',
+        });
+
+        toast.success("Backup exported successfully");
+      } catch (error) {
+        console.error('Export error:', error);
+        toast.error("Failed to export. Please try again.");
+      }
+    } else {
+      // Web: use blob download
+      const blob = new Blob([json], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      toast.success("Data exported successfully");
+    }
   }, [toast]);
 
   const handleImportData = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
@@ -190,6 +227,8 @@ export default function SettingsPage() {
       }
     };
     reader.readAsText(file);
+    // Reset input so the same file can be selected again
+    event.target.value = '';
   }, [toast]);
 
   const userInitial = userName.charAt(0).toUpperCase();
@@ -201,47 +240,49 @@ export default function SettingsPage() {
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
       </div>
 
-      <MainLayout showBottomNav>
+      <MainLayout showBottomNav topSafe={false}>
         <div className="min-h-screen pb-24">
           {/* Header */}
-          <div className="fixed top-0 left-0 right-0 z-50 pt-safe">
-            <div className="mx-auto max-w-[428px]">
-              <div className="glass-panel border-b border-gray-100/50">
-                <div className="px-4 h-14 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-10 w-10 rounded-xl hover:bg-gray-100"
-                      onClick={() => router.back()}
-                    >
-                      <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </Button>
-                    <h1 className="font-bold text-lg text-gray-900">Settings</h1>
-                  </div>
-                  {!isEditing && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => setIsEditing(true)}
-                      className="text-[#1E88E5] hover:bg-[#1E88E5]/10"
-                    >
-                      <Edit3 className="w-4 h-4 mr-1" />
-                      Edit
-                    </Button>
-                  )}
+          <div className="fixed top-0 left-0 right-0 z-50">
+            {/* Safe Area Background */}
+            <div className="absolute inset-0 bg-white/90 backdrop-blur-xl border-b border-gray-100" />
+
+            <div className="mx-auto max-w-[428px] relative pt-safe">
+              <div className="px-4 h-14 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                    onClick={() => router.back()}
+                  >
+                    <ArrowLeft className="w-5 h-5 text-gray-700" />
+                  </Button>
+                  <h1 className="font-bold text-lg text-gray-900">Settings</h1>
                 </div>
+                {!isEditing && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setIsEditing(true)}
+                    className="text-[#1E88E5] hover:bg-[#1E88E5]/10 font-bold"
+                  >
+                    <Edit3 className="w-4 h-4 mr-1" />
+                    Edit
+                  </Button>
+                )}
               </div>
             </div>
           </div>
 
-          <ScrollView className="pt-[56px]">
+          <ScrollView
+            className="flex-1"
+            style={{ paddingTop: 'calc(56px + env(safe-area-inset-top, 0px))' }}
+          >
             {/* Auth Status Section */}
-            <motion.div 
-              className="px-5 mb-6" 
-              initial={{ opacity: 0, y: 20 }} 
+            <motion.div
+              className="px-5 mb-6"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
               <div className={`glass-panel rounded-3xl overflow-hidden ${isAuthenticated ? 'bg-gradient-to-br from-green-50/50 to-emerald-50/50' : ''}`}>
@@ -299,25 +340,23 @@ export default function SettingsPage() {
                           <img src={instituteLogo} alt="Logo" className="w-full h-full object-contain p-2" />
                         </div>
                       ) : (
-                        <div className={`w-24 h-24 rounded-2xl flex items-center justify-center text-4xl font-bold text-white shadow-lg ${
-                          isAuthenticated 
-                            ? 'bg-gradient-to-br from-green-400 to-emerald-500' 
+                        <div className={`w-24 h-24 rounded-2xl flex items-center justify-center text-4xl font-bold text-white shadow-lg ${isAuthenticated
+                            ? 'bg-gradient-to-br from-green-400 to-emerald-500'
                             : 'bg-gradient-to-br from-[#1E88E5] to-[#1565C0]'
-                        }`}>
+                          }`}>
                           {userInitial}
                         </div>
                       )}
                       <button
                         onClick={instituteLogo ? handleRemoveLogo : handleLogoSelect}
-                        className={`absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center shadow-md ${
-                          instituteLogo 
-                            ? 'bg-red-500 text-white hover:bg-red-600' 
+                        className={`absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center shadow-md ${instituteLogo
+                            ? 'bg-red-500 text-white hover:bg-red-600'
                             : 'bg-white text-[#1E88E5] hover:bg-gray-50'
-                        }`}
+                          }`}
                       >
                         {instituteLogo ? <X className="w-4 h-4" /> : <ImagePlus className="w-4 h-4" />}
                       </button>
-                      
+
                       {/* Auth Status Badge */}
                       {isAuthenticated && (
                         <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center shadow-md">
@@ -348,14 +387,14 @@ export default function SettingsPage() {
                           Guest Mode
                         </span>
                       )}
-                      
+
                       {isPremium && (
                         <span className="px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-medium flex items-center gap-1">
                           <Crown className="w-3 h-3" />
                           Premium
                         </span>
                       )}
-                      
+
                       {isAdmin && (
                         <span className="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-medium flex items-center gap-1">
                           <Shield className="w-3 h-3" />
@@ -375,9 +414,9 @@ export default function SettingsPage() {
             </motion.div>
 
             {/* Auth Actions Section */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 }}
               className="px-5 mb-6"
             >
@@ -387,7 +426,7 @@ export default function SettingsPage() {
                   <div className="px-4 py-3 border-b border-gray-100">
                     <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Account</p>
                   </div>
-                  
+
                   <div className="p-4 hover:bg-red-50 cursor-pointer" onClick={() => setShowLogoutConfirm(true)}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
@@ -408,7 +447,7 @@ export default function SettingsPage() {
                   <div className="px-4 py-3 border-b border-gray-100">
                     <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Account</p>
                   </div>
-                  
+
                   <Link href="/auth/login">
                     <div className="p-4 hover:bg-blue-50 cursor-pointer border-b border-gray-100">
                       <div className="flex items-center justify-between">
@@ -425,7 +464,7 @@ export default function SettingsPage() {
                       </div>
                     </div>
                   </Link>
-                  
+
                   <Link href="/auth/signup">
                     <div className="p-4 hover:bg-green-50 cursor-pointer">
                       <div className="flex items-center justify-between">
@@ -448,9 +487,9 @@ export default function SettingsPage() {
 
             {/* Admin Access Section (Only for Admins) */}
             {isAdmin && (
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }} 
-                animate={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
                 className="px-5 mb-6"
               >
@@ -476,9 +515,9 @@ export default function SettingsPage() {
             )}
 
             {/* Premium Section */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
               className="px-5 mb-6"
             >
@@ -515,7 +554,11 @@ export default function SettingsPage() {
                       </div>
                       <div>
                         <h3 className="font-bold text-gray-900">Premium Active</h3>
-                        <p className="text-sm text-gray-600">You have unlimited access</p>
+                        <p className="text-sm text-gray-600">
+                          {premiumStatus.activatedAt 
+                            ? `Active since ${new Date(premiumStatus.activatedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}`
+                            : 'You have unlimited access'}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -524,9 +567,9 @@ export default function SettingsPage() {
             </motion.div>
 
             {/* Data Management */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="px-5 mb-6"
             >
@@ -534,7 +577,7 @@ export default function SettingsPage() {
                 <div className="px-4 py-3 border-b border-gray-100">
                   <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Data Management</p>
                 </div>
-                
+
                 <div className="p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100" onClick={handleExportData}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -549,7 +592,7 @@ export default function SettingsPage() {
                     <ChevronRight className="w-5 h-5 text-gray-400" />
                   </div>
                 </div>
-                
+
                 <label className="p-4 block hover:bg-gray-50 cursor-pointer border-b border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -567,7 +610,7 @@ export default function SettingsPage() {
                   </div>
                   <input type="file" accept=".json" className="hidden" onChange={handleImportData} />
                 </label>
-                
+
                 <div className="p-4 hover:bg-red-50 cursor-pointer" onClick={() => setShowClearConfirm(true)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -582,18 +625,24 @@ export default function SettingsPage() {
             </motion.div>
 
             {/* Danger Zone */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25 }}
               className="px-5 mb-6"
             >
               <div className="bg-white/95 rounded-2xl border border-red-100 shadow-sm overflow-hidden">
+                {/* Danger Zone Header */}
+                <div className="px-4 py-3 border-b border-red-100 bg-red-50/50">
+                  <p className="text-xs font-semibold text-red-400 uppercase tracking-wide flex items-center gap-2">
+                    <span>⚠</span> Danger Zone
+                  </p>
+                </div>
                 <div className="p-4 hover:bg-red-50 cursor-pointer" onClick={() => setShowResetConfirm(true)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center">
-                        <LogOut className="w-5 h-5 text-red-500" />
+                        <Trash2 className="w-5 h-5 text-red-500" />
                       </div>
                       <div>
                         <span className="font-medium text-red-600 block">Reset App</span>

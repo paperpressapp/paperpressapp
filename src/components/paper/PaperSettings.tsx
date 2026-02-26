@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Settings2, ChevronDown, ImagePlus, X, Check, Building2 } from "lucide-react";
+import { Settings2, ChevronDown, ImagePlus, X, Building2, Crown, Lock, ClipboardList, MapPin, Mail, Phone, Globe, BookOpen } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -12,17 +12,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { EXAM_TYPES, TIME_OPTIONS } from "@/constants/paper";
+import { TIME_OPTIONS } from "@/constants/paper";
 import type { PaperSettings } from "@/types";
 import { useToast } from "@/hooks";
+import { checkPremiumStatus, PREMIUM_FEATURES } from "@/lib/premium";
 
 interface PaperSettingsProps {
   settings: PaperSettings;
   onUpdate: (changes: Partial<PaperSettings>) => void;
   defaultInstituteName?: string;
   className?: string;
+  onPremiumRequired?: (feature: string) => void;
 }
 
 export function PaperSettings({
@@ -30,11 +31,19 @@ export function PaperSettings({
   onUpdate,
   defaultInstituteName = "",
   className = "",
+  onPremiumRequired,
 }: PaperSettingsProps) {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
   const { toast } = useToast();
+  const isPremium = checkPremiumStatus().isPremium;
 
   const handleLogoUpload = () => {
+    if (!isPremium) {
+      toast.error(`${PREMIUM_FEATURES.customLogo} is a premium feature`);
+      onPremiumRequired?.(PREMIUM_FEATURES.customLogo);
+      return;
+    }
+    
     const input = document.createElement('input');
     input.type = 'file';
     input.accept = 'image/jpeg,image/png,image/jpg,image/webp';
@@ -64,20 +73,33 @@ export function PaperSettings({
     toast.success("Logo removed");
   };
 
+  const handleBubbleSheetToggle = () => {
+    onUpdate({ includeAnswerSheet: !settings.includeAnswerSheet });
+  };
+
   return (
-    <motion.div
-      className={cn("glass-panel rounded-2xl overflow-hidden", className)}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.1, duration: 0.3 }}
-    >
+    <div className={cn("bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden", className)}>
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className="w-full px-4 py-4 flex items-center justify-between hover:bg-gray-50/50 transition-colors"
       >
-        <div className="flex items-center gap-2">
-          <Settings2 className="w-5 h-5 text-[#1E88E5]" />
-          <span className="font-semibold text-gray-800">Paper Details</span>
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-[#E3F2FD] flex items-center justify-center">
+            <Settings2 className="w-5 h-5 text-[#1E88E5]" />
+          </div>
+          <div className="flex-1 text-left">
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-gray-900 block">Paper Details</span>
+              {!isExpanded && (
+                <span className="text-xs text-gray-400 ml-auto pr-2">
+                  Customize paper header
+                </span>
+              )}
+            </div>
+            {isExpanded && (
+              <span className="text-xs text-gray-500">Title, date, institute & options</span>
+            )}
+          </div>
         </div>
         <motion.div
           animate={{ rotate: isExpanded ? 180 : 0 }}
@@ -98,40 +120,34 @@ export function PaperSettings({
           >
             <div className="px-4 pb-4 space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="title" className="text-gray-700 font-medium">Paper Title</Label>
+                <Label htmlFor="title" className="text-gray-700 font-medium text-sm">Paper Title</Label>
                 <Input
                   id="title"
                   value={settings.title}
                   onChange={(e) => onUpdate({ title: e.target.value })}
                   placeholder="e.g., Physics Monthly Test"
-                  className="h-11 rounded-xl border-gray-200 focus:border-[#1E88E5] focus:ring-[#1E88E5]"
+                  className="h-12 rounded-xl border-gray-200 focus:border-[#1E88E5] focus:ring-[#1E88E5]"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-2">
-                  <Label htmlFor="examType" className="text-gray-700 font-medium">Exam Type</Label>
-                  <Select
-                    value={settings.examType}
-                    onValueChange={(value) => onUpdate({ examType: value })}
-                  >
-                    <SelectTrigger id="examType" className="h-11 rounded-xl">
-                      <SelectValue placeholder="Select type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {EXAM_TYPES.map((type) => (
-                        <SelectItem key={type} value={type}>{type}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <Label htmlFor="date" className="text-gray-700 font-medium text-sm">Exam Date</Label>
+                  <Input
+                    id="date"
+                    type="date"
+                    value={settings.date}
+                    onChange={(e) => onUpdate({ date: e.target.value })}
+                    className="h-12 rounded-xl border-gray-200 focus:border-[#1E88E5] focus:ring-[#1E88E5]"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="timeAllowed" className="text-gray-700 font-medium">Time Allowed</Label>
+                  <Label htmlFor="timeAllowed" className="text-gray-700 font-medium text-sm">Time Allowed</Label>
                   <Select
                     value={settings.timeAllowed}
                     onValueChange={(value) => onUpdate({ timeAllowed: value })}
                   >
-                    <SelectTrigger id="timeAllowed" className="h-11 rounded-xl">
+                    <SelectTrigger id="timeAllowed" className="h-12 rounded-xl">
                       <SelectValue placeholder="Select time" />
                     </SelectTrigger>
                     <SelectContent>
@@ -144,34 +160,29 @@ export function PaperSettings({
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="date" className="text-gray-700 font-medium">Exam Date</Label>
-                <Input
-                  id="date"
-                  type="date"
-                  value={settings.date}
-                  onChange={(e) => onUpdate({ date: e.target.value })}
-                  className="h-11 rounded-xl border-gray-200 focus:border-[#1E88E5] focus:ring-[#1E88E5]"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="instituteName" className="text-gray-700 font-medium flex items-center gap-2">
-                  <Building2 className="w-4 h-4" />
-                  Institute Name
+                <Label htmlFor="instituteName" className="text-gray-700 font-medium text-sm flex items-center gap-2">
+                  <Building2 className="w-4 h-4 text-gray-500" />
+                  Institute Name <span className="text-red-500">*</span>
                 </Label>
                 <Input
                   id="instituteName"
                   value={settings.instituteName}
                   onChange={(e) => onUpdate({ instituteName: e.target.value })}
                   placeholder="Enter school/institute name"
-                  className="h-11 rounded-xl border-gray-200 focus:border-[#1E88E5] focus:ring-[#1E88E5]"
+                  className="h-12 rounded-xl border-gray-200 focus:border-[#1E88E5] focus:ring-[#1E88E5]"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label className="text-gray-700 font-medium flex items-center gap-2">
-                  <ImagePlus className="w-4 h-4" />
+                <Label className="text-gray-700 font-medium text-sm flex items-center gap-2">
+                  <ImagePlus className="w-4 h-4 text-gray-500" />
                   Institute Logo
+                  {!isPremium && (
+                    <span className="flex items-center gap-1 text-amber-600 text-xs">
+                      <Crown className="w-3 h-3" />
+                      Premium
+                    </span>
+                  )}
                 </Label>
                 <div className="flex items-center gap-3">
                   {settings.instituteLogo ? (
@@ -193,15 +204,34 @@ export function PaperSettings({
                   ) : (
                     <button
                       onClick={handleLogoUpload}
-                      className="w-16 h-16 rounded-xl border-2 border-dashed border-gray-300 flex flex-col items-center justify-center hover:border-[#1E88E5] hover:bg-[#1E88E5]/5 transition-colors"
+                      className={cn(
+                        "w-16 h-16 rounded-xl border-2 border-dashed flex flex-col items-center justify-center transition-colors",
+                        isPremium 
+                          ? "border-gray-300 hover:border-[#1E88E5] hover:bg-[#1E88E5]/5" 
+                          : "border-gray-200 bg-gray-50 cursor-not-allowed"
+                      )}
                     >
-                      <ImagePlus className="w-5 h-5 text-gray-400" />
-                      <span className="text-[10px] text-gray-400 mt-1">Upload</span>
+                      {isPremium ? (
+                        <>
+                          <ImagePlus className="w-5 h-5 text-gray-400" />
+                          <span className="text-[10px] text-gray-400 mt-1">Upload</span>
+                        </>
+                      ) : (
+                        <>
+                          <Lock className="w-4 h-4 text-gray-400" />
+                          <span className="text-[10px] text-gray-400 mt-1">Locked</span>
+                        </>
+                      )}
                     </button>
                   )}
                   <div className="flex-1">
                     <p className="text-xs text-gray-500">
-                      {settings.instituteLogo ? "Logo will appear on paper header" : "Optional: Add your institute logo"}
+                      {settings.instituteLogo 
+                        ? "Logo will appear on paper header" 
+                        : isPremium 
+                          ? "Optional: Add your institute logo" 
+                          : "Upgrade to Premium to upload logo"
+                      }
                     </p>
                     {settings.instituteLogo && (
                       <button
@@ -215,10 +245,93 @@ export function PaperSettings({
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-gray-100">
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Advanced Options</p>
+              <div className="pt-3 border-t border-gray-100">
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Paper Options</p>
                 
                 <div className="space-y-3">
+                  <button
+                    onClick={handleBubbleSheetToggle}
+                    className={cn(
+                      "w-full flex items-center justify-between p-3 rounded-xl border transition-all",
+                      settings.includeAnswerSheet
+                        ? "bg-blue-50 border-blue-200"
+                        : "bg-gray-50 border-gray-200 hover:bg-gray-100"
+                    )}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className={cn(
+                        "w-10 h-10 rounded-xl flex items-center justify-center",
+                        settings.includeAnswerSheet ? "bg-blue-100" : "bg-gray-200"
+                      )}>
+                        <ClipboardList className={cn(
+                          "w-5 h-5",
+                          settings.includeAnswerSheet ? "text-blue-600" : "text-gray-500"
+                        )} />
+                      </div>
+                      <div className="text-left">
+                        <p className="font-medium text-gray-900 text-sm">Bubble Sheet (MCQ Answers)</p>
+                        <p className="text-xs text-gray-500">Show answer circles for MCQs</p>
+                      </div>
+                    </div>
+                    <div className={cn(
+                      "w-11 h-6 rounded-full p-0.5 transition-colors",
+                      settings.includeAnswerSheet ? "bg-blue-500" : "bg-gray-300"
+                    )}>
+                      <motion.div
+                        className="w-5 h-5 bg-white rounded-full shadow"
+                        animate={{
+                          x: settings.includeAnswerSheet ? 20 : 0,
+                        }}
+                        transition={{ duration: 0.2 }}
+                      />
+                    </div>
+                  </button>
+
+                  <div className="p-3 bg-gray-50 rounded-xl border border-gray-200">
+                    <p className="text-xs font-semibold text-gray-500 uppercase mb-3">Custom Marks Per Question</p>
+                    <div className="grid grid-cols-3 gap-2">
+                      <div>
+                        <Label className="text-xs text-gray-600">MCQ</Label>
+                        <Input
+                          type="number"
+                          min={1}
+                          max={10}
+                          value={settings.customMarks?.mcq || 1}
+                          onChange={(e) => onUpdate({
+                            customMarks: { ...settings.customMarks, mcq: parseInt(e.target.value) || 1 }
+                          })}
+                          className="h-9 rounded-lg text-sm text-center"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-xs text-gray-600">Short</Label>
+                        <Input
+                          type="number"
+                          min={1}
+                          max={20}
+                          value={settings.customMarks?.short || 5}
+                          onChange={(e) => onUpdate({
+                            customMarks: { ...settings.customMarks, short: parseInt(e.target.value) || 5 }
+                          })}
+                          className="h-9 rounded-lg text-sm text-center"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-xs text-gray-600">Long</Label>
+                        <Input
+                          type="number"
+                          min={1}
+                          max={20}
+                          value={settings.customMarks?.long || 10}
+                          onChange={(e) => onUpdate({
+                            customMarks: { ...settings.customMarks, long: parseInt(e.target.value) || 10 }
+                          })}
+                          className="h-9 rounded-lg text-sm text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
                     <Label htmlFor="customHeader" className="text-gray-600 text-sm">Custom Header (Optional)</Label>
                     <Input
@@ -226,50 +339,93 @@ export function PaperSettings({
                       value={settings.customHeader || ''}
                       onChange={(e) => onUpdate({ customHeader: e.target.value })}
                       placeholder="e.g., Punjab Board Examination"
-                      className="h-10 rounded-xl text-sm border-gray-200"
+                      className="h-11 rounded-xl text-sm border-gray-200"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
-                    <Label htmlFor="customSubHeader" className="text-gray-600 text-sm">Custom Subheader (Optional)</Label>
+                    <Label htmlFor="syllabus" className="text-gray-600 text-sm flex items-center gap-2">
+                      <BookOpen className="w-4 h-4 text-gray-500" />
+                      Syllabus
+                    </Label>
                     <Input
-                      id="customSubHeader"
-                      value={settings.customSubHeader || ''}
-                      onChange={(e) => onUpdate({ customSubHeader: e.target.value })}
-                      placeholder="e.g., Annual Examination 2024"
-                      className="h-10 rounded-xl text-sm border-gray-200"
+                      id="syllabus"
+                      value={settings.syllabus || ''}
+                      onChange={(e) => onUpdate({ syllabus: e.target.value })}
+                      placeholder="e.g., Chapter 1-5"
+                      className="h-11 rounded-xl text-sm border-gray-200"
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-xl">
-                <Label htmlFor="includeInstructions" className="cursor-pointer text-sm text-gray-600">
-                  Include instructions section
-                </Label>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => onUpdate({ includeInstructions: !settings.includeInstructions })}
-                  className={cn(
-                    "relative w-11 h-6 rounded-full transition-colors p-0",
-                    settings.includeInstructions ? "bg-[#1E88E5]" : "bg-gray-300"
-                  )}
-                >
-                  <motion.div
-                    className="absolute w-5 h-5 bg-white rounded-full shadow top-0.5"
-                    animate={{
-                      left: settings.includeInstructions ? "calc(100% - 21px)" : "2px",
-                    }}
-                    transition={{ duration: 0.2 }}
-                  />
-                </Button>
+              <div className="pt-3 border-t border-gray-100">
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Institute Contact (Optional)</p>
+                
+                <div className="space-y-3">
+                  <div className="space-y-2">
+                    <Label htmlFor="instituteAddress" className="text-gray-600 text-sm flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-gray-500" />
+                      Address
+                    </Label>
+                    <Input
+                      id="instituteAddress"
+                      value={settings.instituteAddress || ''}
+                      onChange={(e) => onUpdate({ instituteAddress: e.target.value })}
+                      placeholder="e.g., Main Campus, City"
+                      className="h-11 rounded-xl text-sm border-gray-200"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-2">
+                      <Label htmlFor="institutePhone" className="text-gray-600 text-sm flex items-center gap-2">
+                        <Phone className="w-3 h-3 text-gray-500" />
+                        Phone
+                      </Label>
+                      <Input
+                        id="institutePhone"
+                        value={settings.institutePhone || ''}
+                        onChange={(e) => onUpdate({ institutePhone: e.target.value })}
+                        placeholder="e.g., 0300-1234567"
+                        className="h-11 rounded-xl text-sm border-gray-200"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="instituteEmail" className="text-gray-600 text-sm flex items-center gap-2">
+                        <Mail className="w-3 h-3 text-gray-500" />
+                        Email
+                      </Label>
+                      <Input
+                        id="instituteEmail"
+                        type="email"
+                        value={settings.instituteEmail || ''}
+                        onChange={(e) => onUpdate({ instituteEmail: e.target.value })}
+                        placeholder="e.g., info@school.edu"
+                        className="h-11 rounded-xl text-sm border-gray-200"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="instituteWebsite" className="text-gray-600 text-sm flex items-center gap-2">
+                      <Globe className="w-4 h-4 text-gray-500" />
+                      Website
+                    </Label>
+                    <Input
+                      id="instituteWebsite"
+                      value={settings.instituteWebsite || ''}
+                      onChange={(e) => onUpdate({ instituteWebsite: e.target.value })}
+                      placeholder="e.g., www.school.edu"
+                      className="h-11 rounded-xl text-sm border-gray-200"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </div>
   );
 }

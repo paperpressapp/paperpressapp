@@ -16,3 +16,4 @@ export { ChapterAccordion } from "./ChapterAccordion";
 export { DifficultyBadge } from "./DifficultyBadge";
 export { McqOptions } from "./McqOptions";
 export { GeneratingOverlay } from "./GeneratingOverlay";
+export { QuestionPickerModal } from "./QuestionPickerModal";

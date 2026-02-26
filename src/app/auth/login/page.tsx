@@ -155,16 +155,17 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1565C0] to-[#1E88E5] flex items-center justify-center p-4">
-      <div className="w-full max-w-sm">
-        <div className="bg-white rounded-2xl p-6 shadow-xl">
-          <div className="text-center mb-6">
-            <div className="w-16 h-16 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg">
-              <span className="text-2xl font-bold text-white">P</span>
+    <div className="min-h-screen bg-gradient-to-br from-[#1565C0] to-[#1E88E5] flex flex-col overflow-y-auto">
+      <div className="flex-1 flex items-center justify-center p-4 min-h-0">
+        <div className="w-full max-w-sm">
+          <div className="bg-white rounded-2xl p-6 shadow-xl">
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg">
+                <span className="text-2xl font-bold text-white">P</span>
+              </div>
+              <h1 className="text-xl font-bold text-gray-900">Welcome Back</h1>
+              <p className="text-gray-500 text-sm mt-1">Sign in to PaperPress</p>
             </div>
-            <h1 className="text-xl font-bold text-gray-900">Welcome Back</h1>
-            <p className="text-gray-500 text-sm mt-1">Sign in to PaperPress</p>
-          </div>
 
           {error && (
             <div className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-sm flex items-start gap-2">
@@ -254,9 +255,10 @@ export default function LoginPage() {
         </div>
 
         <p className="text-center mt-4 text-white/60 text-xs">
-          PaperPress By Hamza Khan
+          Professional Exam Paper Generator
         </p>
       </div>
+    </div>
     </div>
   );
 }

@@ -30,7 +30,7 @@ const subjectIcons: Record<string, React.ReactNode> = {
 export default function SubjectsPage() {
   const router = useRouter();
   const { setClass, setSubject, resetAll } = usePaperStore();
-  
+
   const [selectedSubjectId, setSelectedSubjectId] = useState<string | null>(null);
   const [showClassPopup, setShowClassPopup] = useState(false);
 
@@ -41,7 +41,7 @@ export default function SubjectsPage() {
 
   const handleClassSelect = (classId: string) => {
     if (!selectedSubjectId) return;
-    
+
     const subject = SUBJECTS.find((s) => s.id === selectedSubjectId);
     if (subject) {
       setClass(classId as "9th" | "10th" | "11th" | "12th");
@@ -58,38 +58,41 @@ export default function SubjectsPage() {
   const selectedSubject = SUBJECTS.find((s) => s.id === selectedSubjectId);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1E88E5] via-[#1976D2] to-[#1565C0]">
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
-      </div>
+    <MainLayout showBottomNav className="bg-gray-50" topSafe={false}>
+      <div className="min-h-screen flex flex-col">
+          <header className="fixed top-0 left-0 right-0 z-50">
+            {/* Safe Area Background */}
+            <div className="absolute inset-0 bg-white/90 backdrop-blur-xl border-b border-gray-100" />
 
-      <MainLayout showBottomNav>
-        <div className="relative z-10 min-h-screen flex flex-col">
-          <header className="fixed top-0 left-0 right-0 z-50 pt-safe">
-            <div className="mx-auto max-w-[428px]">
-              <div className="bg-white/90 backdrop-blur-xl border-b border-gray-100">
-                <div className="px-4 h-14 flex items-center justify-between">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-10 w-10 rounded-xl active:bg-gray-100"
-                    onClick={handleBack}
-                  >
-                    <ArrowLeft className="w-5 h-5 text-gray-700" />
-                  </Button>
-                  <h1 className="font-bold text-lg text-gray-900">Select Subject</h1>
-                  <div className="w-10" />
-                </div>
+            <div className="mx-auto max-w-[428px] relative pt-safe">
+              <div className="px-4 h-14 flex items-center justify-between">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                  onClick={handleBack}
+                >
+                  <ArrowLeft className="w-5 h-5 text-gray-700" />
+                </Button>
+                <h1 className="font-bold text-lg text-gray-900">Select Subject</h1>
+                <div className="w-10" />
               </div>
             </div>
           </header>
 
-          <ScrollView className="pt-[56px] flex-1">
+          <ScrollView
+            className="flex-1"
+            style={{ paddingTop: 'calc(56px + env(safe-area-inset-top, 0px))' }}
+          >
             <div className="px-5 py-6">
-              <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold text-white mb-2">Choose a Subject</h2>
-                <p className="text-white/70">Select your subject to create paper</p>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg shadow-[#1E88E5]/30">
+                  <BookOpen className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold text-gray-900">Select Subject</h2>
+                  <p className="text-sm text-gray-500">Choose a subject to create paper</p>
+                </div>
               </div>
             </div>
 
@@ -99,29 +102,22 @@ export default function SubjectsPage() {
                   <button
                     key={subject.id}
                     onClick={() => handleSubjectClick(subject.id)}
-                    className="group relative bg-white/95 backdrop-blur-sm rounded-2xl p-5 border border-white/50 shadow-lg overflow-hidden text-left active:scale-[0.98] transition-transform"
+                    className="group bg-white rounded-2xl p-5 border border-gray-100 shadow-sm active:scale-[0.98] transition-transform text-left"
                   >
-                    <div 
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4"
-                      style={{ 
-                        backgroundColor: `${subject.color}15`,
-                        color: subject.color 
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-3 shadow-md"
+                      style={{
+                        backgroundColor: `${subject.color}20`,
+                        color: subject.color
                       }}
                     >
                       {subjectIcons[subject.id]}
                     </div>
 
-                    <h3 className="font-bold text-gray-900 mb-1">{subject.name}</h3>
-                    <p className="text-sm text-gray-500">{subject.chapterCount} Chapters</p>
+                    <h3 className="font-semibold text-gray-900 text-sm">{subject.name}</h3>
+                    <p className="text-xs text-gray-500 mt-1">{subject.chapterCount} Chapters</p>
 
-                    <div className="absolute top-5 right-5 w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center">
-                      <ChevronRight className="w-4 h-4 text-gray-400" />
-                    </div>
-
-                    <div 
-                      className="absolute bottom-0 left-0 right-0 h-1 opacity-50"
-                      style={{ backgroundColor: subject.color }}
-                    />
+                    <ChevronRight className="absolute top-4 right-4 w-4 h-4 text-gray-300" />
                   </button>
                 ))}
               </div>
@@ -163,11 +159,11 @@ export default function SubjectsPage() {
                     <div className="px-6 pb-4 border-b border-gray-100 bg-white shrink-0">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div 
+                          <div
                             className="w-12 h-12 rounded-2xl flex items-center justify-center"
-                            style={{ 
+                            style={{
                               backgroundColor: `${selectedSubject.color}15`,
-                              color: selectedSubject.color 
+                              color: selectedSubject.color
                             }}
                           >
                             {subjectIcons[selectedSubject.id]}
@@ -231,8 +227,7 @@ export default function SubjectsPage() {
               </div>
             )}
           </AnimatePresence>
-        </div>
-      </MainLayout>
-    </div>
+      </div>
+    </MainLayout>
   );
 }

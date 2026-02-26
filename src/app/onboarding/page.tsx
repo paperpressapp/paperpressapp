@@ -22,7 +22,6 @@ export default function OnboardingPage() {
     instituteLogo: null as string | null,
   });
 
-  const fileInputRef = useState<HTMLInputElement | null>(null)[0];
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
 
   useEffect(() => {

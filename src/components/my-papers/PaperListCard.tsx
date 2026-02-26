@@ -46,46 +46,43 @@ export function PaperListCard({
   return (
     <>
       <motion.div
-        className="glass-panel rounded-2xl p-4 flex items-center gap-4"
-        initial={{ opacity: 0, y: 20 }}
+        className="glass-panel rounded-xl p-3 flex items-center gap-3"
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, x: -100 }}
         whileTap={{ scale: 0.99 }}
       >
         {/* PDF Icon */}
-        <div className="w-14 h-14 rounded-xl bg-red-50 flex items-center justify-center flex-shrink-0">
-          <FileText className="w-7 h-7 text-red-500" />
+        <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0">
+          <FileText className="w-5 h-5 text-red-500" />
         </div>
 
         {/* Content */}
         <div className="flex-1 min-w-0" onClick={onView}>
-          <h3 className="font-medium text-foreground truncate">
+          <h3 className="font-medium text-sm text-foreground truncate">
             {paper.title}
           </h3>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             {paper.classId} • {paper.subject}
           </p>
-          <p className="text-xs text-muted-foreground">
-            {formatDate(paper.createdAt)}
-          </p>
-          <p className="text-xs text-muted-foreground mt-0.5">
-            {paper.questionCount} questions • {paper.totalMarks} marks
+          <p className="text-[10px] text-muted-foreground">
+            {formatDate(paper.createdAt)} • {paper.questionCount} Q • {paper.totalMarks} marks
           </p>
         </div>
 
         {/* More Options */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" className="h-9 w-9">
-              <MoreVertical className="w-5 h-5" />
+            <Button variant="ghost" size="icon" className="h-8 w-8">
+              <MoreVertical className="w-4 h-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={onView}>
-              View Paper
+              View
             </DropdownMenuItem>
             <DropdownMenuItem onClick={onDownload}>
-              Download PDF
+              Download
             </DropdownMenuItem>
             <DropdownMenuItem onClick={onShare}>
               Share

@@ -10,8 +10,13 @@ import { useAuthStore, initializeAuth } from "@/stores/authStore";
 import { validatePasswordStrength } from "@/lib/utils/validation";
 import Link from "next/link";
 
-// Always use the deployed API URL for auth
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://paperpressapp.vercel.app';
+// Always use the deployed API URL for auth (or local in development)
+const getApiUrl = () => {
+  // In development or on server, use the default
+  return process.env.NEXT_PUBLIC_API_URL || 'https://paperpressapp.vercel.app';
+};
+
+const API_URL = getApiUrl();
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -109,7 +114,7 @@ export default function SignUpPage() {
       const data = await response.json();
 
       if (!response.ok) {
-        setError(data.error || 'Failed to send OTP');
+        setError(data.error || 'Failed to send OTP. Please try again.');
         setIsLoading(false);
         return;
       }
@@ -126,7 +131,8 @@ export default function SignUpPage() {
       }
       setIsLoading(false);
     } catch (err) {
-      setError("Failed to send verification code. Please try again.");
+      console.error('Send OTP error:', err);
+      setError("Failed to send verification code. Please check your internet connection and try again.");
       setIsLoading(false);
     }
   };

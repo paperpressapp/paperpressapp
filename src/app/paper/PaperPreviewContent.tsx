@@ -3,14 +3,14 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Download, Share2, Plus, Check, FileText, Clock, BookOpen, Hash, MessageCircle, Mail, Copy, CheckCircle } from "lucide-react";
+import { ArrowLeft, Download, Share2, Plus, Check, FileText, Clock, BookOpen, Hash, MessageCircle, Mail, Copy, CheckCircle, FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollView, MainLayout } from "@/components/layout";
 import { toast } from "@/hooks";
-import { usePaperStore } from "@/stores";
+import { usePaperStore, useAuthStore } from "@/stores";
 import { getPaperById } from "@/lib/storage/papers";
 import { getQuestionsByIds } from "@/data";
-import { fetchAndDownloadPDF, fetchAndPreviewPDF } from "@/lib/pdf/download";
+import { fetchAndDownloadPDF, fetchAndPreviewPDF, fetchAndDownloadDOCX } from "@/lib/pdf/download";
 import { AppLoader } from "@/components/shared";
 import { Capacitor } from '@capacitor/core';
 import { Share } from '@capacitor/share';
@@ -21,6 +21,7 @@ export default function PaperPreviewContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { resetAll } = usePaperStore();
+  const { isPremium } = useAuthStore();
 
   const paperId = searchParams.get('id') || '';
 
@@ -80,7 +81,6 @@ export default function PaperPreviewContent() {
     if (!paper) return null;
     return {
       instituteName: paper.instituteName || "Institution",
-      examType: paper.examType,
       date: paper.date,
       timeAllowed: paper.timeAllowed,
       classId: paper.classId,
@@ -89,8 +89,17 @@ export default function PaperPreviewContent() {
       customHeader: paper.customHeader || '',
       customSubHeader: paper.customSubHeader || '',
       showLogo: paper.showLogo && !!paper.instituteLogo,
+      isPremium: isPremium,
+      includeAnswerSheet: paper.includeAnswerSheet ?? true,
+      customMarks: paper.customMarks || { mcq: 1, short: 5, long: 10 },
+      attemptRules: { shortAttempt: paper.shortCount, longAttempt: paper.longCount },
+      syllabus: paper.syllabus || '',
+      instituteAddress: paper.instituteAddress || '',
+      instituteEmail: paper.instituteEmail || '',
+      institutePhone: paper.institutePhone || '',
+      instituteWebsite: paper.instituteWebsite || '',
     };
-  }, [paper]);
+  }, [paper, isPremium]);
 
   const handleDownloadPDF = useCallback(async () => {
     const settings = getSettings();
@@ -120,19 +129,67 @@ export default function PaperPreviewContent() {
     }
   }, [questions, getSettings]);
 
+  const handleDownloadDOCX = useCallback(async () => {
+    const settings = getSettings();
+    if (!settings) return;
+
+    setIsGenerating(true);
+    const result = await fetchAndDownloadDOCX(settings, questions.mcqs, questions.shorts, questions.longs);
+    setIsGenerating(false);
+
+    if (result.success) {
+      toast.success("DOCX downloaded!");
+    } else {
+      toast.error(result.error || "Failed to download DOCX");
+    }
+  }, [questions, getSettings]);
+
   const getShareText = useCallback(() => {
     if (!paper) return "";
     return `${paper.title}\n\nSubject: ${paper.subject}\nClass: ${paper.classId}\nMarks: ${paper.totalMarks}\nQuestions: ${paper.questionCount}\nDate: ${paper.date}\n\nGenerated with PaperPress`;
   }, [paper]);
 
-  const handleWhatsAppShare = useCallback(() => {
-    window.open(`https://wa.me/?text=${encodeURIComponent(getShareText())}`, '_blank');
+  const handleWhatsAppShare = useCallback(async () => {
+    const shareText = getShareText();
+    
+    // On Android, use native share sheet
+    if (Capacitor.isNativePlatform()) {
+      try {
+        await Share.share({
+          title: paper?.title || "Paper",
+          text: shareText,
+          dialogTitle: 'Share via',
+        });
+      } catch {
+        // User cancelled or error
+      }
+    } else {
+      // Web: open WhatsApp web
+      window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
+    }
     setShowShareSheet(false);
-  }, [getShareText]);
+  }, [paper, getShareText]);
 
-  const handleEmailShare = useCallback(() => {
-    if (!paper) return;
-    window.location.href = `mailto:?subject=${encodeURIComponent(paper.title)}&body=${encodeURIComponent(getShareText())}`;
+  const handleEmailShare = useCallback(async () => {
+    const shareText = getShareText();
+    
+    // On Android, use native share sheet
+    if (Capacitor.isNativePlatform()) {
+      try {
+        await Share.share({
+          title: paper?.title || "Paper",
+          text: shareText,
+          dialogTitle: 'Share via',
+        });
+      } catch {
+        // User cancelled or error
+      }
+    } else {
+      // Web: open mailto
+      if (paper) {
+        window.location.href = `mailto:?subject=${encodeURIComponent(paper.title)}&body=${encodeURIComponent(shareText)}`;
+      }
+    }
     setShowShareSheet(false);
   }, [paper, getShareText]);
 
@@ -261,61 +318,97 @@ export default function PaperPreviewContent() {
             </div>
           </div>
 
-          {/* Download Button */}
-          <div className="mx-5 mt-6">
-            <Button onClick={handleDownloadPDF} disabled={isGenerating} className="w-full h-14 rounded-2xl font-semibold text-base bg-gradient-to-r from-white to-gray-100 text-[#1565C0] shadow-xl shadow-black/20 hover:shadow-2xl transition-all disabled:opacity-50">
+          {/* Download Buttons */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mx-4 mt-4 space-y-3"
+          >
+            <Button onClick={handleDownloadPDF} disabled={isGenerating} className="w-full h-11 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#1E40AF] to-[#2563EB] text-white shadow-lg shadow-blue-500/20 hover:shadow-xl transition-all disabled:opacity-50">
               {isGenerating ? (
                 <span className="flex items-center gap-2">
-                  <div className="w-5 h-5 border-2 border-[#1565C0]/30 border-t-[#1565C0] rounded-full animate-spin" />
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   Generating...
                 </span>
               ) : (
-                <><Download className="w-5 h-5 mr-2" /> Download PDF</>
+                <><Download className="w-4 h-4 mr-2" /> Download PDF</>
               )}
             </Button>
-          </div>
+
+            <Button onClick={handleDownloadDOCX} disabled={isGenerating} variant="outline" className="w-full h-10 rounded-lg font-medium text-sm bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 shadow-sm disabled:opacity-50">
+              <FileDown className="w-4 h-4 mr-1.5" /> Word (.docx)
+            </Button>
+          </motion.div>
 
           {/* Preview & Share */}
-          <div className="mx-5 mt-3 grid grid-cols-2 gap-3">
-            <Button variant="outline" onClick={handlePreviewPDF} disabled={isGenerating} className="h-12 rounded-xl bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20">
-              <FileText className="w-5 h-5 mr-2" /> Preview
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mx-4 mt-3 grid grid-cols-2 gap-2"
+          >
+            <Button variant="outline" onClick={handlePreviewPDF} disabled={isGenerating} className="h-10 rounded-lg font-medium text-sm bg-white text-gray-700 border border-gray-200 hover:bg-gray-50">
+              <FileText className="w-4 h-4 mr-1.5" /> Preview
             </Button>
-            <Button variant="outline" onClick={handleNativeShare} disabled={isGenerating} className="h-12 rounded-xl bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20">
-              <Share2 className="w-5 h-5 mr-2" /> Share
+            <Button variant="outline" onClick={handleNativeShare} disabled={isGenerating} className="h-10 rounded-lg font-medium text-sm bg-gradient-to-r from-emerald-500 to-green-600 text-white border-0 shadow-md">
+              <Share2 className="w-4 h-4 mr-1.5" /> Share
             </Button>
-          </div>
+          </motion.div>
 
           {/* Quick Share */}
-          <div className="mx-5 mt-6">
-            <p className="text-xs font-semibold text-white/60 uppercase mb-3 px-1">Quick Share</p>
-            <div className="grid grid-cols-3 gap-3">
-              <button onClick={handleWhatsAppShare} className="bg-white rounded-2xl p-4 flex flex-col items-center gap-2 shadow-lg active:scale-95 transition-transform">
-                <div className="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-green-500/30">
-                  <MessageCircle className="w-6 h-6 text-white" />
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="mx-4 mt-4"
+          >
+            <p className="text-[10px] font-medium text-white/40 uppercase mb-3 px-1">Quick Share</p>
+            <div className="grid grid-cols-3 gap-2">
+              <motion.button 
+                whileTap={{ scale: 0.95 }}
+                onClick={handleWhatsAppShare} 
+                className="bg-white rounded-xl p-2.5 flex flex-col items-center gap-1.5 shadow"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#25D366] flex items-center justify-center">
+                  <MessageCircle className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-xs font-medium text-gray-600">WhatsApp</span>
-              </button>
-              <button onClick={handleEmailShare} className="bg-white rounded-2xl p-4 flex flex-col items-center gap-2 shadow-lg active:scale-95 transition-transform">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg shadow-blue-500/30">
-                  <Mail className="w-6 h-6 text-white" />
+                <span className="text-[10px] font-medium text-gray-600">WhatsApp</span>
+              </motion.button>
+              <motion.button 
+                whileTap={{ scale: 0.95 }}
+                onClick={handleEmailShare} 
+                className="bg-white rounded-xl p-2.5 flex flex-col items-center gap-1.5 shadow"
+              >
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#1E40AF] to-[#2563EB] flex items-center justify-center">
+                  <Mail className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-xs font-medium text-gray-600">Email</span>
-              </button>
-              <button onClick={handleCopyLink} className="bg-white rounded-2xl p-4 flex flex-col items-center gap-2 shadow-lg active:scale-95 transition-transform">
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg ${copied ? 'bg-emerald-500 shadow-emerald-500/30' : 'bg-gray-500 shadow-gray-500/30'}`}>
-                  {copied ? <CheckCircle className="w-6 h-6 text-white" /> : <Copy className="w-6 h-6 text-white" />}
+                <span className="text-[10px] font-medium text-gray-600">Email</span>
+              </motion.button>
+              <motion.button 
+                whileTap={{ scale: 0.95 }}
+                onClick={handleCopyLink} 
+                className="bg-white rounded-xl p-2.5 flex flex-col items-center gap-1.5 shadow"
+              >
+                <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${copied ? 'bg-emerald-500' : 'bg-gray-500'}`}>
+                  {copied ? <CheckCircle className="w-4 h-4 text-white" /> : <Copy className="w-4 h-4 text-white" />}
                 </div>
-                <span className="text-xs font-medium text-gray-600">{copied ? 'Copied!' : 'Copy'}</span>
-              </button>
+                <span className="text-[10px] font-medium text-gray-600">{copied ? 'Copied!' : 'Copy'}</span>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Create Another */}
-          <div className="mx-5 mt-6">
-            <Button variant="outline" onClick={handleCreateAnother} className="w-full h-12 rounded-xl bg-white/10 backdrop-blur-md border-white/20 text-white font-semibold hover:bg-white/20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mx-5 mt-8 mb-8"
+          >
+            <Button variant="outline" onClick={handleCreateAnother} className="w-full h-14 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20 text-white font-bold hover:bg-white/20 transition-all">
               <Plus className="w-5 h-5 mr-2" /> Create Another Paper
             </Button>
-          </div>
+          </motion.div>
 
           <div className="h-8" />
         </ScrollView>

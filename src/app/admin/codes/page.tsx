@@ -8,7 +8,6 @@ import {
   Clock, Crown, Users, Trash2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useAuthStore } from "@/stores/authStore";
 import { AppLoader } from "@/components/shared";
 import { supabase } from "@/lib/supabase/client";
 import { useToast } from "@/hooks";
@@ -27,25 +26,23 @@ interface PremiumCode {
 
 export default function AdminCodesPage() {
   const router = useRouter();
-  const { isAdmin, profile, isLoading: authLoading } = useAuthStore();
   const { toast } = useToast();
   
   const [codes, setCodes] = useState<PremiumCode[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [showGenerateModal, setShowGenerateModal] = useState(false);
 
   useEffect(() => {
-    if (!authLoading && !isAdmin) {
-      router.replace("/home");
+    const token = localStorage.getItem("admin_token");
+    if (!token) {
+      router.replace("/admin");
+      return;
     }
-  }, [authLoading, isAdmin, router]);
-
-  useEffect(() => {
-    if (isAdmin) {
-      fetchCodes();
-    }
-  }, [isAdmin]);
+    setIsAuthenticated(true);
+    fetchCodes();
+  }, [router]);
 
   const fetchCodes = async () => {
     try {
@@ -87,8 +84,6 @@ export default function AdminCodesPage() {
   };
 
   const createCodes = async (type: 'monthly' | 'yearly' | 'lifetime', count: number) => {
-    if (!profile?.id) return;
-
     const durationDays = type === 'monthly' ? 30 : type === 'yearly' ? 365 : 999999;
     const newCodes = [];
 
@@ -97,7 +92,7 @@ export default function AdminCodesPage() {
         code: generateCode(),
         code_type: type,
         duration_days: durationDays,
-        created_by: profile.id,
+        created_by: 'admin',
         is_active: true,
       });
     }
@@ -137,11 +132,11 @@ export default function AdminCodesPage() {
     }
   };
 
-  if (authLoading || isLoading) {
+  if (isLoading || isAuthenticated === null) {
     return <AppLoader message="Loading codes..." />;
   }
 
-  if (!isAdmin) return null;
+  if (!isAuthenticated) return null;
 
   const stats = {
     total: codes.length,

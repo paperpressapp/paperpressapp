@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Restrict to app-specific directories only -->
-    <external-path name="documents" path="Documents/PaperPress" />
+    <!-- PaperPress PDF directory -->
+    <external-files-path name="paperpress_pdfs" path="PaperPress/" />
+    <!-- Cache for temp files -->
     <cache-path name="cache" path="." />
-    <files-path name="files" path="." />
+    <!-- General external storage -->
+    <external-path name="external" path="." />
     <external-files-path name="external_files" path="." />
-    <external-cache-path name="external_cache" path="." />
 </paths>

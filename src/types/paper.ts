@@ -6,77 +6,45 @@
 
 import type { ClassName, SubjectName, MCQQuestion, ShortQuestion, LongQuestion } from './question';
 
-/**
- * Paper header/settings configuration
- */
+export interface CustomMarks {
+  mcq?: number;
+  short?: number;
+  long?: number;
+}
+
 export interface PaperSettings {
-  /** Paper title */
   title: string;
-  
-  /** Type of exam (e.g., "Monthly Test", "Final Exam") */
-  examType: string;
-  
-  /** Exam date */
+  examType?: string;
   date: string;
-  
-  /** Time allowed for the exam */
   timeAllowed: string;
-  
-  /** Total marks for the paper */
   totalMarks: number;
-  
-  /** Whether to include instructions section */
   includeInstructions: boolean;
-  
-  /** Institute/school name to display on paper */
   instituteName: string;
-  
-  /** Institute logo as base64 data URL (optional) */
   instituteLogo?: string | null;
-  
-  /** Custom header text (e.g., "Punjab Board Examination") */
   customHeader?: string;
-  
-  /** Custom subheader text (e.g., "Annual Examination 2024") */
   customSubHeader?: string;
-  
-  /** Whether to show logo on paper */
   showLogo?: boolean;
+  customMarks: CustomMarks;
+  includeAnswerSheet: boolean;
+  includeMarkingScheme: boolean;
+  syllabus?: string;
+  instituteAddress?: string;
+  instituteEmail?: string;
+  institutePhone?: string;
+  instituteWebsite?: string;
+  attemptRules?: {
+    shortAttempt?: number;
+    longAttempt?: number;
+  };
 }
 
-/**
- * Complete paper data for generation
- */
-export interface PaperData {
-  /** Class identifier */
-  classId: ClassName;
-  
-  /** Subject name */
-  subject: SubjectName;
-  
-  /** Paper settings */
-  settings: PaperSettings;
-  
-  /** Selected MCQ questions */
-  mcqs: MCQQuestion[];
-  
-  /** Selected short questions */
-  shorts: ShortQuestion[];
-  
-  /** Selected long questions */
-  longs: LongQuestion[];
-}
-
-/**
- * Generated paper metadata
- */
 export interface GeneratedPaper {
   id: string;
   userId?: string;
   classId: ClassName;
   subject: SubjectName;
   title: string;
-  examType: string;
+  examType?: string;
   date: string;
   timeAllowed: string;
   totalMarks: number;
@@ -93,6 +61,23 @@ export interface GeneratedPaper {
   showLogo?: boolean;
   customHeader?: string;
   customSubHeader?: string;
+  includeAnswerSheet?: boolean;
+  includeMarkingScheme?: boolean;
+  customMarks?: CustomMarks;
+  syllabus?: string;
+  instituteAddress?: string;
+  instituteEmail?: string;
+  institutePhone?: string;
+  instituteWebsite?: string;
+}
+
+export interface PaperData {
+  classId: ClassName;
+  subject: SubjectName;
+  settings: PaperSettings;
+  mcqs: MCQQuestion[];
+  shorts: ShortQuestion[];
+  longs: LongQuestion[];
 }
 
 /**

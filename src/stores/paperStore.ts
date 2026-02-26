@@ -63,7 +63,6 @@ interface PaperState {
 // Default paper settings
 const getDefaultSettings = (): PaperSettings => ({
   title: '',
-  examType: 'Monthly Test',
   date: format(new Date(), 'yyyy-MM-dd'),
   timeAllowed: '2 Hours',
   totalMarks: 0,
@@ -73,6 +72,14 @@ const getDefaultSettings = (): PaperSettings => ({
   customHeader: '',
   customSubHeader: '',
   showLogo: true,
+  customMarks: { mcq: 1, short: 5, long: 10 },
+  includeAnswerSheet: false,
+  includeMarkingScheme: false,
+  syllabus: '',
+  instituteAddress: '',
+  instituteEmail: '',
+  institutePhone: '',
+  instituteWebsite: '',
 });
 
 // Initial state

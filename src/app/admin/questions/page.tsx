@@ -10,7 +10,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useAuthStore } from "@/stores/authStore";
 import { AppLoader } from "@/components/shared";
 import { supabase } from "@/lib/supabase/client";
 import { CLASSES, SUBJECTS } from "@/constants";
@@ -32,10 +31,10 @@ interface Question {
 
 export default function AdminQuestionsPage() {
   const router = useRouter();
-  const { isAdmin, isLoading: authLoading } = useAuthStore();
   
   const [questions, setQuestions] = useState<Question[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [filterType, setFilterType] = useState<string>("all");
   const [filterClass, setFilterClass] = useState<string>("all");
@@ -43,16 +42,14 @@ export default function AdminQuestionsPage() {
   const [editingQuestion, setEditingQuestion] = useState<Question | null>(null);
 
   useEffect(() => {
-    if (!authLoading && !isAdmin) {
-      router.replace("/home");
+    const token = localStorage.getItem("admin_token");
+    if (!token) {
+      router.replace("/admin");
+      return;
     }
-  }, [authLoading, isAdmin, router]);
-
-  useEffect(() => {
-    if (isAdmin) {
-      fetchQuestions();
-    }
-  }, [isAdmin]);
+    setIsAuthenticated(true);
+    fetchQuestions();
+  }, [router]);
 
   const fetchQuestions = async () => {
     try {
@@ -121,11 +118,11 @@ export default function AdminQuestionsPage() {
     return matchesSearch && matchesType && matchesClass;
   });
 
-  if (authLoading || isLoading) {
+  if (isLoading || isAuthenticated === null) {
     return <AppLoader message="Loading questions..." />;
   }
 
-  if (!isAdmin) return null;
+  if (!isAuthenticated) return null;
 
   return (
     <div className="min-h-screen bg-gray-50">

@@ -1,49 +1,51 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useAuthStore, initializeAuth } from "@/stores/authStore";
 
-const PUBLIC_ROUTES = ["/", "/auth/login", "/auth/signup", "/auth/forgot-password", "/auth/reset-password", "/welcome", "/terms", "/privacy", "/onboarding", "/auth/callback"];
+const PUBLIC_ROUTES = ["/", "/auth/login", "/auth/signup", "/auth/forgot-password", "/auth/reset-password", "/welcome", "/terms", "/privacy", "/onboarding", "/auth/callback", "/admin"];
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
-  // isLoading is the authoritative "auth not yet resolved" flag —
-  // it's set to false ONLY after onAuthStateChange fires INITIAL_SESSION.
   const { isAuthenticated, isLoading, isAdmin, profile } = useAuthStore();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Start the auth listener. No need to track a separate initialized flag —
-    // isLoading going false is the signal that auth state is ready.
+    setMounted(true);
     initializeAuth();
   }, []);
 
   useEffect(() => {
-    // Don't do anything until Supabase has resolved the initial session
-    if (isLoading) return;
+    if (!mounted || isLoading) return;
 
-    const isPublicRoute = PUBLIC_ROUTES.some(route => pathname === route || pathname?.startsWith(route));
+    console.log("AuthProvider running, pathname:", pathname);
+
+    if (pathname?.startsWith("/admin")) {
+      console.log("Admin route - skipping redirect");
+      return;
+    }
+
+    const isPublicRoute = PUBLIC_ROUTES.some(route => 
+      pathname === route || (route !== "/" && pathname?.startsWith(route + "/"))
+    );
+    const hasAdminToken = typeof window !== "undefined" && !!localStorage.getItem("admin_token");
 
     if (isAuthenticated) {
-      // Redirect away from auth/guest pages once logged in
       if (pathname === "/" || pathname === "/welcome" || pathname?.startsWith("/auth")) {
-        if (isAdmin) {
+        if (isAdmin || hasAdminToken) {
           router.replace("/admin");
         } else {
           router.replace("/home");
         }
       }
-      if (pathname?.startsWith("/admin") && !isAdmin) {
-        router.replace("/home");
-      }
     } else {
-      // Redirect unauthenticated users away from protected routes
       if (!isPublicRoute && !pathname?.startsWith("/_not-found")) {
         router.replace("/welcome");
       }
     }
-  }, [isAuthenticated, isLoading, isAdmin, profile, pathname, router]);
+  }, [isAuthenticated, isLoading, isAdmin, profile, pathname, router, mounted]);
 
   return <>{children}</>;
 }

@@ -1,0 +1,148 @@
+/* src/lib/pdf/print.css */
+@page {
+  size: A4;
+  margin: 18mm 12mm; /* Top/Bottom, Left/Right */
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: #000;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* --- Utility & Spacing --- */
+.one-line-space { height: 1em; }
+.two-line-space { height: 2em; }
+.page-break { page-break-before: always; }
+
+/* --- Header --- */
+.header {
+  text-align: center;
+  border-bottom: 1pt solid #000;
+  padding-bottom: 8pt;
+  margin-bottom: 8pt;
+}
+.logo-container { text-align: center; margin-bottom: 4pt; }
+.logo { width: 40pt; height: 40pt; object-fit: contain; }
+.custom-header { font-size: 13pt; font-weight: bold; margin-bottom: 2pt; }
+.custom-subheader { font-size: 11pt; margin-bottom: 3pt; }
+.school-name { font-size: 15pt; font-weight: bold; }
+.subject-line { font-size: 13pt; margin-top: 2pt; font-weight: 600; }
+.header-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10pt;
+  margin-top: 4pt;
+  padding: 0 5mm;
+}
+
+/* --- Info Table --- */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12pt;
+  font-size: 10pt;
+}
+.info-table td {
+  border: 0.5pt solid #000;
+  padding: 4pt 8pt;
+  height: 2.5em; /* Provide space for writing */
+}
+.info-label {
+  font-weight: bold;
+  width: 15%;
+  background-color: #f0f0f0 !important;
+}
+
+/* --- Section Titles --- */
+.section-title, .subjective-title {
+  font-size: 14pt;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 12pt;
+  margin-bottom: 2pt;
+}
+.section-subtitle {
+  font-size: 10pt;
+  text-align: center;
+  margin-bottom: 10pt;
+}
+.question-header {
+  font-size: 13pt;
+  font-weight: bold;
+  margin-top: 8pt;
+  margin-bottom: 4pt;
+}
+
+/* --- MCQ Section --- */
+.mcq-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10.5pt;
+  page-break-inside: auto;
+}
+.mcq-question-row { page-break-inside: avoid; }
+.mcq-options-row { page-break-inside: avoid; }
+
+.mcq-table td {
+  border: none; /* Borders are distracting */
+  padding: 4pt 5pt;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+.mcq-question-row .mcq-no {
+  width: 25pt;
+  font-weight: bold;
+}
+.mcq-options-row {
+  font-size: 10pt;
+}
+.mcq-options-row td {
+  padding-left: 25pt; /* Indent options under the question */
+  width: 25%;
+}
+
+/* --- Subjective Questions --- */
+.question-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  line-height: 1.5;
+  margin-bottom: 6pt;
+  page-break-inside: avoid;
+}
+.long-question { margin-top: 8pt; }
+.question-number {
+  font-weight: bold;
+  width: 25pt;
+  flex-shrink: 0;
+}
+.question-text {
+  flex-grow: 1;
+  text-align: left;
+}
+.question-marks {
+  font-size: 10pt;
+  width: 30pt;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* --- KaTeX Math Rendering --- */
+.katex { font-size: 1.1em; /* Make math slightly larger */ }
+.math-inline { margin: 0 2pt; }
+.math-display { display: block; text-align: center; margin: 8pt 0; }
+
+/* --- Footer Watermark --- */
+.watermark {
+  position: fixed;
+  bottom: -10mm; /* Position it inside the bottom margin */
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 8pt;
+  color: #888;
+}

@@ -154,47 +154,51 @@ export default function ChaptersClient() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <MainLayout showBottomNav>
+      <MainLayout showBottomNav topSafe={false}>
         <div className="relative z-10 min-h-screen flex flex-col">
           {/* App Bar */}
-          <div className="fixed top-0 left-0 right-0 z-50 pt-safe">
-            <div className="mx-auto max-w-[428px]">
-              <div className="glass-panel border-b border-white/50">
-                <div className="px-4 h-14 flex items-center justify-between">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-10 w-10 rounded-xl hover:bg-gray-100"
-                    onClick={handleBack}
-                  >
-                    <ArrowLeft className="w-5 h-5 text-gray-700" />
-                  </Button>
-                  <h1 className="font-bold text-lg text-gray-900">{subjectName}</h1>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={handleSelectAll}
-                    className="text-[#1E88E5] hover:bg-[#1E88E5]/10 font-medium"
-                  >
-                    {isAllSelected ? (
-                      <>
-                        <Square className="w-4 h-4 mr-1" />
-                        None
-                      </>
-                    ) : (
-                      <>
-                        <CheckSquare className="w-4 h-4 mr-1" />
-                        All
-                      </>
-                    )}
-                  </Button>
-                </div>
+          <div className="fixed top-0 left-0 right-0 z-50">
+            {/* Safe Area Background */}
+            <div className="absolute inset-0 bg-white/90 backdrop-blur-xl border-b border-white/50" />
+
+            <div className="mx-auto max-w-[428px] relative pt-safe">
+              <div className="px-4 h-14 flex items-center justify-between">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                  onClick={handleBack}
+                >
+                  <ArrowLeft className="w-5 h-5 text-gray-700" />
+                </Button>
+                <h1 className="font-bold text-lg text-gray-900">{subjectName}</h1>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleSelectAll}
+                  className="text-[#1E88E5] hover:bg-[#1E88E5]/10 font-medium"
+                >
+                  {isAllSelected ? (
+                    <>
+                      <Square className="w-4 h-4 mr-1" />
+                      None
+                    </>
+                  ) : (
+                    <>
+                      <CheckSquare className="w-4 h-4 mr-1" />
+                      All
+                    </>
+                  )}
+                </Button>
               </div>
             </div>
           </div>
 
           {/* Content */}
-          <ScrollView className="pt-[56px] pb-32 flex-1">
+          <ScrollView
+            className="flex-1 pb-32"
+            style={{ paddingTop: 'calc(56px + env(safe-area-inset-top, 0px))' }}
+          >
             {/* Subject Hero Section */}
             <motion.div
               initial={{ opacity: 0 }}

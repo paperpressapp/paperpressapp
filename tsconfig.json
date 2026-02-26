@@ -36,9 +36,12 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "dist/types/**/*.ts",
-    "dist/dev/types/**/*.ts"
+    "dist/dev/types/**/*.ts",
+    "out/types/**/*.ts",
+    "out/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "Plan"
   ]
 }

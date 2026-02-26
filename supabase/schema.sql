@@ -5,6 +5,34 @@
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- ============================================
+-- OTP VERIFICATIONS TABLE
+-- ============================================
+CREATE TABLE IF NOT EXISTS public.otp_verifications (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    email TEXT UNIQUE NOT NULL,
+    otp TEXT NOT NULL,
+    attempts INTEGER DEFAULT 1,
+    expires_at TIMESTAMPTZ NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Enable RLS
+ALTER TABLE public.otp_verifications ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Service role can manage OTPs" ON public.otp_verifications;
+
+CREATE POLICY "Service role can manage OTPs" ON public.otp_verifications
+    FOR ALL USING (true);
+
+-- Function to cleanup expired OTPs
+CREATE OR REPLACE FUNCTION public.cleanup_expired_otps()
+RETURNS void AS $$
+BEGIN
+    DELETE FROM public.otp_verifications WHERE expires_at < NOW();
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ============================================
 -- PROFILES TABLE (extends auth.users)
 -- ============================================
 CREATE TABLE IF NOT EXISTS public.profiles (
@@ -144,6 +172,11 @@ CREATE TABLE IF NOT EXISTS public.papers (
     show_logo BOOLEAN DEFAULT false,
     custom_header TEXT,
     custom_subheader TEXT,
+    syllabus TEXT,
+    institute_address TEXT,
+    institute_email TEXT,
+    institute_phone TEXT,
+    institute_website TEXT,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     updated_at TIMESTAMPTZ DEFAULT NOW()
 );

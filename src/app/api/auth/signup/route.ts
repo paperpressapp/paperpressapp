@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+
+export const dynamic = 'force-dynamic';
+
 import { createClient } from '@supabase/supabase-js';
+import logger from '@/lib/utils/logger';
 
 const supabaseAdmin = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -53,7 +57,7 @@ export async function POST(request: NextRequest) {
         });
 
         if (profileError) {
-            console.error('Profile creation error:', profileError);
+            logger.error('Profile creation error:', profileError);
         }
 
         return NextResponse.json({
@@ -65,7 +69,7 @@ export async function POST(request: NextRequest) {
             },
         });
     } catch (error) {
-        console.error('Signup error:', error);
+        logger.error('Signup error:', error);
         return NextResponse.json({ error: 'Failed to create account' }, { status: 500 });
     }
 }

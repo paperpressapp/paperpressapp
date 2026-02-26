@@ -10,3 +10,7 @@ export { usePaperStore } from './paperStore';
 
 // User Store - Simple localStorage-based user info (no auth!)
 export { useUserStore } from './userStore';
+
+// Auth Store - Supabase authentication
+export { useAuthStore, initializeAuth, cleanupAuth } from './authStore';
+export type { Profile, UserRole } from './authStore';

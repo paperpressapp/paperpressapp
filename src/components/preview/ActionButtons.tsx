@@ -97,7 +97,8 @@ export function ActionButtons({
 
     // Fallback: mailto link
     const subject = encodeURIComponent(paperTitle);
-    window.location.href = `mailto:?subject=${subject}`;
+    const body = encodeURIComponent(`Check out this paper: ${paperTitle}\n\nGenerated with PaperPress`);
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
   };
 
   const handleCopyLink = () => {

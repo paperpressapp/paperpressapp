@@ -13,6 +13,7 @@ interface MainLayoutProps {
   showBottomNav?: boolean;
   className?: string;
   requireOnboarding?: boolean;
+  topSafe?: boolean;
 }
 
 export function MainLayout({
@@ -20,6 +21,7 @@ export function MainLayout({
   showBottomNav = true,
   className = "",
   requireOnboarding = false,
+  topSafe = true,
 }: MainLayoutProps) {
   const router = useRouter();
   const loadUser = useUserStore((state) => state.loadFromStorage);
@@ -37,26 +39,11 @@ export function MainLayout({
   }, [router, loadUser, requireOnboarding]);
 
   return (
-    <AppLayout>
-      <div
-        className={cn(
-          "relative min-h-screen",
-          className
-        )}
-      >
-        {/* Main content area */}
-        <div 
-          className="min-h-screen"
-          style={{ 
-            paddingBottom: showBottomNav 
-              ? "calc(90px + env(safe-area-inset-bottom, 0px))" 
-              : "env(safe-area-inset-bottom, 0px)" 
-          }}
-        >
+    <AppLayout topSafe={topSafe}>
+      <div className={cn("h-full flex flex-col overflow-hidden", className)}>
+        <div className="flex-1 overflow-auto">
           {children}
         </div>
-
-        {/* Fixed bottom navigation */}
         {showBottomNav && <BottomNavigation />}
       </div>
     </AppLayout>

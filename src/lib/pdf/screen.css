@@ -1,0 +1,134 @@
+/* src/lib/pdf/screen.css */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {  
+  font-family: 'Times New Roman', Times, serif; 
+  font-size: 12pt; 
+  line-height: 1.5; 
+  color: #000; 
+}
+
+.one-line-space { height: 10pt; }
+.two-line-space { height: 18pt; }
+
+.header { 
+  text-align: center; 
+  border-bottom: 0.5pt solid #000; 
+  padding-bottom: 4pt; 
+  margin-bottom: 4pt; 
+}
+
+.logo-container { 
+  text-align: center; 
+  margin-bottom: 4pt; 
+}
+
+.logo { 
+  width: 45pt; 
+  height: 45pt; 
+  object-fit: contain; 
+}
+
+.custom-header { font-size: 14pt; font-weight: bold; margin-bottom: 2pt; color: #333; }
+.custom-subheader { font-size: 12pt; font-weight: 500; margin-top: 1pt; margin-bottom: 3pt; color: #444; }
+
+.school-name { font-size: 16pt; font-weight: bold; }
+.subject-line { font-size: 14pt; margin-top: 2pt; font-weight: 600; }
+.header-details { display: flex; justify-content: center; gap: 15pt; font-size: 10pt; margin-top: 2pt; }
+
+.info-table { width: 100%; border-collapse: collapse; margin-bottom: 8pt; font-size: 10pt; }
+.info-table td { border: 0.4pt solid #000; padding: 4pt; }
+.info-label { font-weight: bold; width: 45pt; background: #f5f5f5; }
+
+.section-title { font-size: 14pt; font-weight: bold; text-align: center; margin-top: 5pt; }
+.section-subtitle { font-size: 11pt; text-align: center; color: #444; margin-bottom: 6pt; }
+
+.mcq-table { width: 100%; border-collapse: collapse; font-size: 11pt; table-layout: fixed; }
+.mcq-table td { border: 0.4pt solid #000; padding: 3pt 5pt; vertical-align: middle; word-wrap: break-word; }
+.mcq-question-row .mcq-no { width: 20pt; text-align: center; font-weight: bold; vertical-align: top; }
+.mcq-question-row .mcq-question { text-align: left; line-height: 1.5; }
+.mcq-options-row .mcq-opt { width: 25%; text-align: left; font-size: 10pt; }
+
+.subjective-title { font-size: 15pt; font-weight: bold; text-align: center; margin-top: 10pt; }
+.question-header { font-size: 14pt; font-weight: bold; }
+
+.question-item { display: flex; line-height: 1.5; margin-bottom: 4pt; }
+.long-question { margin-top: 6pt; }
+.question-number { font-weight: bold; width: 18pt; flex-shrink: 0; }
+.question-text { flex: 1; text-align: left; }
+.question-marks { font-size: 11pt; color: #555; width: 22pt; text-align: right; flex-shrink: 0; }
+
+.page-break { page-break-before: always; }
+
+.watermark { 
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center; 
+  font-size: 9pt; 
+  font-family: 'Times New Roman', Times, serif;
+  color: #1c1c1c;
+  padding: 6pt 10mm;
+  margin-top: 4pt;
+  border-top: 0.5pt solid #ccc;
+  background: white;
+  z-index: 1000;
+}
+
+.katex { 
+  font-size: 1.15em; 
+  line-height: 1.4; 
+  font-family: 'KaTeX_Main', 'Times New Roman', serif;
+  letter-spacing: 0.01em;
+}
+.katex-html { 
+  white-space: normal; 
+  display: inline;
+}
+.katex .sizing { font-size: inherit; }
+.katex .mopen, .katex .mclose { font-size: 1.1em; }
+.math-inline { 
+  display: inline; 
+  word-spacing: normal;
+  margin: 0 2pt;
+}
+.math-display { 
+  display: block; 
+  text-align: center; 
+  margin: 6pt 0; 
+  padding: 4pt 0; 
+  font-size: 1.05em;
+}
+
+/* Professional book-like fraction and math rendering */
+.katex .frac-line { 
+  border-top: 1.4px solid #000; 
+  min-height: 0.04em;
+}
+.katex .mfrac > .vlist-t { 
+  vertical-align: middle; 
+}
+.katex .sqrt-sign { 
+  font-size: 1.1em; 
+  position: relative;
+  top: -0.1em;
+}
+.katex .radical { font-size: 1.1em; }
+.katex .op { letter-spacing: 0.05em; font-weight: 400; }
+.katex .thinspace { width: 0.15em; }
+.katex .enclose { border-radius: 2pt; }
+
+/* Increase inline math size slightly for better legibility */
+.math-inline .katex { font-size: 1.15em; }
+
+/* Ensure fractions don't look too small in inline mode */
+.math-inline .katex .mfrac { font-size: 0.95em; }
+
+/* Question text with math */
+.question-text, .mcq-col-question { 
+  line-height: 1.6; 
+  word-spacing: 0.05em;
+  overflow-wrap: break-word;
+}

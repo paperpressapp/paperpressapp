@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
+
+export const dynamic = 'force-dynamic';
+
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
+import logger from '@/lib/utils/logger';
 
 // Service-role client — bypasses RLS, safe for server-only API routes
 const supabase = createClient(
@@ -29,15 +33,21 @@ export async function POST(request: NextRequest) {
 
         const normalizedEmail = email.toLowerCase().trim();
 
-        // Cleanup expired OTPs (fire-and-forget)
-        supabase.rpc('cleanup_expired_otps').then(() => { });
+        // Cleanup expired OTPs (fire-and-forget, ignore errors if RPC doesn't exist)
+        try {
+            await supabase.rpc('cleanup_expired_otps');
+        } catch { }
 
         // Check existing OTP for rate limiting
-        const { data: existing } = await supabase
+        const { data: existing, error: fetchError } = await supabase
             .from('otp_verifications')
             .select('attempts, expires_at')
             .eq('email', normalizedEmail)
             .maybeSingle();
+
+        if (fetchError) {
+            logger.error('OTP fetch error:', fetchError);
+        }
 
         const now = new Date();
         const isStillValid = existing && new Date(existing.expires_at) > now;
@@ -64,15 +74,25 @@ export async function POST(request: NextRequest) {
             });
 
         if (upsertError) {
-            console.error('OTP upsert error:', upsertError);
-            return NextResponse.json({ error: 'Failed to generate OTP' }, { status: 500 });
+            logger.error('OTP upsert error:', upsertError);
+            // If table doesn't exist, still allow in development
+            if (process.env.NODE_ENV === 'development') {
+                logger.log('[DEV MODE - Table missing] OTP for', email, ':', otp);
+                return NextResponse.json({ 
+                    success: true, 
+                    message: 'OTP generated (dev mode - check server console)', 
+                    devOtp: otp, 
+                    expiresIn: 600 
+                });
+            }
+            return NextResponse.json({ error: 'Failed to generate OTP. Please try again.' }, { status: 500 });
         }
 
         const resend = getResendClient();
 
         if (!resend) {
             if (process.env.NODE_ENV === 'development') {
-                console.log('[DEV MODE] OTP for', email, ':', otp);
+                logger.log('[DEV MODE] OTP for', email, ':', otp);
                 return NextResponse.json({ success: true, message: 'OTP generated (check server console)', devOtp: otp, expiresIn: 600 });
             }
             return NextResponse.json({ error: 'Email service not configured.' }, { status: 503 });
@@ -114,7 +134,7 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json({ success: true, message: 'OTP sent successfully', expiresIn: 600 });
     } catch (error) {
-        console.error('Send OTP error:', error);
+        logger.error('Send OTP error:', error);
         return NextResponse.json({ error: 'Failed to send OTP' }, { status: 500 });
     }
 }
@@ -154,7 +174,7 @@ export async function PUT(request: NextRequest) {
         await supabase.from('otp_verifications').delete().eq('email', normalizedEmail);
         return NextResponse.json({ valid: true, message: 'OTP verified successfully' });
     } catch (error) {
-        console.error('Verify OTP error:', error);
+        logger.error('Verify OTP error:', error);
         return NextResponse.json({ error: 'Failed to verify OTP' }, { status: 500 });
     }
 }

@@ -14,17 +14,35 @@
 import { Capacitor } from '@capacitor/core';
 import type { MCQQuestion, ShortQuestion, LongQuestion } from '@/types';
 import { generateProfessionalPDF, generateFilename as profFilename } from './professionalPDF';
-import { generatePaperHTML, generatePDFFilename } from './htmlGenerator';
+import { generateHTMLTemplate, type PaperData } from './htmlTemplate';
 import PDFPrinter from '@/lib/plugins/PDFPrinter';
 
-// Always use the deployed API URL for PDF generation
-// The app makes HTTP calls to the Vercel server for Puppeteer PDF
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://paperpressapp.vercel.app';
+// Helper to get the base URL for API calls
+function getApiBaseUrl(): string {
+  // If explicitly set in environment, use that
+  if (process.env.NEXT_PUBLIC_API_URL && !process.env.NEXT_PUBLIC_API_URL.includes('vercel.app')) {
+    return process.env.NEXT_PUBLIC_API_URL;
+  }
+
+  // Development environment logic
+  if (process.env.NODE_ENV === 'development') {
+    if (Capacitor.isNativePlatform()) {
+      // In Android emulator, 10.0.2.2 points to the host machine's localhost
+      // For physical devices, they should ideally set NEXT_PUBLIC_API_URL to their IP
+      return 'http://10.0.2.2:3000';
+    }
+    return 'http://localhost:3000';
+  }
+
+  // Production default
+  return 'https://paperpressapp.vercel.app';
+}
+
+const API_BASE_URL = getApiBaseUrl();
 
 export interface PDFSettings {
   instituteName: string;
   instituteLogo?: string | null;
-  examType: string;
   date: string;
   timeAllowed: string;
   classId: string;
@@ -32,6 +50,24 @@ export interface PDFSettings {
   customHeader?: string;
   customSubHeader?: string;
   showLogo?: boolean;
+  isPremium?: boolean;
+  includeAnswerSheet?: boolean;
+  syllabus?: string;
+  instituteAddress?: string;
+  instituteEmail?: string;
+  institutePhone?: string;
+  instituteWebsite?: string;
+  attemptRules?: {
+    shortAttempt?: number;
+    shortTotal?: number;
+    longAttempt?: number;
+    longTotal?: number;
+  };
+  customMarks?: {
+    mcq?: number;
+    short?: number;
+    long?: number;
+  };
 }
 
 // ─────────────────────────────────────────────
@@ -50,6 +86,60 @@ export async function fetchAndDownloadPDF(
   return downloadPDFWeb(settings, mcqs, shorts, longs);
 }
 
+export async function fetchAndDownloadDOCX(
+  settings: any,
+  mcqs: MCQQuestion[],
+  shorts: ShortQuestion[],
+  longs: LongQuestion[]
+): Promise<{ success: boolean; error?: string }> {
+  showToast('Generating Word Document...');
+
+  const filename = `${settings.classId}_${settings.subject}_${settings.date.replace(/-/g, '')}.docx`;
+
+  // ── PRIMARY PATH: Server-side API (Professional Layout) ──────────
+  try {
+    console.log('[DOCX] Fetching from server...');
+    const response = await fetch(`${API_BASE_URL}/api/generate-docx`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ settings, mcqs, shorts, longs }),
+    });
+
+    if (!response.ok) throw new Error('Server returned error');
+
+    const blob = await response.blob();
+    const reader = new FileReader();
+
+    return new Promise((resolve) => {
+      reader.onloadend = async () => {
+        const base64 = (reader.result as string).split(',')[1];
+        if (Capacitor.isNativePlatform()) {
+          await savePDFToDevice(base64, filename, true);
+          showToast('Word file saved to Documents/PaperPress/');
+        } else {
+          const link = document.createElement('a');
+          link.href = window.URL.createObjectURL(blob);
+          link.download = filename;
+          link.click();
+        }
+        resolve({ success: true });
+      };
+      reader.onerror = () => resolve({ success: false, error: 'Failed to process file binary' });
+      reader.readAsDataURL(blob);
+    });
+
+  } catch (error) {
+    console.warn('[DOCX] Server API failed or offline, falling back to local generation:', error);
+
+    // OFFLINE FALLBACK: Local generation (docx library)
+    try {
+      const { downloadDOCX } = await import('./docxGenerator');
+      return await downloadDOCX(settings, mcqs, shorts, longs);
+    } catch (localError) {
+      return { success: false, error: 'Failed to generate Word document locally' };
+    }
+  }
+}
 export async function fetchAndPreviewPDF(
   settings: PDFSettings,
   mcqs: MCQQuestion[],
@@ -77,42 +167,106 @@ async function downloadPDFAndroid(
 ): Promise<{ success: boolean; error?: string }> {
   showToast('Generating PDF...');
 
+  // Build HTML for WebView rendering (fully offline with bundled KaTeX)
+  const paperData: PaperData = {
+    instituteName: settings.instituteName,
+    logoUrl: settings.instituteLogo,
+    date: settings.date,
+    timeAllowed: settings.timeAllowed,
+    classId: settings.classId,
+    subject: settings.subject,
+    mcqs,
+    shorts,
+    longs,
+    customHeader: settings.customHeader,
+    customSubHeader: settings.customSubHeader,
+    showLogo: settings.showLogo,
+    isPremium: settings.isPremium,
+    includeAnswerSheet: settings.includeAnswerSheet,
+    attemptRules: settings.attemptRules,
+    customMarks: settings.customMarks,
+    syllabus: settings.syllabus,
+    instituteAddress: settings.instituteAddress,
+    instituteEmail: settings.instituteEmail,
+    institutePhone: settings.institutePhone,
+    instituteWebsite: settings.instituteWebsite,
+  };
+
+  const html = generateHTMLTemplate(paperData);
+  const filename = generateFilename(settings.classId, settings.subject, settings.date);
+
+  // ── PRIMARY: Silent PDF save via PDFPrinterPlugin.java ────────────────────
   try {
-    // Generate HTML locally — no internet needed
-    const html = generatePaperHTML(
-      {
-        instituteName: settings.instituteName,
-        instituteLogo: settings.instituteLogo,
-        examType: settings.examType,
-        date: settings.date,
-        timeAllowed: settings.timeAllowed,
-        classId: settings.classId,
-        subject: settings.subject,
-      },
-      mcqs,
-      shorts,
-      longs
-    );
-
-    const filename = generatePDFFilename(settings.classId, settings.subject, settings.date);
-
-    // → Android WebView renders HTML (KaTeX renders perfectly)
-    // → Android PrintManager converts to PDF at 300 DPI
-    // → Opens Android print dialog → user saves as PDF
-    console.log('[PDF] Using native WebView PrintManager...');
+    console.log('[PDF] Using Android WebView PrintManager (offline)...');
     const result = await PDFPrinter.printToPDF({ html, filename });
 
     if (!result.success) {
-      throw new Error(result.message || 'Print failed');
+      throw new Error(result.message || 'PDFPrinterPlugin returned failure');
     }
 
-    showToast('PDF ready — tap "Save as PDF" in the print dialog');
+    console.log('[PDF] Saved to:', result.filePath);
+    showToast('✅ PDF saved to Documents/PaperPress/');
+
+    // Open the file immediately if requested (preview mode)
+    if (openAfterSave && result.filePath) {
+      await openSavedPDF(result.filePath);
+    }
+
     return { success: true };
 
-  } catch (error) {
-    console.error('[PDF] Native print failed:', error);
-    const errorMessage = error instanceof Error ? error.message : 'Failed to generate PDF';
+  } catch (primaryError) {
+    console.warn('[PDF] Silent save failed, trying print dialog:', primaryError);
+  }
+
+  // ── FALLBACK 1: Show Android print dialog ───────────────────────────────────
+  try {
+    const result = await PDFPrinter.showPrintDialog({ html, filename });
+
+    if (!result.success) {
+      throw new Error(result.message || 'Print dialog failed');
+    }
+
+    showToast('Tap "Save as PDF" in the print dialog');
+    return { success: true };
+
+  } catch (dialogError) {
+    console.warn('[PDF] Print dialog failed, trying server:', dialogError);
+  }
+
+  // ── FALLBACK 2: Try server API (requires internet) ──────────────────────────
+  try {
+    console.log('[PDF] Trying Puppeteer via API: ' + API_BASE_URL);
+    const pdfBase64 = await fetchPDFFromServer(settings, mcqs, shorts, longs);
+    await savePDFToDevice(pdfBase64, filename, openAfterSave);
+    showToast('PDF downloaded from server');
+    return { success: true };
+  } catch (serverError) {
+    console.warn('[PDF] Server API unavailable:', serverError);
+  }
+
+  // ── FALLBACK 3: jsPDF (last resort, reduced quality) ────────────────────────
+  try {
+    console.log('[PDF] Using jsPDF fallback...');
+    const pdfBase64 = await generateProfessionalPDF(settings, mcqs, shorts, longs);
+    await savePDFToDevice(pdfBase64, filename, openAfterSave);
+    showToast('PDF saved (basic format)');
+    return { success: true };
+  } catch (finalError) {
+    console.error('[PDF] All PDF methods failed:', finalError);
+    const errorMessage = finalError instanceof Error ? finalError.message : 'Failed to generate PDF';
     return { success: false, error: errorMessage };
+  }
+}
+
+async function openSavedPDF(filePath: string): Promise<void> {
+  try {
+    const { FileOpener } = await import('@capacitor-community/file-opener');
+    await FileOpener.open({
+      filePath,
+      contentType: 'application/pdf',
+    });
+  } catch (e) {
+    console.warn('[PDF] Could not open file automatically:', e);
   }
 }
 
@@ -132,6 +286,7 @@ async function fetchPDFFromServer(
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/pdf',
+        'x-api-key': process.env.NEXT_PUBLIC_PDF_API_KEY || '',
       },
       body: JSON.stringify({ settings, mcqs, shorts, longs }),
       signal: controller.signal,
@@ -280,7 +435,10 @@ async function downloadPDFWeb(
   try {
     const response = await fetch(`${API_BASE_URL}/api/generate-pdf`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.NEXT_PUBLIC_PDF_API_KEY || '',
+      },
       body: JSON.stringify({ settings, mcqs, shorts, longs }),
     });
 
@@ -316,7 +474,10 @@ async function previewPDFWeb(
   try {
     const response = await fetch(`${API_BASE_URL}/api/generate-pdf`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.NEXT_PUBLIC_PDF_API_KEY || '',
+      },
       body: JSON.stringify({ settings, mcqs, shorts, longs }),
     });
 

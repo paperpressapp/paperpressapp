@@ -9,6 +9,7 @@ import type { GeneratedPaper } from "@/types";
 
 const STORAGE_KEY = "paperpress_papers";
 const MAX_PAPERS = 50;
+const MAX_STORAGE_SIZE = 4.5 * 1024 * 1024; // 4.5MB limit (leaving buffer for other data)
 
 /**
  * Get all saved papers
@@ -31,19 +32,47 @@ export function getPaperById(paperId: string): GeneratedPaper | null {
 /**
  * Save a new paper to storage
  * @param paper - The paper to save
+ * @returns Object with success status and optional error message
  */
-export function savePaper(paper: GeneratedPaper): void {
-  const papers = getPapers();
-  
-  // Add new paper to beginning of array
-  const updatedPapers = [paper, ...papers];
-  
-  // Limit to MAX_PAPERS
-  if (updatedPapers.length > MAX_PAPERS) {
-    updatedPapers.length = MAX_PAPERS;
+export function savePaper(paper: GeneratedPaper): { success: boolean; error?: string } {
+  try {
+    const papers = getPapers();
+    
+    // Add new paper to beginning of array
+    let updatedPapers = [paper, ...papers];
+    
+    // Limit to MAX_PAPERS
+    if (updatedPapers.length > MAX_PAPERS) {
+      updatedPapers = updatedPapers.slice(0, MAX_PAPERS);
+    }
+    
+    // Serialize and check size
+    const serialized = JSON.stringify(updatedPapers);
+    
+    // If too large, remove oldest papers until under limit
+    if (serialized.length > MAX_STORAGE_SIZE) {
+      // Remove oldest 20% of papers
+      const trimmed = updatedPapers.slice(0, Math.floor(updatedPapers.length * 0.8));
+      const trimmedSerialized = JSON.stringify(trimmed);
+      
+      if (trimmedSerialized.length > MAX_STORAGE_SIZE) {
+        // Still too large - remove more aggressively
+        const minimal = updatedPapers.slice(0, Math.floor(updatedPapers.length * 0.5));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(minimal));
+        return { success: true, error: 'Oldest papers removed to free space' };
+      }
+      
+      localStorage.setItem(STORAGE_KEY, trimmedSerialized);
+      return { success: true, error: 'Some older papers removed to free storage space' };
+    }
+    
+    localStorage.setItem(STORAGE_KEY, serialized);
+    return { success: true };
+  } catch (e) {
+    // QuotaExceededError
+    console.error('[Storage] Failed to save paper:', e);
+    return { success: false, error: 'Storage full — please delete old papers in Settings' };
   }
-  
-  setToLocalStorage(STORAGE_KEY, updatedPapers);
 }
 
 /**

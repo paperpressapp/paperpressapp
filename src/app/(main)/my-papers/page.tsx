@@ -6,7 +6,7 @@
  * Lists all previously generated papers with search and filter options.
  */
 
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Filter, FileText, Plus, ArrowLeft } from "lucide-react";
@@ -30,6 +30,14 @@ export default function MyPapersPage() {
   const [activeTab, setActiveTab] = useState<"all" | "month">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearch, setShowSearch] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  const handleShowSearch = () => {
+    setShowSearch(true);
+    requestAnimationFrame(() => {
+      searchInputRef.current?.focus();
+    });
+  };
 
   const debouncedSearch = useDebounce(searchQuery, 300);
 
@@ -148,49 +156,43 @@ export default function MyPapersPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1E88E5] via-[#1976D2] to-[#1565C0]">
-      {/* Background decorations */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
-      </div>
-
-      <MainLayout showBottomNav>
-        <div className="min-h-screen pb-24">
+    <MainLayout showBottomNav className="bg-gray-50" topSafe={false}>
+      <div className="min-h-screen pb-24">
           {/* App Bar */}
-          <div className="fixed top-0 left-0 right-0 z-50 pt-safe">
-            <div className="mx-auto max-w-[428px]">
-              <div className="bg-white/90 backdrop-blur-xl border-b border-gray-100">
-                <div className="px-4 h-14 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-10 w-10 rounded-xl hover:bg-gray-100"
-                      onClick={() => router.push("/home")}
-                    >
-                      <ArrowLeft className="w-5 h-5 text-gray-700" />
-                    </Button>
-                    <h1 className="font-bold text-lg text-gray-900">My Papers</h1>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-10 w-10 rounded-xl hover:bg-gray-100"
-                      onClick={() => setShowSearch(!showSearch)}
-                    >
-                      <Search className="w-5 h-5 text-gray-700" />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-10 w-10 rounded-xl hover:bg-gray-100"
-                      onClick={() => toast.info("Filters coming soon!")}
-                    >
-                      <Filter className="w-5 h-5 text-gray-700" />
-                    </Button>
-                  </div>
+          <div className="fixed top-0 left-0 right-0 z-50">
+            {/* Safe Area Background */}
+            <div className="absolute inset-0 bg-white/90 backdrop-blur-xl border-b border-gray-100" />
+
+            <div className="mx-auto max-w-[428px] relative pt-safe">
+              <div className="px-4 h-14 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                    onClick={() => router.push("/home")}
+                  >
+                    <ArrowLeft className="w-5 h-5 text-gray-700" />
+                  </Button>
+                  <h1 className="font-bold text-lg text-gray-900">My Papers</h1>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                    onClick={showSearch ? () => setShowSearch(false) : handleShowSearch}
+                  >
+                    <Search className="w-5 h-5 text-gray-700" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                    onClick={() => toast.info("Filters coming soon!")}
+                  >
+                    <Filter className="w-5 h-5 text-gray-700" />
+                  </Button>
                 </div>
               </div>
             </div>
@@ -200,25 +202,27 @@ export default function MyPapersPage() {
           <AnimatePresence>
             {showSearch && (
               <motion.div
-                className="fixed top-14 left-0 right-0 z-40 px-4 py-3 bg-white/95 backdrop-blur-xl border-b border-gray-100"
+                className="fixed left-0 right-0 z-40 px-4 py-3 bg-white/95 backdrop-blur-xl border-b border-gray-100"
+                style={{ top: 'calc(56px + env(safe-area-inset-top, 0px))' }}
                 initial={{ height: 0, opacity: 0, y: -10 }}
                 animate={{ height: "auto", opacity: 1, y: 0 }}
+                exit={{ height: 0, opacity: 0, y: -10 }}
               >
                 <div className="mx-auto max-w-[428px]">
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <Input
+                      ref={searchInputRef}
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder="Search papers..."
-                      className="pl-10 h-12 rounded-xl border-gray-200 bg-gray-50"
-                      autoFocus
+                      className="pl-10 h-12 rounded-xl border-gray-200 bg-gray-50 text-sm"
                     />
                     {searchQuery && (
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="absolute right-1 top-1/2 -translate-y-1/2 h-8"
+                        className="absolute right-1 top-1/2 -translate-y-1/2 h-8 text-xs"
                         onClick={() => setSearchQuery("")}
                       >
                         Clear
@@ -231,29 +235,36 @@ export default function MyPapersPage() {
           </AnimatePresence>
 
           {/* Content */}
-          <ScrollView className={`pt-[56px] ${showSearch ? "pt-[120px]" : ""}`}>
+          <ScrollView
+            className="flex-1"
+            style={{
+              paddingTop: showSearch
+                ? 'calc(120px + env(safe-area-inset-top, 0px))'
+                : 'calc(56px + env(safe-area-inset-top, 0px))'
+            }}
+          >
             {/* Stats Card */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="px-5 py-4"
+              className="px-4 py-3"
             >
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 border border-gray-100 shadow-sm">
+              <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg shadow-[#1E88E5]/30">
-                      <FileText className="w-6 h-6 text-white" />
+                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow">
+                      <FileText className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-gray-900">{papers.length}</p>
-                      <p className="text-sm text-gray-500">Total Papers</p>
+                      <p className="text-lg font-bold text-gray-900">{papers.length}</p>
+                      <p className="text-xs text-gray-500">Total Papers</p>
                     </div>
                   </div>
                   <Button
                     onClick={() => router.push("/home")}
-                    className="h-10 rounded-xl bg-gradient-to-r from-[#1E88E5] to-[#1565C0] font-semibold"
+                    className="h-9 rounded-lg bg-gradient-to-r from-[#1E88E5] to-[#1565C0] font-medium text-sm"
                   >
-                    <Plus className="w-4 h-4 mr-1" />
+                    <Plus className="w-3.5 h-3.5 mr-1" />
                     Create
                   </Button>
                 </div>
@@ -261,34 +272,35 @@ export default function MyPapersPage() {
             </motion.div>
 
             {/* Tabs */}
-            <div className="px-5 mb-4">
+            <div className="px-4 mb-3">
               <PapersTabs activeTab={activeTab} onChange={handleTabChange} />
             </div>
 
             {/* Papers List */}
-            {filteredPapers.length === 0 ? (
-              <EmptyPapers onCreate={() => router.push("/home")} />
-            ) : (
-              <div className="px-5 space-y-3">
-                <AnimatePresence mode="popLayout">
-                  {filteredPapers.map((paper) => (
-                    <PaperListCard
-                      key={paper.id}
-                      paper={paper}
-                      onView={() => handleView(paper.id)}
-                      onDownload={() => handleDownload(paper)}
-                      onShare={() => handleShare(paper)}
-                      onDelete={() => handleDelete(paper.id)}
-                    />
-                  ))}
-                </AnimatePresence>
-              </div>
-            )}
+            <div className="px-4 space-y-2 pb-4">
+              {filteredPapers.length === 0 ? (
+                <EmptyPapers onCreate={() => router.push("/home")} />
+              ) : (
+                <div className="space-y-2">
+                  <AnimatePresence mode="popLayout">
+                    {filteredPapers.map((paper) => (
+                      <PaperListCard
+                        key={paper.id}
+                        paper={paper}
+                        onView={() => handleView(paper.id)}
+                        onDownload={() => handleDownload(paper)}
+                        onShare={() => handleShare(paper)}
+                        onDelete={() => handleDelete(paper.id)}
+                      />
+                    ))}
+                  </AnimatePresence>
+                </div>
+              )}
 
-            <div className="h-24" />
+              <div className="h-20" />
+            </div>
           </ScrollView>
         </div>
       </MainLayout>
-    </div>
-  );
-}
+    );
+  }

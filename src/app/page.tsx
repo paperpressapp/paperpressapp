@@ -11,57 +11,67 @@ export default function SplashPage() {
   const router = useRouter();
   const { isLoading, isAuthenticated, profile } = useAuthStore();
   const [logoError, setLogoError] = useState(false);
-  const [animationComplete, setAnimationComplete] = useState(false);
-  const [authChecked, setAuthChecked] = useState(false);
   const hasNavigated = useRef(false);
+  const [forceReady, setForceReady] = useState(false);
 
   useEffect(() => {
     initializeAuth();
+
+    // Force navigation after 3 seconds max (increased from 2s for safety)
+    const forceTimer = setTimeout(() => {
+      if (!hasNavigated.current) {
+        setForceReady(true);
+      }
+    }, 3000);
+
+    return () => clearTimeout(forceTimer);
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => setAnimationComplete(true), 4000);
-    return () => clearTimeout(timer);
-  }, []);
+    // Navigate when loading is done OR force ready
+    if (hasNavigated.current) return;
 
-  useEffect(() => {
-    if (!isLoading) setAuthChecked(true);
-  }, [isLoading]);
+    if (!isLoading || forceReady) {
+      hasNavigated.current = true;
 
-  useEffect(() => {
-    if (!animationComplete || !authChecked || hasNavigated.current) return;
-    hasNavigated.current = true;
+      const navigate = async () => {
+        if (Capacitor.isNativePlatform()) {
+          try { await SplashScreen.hide(); } catch (e) { }
+        }
+        await new Promise(resolve => setTimeout(resolve, 100));
 
-    const navigate = async () => {
-      if (Capacitor.isNativePlatform()) {
-        try { await SplashScreen.hide(); } catch (e) {}
-      }
-      await new Promise(resolve => setTimeout(resolve, 100));
+        // Fixed routing logic - Supabase auth takes priority
+        if (isAuthenticated && profile) {
+          // Authenticated Supabase user - always go home (or admin)
+          router.replace(profile.role === 'admin' ? "/admin" : "/home");
+        } else {
+          // Guest - check if they've done onboarding
+          const hasOnboarded = typeof window !== 'undefined' && 
+            localStorage.getItem("paperpress_user_name");
+          router.replace(hasOnboarded ? "/home" : "/welcome");
+        }
+      };
 
-      if (isAuthenticated && profile) {
-        router.replace(profile.role === 'admin' ? "/admin" : "/home");
-      } else {
-        const hasLocalUser = localStorage.getItem("paperpress_user_name");
-        router.replace(hasLocalUser ? "/home" : "/welcome");
-      }
-    };
-
-    navigate();
-  }, [animationComplete, authChecked, isAuthenticated, profile, router]);
+      navigate();
+    }
+  }, [isLoading, forceReady, isAuthenticated, profile, router]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1565C0] via-[#1976D2] to-[#1E88E5] flex flex-col items-center justify-center relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden">
+    <div className="min-h-screen bg-[#1E88E5] flex flex-col items-center justify-center relative overflow-hidden">
+      {/* Premium Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1565C0] via-[#1E88E5] to-[#42A5F5]" />
+
+      {/* Subtle Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-white/5 blur-3xl"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-white/10 blur-[100px]"
+          animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-white/5 blur-3xl"
-          animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute -bottom-[10%] -right-[10%] w-[60%] h-[60%] rounded-full bg-black/10 blur-[120px]"
+          animate={{ x: [0, -40, 0], y: [0, -20, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
         />
       </div>
 
@@ -70,104 +80,97 @@ export default function SplashPage() {
         className="flex flex-col items-center z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.8 }}
       >
-        {/* Logo */}
+        {/* Logo with Premium Shadow */}
         <motion.div
           className="relative mb-8"
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.2, duration: 1 }}
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20 }}
         >
-          <motion.div
-            className="absolute inset-0 bg-white/30 blur-3xl rounded-full scale-150"
-            animate={{ scale: [1.5, 1.8, 1.5], opacity: [0.3, 0.5, 0.3] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          />
-          
+          <div className="absolute inset-0 bg-white/20 blur-2xl rounded-full scale-125" />
+
           {!logoError ? (
             <motion.img
               src="/logo.png"
               alt="PaperPress"
-              className="relative w-28 h-28 object-contain drop-shadow-2xl z-10"
+              className="relative w-24 h-24 object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.25)] z-10"
               onError={() => setLogoError(true)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
             />
           ) : (
-            <motion.div
-              className="relative w-28 h-28 rounded-3xl bg-white flex items-center justify-center shadow-2xl z-10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              <span className="text-5xl font-bold text-[#1E88E5]">P</span>
-            </motion.div>
+            <div className="relative w-24 h-24 rounded-[28px] bg-white flex items-center justify-center shadow-2xl z-10 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-blue-100 opacity-50" />
+              <motion.div
+                initial={{ rotate: -10, scale: 0.9 }}
+                animate={{ rotate: 0, scale: 1 }}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
+                <div className="relative">
+                  <div className="absolute -inset-2 bg-blue-500/20 blur-xl rounded-full" />
+                  <svg className="w-12 h-12 text-[#1E88E5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <path d="M16 13H8" />
+                    <path d="M16 17H8" />
+                    <path d="M10 9H8" />
+                  </svg>
+                </div>
+              </motion.div>
+            </div>
           )}
         </motion.div>
 
-        {/* App name */}
-        <motion.h1
-          className="text-white text-3xl font-bold tracking-wide mb-3"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6, type: "spring" }}
-        >
-          PaperPress
-        </motion.h1>
+        {/* App Name - Professional Typography */}
+        <div className="text-center">
+          <motion.h1
+            className="text-white text-2xl font-bold tracking-tight mb-2"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            PaperPress
+          </motion.h1>
 
-        {/* Tagline */}
-        <motion.p
-          className="text-white/80 text-base text-center tracking-wide mb-2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.5 }}
-        >
-          Generate Perfect Papers in Seconds
-        </motion.p>
-
-        {/* Credit */}
-        <motion.div
-          className="mt-6 px-5 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.3, duration: 0.5 }}
-        >
-          <span className="text-white/90 text-sm font-medium tracking-wider">
-            PaperPress By Hamza Khan
-          </span>
-        </motion.div>
-      </motion.div>
-
-      {/* Loading dots */}
-      <motion.div
-        className="absolute bottom-24"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-      >
-        <div className="flex space-x-2">
-          {[0, 1, 2].map((i) => (
-            <motion.div
-              key={i}
-              className="w-3 h-3 rounded-full bg-white/70"
-              animate={{ scale: [1, 1.4, 1], opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.2, ease: "easeInOut" }}
-            />
-          ))}
+          {/* Tagline - Professional, no developer credit */}
+          <motion.p
+            className="text-white/70 text-sm font-medium tracking-wide uppercase"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+          >
+            Professional Exam Paper Generator
+          </motion.p>
         </div>
       </motion.div>
 
-      {/* Version */}
-      <motion.p
-        className="absolute bottom-8 text-white/40 text-xs font-light tracking-wider"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
-      >
-        v1.0.0
-      </motion.p>
+      {/* Modern Loader */}
+      <div className="absolute bottom-32 flex flex-col items-center gap-4">
+        <div className="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden relative">
+          <motion.div
+            className="absolute inset-0 bg-white/60"
+            initial={{ x: "-100%" }}
+            animate={{ x: "100%" }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Professional Bottom Info */}
+      <div className="absolute bottom-10 flex flex-col items-center gap-1">
+        <motion.p
+          className="text-white/40 text-[10px] font-bold tracking-[0.2em] uppercase"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+        >
+          Professional Exam Paper Generator App
+        </motion.p>
+      </div>
     </div>
   );
 }

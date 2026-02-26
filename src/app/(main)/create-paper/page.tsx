@@ -188,46 +188,45 @@ export default function CreatePaperPage() {
   if (isValidating) return <AppLoader message="Preparing..." />;
 
   return (
-    <MainLayout showBottomNav={false} className="bg-gradient-to-br from-[#1E88E5] via-[#1976D2] to-[#1565C0]">
+    <MainLayout showBottomNav={false} className="bg-gradient-to-br from-[#1E40AF] via-[#1E56B8] to-[#2563EB]">
       {/* Background decoration */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
+        <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-xl" />
       </div>
 
-      <div className="relative z-10 min-h-screen flex flex-col">
+      <div className="relative z-10 h-full flex flex-col">
         {/* Header */}
         <header className="fixed top-0 left-0 right-0 z-40">
           <div className="mx-auto max-w-[428px]">
             <div className="glass-panel border-b border-white/10">
-              <div className="px-4 h-14 flex items-center justify-between">
-                <Button variant="ghost" size="icon" className="h-10 w-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20" onClick={handleBack}>
-                  <ArrowLeft className="w-5 h-5 text-white" />
+              <div className="px-3 h-12 flex items-center justify-between">
+                <Button variant="ghost" size="icon" className="h-9 w-9 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20" onClick={handleBack}>
+                  <ArrowLeft className="w-4 h-4 text-white" />
                 </Button>
-                <h1 className="font-bold text-lg text-white">Create Paper</h1>
-                <Button variant="ghost" size="icon" className={`h-10 w-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 ${hasUnsavedChanges ? 'text-red-300' : 'text-white/60'}`} onClick={handleReset}>
-                  <RotateCcw className="w-5 h-5" />
+                <h1 className="font-bold text-base text-white">Create Paper</h1>
+                <Button variant="ghost" size="icon" className={`h-9 w-9 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 ${hasUnsavedChanges ? 'text-red-300' : 'text-white/60'}`} onClick={handleReset}>
+                  <RotateCcw className="w-4 h-4" />
                 </Button>
               </div>
             </div>
           </div>
         </header>
 
-        <ScrollView className="pt-[56px] flex-1 pb-40">
+        <ScrollView className="pt-12 flex-1 pb-36">
           {/* Premium Banner */}
           {!premiumStatus.isPremium && (
-            <div className="px-5 py-3">
-              <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 backdrop-blur-md border border-amber-400/30 rounded-2xl p-4 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-lg shadow-amber-500/30">
-                    <Crown className="w-5 h-5 text-white" />
+            <div className="px-4 py-2">
+              <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 backdrop-blur-md border border-amber-400/30 rounded-xl p-3 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow">
+                    <Crown className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-amber-100">{premiumStatus.remaining} free papers left</p>
-                    <p className="text-xs text-amber-200/70">Upgrade for unlimited access</p>
+                    <p className="text-xs font-semibold text-amber-100">{premiumStatus.remaining} free papers left</p>
                   </div>
                 </div>
-                <Button size="sm" onClick={() => setShowPremiumModal(true)} className="h-9 px-4 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-white font-semibold shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 transition-shadow">
+                <Button size="sm" onClick={() => setShowPremiumModal(true)} className="h-8 px-3 rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-white font-semibold text-xs">
                   Upgrade
                 </Button>
               </div>
@@ -235,78 +234,78 @@ export default function CreatePaperPage() {
           )}
 
           {/* Subject Card */}
-          <div className="px-5 py-4">
-            <div className="glass-panel rounded-2xl p-4">
+          <div className="px-4 py-2">
+            <div className="glass-panel rounded-xl p-3">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg shadow-blue-500/30">
-                    <BookOpen className="w-6 h-6 text-white" />
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#1E40AF] to-[#2563EB] flex items-center justify-center shadow">
+                    <BookOpen className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-400 font-medium">Class {selectedClass}</p>
-                    <p className="text-lg font-bold text-gray-900">{selectedSubject}</p>
+                    <p className="text-[10px] text-gray-400 font-medium">Class {selectedClass}</p>
+                    <p className="text-base font-bold text-gray-900">{selectedSubject}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5 text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full">
-                  <Layers className="w-4 h-4" />
-                  <span className="text-sm font-medium">{selectedChapters.length}</span>
+                <div className="flex items-center gap-1 text-gray-500 bg-gray-100 px-2 py-1 rounded-lg">
+                  <Layers className="w-3 h-3" />
+                  <span className="text-xs font-medium">{selectedChapters.length}</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Stats Card */}
-          <div className="px-5 mb-4">
-            <div className="bg-gradient-to-r from-[#1E88E5] to-[#1565C0] rounded-2xl p-5 shadow-xl shadow-blue-500/30">
+          <div className="px-4 mb-3">
+            <div className="bg-gradient-to-r from-[#1E40AF] to-[#2563EB] rounded-xl p-4 shadow-lg shadow-blue-500/20">
               <div className="flex items-center justify-between text-white">
                 <div className="text-center flex-1">
-                  <p className="text-4xl font-bold">{totalQuestions}</p>
-                  <p className="text-xs opacity-80 mt-1">Questions</p>
+                  <p className="text-2xl font-bold">{totalQuestions}</p>
+                  <p className="text-[10px] opacity-80 mt-0.5">Questions</p>
                 </div>
-                <div className="w-px h-12 bg-white/20" />
+                <div className="w-px h-8 bg-white/20" />
                 <div className="text-center flex-1">
-                  <p className="text-4xl font-bold">{totalMarks}</p>
-                  <p className="text-xs opacity-80 mt-1">Total Marks</p>
+                  <p className="text-2xl font-bold">{totalMarks}</p>
+                  <p className="text-[10px] opacity-80 mt-0.5">Marks</p>
                 </div>
-                <div className="w-px h-12 bg-white/20" />
+                <div className="w-px h-8 bg-white/20" />
                 <div className="text-center flex-1">
-                  <p className="text-4xl font-bold">{selectedChapters.length}</p>
-                  <p className="text-xs opacity-80 mt-1">Chapters</p>
+                  <p className="text-2xl font-bold">{selectedChapters.length}</p>
+                  <p className="text-[10px] opacity-80 mt-0.5">Chapters</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Paper Settings */}
-          <div className="px-5">
+          <div className="px-4">
             <PaperSettings settings={paperSettings} onUpdate={updateSettings} defaultInstituteName={paperSettings.instituteName || ""} />
           </div>
 
           {/* Question Selection */}
-          <div className="px-5 mt-4">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg shadow-violet-500/30">
-                <FileText className="w-4 h-4 text-white" />
+          <div className="px-4 mt-3">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#1E40AF] to-[#2563EB] flex items-center justify-center shadow">
+                <FileText className="w-3.5 h-3.5 text-white" />
               </div>
-              <h2 className="text-base font-bold text-gray-900">Select Questions</h2>
+              <h2 className="text-sm font-bold text-gray-900">Select Questions</h2>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2">
               {/* MCQ */}
-              <div className="glass-panel rounded-xl p-4">
+              <div className="glass-panel rounded-lg p-3">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-medium text-gray-900">MCQs</p>
-                    <p className="text-xs text-gray-500">{availableCounts.mcqs} available</p>
+                    <p className="font-medium text-gray-900 text-sm">MCQs</p>
+                    <p className="text-[10px] text-gray-500">{availableCounts.mcqs} available</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl font-bold text-[#1E88E5]">{selectedMcqIds.length}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl font-bold text-[#1E40AF]">{selectedMcqIds.length}</span>
                     <div className="flex items-center gap-1">
-                      <button onClick={() => setMcqs(selectedMcqIds.slice(0, -1))} className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center active:scale-95 transition-transform">
-                        <Minus className="w-4 h-4 text-red-600" />
+                      <button onClick={() => setMcqs(selectedMcqIds.slice(0, -1))} className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center active:scale-95 transition-transform">
+                        <Minus className="w-3.5 h-3.5 text-red-600" />
                       </button>
-                      <button onClick={() => setMcqs([...selectedMcqIds, `mcq_${Date.now()}`])} className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg shadow-blue-500/30 active:scale-95 transition-transform">
-                        <Plus className="w-4 h-4 text-white" />
+                      <button onClick={() => setMcqs([...selectedMcqIds, `mcq_${Date.now()}`])} className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#1E40AF] to-[#2563EB] flex items-center justify-center shadow active:scale-95 transition-transform">
+                        <Plus className="w-3.5 h-3.5 text-white" />
                       </button>
                     </div>
                   </div>
@@ -314,20 +313,20 @@ export default function CreatePaperPage() {
               </div>
 
               {/* Short */}
-              <div className="glass-panel rounded-xl p-4">
+              <div className="glass-panel rounded-lg p-3">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-medium text-gray-900">Short Questions</p>
-                    <p className="text-xs text-gray-500">{availableCounts.shorts} available</p>
+                    <p className="font-medium text-gray-900 text-sm">Short Questions</p>
+                    <p className="text-[10px] text-gray-500">{availableCounts.shorts} available</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl font-bold text-emerald-500">{selectedShortIds.length}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl font-bold text-emerald-600">{selectedShortIds.length}</span>
                     <div className="flex items-center gap-1">
-                      <button onClick={() => setShorts(selectedShortIds.slice(0, -1))} className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center active:scale-95 transition-transform">
-                        <Minus className="w-4 h-4 text-red-600" />
+                      <button onClick={() => setShorts(selectedShortIds.slice(0, -1))} className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center active:scale-95 transition-transform">
+                        <Minus className="w-3.5 h-3.5 text-red-600" />
                       </button>
-                      <button onClick={() => setShorts([...selectedShortIds, `short_${Date.now()}`])} className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center shadow-lg shadow-emerald-500/30 active:scale-95 transition-transform">
-                        <Plus className="w-4 h-4 text-white" />
+                      <button onClick={() => setShorts([...selectedShortIds, `short_${Date.now()}`])} className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow active:scale-95 transition-transform">
+                        <Plus className="w-3.5 h-3.5 text-white" />
                       </button>
                     </div>
                   </div>
@@ -335,20 +334,20 @@ export default function CreatePaperPage() {
               </div>
 
               {/* Long */}
-              <div className="glass-panel rounded-xl p-4">
+              <div className="glass-panel rounded-lg p-3">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-medium text-gray-900">Long Questions</p>
-                    <p className="text-xs text-gray-500">{availableCounts.longs} available</p>
+                    <p className="font-medium text-gray-900 text-sm">Long Questions</p>
+                    <p className="text-[10px] text-gray-500">{availableCounts.longs} available</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl font-bold text-violet-500">{selectedLongIds.length}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl font-bold text-violet-600">{selectedLongIds.length}</span>
                     <div className="flex items-center gap-1">
-                      <button onClick={() => setLongs(selectedLongIds.slice(0, -1))} className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center active:scale-95 transition-transform">
-                        <Minus className="w-4 h-4 text-red-600" />
+                      <button onClick={() => setLongs(selectedLongIds.slice(0, -1))} className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center active:scale-95 transition-transform">
+                        <Minus className="w-3.5 h-3.5 text-red-600" />
                       </button>
-                      <button onClick={() => setLongs([...selectedLongIds, `long_${Date.now()}`])} className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg shadow-violet-500/30 active:scale-95 transition-transform">
-                        <Plus className="w-4 h-4 text-white" />
+                      <button onClick={() => setLongs([...selectedLongIds, `long_${Date.now()}`])} className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow active:scale-95 transition-transform">
+                        <Plus className="w-3.5 h-3.5 text-white" />
                       </button>
                     </div>
                   </div>
@@ -358,19 +357,19 @@ export default function CreatePaperPage() {
           </div>
 
           {/* Quick Fill */}
-          <div className="px-5 mt-4">
+          <div className="px-4 mt-3">
             <QuickFillCard availableMcqs={availableCounts.mcqs} availableShorts={availableCounts.shorts} availableLongs={availableCounts.longs} onAutoSelect={handleAutoSelect} />
           </div>
 
-          <div className="h-8" />
+          <div className="h-6" />
         </ScrollView>
 
         {/* Generate Button */}
         <AnimatePresence>
           {!isGenerating && (
             <motion.div
-              className="fixed left-0 right-0 z-30 px-5"
-              style={{ bottom: 'calc(24px + env(safe-area-inset-bottom, 0px))' }}
+              className="fixed left-0 right-0 z-30 px-4"
+              style={{ bottom: 'calc(16px + env(safe-area-inset-bottom, 0px))' }}
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 100, opacity: 0 }}
@@ -379,13 +378,13 @@ export default function CreatePaperPage() {
                 <Button
                   onClick={handleGenerate}
                   disabled={totalQuestions === 0}
-                  className="w-full h-14 rounded-2xl font-semibold text-base bg-gradient-to-r from-white to-gray-100 text-[#1565C0] shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-black/30 transition-all disabled:opacity-50 disabled:shadow-lg"
+                  className="w-full h-12 rounded-xl font-semibold text-sm bg-gradient-to-r from-white to-gray-100 text-[#1E40AF] shadow-lg shadow-black/20 hover:shadow-xl transition-all disabled:opacity-50"
                 >
                   <span className="flex items-center justify-center gap-2">
-                    <Sparkles className="w-5 h-5" />
+                    <Sparkles className="w-4 h-4" />
                     Generate Paper
                     {totalQuestions > 0 && (
-                      <span className="bg-[#1565C0] text-white px-2.5 py-0.5 rounded-lg text-sm font-bold">
+                      <span className="bg-[#1E40AF] text-white px-2 py-0.5 rounded-md text-xs font-bold">
                         {totalQuestions}Q
                       </span>
                     )}

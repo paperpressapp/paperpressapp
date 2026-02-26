@@ -58,13 +58,16 @@ export function HomeHeader() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pt-safe">
-      <div className="mx-auto max-w-[428px]">
-        <div className="glass-panel border-b border-gray-100/50 h-14 flex items-center px-4 justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Safe Area Background */}
+      <div className="absolute inset-0 bg-white/80 backdrop-blur-xl border-b border-gray-100/50" />
+
+      <div className="mx-auto max-w-[428px] relative pt-safe">
+        <div className="h-14 flex items-center px-4 justify-between">
           <Button
             variant="ghost"
             size="icon"
-            className="h-10 w-10 rounded-xl active:bg-gray-100"
+            className="h-10 w-10 rounded-xl hover:bg-gray-100 active:scale-95 transition-all"
             onClick={() => setShowMenu(true)}
             aria-label="Open menu"
           >
@@ -76,20 +79,20 @@ export function HomeHeader() {
               <img
                 src="/logo.png"
                 alt="PaperPress"
-                className="w-8 h-8 object-contain"
+                className="w-7 h-7 object-contain drop-shadow-sm"
                 onError={() => setLogoError(true)}
               />
             ) : (
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center">
-                <span className="text-white text-sm font-bold">P</span>
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center">
+                <span className="text-white text-[10px] font-bold">P</span>
               </div>
             )}
-            <span className="font-bold text-lg text-gray-900">PaperPress</span>
+            <span className="font-bold text-base text-gray-900 tracking-tight">PaperPress</span>
           </div>
 
           <button
             onClick={() => router.push("/settings")}
-            className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] text-white flex items-center justify-center text-sm font-bold shadow-lg shadow-[#1E88E5]/30 active:opacity-80 transition-opacity"
+            className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] text-white flex items-center justify-center text-xs font-bold shadow-md shadow-[#1E88E5]/20 active:scale-95 transition-all"
             aria-label="Open settings"
           >
             {userInitial}

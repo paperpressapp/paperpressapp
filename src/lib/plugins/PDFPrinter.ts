@@ -2,6 +2,7 @@ import { registerPlugin } from '@capacitor/core';
 
 export interface PDFPrinterPlugin {
   printToPDF(options: PrintToPDFOptions): Promise<PrintToPDFResult>;
+  showPrintDialog(options: PrintToPDFOptions): Promise<PrintToPDFResult>;
 }
 
 export interface PrintToPDFOptions {
@@ -12,6 +13,8 @@ export interface PrintToPDFOptions {
 export interface PrintToPDFResult {
   success: boolean;
   message: string;
+  filePath?: string;
+  fileName?: string;
   jobName?: string;
 }
 

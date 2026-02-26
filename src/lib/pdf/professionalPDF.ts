@@ -17,13 +17,11 @@ import { QUESTION_MARKS } from '@/types/question';
 export interface PDFSettings {
   instituteName: string;
   instituteLogo?: string | null;
-  examType: string;
   date: string;
   timeAllowed: string;
   classId: string;
   subject: string;
   customHeader?: string;
-  customSubHeader?: string;
   showLogo?: boolean;
 }
 
@@ -76,14 +74,6 @@ export async function generateProfessionalPDF(
   const subjectLine = `${settings.subject.toUpperCase()} — CLASS ${settings.classId.toUpperCase()}`;
   doc.text(subjectLine, PAGE_WIDTH / 2, y, { align: 'center' });
   y += 6;
-
-  // Exam Type
-  if (settings.customSubHeader || settings.examType) {
-    doc.setFontSize(11);
-    doc.setFont('times', 'italic');
-    doc.text(settings.customSubHeader || settings.examType, PAGE_WIDTH / 2, y, { align: 'center' });
-    y += 6;
-  }
 
   // Time, Marks, Date line
   doc.setFontSize(10);
@@ -141,55 +131,76 @@ export async function generateProfessionalPDF(
     doc.text(`(${mcqs.length} × ${QUESTION_MARKS.mcq} = ${mcqs.length * QUESTION_MARKS.mcq} Marks)`, PAGE_WIDTH / 2, y + 3, { align: 'center' });
     y += 6;
 
-    // MCQ Table
-    const cols = [8, 85, 22, 22, 22, 22];
-    const cellHeight = 9;
-
-    // Table Header
-    doc.setFillColor(245, 245, 245);
-    doc.setFontSize(9);
-    doc.setFont('times', 'bold');
-    let x = MARGIN;
-    
-    ['Q.', 'Question', 'A', 'B', 'C', 'D'].forEach((header, i) => {
-      doc.rect(x, y, cols[i], cellHeight, 'FD');
-      doc.text(header, x + cols[i] / 2, y + 6, { align: 'center' });
-      x += cols[i];
-    });
-    y += cellHeight;
-
-    // MCQ Rows
-    doc.setFont('times', 'normal');
-    doc.setFontSize(8);
+    // MCQ with 2x2 option grid layout
+    // Row 1: Q# (8mm) + Question text (full width)
+    // Row 2-3: 2 options per row (50% width each)
+    const qNoWidth = 8;
+    const optCellWidth = CONTENT_WIDTH / 2;
+    const questionRowHeight = 7;
+    const optionsRowHeight = 6;
 
     mcqs.forEach((mcq, idx) => {
-      y = checkPageBreak(doc, y, cellHeight + 5);
-      x = MARGIN;
       const opts = mcq.options || [];
-
-      // Question number
-      doc.rect(x, y, cols[0], cellHeight);
-      doc.text(String(idx + 1), x + cols[0] / 2, y + 6, { align: 'center' });
-      x += cols[0];
-
-      // Question text
-      doc.rect(x, y, cols[1], cellHeight);
       const qText = cleanLatex(mcq.questionText);
-      const truncatedQ = qText.length > 50 ? qText.substring(0, 47) + '...' : qText;
-      doc.text(truncatedQ, x + 2, y + 6);
-      x += cols[1];
+      
+      // Check if we need a new page (need space for 3 rows)
+      y = checkPageBreak(doc, y, questionRowHeight + (optionsRowHeight * 2) + 2);
 
-      // Options
-      for (let i = 0; i < 4; i++) {
-        doc.rect(x, y, cols[2 + i], cellHeight);
-        const opt = cleanLatex(opts[i] || '');
-        const truncatedOpt = opt.length > 10 ? opt.substring(0, 7) + '...' : opt;
-        doc.text(truncatedOpt, x + cols[2 + i] / 2, y + 6, { align: 'center' });
-        x += cols[2 + i];
+      // ---- ROW 1: Question Number + Question Text ----
+      let x = MARGIN;
+      
+      // Question number cell
+      doc.setLineWidth(0.2);
+      doc.rect(x, y, qNoWidth, questionRowHeight);
+      doc.setFontSize(10);
+      doc.setFont('times', 'bold');
+      doc.text(String(idx + 1), x + qNoWidth / 2, y + 5, { align: 'center' });
+      x += qNoWidth;
+
+      // Question text cell - NO TRUNCATION, wrap properly
+      doc.rect(x, y, CONTENT_WIDTH - qNoWidth, questionRowHeight);
+      doc.setFont('times', 'normal');
+      doc.setFontSize(9);
+      
+      // Wrap question text properly
+      const maxQWidth = CONTENT_WIDTH - qNoWidth - 4;
+      const qLines = doc.splitTextToSize(qText, maxQWidth);
+      const displayQ = qLines.slice(0, 2).join(' '); // Show up to 2 lines
+      doc.text(displayQ, x + 2, y + 5);
+
+      y += questionRowHeight;
+
+      // ---- ROW 2-3: 2x2 Option Grid ----
+      doc.setFontSize(8);
+      
+      const optLabels = ['A', 'B', 'C', 'D'];
+      
+      // First row: A and B
+      x = MARGIN;
+      for (let i = 0; i < 2; i++) {
+        doc.rect(x, y, optCellWidth, optionsRowHeight);
+        const optText = cleanLatex(opts[i] || '');
+        const optLines = doc.splitTextToSize(`${optLabels[i]}) ${optText}`, optCellWidth - 4);
+        const displayOpt = optLines.slice(0, 2).join(' '); // Show up to 2 lines
+        doc.text(displayOpt, x + 2, y + 4);
+        x += optCellWidth;
       }
-      y += cellHeight;
+      y += optionsRowHeight;
+
+      // Second row: C and D
+      x = MARGIN;
+      for (let i = 2; i < 4; i++) {
+        doc.rect(x, y, optCellWidth, optionsRowHeight);
+        const optText = cleanLatex(opts[i] || '');
+        const optLines = doc.splitTextToSize(`${optLabels[i]}) ${optText}`, optCellWidth - 4);
+        const displayOpt = optLines.slice(0, 2).join(' '); // Show up to 2 lines
+        doc.text(displayOpt, x + 2, y + 4);
+        x += optCellWidth;
+      }
+
+      y += optionsRowHeight + 1;
     });
-    y += 8;
+    y += 6;
   }
 
   // ─────────────────────────────────────────────

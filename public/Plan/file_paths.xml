@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Create this file at:
+  android/app/src/main/res/xml/file_paths.xml
+
+  This tells FileProvider which directories it can share files from.
+  Required for the FileOpener Capacitor plugin to open saved PDFs.
+-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Allows sharing from getExternalFilesDir() — where PaperPress PDFs are saved -->
+    <external-files-path
+        name="paperpress_pdfs"
+        path="PaperPress/" />
+
+    <!-- Also allow cache dir access (used during HTML temp file creation) -->
+    <cache-path
+        name="cache"
+        path="." />
+
+    <!-- Fallback: entire external storage (broad, but safe) -->
+    <external-path
+        name="external"
+        path="." />
+</paths>

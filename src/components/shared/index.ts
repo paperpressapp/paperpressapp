@@ -57,3 +57,6 @@ export {
 
 // Background Components
 export { AppBackground, GlassCard } from './AppBackground';
+
+// Status Components
+export { OfflineBanner } from './OfflineBanner';

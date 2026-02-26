@@ -62,3 +62,6 @@ nul
 
 # Build binary
 paperpress
+
+.vercel
+.env*.local

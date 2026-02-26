@@ -18,3 +18,11 @@ export const supabase = createClient(
     },
   }
 );
+
+if (typeof window !== 'undefined') {
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event === 'TOKEN_REFRESHED') {
+      console.log('[Auth] Token refreshed successfully');
+    }
+  });
+}

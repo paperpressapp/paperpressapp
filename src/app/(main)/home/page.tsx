@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { HomeHeader, HeroSection, RecentPapers, ClassSection } from "@/components/home";
 import { MainLayout, ScrollView } from "@/components/layout";
 import { AppLoader } from "@/components/shared";
@@ -40,7 +39,7 @@ export default function HomePage() {
         });
         setPapersThisMonth(thisMonthPapers.length);
       } catch (error) {
-        console.error("Error loading home data:", error);
+        // Error loading data
       } finally {
         setIsLoading(false);
       }
@@ -52,24 +51,24 @@ export default function HomePage() {
   if (isLoading) return <AppLoader message="Loading..." />;
 
   return (
-    <MainLayout showBottomNav className="bg-gray-50">
+    <MainLayout showBottomNav className="bg-gray-50" topSafe={false}>
       <HomeHeader />
 
-      <ScrollView className="pt-[56px] flex-1">
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
-          <HeroSection userName={userName} totalPapers={recentPapers.length} papersThisMonth={papersThisMonth} />
-        </motion.div>
+      <ScrollView className="flex-1">
+          <div>
+            <HeroSection userName={userName} totalPapers={recentPapers.length} papersThisMonth={papersThisMonth} />
+          </div>
 
-        <div className="bg-gray-50 min-h-[500px] mt-4">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.3 }}>
+        <div className="bg-gray-50 mt-2">
+          <div>
             <RecentPapers papers={recentPapers} />
-          </motion.div>
+          </div>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.3 }}>
+          <div>
             <ClassSection />
-          </motion.div>
+          </div>
 
-          <div className="h-32" />
+          <div className="h-20" />
         </div>
       </ScrollView>
     </MainLayout>

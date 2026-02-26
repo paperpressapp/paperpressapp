@@ -1,5 +1,6 @@
 import { jsPDF } from "jspdf";
 import type { PaperData, MCQQuestion, ShortQuestion, LongQuestion } from "@/types";
+import { QUESTION_MARKS } from "@/types/question";
 
 /**
  * PROFESSIONAL EXAM PAPER GENERATOR
@@ -108,10 +109,10 @@ function addHeader(
   longs: LongQuestion[],
   logoBase64?: string | null
 ): HeaderResult {
-  // Calculate total marks
-  const mcqMarks = mcqs.length;
-  const shortMarks = Math.min(8, shorts.length) * 2;
-  const longMarks = Math.min(3, longs.length) * 5;
+  // Calculate total marks using QUESTION_MARKS constants
+  const mcqMarks = mcqs.reduce((sum, m) => sum + (m.marks || QUESTION_MARKS.mcq), 0);
+  const shortMarks = shorts.length * QUESTION_MARKS.short;
+  const longMarks = longs.length * QUESTION_MARKS.long;
   const totalMarks = mcqMarks + shortMarks + longMarks;
 
   // Center point for alignment
@@ -154,22 +155,17 @@ function drawLogo(pdf: jsPDF, logoBase64: string | null | undefined) {
   if (!logoBase64) return;
 
   try {
-    // Absolute positioning for logo
+    // Auto-detect image format from base64 data URL prefix
+    const imgFmt = /data:image\/(jpeg|jpg)/i.test(logoBase64) ? 'JPEG' : 'PNG';
+
     const logoX = MARGIN_LEFT;
     const logoY = MARGIN_TOP;
     const logoWidth = 20;
     const logoHeight = 20;
 
-    pdf.addImage(
-      logoBase64,
-      'PNG',
-      logoX,
-      logoY,
-      logoWidth,
-      logoHeight
-    );
+    pdf.addImage(logoBase64, imgFmt, logoX, logoY, logoWidth, logoHeight);
   } catch (error) {
-    console.warn('Failed to draw logo:', error);
+    console.warn('[PDF] Logo render failed — skipping:', error);
   }
 }
 
@@ -244,11 +240,10 @@ function checkSpace(currentY: number, requiredSpace: number): boolean {
 }
 
 function checkAndAddPage(pdf: jsPDF, currentY: number, requiredSpace: number): number {
-  const pageHeight = PAGE_HEIGHT - MARGIN_TOP - MARGIN_BOTTOM;
   const remainingSpace = PAGE_HEIGHT - MARGIN_BOTTOM - currentY;
 
-  // "50% Rule": If remaining space < 50% of page height
-  if (remainingSpace < pageHeight * 0.5 || !checkSpace(currentY, requiredSpace)) {
+  // Only add a page when the next element genuinely doesn't fit
+  if (remainingSpace < requiredSpace) {
     pdf.addPage();
     return MARGIN_TOP;
   }
@@ -271,86 +266,60 @@ function addMCQSection(pdf: jsPDF, mcqs: MCQQuestion[], startY: number): number 
   y += 5;
 
   setFont(pdf, FONT_SIZE.label, "italic");
-  pdf.text(`Marks: ${mcqs.length} | Time: 15 min | Choose correct answer.`, MARGIN_LEFT, y);
+  pdf.text(`Marks: ${mcqs.length} × ${QUESTION_MARKS.mcq} = ${mcqs.length * QUESTION_MARKS.mcq} | Time: 15 min`, MARGIN_LEFT, y);
   y += 6;
 
-  // MCQ Table
-  const colWidths = {
-    qno: 10,
-    question: SAFE_WIDTH - 10 - (14 * 4),
-    opt: 14
-  };
-  const rowHeight = 7;
+  // Column widths for 2-row layout
+  const qNoWidth = 10;
+  const optWidth = (SAFE_WIDTH - qNoWidth) / 4;
+  const questionRowHeight = 8;
+  const optionsRowHeight = 7;
 
-  // Table Header
-  pdf.setFillColor(245, 245, 245);
-  pdf.setLineWidth(LINE_WIDTH);
-  pdf.rect(MARGIN_LEFT, y, SAFE_WIDTH, rowHeight, "FD");
-
-  setFont(pdf, FONT_SIZE.option, "bold");
-  pdf.text("Q.No", MARGIN_LEFT + colWidths.qno / 2, y + 4.5, { align: "center" });
-  pdf.text("Question", MARGIN_LEFT + colWidths.qno + colWidths.question / 2, y + 4.5, { align: "center" });
-  pdf.text("A", MARGIN_LEFT + colWidths.qno + colWidths.question + colWidths.opt * 0.5, y + 4.5, { align: "center" });
-  pdf.text("B", MARGIN_LEFT + colWidths.qno + colWidths.question + colWidths.opt * 1.5, y + 4.5, { align: "center" });
-  pdf.text("C", MARGIN_LEFT + colWidths.qno + colWidths.question + colWidths.opt * 2.5, y + 4.5, { align: "center" });
-  pdf.text("D", MARGIN_LEFT + colWidths.qno + colWidths.question + colWidths.opt * 3.5, y + 4.5, { align: "center" });
-
-  // Header vertical lines
-  pdf.line(MARGIN_LEFT + colWidths.qno, y, MARGIN_LEFT + colWidths.qno, y + rowHeight);
-  pdf.line(MARGIN_LEFT + colWidths.qno + colWidths.question, y, MARGIN_LEFT + colWidths.qno + colWidths.question, y + rowHeight);
-  for (let i = 1; i <= 4; i++) {
-    const x = MARGIN_LEFT + colWidths.qno + colWidths.question + (i * colWidths.opt);
-    pdf.line(x, y, x, y + rowHeight);
-  }
-
-  y += rowHeight;
-
-  // Table Rows
+  // MCQ Items - 2 rows per question
   mcqs.forEach((mcq, index) => {
-    // Check space for new row
-    if (!checkSpace(y, rowHeight + 5)) {
+    // Check space for 2 rows
+    if (!checkSpace(y, questionRowHeight + optionsRowHeight + 5)) {
       pdf.addPage();
       y = MARGIN_TOP;
     }
 
-    const rowStartY = y;
     const cleanQ = cleanLatex(mcq.questionText);
-
-    // Row border
-    pdf.setLineWidth(LINE_WIDTH);
-    pdf.rect(MARGIN_LEFT, y, SAFE_WIDTH, rowHeight, "S");
-
-    // Q.No
-    setFont(pdf, FONT_SIZE.option, "bold");
-    pdf.text(`${index + 1}`, MARGIN_LEFT + colWidths.qno / 2, y + 4.5, { align: "center" });
-
-    // Question (truncated to fit)
-    setFont(pdf, FONT_SIZE.option, "normal");
-    const qText = cleanQ.length > 70
-      ? cleanQ.substring(0, 67) + "..."
-      : cleanQ;
-    pdf.text(qText, MARGIN_LEFT + colWidths.qno + 2, y + 4.5);
-
-    // Options
     const opts = mcq.options || [];
-    const optX = MARGIN_LEFT + colWidths.qno + colWidths.question;
-    setFont(pdf, FONT_SIZE.option - 1, "normal");
 
-    pdf.text(truncateText(cleanLatex(opts[0]), 7), optX + colWidths.opt * 0.5, y + 4.5, { align: "center" });
-    pdf.text(truncateText(cleanLatex(opts[1]), 7), optX + colWidths.opt * 1.5, y + 4.5, { align: "center" });
-    pdf.text(truncateText(cleanLatex(opts[2]), 7), optX + colWidths.opt * 2.5, y + 4.5, { align: "center" });
-    pdf.text(truncateText(cleanLatex(opts[3]), 7), optX + colWidths.opt * 3.5, y + 4.5, { align: "center" });
+    // Row 1: Question number + Question text
+    pdf.setLineWidth(LINE_WIDTH);
 
-    // Vertical lines
-    pdf.line(MARGIN_LEFT + colWidths.qno, rowStartY, MARGIN_LEFT + colWidths.qno, rowStartY + rowHeight);
-    pdf.line(MARGIN_LEFT + colWidths.qno + colWidths.question, rowStartY, MARGIN_LEFT + colWidths.qno + colWidths.question, rowStartY + rowHeight);
-    for (let i = 1; i <= 4; i++) {
-      const x = MARGIN_LEFT + colWidths.qno + colWidths.question + (i * colWidths.opt);
-      pdf.line(x, rowStartY, x, rowStartY + rowHeight);
+    // Question number cell
+    pdf.rect(MARGIN_LEFT, y, qNoWidth, questionRowHeight);
+    setFont(pdf, FONT_SIZE.option, "bold");
+    pdf.text(String(index + 1), MARGIN_LEFT + qNoWidth / 2, y + 5.5, { align: "center" });
+
+    // Question text cell
+    pdf.rect(MARGIN_LEFT + qNoWidth, y, SAFE_WIDTH - qNoWidth, questionRowHeight);
+    setFont(pdf, FONT_SIZE.option, "normal");
+    const qLines = pdf.splitTextToSize(cleanQ, SAFE_WIDTH - qNoWidth - 4);
+    pdf.text(qLines, MARGIN_LEFT + qNoWidth + 2, y + 5.5);
+
+    // Border between Q.No and Question
+    pdf.line(MARGIN_LEFT + qNoWidth, y, MARGIN_LEFT + qNoWidth, y + questionRowHeight);
+
+    y += questionRowHeight;
+
+    // Row 2: Options (4 equal columns)
+    for (let i = 0; i < 4; i++) {
+      const x = MARGIN_LEFT + (i === 0 ? 0 : qNoWidth) + (i * optWidth);
+      const width = i === 0 ? qNoWidth + optWidth : optWidth;
+
+      pdf.rect(x, y, width, optionsRowHeight);
+
+      // Option label and text
+      const optText = cleanLatex(opts[i] || '');
+      const optLabel = ['A', 'B', 'C', 'D'][i];
+      setFont(pdf, FONT_SIZE.option - 1, "normal");
+      pdf.text(`${optLabel}: ${optText}`, x + 2, y + 4.5);
     }
 
-    // Update cursor with line height
-    y += rowHeight;
+    y += optionsRowHeight;
   });
 
   return y + 6;
@@ -388,7 +357,7 @@ function addShortQuestions(pdf: jsPDF, shorts: ShortQuestion[], startY: number):
   y += 4;
 
   setFont(pdf, FONT_SIZE.label, "italic");
-  pdf.text(`SHORT QUESTIONS: Attempt any ${attemptCount} questions. (2 marks each)`, MARGIN_LEFT, y);
+  pdf.text(`SHORT QUESTIONS: Attempt any ${attemptCount} questions. (${QUESTION_MARKS.short} marks each)`, MARGIN_LEFT, y);
   y += 6;
 
   // Questions
@@ -430,7 +399,7 @@ function addLongQuestions(pdf: jsPDF, longs: LongQuestion[], startY: number): nu
 
   // Section Header
   setFont(pdf, FONT_SIZE.section, "bold");
-  pdf.text(`LONG QUESTIONS: Attempt any ${attemptCount} questions. (5 marks each)`, MARGIN_LEFT, y);
+  pdf.text(`LONG QUESTIONS: Attempt any ${attemptCount} questions. (${QUESTION_MARKS.long} marks each)`, MARGIN_LEFT, y);
   y += 7;
 
   // Questions

@@ -3,9 +3,11 @@ import type { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'com.paperpress.app',
   appName: 'PaperPress',
-  webDir: 'dist',
+  webDir: 'out',
   server: {
     androidScheme: 'https',
+    url: 'https://paperpressapp.vercel.app',
+    cleartext: false,
   },
   plugins: {
     SplashScreen: {

@@ -231,6 +231,15 @@ export const useAuthStore = create<AuthState>()(
             isPremium: profile?.role === 'premium' || profile?.role === 'admin',
           });
 
+          // Sync local premium status from Supabase
+          if (profile?.role === 'premium' || profile?.role === 'admin') {
+            localStorage.setItem('paperpress_premium_status', JSON.stringify({
+              isPremium: true,
+              activatedAt: Date.now(),
+              code: 'SUPABASE_SYNC',
+            }));
+          }
+
           return profile;
         } catch (error) {
           logger.error('Error in fetchProfile:', error);
@@ -262,20 +271,26 @@ export const useAuthStore = create<AuthState>()(
 
           if (error) {
             set({ isLoading: false });
-            logger.error('Supabase login error:', error);
-            
-            // Handle specific error cases
-            if (error.message.includes('Invalid login credentials')) {
-              return { error: 'Invalid email or password. Please check your credentials and try again.' };
+
+            const errorMessage = error.message.toLowerCase();
+
+            if (errorMessage.includes('invalid login credentials')) {
+              return { error: 'Invalid email or password. Please try again.' };
             }
-            if (error.message.includes('Email not confirmed')) {
-              return { error: 'Please verify your email address first. Check your inbox for a confirmation link.' };
+            if (errorMessage.includes('email not confirmed')) {
+              return { error: 'Please verify your email first. Check your inbox for the confirmation link.' };
             }
-            if (error.message.includes('Too many requests')) {
-              return { error: 'Too many login attempts. Please wait a few minutes and try again.' };
+            if (errorMessage.includes('too many requests')) {
+              return { error: 'Too many attempts. Please wait a few minutes and try again.' };
             }
-            
-            return { error: error.message };
+            if (errorMessage.includes('user not found')) {
+              return { error: 'No account found with this email. Please sign up first.' };
+            }
+            if (errorMessage.includes('invalid password')) {
+              return { error: 'Incorrect password. Please try again.' };
+            }
+
+            return { error: 'Unable to sign in. Please check your credentials.' };
           }
 
           if (!data.user || !data.session) {
@@ -298,13 +313,12 @@ export const useAuthStore = create<AuthState>()(
             .from('profiles')
             .update({ last_login: new Date().toISOString() })
             .eq('id', data.user.id)
-            .then(() => {})
-            .then(() => {}, () => {});
+            .then(() => { })
+            .then(() => { }, () => { });
 
           set({ isLoading: false });
           return { user: data.user, session: data.session };
         } catch (error) {
-          logger.error('Sign in error:', error);
           set({ isLoading: false });
           return { error: 'An unexpected error occurred. Please try again.' };
         }
@@ -336,13 +350,16 @@ export const useAuthStore = create<AuthState>()(
           });
 
           if (error) {
-            return { error: error.message };
+            const msg = error.message.toLowerCase();
+            if (msg.includes('invalid') || msg.includes('expired')) {
+              return { error: 'Invalid or expired code. Please request a new one.' };
+            }
+            return { error: 'Failed to send verification code. Please try again.' };
           }
 
           return { message: 'OTP sent successfully. Please check your email.' };
         } catch (error) {
-          logger.error('OTP request error:', error);
-          return { error: 'Failed to send OTP. Please try again.' };
+          return { error: 'Failed to send verification code. Please try again.' };
         }
       },
 
@@ -364,7 +381,11 @@ export const useAuthStore = create<AuthState>()(
 
           if (error) {
             set({ isLoading: false });
-            return { error: error.message };
+            const msg = error.message.toLowerCase();
+            if (msg.includes('invalid') || msg.includes('expired')) {
+              return { error: 'Invalid or expired code. Please try again.' };
+            }
+            return { error: 'Verification failed. Please try again.' };
           }
 
           if (!data.user || !data.session) {
@@ -391,9 +412,8 @@ export const useAuthStore = create<AuthState>()(
           set({ isLoading: false });
           return { user: data.user, session: data.session };
         } catch (error) {
-          logger.error('OTP verification error:', error);
           set({ isLoading: false });
-          return { error: 'Invalid OTP. Please try again.' };
+          return { error: 'Verification failed. Please try again.' };
         }
       },
 
@@ -426,12 +446,18 @@ export const useAuthStore = create<AuthState>()(
           });
 
           if (error) {
-            return { error: error.message };
+            const msg = error.message.toLowerCase();
+            if (msg.includes('already registered')) {
+              return { error: 'This email is already registered. Try signing in instead.' };
+            }
+            if (msg.includes('invalid')) {
+              return { error: 'Invalid email address. Please check and try again.' };
+            }
+            return { error: 'Failed to send verification code. Please try again.' };
           }
 
           return { message: 'Verification code sent. Please check your email.' };
         } catch (error) {
-          logger.error('Signup OTP error:', error);
           return { error: 'Failed to send verification code. Please try again.' };
         }
       },
@@ -460,12 +486,15 @@ export const useAuthStore = create<AuthState>()(
           });
 
           if (error) {
-            return { error: error.message };
+            const msg = error.message.toLowerCase();
+            if (msg.includes('too many')) {
+              return { error: 'Please wait before requesting another code.' };
+            }
+            return { error: 'Failed to resend code. Please try again.' };
           }
 
           return { message: 'Code resent successfully.' };
         } catch (error) {
-          logger.error('Resend OTP error:', error);
           return { error: 'Failed to resend code. Please try again.' };
         }
       },
@@ -485,13 +514,13 @@ export const useAuthStore = create<AuthState>()(
             isPremium: false,
           });
         } catch (error) {
-          logger.error('Error signing out:', error);
+          // Silent fail for sign out
         }
       },
 
       redeemCode: async (code) => {
         if (!isOnline()) {
-          return { success: false, error: 'No internet connection. Please check your network and try again.' };
+          return { success: false, error: 'No internet connection. Please check your network.' };
         }
 
         try {
@@ -502,7 +531,17 @@ export const useAuthStore = create<AuthState>()(
           });
 
           if (error) {
-            return { success: false, error: error.message };
+            const msg = error.message.toLowerCase();
+            if (msg.includes('invalid') || msg.includes('not found')) {
+              return { success: false, error: 'Invalid premium code. Please check and try again.' };
+            }
+            if (msg.includes('expired')) {
+              return { success: false, error: 'This premium code has expired.' };
+            }
+            if (msg.includes('already')) {
+              return { success: false, error: 'This code has already been used.' };
+            }
+            return { success: false, error: 'Failed to redeem code. Please try again.' };
           }
 
           if (data?.success) {
@@ -510,10 +549,9 @@ export const useAuthStore = create<AuthState>()(
             return { success: true, message: data.message };
           }
 
-          return { success: false, error: data?.error || 'Unknown error' };
+          return { success: false, error: data?.error || 'Failed to redeem code.' };
         } catch (error) {
-          logger.error('Redeem code error:', error);
-          return { success: false, error: 'An unexpected error occurred' };
+          return { success: false, error: 'An unexpected error occurred. Please try again.' };
         }
       },
 
@@ -554,8 +592,7 @@ export const useAuthStore = create<AuthState>()(
             message: data?.message,
           };
         } catch (error) {
-          logger.error('Check paper limit error:', error);
-          return { allowed: false, remaining: 0, message: 'Error checking limit' };
+          return { allowed: false, remaining: 0, message: 'Unable to check limit' };
         }
       },
 
@@ -590,7 +627,6 @@ export const useAuthStore = create<AuthState>()(
 
           return true;
         } catch (error) {
-          logger.error('Session validation error:', error);
           return false;
         }
       },
@@ -599,7 +635,21 @@ export const useAuthStore = create<AuthState>()(
         try {
           const { data: { session }, error } = await supabase.auth.refreshSession();
 
-          if (error || !session) {
+          if (error) {
+            console.warn('[Auth] Token refresh failed:', error.message);
+            // Clear invalid session
+            if (error.message.includes('Refresh Token') || error.message.includes('not found')) {
+              await supabase.auth.signOut();
+            }
+            set({
+              user: null,
+              session: null,
+              isAuthenticated: false,
+            });
+            return false;
+          }
+
+          if (!session) {
             set({
               user: null,
               session: null,
@@ -616,7 +666,16 @@ export const useAuthStore = create<AuthState>()(
 
           return true;
         } catch (error) {
-          logger.error('Token refresh error:', error);
+          console.warn('[Auth] Token refresh error:', error);
+          // Try to clear the invalid session
+          try {
+            await supabase.auth.signOut();
+          } catch { }
+          set({
+            user: null,
+            session: null,
+            isAuthenticated: false,
+          });
           return false;
         }
       },
@@ -662,9 +721,32 @@ export const initializeAuth = async (): Promise<void> => {
 
     setLoading(true);
 
+    // Safety timeout - ensure loading is set to false after 5 seconds max
+    const safetyTimeout = setTimeout(() => {
+      const state = useAuthStore.getState();
+      if (state.isLoading) {
+        console.warn('[Auth] Safety timeout - forcing loading to false');
+        setLoading(false);
+      }
+    }, 5000);
+
     if (authSubscription) {
       authSubscription.unsubscribe();
       authSubscription = null;
+    }
+
+    // Clear any invalid sessions on startup
+    try {
+      const { data: { session }, error } = await supabase.auth.getSession();
+      if (error) {
+        console.warn('[Auth] Session error on init:', error.message);
+        // Clear invalid session
+        if (error.message.includes('Refresh Token') || error.message.includes('not found')) {
+          await supabase.auth.signOut();
+        }
+      }
+    } catch (err) {
+      console.warn('[Auth] Error checking session:', err);
     }
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
@@ -674,7 +756,6 @@ export const initializeAuth = async (): Promise<void> => {
           setSession(session);
           await fetchProfile();
         } else {
-          // No session on initial load — user is logged out
           setUser(null);
           setSession(null);
         }
@@ -689,12 +770,19 @@ export const initializeAuth = async (): Promise<void> => {
         setSession(session);
       }
 
-      // Always resolve loading after any auth event
       setLoading(false);
+      clearTimeout(safetyTimeout);
     });
 
     authSubscription = subscription;
-    // Mark initialized AFTER subscription is active
+
+    // Short fallback — INITIAL_SESSION fires in <100ms normally.
+    // 300ms is enough buffer; the safety timeout at 5s covers true failures.
+    setTimeout(() => {
+      setLoading(false);
+      clearTimeout(safetyTimeout);
+    }, 300);
+
     authInitialized = true;
     authInitializing = false;
   })();

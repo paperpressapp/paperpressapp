@@ -9,11 +9,25 @@ import type { MCQQuestion, ShortQuestion, LongQuestion } from '@/types';
 interface PDFSettings {
   instituteName: string;
   instituteLogo?: string | null;
-  examType: string;
   date: string;
   timeAllowed: string;
   classId: string;
   subject: string;
+  customHeader?: string;
+  showLogo?: boolean;
+  isPremium?: boolean;
+  includeAnswerSheet?: boolean;
+  attemptRules?: {
+    shortAttempt?: number;
+    shortTotal?: number;
+    longAttempt?: number;
+    longTotal?: number;
+  };
+  customMarks?: {
+    mcq?: number;
+    short?: number;
+    long?: number;
+  };
 }
 
 interface UsePDFGeneratorReturn {

@@ -1,22 +1,16 @@
 "use client";
 
 /**
- * Admin Group Layout - Protected Admin Routes
+ * Admin Group Layout
  * 
- * Only accessible to users with admin role.
- * Redirects non-admin users to home page.
+ * Admin login is handled in the page itself using simple token auth.
+ * This layout just provides a clean wrapper.
  */
-
-import { AuthGuard } from "@/components/auth";
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <AuthGuard requireAuth requireAdmin>
-      {children}
-    </AuthGuard>
-  );
+  return <>{children}</>;
 }
