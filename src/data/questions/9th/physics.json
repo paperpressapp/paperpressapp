@@ -7,138 +7,54 @@
       "number": 1,
       "name": "Physical Quantities and Measurement",
       "mcqs": [
-        {
-          "id": "9_phy_ch1_mcq_1",
-          "questionText": "The SI unit of length is:",
-          "options": ["Meter", "Centimeter", "Kilometer", "Millimeter"],
-          "correctOption": 0,
-          "difficulty": "easy",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch1_mcq_2",
-          "questionText": "The SI unit of mass is:",
-          "options": ["Gram", "Kilogram", "Pound", "Ounce"],
-          "correctOption": 1,
-          "difficulty": "easy",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch1_mcq_3",
-          "questionText": "The SI unit of time is:",
-          "options": ["Hour", "Minute", "Second", "Day"],
-          "correctOption": 2,
-          "difficulty": "easy",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch1_mcq_4",
-          "questionText": "The prefix 'kilo' represents:",
-          "options": ["10", "100", "1000", "0.001"],
-          "correctOption": 2,
-          "difficulty": "easy",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch1_mcq_5",
-          "questionText": "1 nanometer is equal to:",
-          "options": ["10⁻⁶ m", "10⁻⁹ m", "10⁻³ m", "10⁻¹² m"],
-          "correctOption": 1,
-          "difficulty": "medium",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch1_mcq_6",
-          "questionText": "Which instrument is used to measure length accurately?",
-          "options": ["Ruler", "Vernier Calipers", "Measuring tape", "All of these"],
-          "correctOption": 3,
-          "difficulty": "easy",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch1_mcq_7",
-          "questionText": "The least count of vernier calipers is usually:",
-          "options": ["0.1 mm", "0.01 mm", "0.001 mm", "1 mm"],
-          "correctOption": 0,
-          "difficulty": "medium",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch1_mcq_8",
-          "questionText": "The SI unit of temperature is:",
-          "options": ["Celsius", "Fahrenheit", "Kelvin", "Joule"],
-          "correctOption": 2,
-          "difficulty": "easy",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch1_mcq_9",
-          "questionText": "A physical quantity that has both magnitude and direction is called:",
-          "options": ["Scalar", "Vector", "Derived quantity", "Base quantity"],
-          "correctOption": 1,
-          "difficulty": "medium",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch1_mcq_10",
-          "questionText": "The number of base units in SI system is:",
-          "options": ["5", "6", "7", "8"],
-          "correctOption": 2,
-          "difficulty": "medium",
-          "marks": 1
-        }
+        {"id": "9_phy_ch1_mcq_1", "questionText": "The instrument most suitable for measuring thickness of a few sheets of cardboard is:", "options": ["metre rule", "measuring tape", "Vernier Callipers", "micrometer screw gauge"], "correctOption": 3, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch1_mcq_2", "questionText": "One femtometre is equal to:", "options": ["10⁻⁹ m", "10⁻¹⁵ m", "10⁹ m", "10¹⁵ m"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_3", "questionText": "A light year is a unit of:", "options": ["light", "time", "distance", "speed"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch1_mcq_4", "questionText": "Which one is a non-physical quantity?", "options": ["distance", "density", "colour", "temperature"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_5", "questionText": "When using a measuring cylinder, one precaution to take is to:", "options": ["check for zero error", "look at meniscus from below the level", "take several readings from more than one direction", "position eye in line with bottom of meniscus"], "correctOption": 3, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_6", "questionText": "Volume of water consumed by you per day is estimated in:", "options": ["millilitre", "litre", "kilogram", "cubic metre"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch1_mcq_7", "questionText": "A displacement can is used to measure:", "options": ["mass of liquid", "mass of solid", "volume of liquid", "volume of solid"], "correctOption": 3, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_8", "questionText": "Two rods with lengths 12.321 cm and 10.3 cm placed side by side, difference in lengths is:", "options": ["2.02 cm", "2.0 cm", "2 cm", "2.021 cm"], "correctOption": 3, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_9", "questionText": "Four students measure diameter with Vernier Callipers. Which reading is correct?", "options": ["3.4 cm", "3.475 cm", "3.47 cm", "3.5 cm"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_10", "questionText": "Which measures represent thickness of a sheet of this book?", "options": ["6 × 10⁻²⁵ m", "1 × 10⁻⁴ m", "1.2 × 10⁻¹⁵ m", "4 × 10⁻² m"], "correctOption": 1, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch1_mcq_11", "questionText": "In Vernier Callipers, ten smallest divisions of Vernier scale equal nine smallest divisions of main scale. If smallest division of main scale is half millimetre, Vernier constant is:", "options": ["0.5 mm", "0.1 mm", "0.05 mm", "0.001 mm"], "correctOption": 2, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch1_mcq_12", "questionText": "The kilogram is the only base unit that:", "options": ["has no prefix", "has a prefix", "is derived", "is not an SI unit"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch1_mcq_13", "questionText": "Parallax error occurs due to:", "options": ["faulty instrument", "incorrect eye position", "temperature variation", "zero error"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch1_mcq_14", "questionText": "The least count of a metre rule is:", "options": ["1 cm", "1 mm", "0.1 mm", "0.01 mm"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch1_mcq_15", "questionText": "The least count of Vernier Callipers is:", "options": ["1 mm", "0.1 mm", "0.01 mm", "0.001 mm"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_16", "questionText": "The least count of micrometer screw gauge is:", "options": ["1 mm", "0.1 mm", "0.01 mm", "0.001 mm"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_17", "questionText": "Which instrument can measure length up to 0.01 mm?", "options": ["Metre rule", "Measuring tape", "Vernier Callipers", "Micrometer screw gauge"], "correctOption": 3, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_18", "questionText": "The SI unit of electric current is:", "options": ["volt", "ampere", "ohm", "coulomb"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch1_mcq_19", "questionText": "The SI unit of amount of substance is:", "options": ["gram", "kilogram", "mole", "candela"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch1_mcq_20", "questionText": "The SI unit of luminous intensity is:", "options": ["lux", "candela", "lumen", "watt"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_21", "questionText": "100 m is equal to:", "options": ["1000 μm", "1000 cm", "100,000 mm", "1 km"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch1_mcq_22", "questionText": "Which prefix represents 10⁻⁶?", "options": ["milli", "micro", "nano", "pico"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch1_mcq_23", "questionText": "Which prefix represents 10⁹?", "options": ["mega", "giga", "tera", "kilo"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch1_mcq_24", "questionText": "Zero error in an instrument is a type of:", "options": ["human error", "systematic error", "random error", "personal error"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_25", "questionText": "The most precise balance is:", "options": ["physical balance", "beam balance", "digital electronic balance", "spring balance"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_26", "questionText": "In scientific notation, 0.00534 m is written as:", "options": ["5.34 × 10⁻³ m", "5.34 × 10³ m", "5.34 × 10⁻² m", "5.34 × 10² m"], "correctOption": 0, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_27", "questionText": "Which of the following has 3 significant figures?", "options": ["0.0045 m", "2.047 m", "3.40 m", "3.420 × 10⁴ m"], "correctOption": 2, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch1_mcq_28", "questionText": "A measurement is accurate if:", "options": ["it has small least count", "it correctly reflects the size of object", "measurements are close together", "instrument is precise"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_29", "questionText": "Precision is determined by:", "options": ["number of significant figures", "instrument's least count", "fractional uncertainty", "true value"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_30", "questionText": "Which timing device can measure time intervals of about 10⁻¹⁰ seconds?", "options": ["Digital stopwatch", "Atomic clock", "Pendulum clock", "Ticker-tape timer"], "correctOption": 1, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch1_mcq_31", "questionText": "A ticker-tape timer measures time intervals of:", "options": ["0.1 s", "0.01 s", "0.02 s", "0.001 s"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_32", "questionText": "When using a measuring cylinder, the reading is taken corresponding to:", "options": ["top of meniscus for water", "bottom of meniscus for water", "top of meniscus for mercury", "middle of meniscus"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_33", "questionText": "Mercury in a cylinder curves:", "options": ["downward (concave)", "upward (convex)", "straight", "irregular"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_34", "questionText": "Random errors can be reduced by:", "options": ["using better instrument", "taking multiple readings and averaging", "calibrating instrument", "removing zero error"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_35", "questionText": "Which is an example of systematic error?", "options": ["Parallax error", "Zero error", "Reaction time error", "Temperature fluctuation"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch1_mcq_36", "questionText": "Rounding off 4.452 × 10² m to 2 significant figures gives:", "options": ["4.4 × 10² m", "4.5 × 10² m", "4.45 × 10² m", "4.0 × 10² m"], "correctOption": 1, "difficulty": "hard", "marks": 1}
       ],
       "shortQuestions": [
-        {
-          "id": "9_phy_ch1_short_1",
-          "questionText": "Define physical quantities. Give three examples of base quantities and their SI units.",
-          "difficulty": "easy",
-          "marks": 5
-        },
-        {
-          "id": "9_phy_ch1_short_2",
-          "questionText": "Differentiate between scalar and vector quantities with two examples of each.",
-          "difficulty": "medium",
-          "marks": 5
-        },
-        {
-          "id": "9_phy_ch1_short_3",
-          "questionText": "What are vernier calipers? How do you read a measurement using vernier calipers?",
-          "difficulty": "medium",
-          "marks": 5
-        },
-        {
-          "id": "9_phy_ch1_short_4",
-          "questionText": "Convert the following: (a) 5 km to meters (b) 2500 g to kg (c) 2 hours to seconds",
-          "difficulty": "medium",
-          "marks": 5
-        },
-        {
-          "id": "9_phy_ch1_short_5",
-          "questionText": "Explain the method to measure the diameter of a wire using a screw gauge.",
-          "difficulty": "hard",
-          "marks": 5
-        }
+        {"id": "9_phy_ch1_short_1", "questionText": "Define physical quantities. Give three examples of base quantities and their SI units.", "difficulty": "easy", "marks": 5},
+        {"id": "9_phy_ch1_short_2", "questionText": "Differentiate between scalar and vector quantities with two examples of each.", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch1_short_3", "questionText": "What are vernier calipers? How do you read a measurement using vernier calipers?", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch1_short_4", "questionText": "Convert the following: (a) 5 km to meters (b) 2500 g to kg (c) 2 hours to seconds", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch1_short_5", "questionText": "Explain the method to measure the diameter of a wire using a screw gauge.", "difficulty": "hard", "marks": 5}
       ],
       "longQuestions": [
-        {
-          "id": "9_phy_ch1_long_1",
-          "questionText": "Explain the International System of Units (SI). Describe the seven base quantities with their SI units and symbols. Give examples of derived quantities.",
-          "difficulty": "medium",
-          "marks": 10
-        },
-        {
-          "id": "9_phy_ch1_long_2",
-          "questionText": "Describe the construction and working of vernier calipers. How do you calculate the least count of vernier calipers? Give its two uses.",
-          "difficulty": "medium",
-          "marks": 10
-        },
-        {
-          "id": "9_phy_ch1_long_3",
-          "questionText": "What is a screw gauge? Describe its construction and working. Explain how to find the pitch and least count of a screw gauge.",
-          "difficulty": "hard",
-          "marks": 10
-        }
+        {"id": "9_phy_ch1_long_1", "questionText": "Explain the International System of Units (SI). Describe the seven base quantities with their SI units and symbols. Give examples of derived quantities.", "difficulty": "medium", "marks": 10},
+        {"id": "9_phy_ch1_long_2", "questionText": "Describe the construction and working of vernier calipers. How do you calculate the least count of vernier calipers? Give its two uses.", "difficulty": "medium", "marks": 10},
+        {"id": "9_phy_ch1_long_3", "questionText": "What is a screw gauge? Describe its construction and working. Explain how to find the pitch and least count of a screw gauge.", "difficulty": "hard", "marks": 10}
       ]
     },
     {
@@ -146,138 +62,242 @@
       "number": 2,
       "name": "Kinematics",
       "mcqs": [
-        {
-          "id": "9_phy_ch2_mcq_1",
-          "questionText": "The branch of physics dealing with motion without considering its cause is:",
-          "options": ["Dynamics", "Kinematics", "Mechanics", "Statics"],
-          "correctOption": 1,
-          "difficulty": "easy",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch2_mcq_2",
-          "questionText": "The rate of change of displacement is called:",
-          "options": ["Speed", "Velocity", "Acceleration", "Distance"],
-          "correctOption": 1,
-          "difficulty": "easy",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch2_mcq_3",
-          "questionText": "The SI unit of velocity is:",
-          "options": ["m/s", "m/s²", "km/h", "m²/s"],
-          "correctOption": 0,
-          "difficulty": "easy",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch2_mcq_4",
-          "questionText": "A body moving with uniform velocity has:",
-          "options": ["Constant speed", "Constant direction", "Both constant speed and direction", "Changing acceleration"],
-          "correctOption": 2,
-          "difficulty": "medium",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch2_mcq_5",
-          "questionText": "Acceleration is defined as the rate of change of:",
-          "options": ["Distance", "Displacement", "Velocity", "Time"],
-          "correctOption": 2,
-          "difficulty": "easy",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch2_mcq_6",
-          "questionText": "The SI unit of acceleration is:",
-          "options": ["m/s", "m/s²", "km/h²", "m²/s"],
-          "correctOption": 1,
-          "difficulty": "easy",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch2_mcq_7",
-          "questionText": "A car accelerates from rest to 20 m/s in 4 seconds. Its acceleration is:",
-          "options": ["5 m/s²", "4 m/s²", "80 m/s²", "0.2 m/s²"],
-          "correctOption": 0,
-          "difficulty": "medium",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch2_mcq_8",
-          "questionText": "The slope of distance-time graph gives:",
-          "options": ["Velocity", "Acceleration", "Speed", "Force"],
-          "correctOption": 2,
-          "difficulty": "medium",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch2_mcq_9",
-          "questionText": "The slope of velocity-time graph gives:",
-          "options": ["Distance", "Displacement", "Acceleration", "Speed"],
-          "correctOption": 2,
-          "difficulty": "medium",
-          "marks": 1
-        },
-        {
-          "id": "9_phy_ch2_mcq_10",
-          "questionText": "A body thrown vertically upward with velocity 'u' reaches maximum height when its velocity becomes:",
-          "options": ["u/2", "2u", "0", "u"],
-          "correctOption": 2,
-          "difficulty": "hard",
-          "marks": 1
-        }
+        {"id": "9_phy_ch2_mcq_1", "questionText": "The numerical ratio of displacement to distance is:", "options": ["always less than one", "always equal to one", "always greater than one", "equal to or less than one"], "correctOption": 3, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_2", "questionText": "If a body does not change its position with respect to some fixed point, it is in state of:", "options": ["rest", "motion", "uniform motion", "variable motion"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_3", "questionText": "A ball dropped from top of tower covers distance in first second:", "options": ["5 m", "10 m", "50 m", "100 m"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_4", "questionText": "A body accelerates from rest to 144 km h⁻¹ in 20 seconds. Distance covered is:", "options": ["100 m", "400 m", "1400 m", "1440 m"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_5", "questionText": "A body moving with constant acceleration from rest covers distance S in 4 seconds. Time to cover one-fourth of this distance:", "options": ["1 s", "2 s", "4 s", "16 s"], "correctOption": 1, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch2_mcq_6", "questionText": "The area under speed-time graph is numerically equal to:", "options": ["velocity", "uniform velocity", "acceleration", "distance covered"], "correctOption": 3, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_7", "questionText": "Gradient of speed-time graph is equal to:", "options": ["speed", "velocity", "acceleration", "distance covered"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_8", "questionText": "Gradient of distance-time graph is equal to:", "options": ["speed", "velocity", "distance covered", "acceleration"], "correctOption": 0, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_9", "questionText": "Speed is a _______ quantity while velocity is a _______ quantity:", "options": ["vector, scalar", "scalar, vector", "scalar, scalar", "vector, vector"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_10", "questionText": "When a car moves on a circular road with constant speed, its velocity:", "options": ["remains constant", "changes at every instant", "becomes zero", "increases uniformly"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_11", "questionText": "A paratrooper descending with uniform velocity is an example of:", "options": ["uniform acceleration", "non-uniform velocity", "dynamic equilibrium", "static equilibrium"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_12", "questionText": "The slope of distance-time graph for a body at rest is:", "options": ["positive", "negative", "zero", "infinite"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_13", "questionText": "The slope of speed-time graph for a body moving with constant speed is:", "options": ["positive", "negative", "zero", "infinite"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_14", "questionText": "If the distance-time graph is a straight line parallel to time axis, the body is:", "options": ["moving with uniform speed", "moving with variable speed", "at rest", "accelerating"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_15", "questionText": "If the speed-time graph is a straight line parallel to time axis, the body has:", "options": ["uniform acceleration", "zero acceleration", "variable acceleration", "negative acceleration"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_16", "questionText": "The value of 'g' (gravitational acceleration) is approximately:", "options": ["5 m s⁻²", "9.8 m s⁻²", "15 m s⁻²", "20 m s⁻²"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_17", "questionText": "According to special relativity, the universal speed limit is:", "options": ["3 × 10⁶ m s⁻¹", "3 × 10⁸ m s⁻¹", "3 × 10¹⁰ m s⁻¹", "3 × 10⁴ m s⁻¹"], "correctOption": 1, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch2_mcq_18", "questionText": "Which of the following is a vector quantity?", "options": ["Distance", "Speed", "Time", "Displacement"], "correctOption": 3, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_19", "questionText": "Which of the following is a scalar quantity?", "options": ["Velocity", "Acceleration", "Force", "Mass"], "correctOption": 3, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_20", "questionText": "Negative acceleration is also called:", "options": ["positive acceleration", "deceleration or retardation", "uniform acceleration", "variable acceleration"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_21", "questionText": "The motion of a bee is an example of:", "options": ["linear motion", "random motion", "circular motion", "vibratory motion"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_22", "questionText": "The motion of an electric fan is:", "options": ["translatory motion", "rotatory motion", "vibratory motion", "random motion"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_23", "questionText": "The motion of a swing in a park is:", "options": ["linear motion", "rotatory motion", "vibratory motion", "circular motion"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_24", "questionText": "Average speed is defined as:", "options": ["displacement/time", "total distance/total time", "(initial velocity + final velocity)/2", "change in velocity/time"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_25", "questionText": "The speed shown by speedometer of a vehicle is:", "options": ["average speed", "instantaneous speed", "uniform speed", "variable speed"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_26", "questionText": "A body has uniform velocity if:", "options": ["speed is constant but direction changes", "direction is constant but speed changes", "both speed and direction are constant", "either speed or direction changes"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_27", "questionText": "The SI unit of acceleration is:", "options": ["m s⁻¹", "m s⁻²", "km h⁻¹", "m² s⁻²"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_28", "questionText": "When a body is thrown vertically upward, at the highest point its velocity is:", "options": ["maximum", "minimum", "zero", "negative"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch2_mcq_29", "questionText": "When a body is thrown vertically upward, at the highest point its acceleration is:", "options": ["zero", "g downward", "g upward", "infinite"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_30", "questionText": "The area under speed-time graph represents:", "options": ["acceleration", "velocity", "distance", "displacement"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_31", "questionText": "If the speed-time graph is a straight line sloping downward, the body has:", "options": ["uniform acceleration", "uniform deceleration", "constant speed", "zero acceleration"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_32", "questionText": "The head-to-tail rule is used for:", "options": ["subtraction of vectors", "addition of vectors", "multiplication of vectors", "division of vectors"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch2_mcq_33", "questionText": "According to head-to-tail rule, resultant vector is directed from:", "options": ["head of first to head of last", "tail of first to head of last", "tail of first to tail of last", "head of first to tail of last"], "correctOption": 1, "difficulty": "hard", "marks": 1}
       ],
       "shortQuestions": [
-        {
-          "id": "9_phy_ch2_short_1",
-          "questionText": "Define kinematics. Differentiate between distance and displacement with examples.",
-          "difficulty": "easy",
-          "marks": 5
-        },
-        {
-          "id": "9_phy_ch2_short_2",
-          "questionText": "Differentiate between speed and velocity. Can a body have constant speed but variable velocity?",
-          "difficulty": "medium",
-          "marks": 5
-        },
-        {
-          "id": "9_phy_ch2_short_3",
-          "questionText": "Define acceleration. A car starts from rest and reaches a velocity of 30 m/s in 6 seconds. Calculate its acceleration.",
-          "difficulty": "medium",
-          "marks": 5
-        },
-        {
-          "id": "9_phy_ch2_short_4",
-          "questionText": "Derive the first equation of motion: v = u + at",
-          "difficulty": "medium",
-          "marks": 5
-        },
-        {
-          "id": "9_phy_ch2_short_5",
-          "questionText": "A train accelerates uniformly from 20 m/s to 40 m/s in 10 seconds. Calculate its acceleration and distance covered.",
-          "difficulty": "hard",
-          "marks": 5
-        }
+        {"id": "9_phy_ch2_short_1", "questionText": "Define kinematics. Differentiate between distance and displacement with examples.", "difficulty": "easy", "marks": 5},
+        {"id": "9_phy_ch2_short_2", "questionText": "Differentiate between speed and velocity. Can a body have constant speed but variable velocity?", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch2_short_3", "questionText": "Define acceleration. A car starts from rest and reaches a velocity of 30 m/s in 6 seconds. Calculate its acceleration.", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch2_short_4", "questionText": "Derive the first equation of motion: v = u + at", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch2_short_5", "questionText": "A train accelerates uniformly from 20 m/s to 40 m/s in 10 seconds. Calculate its acceleration and distance covered.", "difficulty": "hard", "marks": 5}
       ],
       "longQuestions": [
-        {
-          "id": "9_phy_ch2_long_1",
-          "questionText": "State and explain the three equations of motion for uniformly accelerated motion. Derive any two of them graphically.",
-          "difficulty": "medium",
-          "marks": 10
-        },
-        {
-          "id": "9_phy_ch2_long_2",
-          "questionText": "Explain the different types of motion graphs: (a) Distance-time graph (b) Velocity-time graph. What information can be obtained from the slope and area under these graphs?",
-          "difficulty": "hard",
-          "marks": 10
-        },
-        {
-          "id": "9_phy_ch2_long_3",
-          "questionText": "A ball is thrown vertically upward with a velocity of 20 m/s. Calculate: (a) Maximum height reached (b) Time taken to reach maximum height (c) Time of flight (d) Velocity when it hits the ground (Take g = 10 m/s²)",
-          "difficulty": "hard",
-          "marks": 10
-        }
+        {"id": "9_phy_ch2_long_1", "questionText": "State and explain the three equations of motion for uniformly accelerated motion. Derive any two of them graphically.", "difficulty": "medium", "marks": 10},
+        {"id": "9_phy_ch2_long_2", "questionText": "Explain the different types of motion graphs: (a) Distance-time graph (b) Velocity-time graph. What information can be obtained from the slope and area under these graphs?", "difficulty": "hard", "marks": 10},
+        {"id": "9_phy_ch2_long_3", "questionText": "A ball is thrown vertically upward with a velocity of 20 m/s. Calculate: (a) Maximum height reached (b) Time taken to reach maximum height (c) Time of flight (d) Velocity when it hits the ground (Take g = 10 m/s²)", "difficulty": "hard", "marks": 10}
+      ]
+    },
+    {
+      "id": "9_phy_ch3",
+      "number": 3,
+      "name": "Dynamics",
+      "mcqs": [
+        {"id": "9_phy_ch3_mcq_1", "questionText": "When we kick a stone, we get hurt. This is due to:", "options": ["inertia", "velocity", "momentum", "reaction"], "correctOption": 3, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch3_mcq_2", "questionText": "An object will continue its motion with constant acceleration until:", "options": ["resultant force on it begins to decrease", "resultant force on it is zero", "resultant force on it begins to increase", "resultant force is at right angle to velocity"], "correctOption": 1, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch3_mcq_3", "questionText": "Which is a non-contact force?", "options": ["Friction", "Air resistance", "Electrostatic force", "Tension in string"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_4", "questionText": "A ball with initial momentum p hits a solid wall and bounces back with same velocity. Its momentum p' after collision will be:", "options": ["p' = p", "p' = -p", "p' = 2p", "p' = -2p"], "correctOption": 1, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch3_mcq_5", "questionText": "A particle of mass m moving with velocity v collides with another particle of same mass at rest. Velocity of first particle after collision is:", "options": ["v", "-v", "0", "-1/2"], "correctOption": 2, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch3_mcq_6", "questionText": "Conservation of linear momentum is equivalent to:", "options": ["Newton's first law", "Newton's second law", "Newton's third law", "None of these"], "correctOption": 2, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch3_mcq_7", "questionText": "An object with mass 5 kg moves at constant velocity 10 m s⁻¹. A constant force acts for 5 seconds giving it velocity 2 m s⁻¹ in opposite direction. The force is:", "options": ["5 N", "-10 N", "-12 N", "-15 N"], "correctOption": 2, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch3_mcq_8", "questionText": "A large force acts for very short time. In this case, it is easy to determine:", "options": ["magnitude of force", "time interval", "product of force and time", "none of these"], "correctOption": 2, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch3_mcq_9", "questionText": "A lubricant is usually introduced between two surfaces to decrease friction. The lubricant:", "options": ["decreases temperature", "acts as ball bearings", "prevents direct contact of surfaces", "provides rolling friction"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_10", "questionText": "The property of body to maintain its state of rest or uniform motion is called:", "options": ["force", "inertia", "momentum", "weight"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch3_mcq_11", "questionText": "One newton is defined as:", "options": ["1 kg m s⁻¹", "1 kg m s⁻²", "1 g cm s⁻²", "1 kg m² s⁻²"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_12", "questionText": "When a bullet is fired, the gun recoils backward. This illustrates:", "options": ["Newton's first law", "Newton's second law", "Newton's third law", "Law of inertia"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_13", "questionText": "The force that brings a body back to Earth is:", "options": ["magnetic force", "electrostatic force", "gravitational force", "nuclear force"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch3_mcq_14", "questionText": "Which force is responsible for radioactive decay?", "options": ["Gravitational force", "Electromagnetic force", "Strong nuclear force", "Weak nuclear force"], "correctOption": 3, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch3_mcq_15", "questionText": "Dr. Abdus Salam won Nobel Prize for unification of:", "options": ["gravitational and electromagnetic forces", "weak nuclear and electromagnetic forces", "strong and weak nuclear forces", "nuclear and gravitational forces"], "correctOption": 1, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch3_mcq_16", "questionText": "Weight is a:", "options": ["scalar quantity", "vector quantity", "base quantity", "dimensionless quantity"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch3_mcq_17", "questionText": "Mass is measured by:", "options": ["spring balance", "physical balance", "force meter", "newton meter"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch3_mcq_18", "questionText": "Weight is measured by:", "options": ["physical balance", "beam balance", "spring balance", "electronic balance"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch3_mcq_19", "questionText": "The value of gravitational field strength 'g' is:", "options": ["10 N kg⁻¹", "1 N kg⁻¹", "100 N kg⁻¹", "0.1 N kg⁻¹"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch3_mcq_20", "questionText": "Friction is a:", "options": ["contact force", "non-contact force", "field force", "gravitational force"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch3_mcq_21", "questionText": "The force that keeps the Moon in its orbit is:", "options": ["centripetal force provided by gravity", "centrifugal force", "magnetic force", "electrostatic force"], "correctOption": 0, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_22", "questionText": "Rolling friction is about _______ times smaller than sliding friction:", "options": ["10", "100", "1000", "10000"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_23", "questionText": "When a body is in dynamic equilibrium, it:", "options": ["is at rest", "moves with uniform velocity", "accelerates uniformly", "decelerates uniformly"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_24", "questionText": "The force experienced by a rope when pulled is called:", "options": ["friction", "tension", "normal force", "thrust"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch3_mcq_25", "questionText": "The upward force exerted by a liquid on an object immersed in it is:", "options": ["tension", "thrust", "drag", "friction"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_26", "questionText": "Air resistance is an example of:", "options": ["contact force", "non-contact force", "field force", "gravitational force"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch3_mcq_27", "questionText": "Strong nuclear force acts over a distance of order:", "options": ["10⁻¹⁵ m", "10⁻¹⁰ m", "10⁻⁵ m", "1 m"], "correctOption": 0, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch3_mcq_28", "questionText": "Weak nuclear force acts over a distance of order:", "options": ["10⁻¹⁵ m", "10⁻¹⁷ m", "10⁻¹⁰ m", "10⁻⁵ m"], "correctOption": 1, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch3_mcq_29", "questionText": "The force that binds protons and neutrons in nucleus is:", "options": ["gravitational force", "electromagnetic force", "strong nuclear force", "weak nuclear force"], "correctOption": 2, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_30", "questionText": "The force of friction that acts when a body is just about to move is:", "options": ["kinetic friction", "limiting friction", "rolling friction", "sliding friction"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_31", "questionText": "Terminal velocity is attained when:", "options": ["weight becomes zero", "air resistance balances weight", "acceleration becomes maximum", "velocity becomes zero"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_32", "questionText": "A paratrooper descends with terminal velocity because:", "options": ["gravity stops acting", "air resistance balances weight", "parachute opens partially", "he has no weight"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch3_mcq_33", "questionText": "Which of the following is NOT a fundamental force?", "options": ["Gravitational force", "Electromagnetic force", "Frictional force", "Nuclear force"], "correctOption": 2, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch3_mcq_34", "questionText": "The SI unit of momentum is:", "options": ["N s", "kg m s⁻¹", "N m", "J"], "correctOption": 1, "difficulty": "easy", "marks": 1}
+      ],
+      "shortQuestions": [
+        {"id": "9_phy_ch3_short_1", "questionText": "State Newton's three laws of motion with examples.", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch3_short_2", "questionText": "Define momentum. State the law of conservation of momentum.", "difficulty": "easy", "marks": 5},
+        {"id": "9_phy_ch3_short_3", "questionText": "Explain the difference between mass and weight.", "difficulty": "easy", "marks": 5},
+        {"id": "9_phy_ch3_short_4", "questionText": "What is friction? Explain the types of friction.", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch3_short_5", "questionText": "A cricket ball of mass 150 g is moving with a velocity of 20 m/s. Find its momentum.", "difficulty": "medium", "marks": 5}
+      ],
+      "longQuestions": [
+        {"id": "9_phy_ch3_long_1", "questionText": "Explain Newton's laws of motion. Derive the equation F = ma from Newton's second law.", "difficulty": "medium", "marks": 10},
+        {"id": "9_phy_ch3_long_2", "questionText": "State and explain the law of conservation of momentum. A bullet of mass 20 g is fired from a gun of mass 5 kg with a velocity of 400 m/s. Find the recoil velocity of the gun.", "difficulty": "hard", "marks": 10},
+        {"id": "9_phy_ch3_long_3", "questionText": "What is friction? Explain the methods of reducing friction and its advantages and disadvantages.", "difficulty": "medium", "marks": 10}
+      ]
+    },
+    {
+      "id": "9_phy_ch4",
+      "number": 4,
+      "name": "Turning Effect of Forces",
+      "mcqs": [
+        {"id": "9_phy_ch4_mcq_1", "questionText": "A particle is simultaneously acted upon by two forces of 4 and 3 newtons. The net force on the particle is:", "options": ["1 N", "between 1 N and 7 N", "5 N", "7 N"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_2", "questionText": "A force F is making an angle of 60° with x-axis. Its y-component is equal to:", "options": ["F", "F sin60°", "F cos60°", "F tan60°"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_3", "questionText": "Moment of force is called:", "options": ["moment arm", "couple", "couple arm", "torque"], "correctOption": 3, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_4", "questionText": "If F and τ are forces and torque acting on a body, the body will be completely in equilibrium when:", "options": ["ΣF = 0 and Στ = 0", "ΣF = 0 and Στ ≠ 0", "ΣF ≠ 0 and Στ = 0", "ΣF ≠ 0 and Στ ≠ 0"], "correctOption": 0, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch4_mcq_5", "questionText": "A shopkeeper sells his articles by a balance having unequal arms of the pans. If he puts the weights in the pan having shorter arm, then the customer:", "options": ["loses", "gains", "neither loses nor gains", "not certain"], "correctOption": 0, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch4_mcq_6", "questionText": "A man walks on a tight rope. He balances himself by holding a bamboo stick horizontally. It is an application of:", "options": ["law of conservation of momentum", "Newton's second law of motion", "principle of moments", "Newton's third law of motion"], "correctOption": 2, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch4_mcq_7", "questionText": "In stable equilibrium, the centre of gravity of the body lies:", "options": ["at the highest position", "at the lowest position", "at any position", "outside the body"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_8", "questionText": "The centre of mass of a body:", "options": ["lies always inside the body", "lies always outside the body", "lies always on the surface of the body", "may lie within, outside or on the surface"], "correctOption": 3, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_9", "questionText": "A cylinder resting on its circular base is in:", "options": ["stable equilibrium", "unstable equilibrium", "neutral equilibrium", "none of these"], "correctOption": 0, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_10", "questionText": "Centripetal force is given by:", "options": ["rF", "rF cosθ", "mv²/r", "mv/r²"], "correctOption": 2, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch4_mcq_11", "questionText": "The perpendicular distance of the line of action of a force from the axis of rotation is known as:", "options": ["torque", "moment arm", "couple", "force arm"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_12", "questionText": "When two equal and opposite parallel forces act at two different points of the same body, they form a:", "options": ["torque", "couple", "moment", "resultant"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_13", "questionText": "The torque is positive if the force tends to produce:", "options": ["clockwise rotation", "anticlockwise rotation", "no rotation", "linear motion"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_14", "questionText": "The SI unit of torque is:", "options": ["N m", "N", "J", "N m⁻¹"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_15", "questionText": "The torque of a force is zero when:", "options": ["force is maximum", "moment arm is maximum", "line of action passes through axis of rotation", "force is perpendicular to moment arm"], "correctOption": 2, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch4_mcq_16", "questionText": "The centre of gravity of a regular-shaped object lies at its:", "options": ["surface", "geometrical centre", "one end", "anywhere"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_17", "questionText": "The centre of gravity of a triangular lamina lies at the point of intersection of its:", "options": ["diagonals", "medians", "angle bisectors", "perpendicular bisectors"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_18", "questionText": "The centre of gravity of a circular plate lies at its:", "options": ["circumference", "centre", "any point on edge", "radius"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_19", "questionText": "On the surface of Earth where g is uniform, the centre of mass of an object:", "options": ["is different from centre of gravity", "coincides with its centre of gravity", "lies above centre of gravity", "lies below centre of gravity"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_20", "questionText": "A body at rest is in:", "options": ["dynamic equilibrium", "static equilibrium", "unstable equilibrium", "neutral equilibrium"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_21", "questionText": "A body moving with uniform velocity is in:", "options": ["static equilibrium", "dynamic equilibrium", "unstable equilibrium", "neutral equilibrium"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_22", "questionText": "A paratrooper descending with uniform velocity is an example of:", "options": ["static equilibrium", "dynamic equilibrium", "unstable equilibrium", "neutral equilibrium"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_23", "questionText": "The first condition of equilibrium deals with:", "options": ["rotational equilibrium", "translational equilibrium", "both translational and rotational", "neither"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_24", "questionText": "The second condition of equilibrium deals with:", "options": ["translational equilibrium", "rotational equilibrium", "both", "none"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_25", "questionText": "Mathematically, first condition of equilibrium is:", "options": ["ΣF = 0", "Στ = 0", "ΣF = ma", "Στ = Iα"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_26", "questionText": "Mathematically, second condition of equilibrium is:", "options": ["ΣF = 0", "Στ = 0", "ΣF = ma", "Στ = Iα"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_27", "questionText": "A cone resting on its base is in:", "options": ["stable equilibrium", "unstable equilibrium", "neutral equilibrium", "dynamic equilibrium"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_28", "questionText": "A cone balanced on its tip is in:", "options": ["stable equilibrium", "unstable equilibrium", "neutral equilibrium", "dynamic equilibrium"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_29", "questionText": "The stability of a body can be increased by:", "options": ["raising its centre of gravity", "lowering its centre of gravity", "making its base narrow", "increasing height"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch4_mcq_30", "questionText": "Centripetal force is always directed:", "options": ["away from the centre", "towards the centre", "along the tangent", "perpendicular to radius"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_31", "questionText": "The centripetal force for the moon orbiting Earth is provided by:", "options": ["tension", "gravity", "magnetic force", "electrostatic force"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_32", "questionText": "In a washing machine dryer, clothes dry quickly because:", "options": ["they are heated", "water molecules escape through holes", "they are compressed", "air blows on them"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch4_mcq_33", "questionText": "A cream separator works on the principle of:", "options": ["gravity", "centripetal force", "friction", "buoyancy"], "correctOption": 1, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch4_mcq_34", "questionText": "If the string breaks when a stone is whirled in a circle, the stone flies off along:", "options": ["radius outward", "radius inward", "tangent to the circle", "perpendicular to tangent"], "correctOption": 2, "difficulty": "hard", "marks": 1}
+      ],
+      "shortQuestions": [
+        {"id": "9_phy_ch4_short_1", "questionText": "Define torque and state its SI unit.", "difficulty": "easy", "marks": 5},
+        {"id": "9_phy_ch4_short_2", "questionText": "State the principle of moments.", "difficulty": "easy", "marks": 5},
+        {"id": "9_phy_ch4_short_3", "questionText": "Define centre of gravity. How does the position of centre of gravity affect stability?", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch4_short_4", "questionText": "Differentiate between stable, unstable and neutral equilibrium.", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch4_short_5", "questionText": "A uniform rod of length 1 m and mass 2 kg is pivoted at its centre. Find the moment of force required to rotate it.", "difficulty": "hard", "marks": 5}
+      ],
+      "longQuestions": [
+        {"id": "9_phy_ch4_long_1", "questionText": "Explain the conditions of equilibrium for a body. State and explain the principle of moments.", "difficulty": "medium", "marks": 10},
+        {"id": "9_phy_ch4_long_2", "questionText": "What is centre of gravity? Explain the factors affecting stability of a body.", "difficulty": "medium", "marks": 10},
+        {"id": "9_phy_ch4_long_3", "questionText": "Explain centripetal force and centrifugal force with examples. Derive the formula F = mv²/r.", "difficulty": "hard", "marks": 10}
+      ]
+    },
+    {
+      "id": "9_phy_ch5",
+      "number": 5,
+      "name": "Work and Energy",
+      "mcqs": [
+        {"id": "9_phy_ch5_mcq_1", "questionText": "Work done is maximum when the angle between force F and displacement d is:", "options": ["0°", "30°", "60°", "90°"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_2", "questionText": "A joule can also be written as:", "options": ["kg m s⁻²", "kg m s⁻¹", "kg m² s⁻³", "kg m² s⁻²"], "correctOption": 3, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch5_mcq_3", "questionText": "The SI unit of power is:", "options": ["joule", "newton", "watt", "second"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_4", "questionText": "The power of a water pump is 2 kW. The amount of water it can raise in one minute to a height of 5 metres is:", "options": ["1000 litres", "1200 litres", "2000 litres", "2400 litres"], "correctOption": 3, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch5_mcq_5", "questionText": "A bullet of mass 0.05 kg has a speed of 300 m s⁻¹. Its kinetic energy will be:", "options": ["2250 J", "4500 J", "1500 J", "1125 J"], "correctOption": 0, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch5_mcq_6", "questionText": "If a car doubles its speed, its kinetic energy will be:", "options": ["the same", "doubled", "increased to three times", "increased to four times"], "correctOption": 3, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch5_mcq_7", "questionText": "The energy possessed by a body by virtue of its position is:", "options": ["kinetic energy", "potential energy", "chemical energy", "solar energy"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_8", "questionText": "The magnitude of momentum of an object is doubled, the kinetic energy of the object will:", "options": ["double", "increase to four times", "reduce to one-half", "remain the same"], "correctOption": 1, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch5_mcq_9", "questionText": "Which of the following is not renewable energy source?", "options": ["Hydroelectric energy", "Fossil fuels", "Wind energy", "Solar energy"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_10", "questionText": "Work is defined as:", "options": ["force × time", "force × distance in direction of force", "force × velocity", "force × acceleration"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_11", "questionText": "If force and displacement are perpendicular, work done is:", "options": ["maximum", "zero", "minimum", "infinite"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_12", "questionText": "If a man pushes a wall and it does not move, work done is:", "options": ["positive", "negative", "zero", "infinite"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_13", "questionText": "One joule work is done when:", "options": ["1 N force moves body through 1 m in its direction", "1 kg mass moves with 1 m s⁻¹", "1 N force acts on body", "body moves 1 m"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_14", "questionText": "The area under force-distance graph represents:", "options": ["power", "work", "energy", "momentum"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch5_mcq_15", "questionText": "Energy is defined as:", "options": ["rate of doing work", "ability to do work", "force × distance", "mass × acceleration"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_16", "questionText": "Kinetic energy is the energy possessed by a body due to its:", "options": ["position", "motion", "shape", "size"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_17", "questionText": "Potential energy is the energy possessed by a body due to its:", "options": ["motion", "position or deformation", "temperature", "velocity"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_18", "questionText": "The energy stored in a compressed spring is:", "options": ["kinetic energy", "gravitational potential energy", "elastic potential energy", "nuclear energy"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_19", "questionText": "The energy stored in a battery is:", "options": ["kinetic energy", "chemical potential energy", "elastic potential energy", "heat energy"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_20", "questionText": "Gravitational potential energy of a body of mass m at height h is given by:", "options": ["mgh", "½ mv²", "mgh²", "mg/h"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_21", "questionText": "According to Einstein's theory, matter and energy are:", "options": ["independent", "interchangeable under certain conditions", "same thing", "always conserved separately"], "correctOption": 1, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch5_mcq_22", "questionText": "The principle of conservation of energy states that energy:", "options": ["can be created but not destroyed", "can be destroyed but not created", "cannot be created or destroyed", "can be both created and destroyed"], "correctOption": 2, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_23", "questionText": "In any energy conversion, some energy is always lost as:", "options": ["light", "heat", "sound", "electricity"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_24", "questionText": "Fossil fuels include:", "options": ["coal, oil, natural gas", "wood, dung, crop waste", "uranium, plutonium", "water, wind, sun"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_25", "questionText": "In hydroelectric generation, potential energy of water is converted into:", "options": ["nuclear energy", "kinetic energy then electrical energy", "chemical energy", "heat energy"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch5_mcq_26", "questionText": "Solar energy can be converted into electricity using:", "options": ["solar panels", "solar cells", "reflectors", "lenses"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_27", "questionText": "Nuclear energy is released when:", "options": ["atoms combine", "atomic nucleus breaks", "electrons move", "molecules vibrate"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch5_mcq_28", "questionText": "Geothermal energy comes from:", "options": ["sun", "hot rocks inside Earth", "wind", "tides"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch5_mcq_29", "questionText": "Wind energy is converted into electricity using:", "options": ["turbines", "windmills", "generators", "solar cells"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_30", "questionText": "Tidal energy is produced due to:", "options": ["wind", "gravitational force of moon", "Earth's rotation", "sun's heat"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch5_mcq_31", "questionText": "Power is defined as:", "options": ["work done", "rate of doing work", "energy", "force × distance"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_32", "questionText": "One watt is equal to:", "options": ["1 J s⁻¹", "1 J s", "1 N m s", "1 kg m s⁻¹"], "correctOption": 0, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch5_mcq_33", "questionText": "One horsepower (hp) is equal to:", "options": ["746 W", "1000 W", "500 W", "100 W"], "correctOption": 0, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch5_mcq_34", "questionText": "Efficiency of a system is defined as:", "options": ["input/output", "useful output energy/total input energy", "total input/output", "work/power"], "correctOption": 1, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch5_mcq_35", "questionText": "A system cannot have 100% efficiency because:", "options": ["energy is lost as heat", "energy is created", "energy is destroyed", "input is less than output"], "correctOption": 0, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch5_mcq_36", "questionText": "Global warming is caused by:", "options": ["renewable energy", "thermal pollution", "solar energy", "hydroelectric power"], "correctOption": 1, "difficulty": "medium", "marks": 1}
+      ],
+      "shortQuestions": [
+        {"id": "9_phy_ch5_short_1", "questionText": "Define work, energy and power with their SI units.", "difficulty": "easy", "marks": 5},
+        {"id": "9_phy_ch5_short_2", "questionText": "State and explain the law of conservation of energy.", "difficulty": "easy", "marks": 5},
+        {"id": "9_phy_ch5_short_3", "questionText": "Differentiate between kinetic energy and potential energy.", "difficulty": "easy", "marks": 5},
+        {"id": "9_phy_ch5_short_4", "questionText": "Explain the transformation of energy in a simple pendulum.", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch5_short_5", "questionText": "A body of mass 2 kg is raised to a height of 5 m. Find its potential energy. (g = 10 m/s²)", "difficulty": "medium", "marks": 5}
+      ],
+      "longQuestions": [
+        {"id": "9_phy_ch5_long_1", "questionText": "Explain work, energy and power. Derive the formula for kinetic energy and potential energy.", "difficulty": "medium", "marks": 10},
+        {"id": "9_phy_ch5_long_2", "questionText": "State and explain the law of conservation of energy. Describe various forms of energy with examples.", "difficulty": "medium", "marks": 10},
+        {"id": "9_phy_ch5_long_3", "questionText": "Explain renewable and non-renewable energy sources. Discuss the advantages and disadvantages of solar energy.", "difficulty": "medium", "marks": 10}
+      ]
+    },
+    {
+      "id": "9_phy_ch6",
+      "number": 6,
+      "name": "Properties of Matter",
+      "mcqs": [
+        {"id": "9_phy_ch6_mcq_1", "questionText": "A wire is stretched by a weight w. If the diameter of the wire is reduced to half of its previous value, the extension will become:", "options": ["one half", "double", "one fourth", "four times"], "correctOption": 3, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch6_mcq_2", "questionText": "Four wires of the same material are stretched by the same load. Their dimensions are given below. Which of them will elongate most?", "options": ["Length 1 m, diameter 1 mm", "Length 2 m, diameter 2 mm", "Length 3 m, diameter 3 mm", "Length 4 m, diameter 0.5 mm"], "correctOption": 3, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch6_mcq_3", "questionText": "Two metal plates of area 2 and 3 square metres are placed in a liquid at the same depth. The ratio of pressures on the two plates is:", "options": ["1:1", "√2 : √3", "2:3", "4:9"], "correctOption": 0, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch6_mcq_4", "questionText": "The pressure at any point in a liquid is proportional to:", "options": ["density of the liquid", "depth of the point below the surface", "acceleration due to gravity", "all of the above"], "correctOption": 3, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch6_mcq_5", "questionText": "Pressure applied to an enclosed fluid is:", "options": ["increased and applied to every part", "diminished and transmitted to walls", "increased proportional to mass", "transmitted unchanged to every portion and walls"], "correctOption": 3, "difficulty": "medium", "marks": 1},
+        {"id": "9_phy_ch6_mcq_6", "questionText": "The principle of a hydraulic press is based on:", "options": ["Hooke's law", "Pascal's law", "Conservation of energy", "Conservation of momentum"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch6_mcq_7", "questionText": "When a spring is compressed, what form of energy does it possess?", "options": ["Kinetic", "Potential", "Internal", "Heat"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch6_mcq_8", "questionText": "What is the force exerted by atmosphere on a rectangular block surface of length 50 cm and breadth 40 cm? Atmospheric pressure is 100 kPa.", "options": ["20 kN", "100 kN", "200 kN", "500 kN"], "correctOption": 0, "difficulty": "hard", "marks": 1},
+        {"id": "9_phy_ch6_mcq_9", "questionText": "The property of material to return to its original shape after removal of deforming force is called:", "options": ["plasticity", "elasticity", "ductility", "malleability"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch6_mcq_10", "questionText": "Beyond elastic limit, the change becomes:", "options": ["temporary", "permanent", "reversible", "elastic"], "correctOption": 1, "difficulty": "easy", "marks": 1},
+        {"id": "9_phy_ch6_mcq_11", "questionText": "Hooke's law states that within elastic limit:", "options": ["stress ∝ strain", "force ∝ velocity", "extension ∝ mass", "force ∝ acceleration"], "correctOption": 0, "difficulty": "medium", "marks": 1}
+      ],
+      "shortQuestions": [
+        {"id": "9_phy_ch6_short_1", "questionText": "Define stress, strain and Hooke's law.", "difficulty": "easy", "marks": 5},
+        {"id": "9_phy_ch6_short_2", "questionText": "Explain pressure in liquids and state Pascal's law.", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch6_short_3", "questionText": "What is meant by elasticity? Define elastic limit.", "difficulty": "easy", "marks": 5},
+        {"id": "9_phy_ch6_short_4", "questionText": "Explain the working of a hydraulic press.", "difficulty": "medium", "marks": 5},
+        {"id": "9_phy_ch6_short_5", "questionText": "A wire of length 2 m is stretched by a load. If its length becomes 2.1 m, find the strain.", "difficulty": "medium", "marks": 5}
+      ],
+      "longQuestions": [
+        {"id": "9_phy_ch6_long_1", "questionText": "State and explain Hooke's law. Describe an experiment to verify it.", "difficulty": "medium", "marks": 10},
+        {"id": "9_phy_ch6_long_2", "questionText": "Explain pressure in fluids. State and prove Pascal's law. Describe applications of Pascal's law.", "difficulty": "hard", "marks": 10},
+        {"id": "9_phy_ch6_long_3", "questionText": "Explain the concepts of stress, strain and modulus of elasticity. Derive the formula for young's modulus.", "difficulty": "hard", "marks": 10}
       ]
     }
   ]
