@@ -82,9 +82,11 @@ export default function ChaptersClient() {
         setSubject(subjectName as "Physics" | "Chemistry" | "Biology" | "Mathematics" | "Computer" | "English");
       }
 
-      // Load chapters
-      const chapterData = getChaptersForSubject(classId, subjectName);
-      const counts = getChapterQuestionCounts(classId, subjectName);
+      // Load chapters (async)
+      const [chapterData, counts] = await Promise.all([
+        getChaptersForSubject(classId, subjectName),
+        getChapterQuestionCounts(classId, subjectName)
+      ]);
 
       // Combine chapter data with counts
       const chaptersWithCounts = chapterData.map((chapter) => {
@@ -153,30 +155,30 @@ export default function ChaptersClient() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--background-primary)' }}>
       <MainLayout showBottomNav topSafe={false}>
         <div className="relative z-10 min-h-screen flex flex-col">
           {/* App Bar */}
           <div className="fixed top-0 left-0 right-0 z-50">
             {/* Safe Area Background */}
-            <div className="absolute inset-0 bg-white/90 backdrop-blur-xl border-b border-white/50" />
+            <div className="absolute inset-0 backdrop-blur-xl border-b border-[#2A2A2A]" style={{ backgroundColor: 'var(--background-primary)' }} />
 
             <div className="mx-auto max-w-[428px] relative pt-safe">
               <div className="px-4 h-14 flex items-center justify-between">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                  className="h-10 w-10 rounded-[12px] hover:bg-[#2A2A2A]"
                   onClick={handleBack}
                 >
-                  <ArrowLeft className="w-5 h-5 text-gray-700" />
+                  <ArrowLeft className="w-5 h-5 text-white" />
                 </Button>
-                <h1 className="font-bold text-lg text-gray-900">{subjectName}</h1>
+                <h1 className="font-bold text-lg text-white">{subjectName}</h1>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={handleSelectAll}
-                  className="text-[#1E88E5] hover:bg-[#1E88E5]/10 font-medium"
+                  className="text-[#B9FF66] hover:bg-[#B9FF66]/10 font-medium"
                 >
                   {isAllSelected ? (
                     <>
@@ -204,19 +206,19 @@ export default function ChaptersClient() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4 }}
-              className="relative overflow-hidden bg-gradient-to-b from-[#1E88E5] to-[#1565C0] rounded-b-[32px] px-6 pt-6 pb-8 text-white mb-6"
+              className="relative overflow-hidden bg-gradient-to-b from-[#1A1A1A] to-[#0A0A0A] rounded-b-[32px] px-6 pt-6 pb-8 text-white mb-6 border border-[#2A2A2A]"
             >
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <p className="text-white/80 text-sm font-medium mb-1">Class {classId}</p>
+                  <p className="text-[#A0A0A0] text-sm font-medium mb-1">Class {classId}</p>
                   <h2 className="text-2xl font-bold">{subjectName}</h2>
                 </div>
-                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
-                  <span className="text-xl font-bold">{chapters.length}</span>
+                <div className="w-12 h-12 rounded-2xl bg-[#2A2A2A] flex items-center justify-center border border-[#2A2A2A]">
+                  <span className="text-xl font-bold text-[#B9FF66]">{chapters.length}</span>
                 </div>
               </div>
 
-              <div className="flex gap-2 text-xs text-white/80 bg-white/10 rounded-xl p-3 border border-white/20">
+              <div className="flex gap-2 text-xs text-[#A0A0A0] bg-[#2A2A2A] rounded-xl p-3 border border-[#2A2A2A]">
                 <Breadcrumb steps={breadcrumbSteps} className="text-white" variant="hero" />
               </div>
             </motion.div>

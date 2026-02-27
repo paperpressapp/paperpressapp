@@ -17,3 +17,4 @@ export { DifficultyBadge } from "./DifficultyBadge";
 export { McqOptions } from "./McqOptions";
 export { GeneratingOverlay } from "./GeneratingOverlay";
 export { QuestionPickerModal } from "./QuestionPickerModal";
+export { PatternQuestionSelector } from "./PatternQuestionSelector";

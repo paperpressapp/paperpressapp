@@ -3,33 +3,39 @@ import type { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'com.paperpress.app',
   appName: 'PaperPress',
-  webDir: 'out',
+
+  // Required but not used since we load remote URL
+  webDir: 'dist',
+
   server: {
-    androidScheme: 'https',
     url: 'https://paperpressapp.vercel.app',
     cleartext: false,
+    androidScheme: 'https',
   },
+
   plugins: {
     SplashScreen: {
-      launchShowDuration: 0,
-      launchAutoHide: false,
+      launchShowDuration: 2000,
+      launchAutoHide: true,
       showSpinner: false,
-      backgroundColor: '#1565C0',
+      backgroundColor: '#1E88E5',
       androidSplashResourceName: 'splash',
       androidScaleType: 'CENTER_CROP',
-      launchFadeOutDuration: 500,
+      launchFadeOutDuration: 300,
     },
     StatusBar: {
       style: 'LIGHT',
-      backgroundColor: '#1565C0',
+      backgroundColor: '#1E88E5',
+      overlayWebview: false,
     },
     Keyboard: {
       resize: 'body',
       resizeOnFullScreen: true,
     },
   },
+
   android: {
-    backgroundColor: '#1565C0',
+    backgroundColor: '#1E88E5',
   },
 };
 

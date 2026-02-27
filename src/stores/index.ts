@@ -14,3 +14,6 @@ export { useUserStore } from './userStore';
 // Auth Store - Supabase authentication
 export { useAuthStore, initializeAuth, cleanupAuth } from './authStore';
 export type { Profile, UserRole } from './authStore';
+
+// Theme Store - Light/dark theme toggle
+export { useThemeStore } from './themeStore';

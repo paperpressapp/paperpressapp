@@ -16,6 +16,15 @@ const supabaseAdmin = createClient(
     }
 );
 
+function generateCode(): string {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let code = 'PP';
+    for (let i = 0; i < 6; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return code;
+}
+
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
@@ -48,6 +57,7 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'Failed to create account' }, { status: 500 });
         }
 
+        // Create profile
         const { error: profileError } = await supabaseAdmin.from('profiles').upsert({
             id: data.user.id,
             email: email.toLowerCase().trim(),
@@ -60,12 +70,29 @@ export async function POST(request: NextRequest) {
             logger.error('Profile creation error:', profileError);
         }
 
+        // Auto-generate welcome premium code for new user
+        const welcomeCode = generateCode();
+        const { error: codeError } = await supabaseAdmin.from('premium_codes').insert({
+            code: welcomeCode,
+            code_type: 'monthly',
+            duration_days: 30,
+            created_by: 'system_welcome',
+            is_active: true,
+            used_by: data.user.id,
+            used_at: new Date().toISOString(),
+        });
+
+        if (codeError) {
+            logger.error('Welcome code creation error:', codeError);
+        }
+
         return NextResponse.json({
             success: true,
             user: {
                 id: data.user.id,
                 email: data.user.email,
                 emailConfirmed: data.user.email_confirmed_at,
+                welcomeCode: welcomeCode,
             },
         });
     } catch (error) {

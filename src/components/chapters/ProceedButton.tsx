@@ -33,15 +33,15 @@ export function ProceedButton({ selectedCount, disabled, onProceed }: ProceedBut
       transition={{ delay: 0.2, type: "spring", stiffness: 300, damping: 30 }}
     >
       <div className="mx-auto max-w-[428px]">
-        <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-lg border border-gray-100 p-4">
+        <div className="bg-[var(--background-card)] backdrop-blur-xl rounded-2xl shadow-lg border border-[var(--border-color)] p-4">
           <Button
             onClick={onProceed}
             disabled={!isEnabled}
             className={cn(
               "w-full h-14 text-base font-semibold rounded-xl transition-all duration-200",
               isEnabled
-                ? "bg-gradient-to-r from-[#1E88E5] to-[#1565C0] hover:opacity-90 shadow-lg shadow-[#1E88E5]/30"
-                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                ? "bg-gradient-to-r from-[#B9FF66] to-[#22c55e] hover:opacity-90 shadow-lg shadow-[#B9FF66]/30 text-[#0A0A0A]"
+                : "bg-[var(--border-color)] text-[var(--text-secondary)] cursor-not-allowed"
             )}
           >
             <span>Continue to Questions</span>

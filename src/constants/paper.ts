@@ -58,3 +58,10 @@ export const DEFAULT_INSTRUCTIONS = [
   'Write your name and roll number on the answer sheet.',
   'Marks are indicated against each question.',
 ] as const;
+
+/** Default marks per question type (Punjab Board standard) */
+export const DEFAULT_MARKS = {
+  mcq: 1,
+  short: 2,
+  long: 5,
+} as const;

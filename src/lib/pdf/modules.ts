@@ -272,6 +272,13 @@ export function generateCSS(config: PDFConfig): string {
   return `
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    html, body {
+      width: 794px;
+      max-width: 794px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
     @page {
       size: A4;
       margin: ${margins.top}mm ${margins.right}mm ${margins.bottom}mm ${margins.left}mm;
@@ -550,14 +557,11 @@ export function generateCSS(config: PDFConfig): string {
 }
 
 export function generateKaTeXScript(): string {
-  // Use CDN in serverless (Vercel) for reliable loading
-  const useCDN = isServerless();
+  const katexJS = getKaTeXJS();
   
-  const katexJSTag = useCDN
-    ? `<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>`
-    : (getKaTeXJS()
-        ? `<script>${getKaTeXJS()}<\/script>`
-        : `<script src="lib/katex/katex.min.js" onerror="(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js';document.head.appendChild(s);}())"><\/script>`);
+  const katexJSTag = katexJS
+    ? `<script>${katexJS}<\/script>`
+    : `<script src="lib/katex/katex.min.js"><\/script>`;
 
   return `
     ${katexJSTag}
@@ -565,8 +569,14 @@ export function generateKaTeXScript(): string {
       (function() {
         function renderMath() {
           if (typeof katex === 'undefined') {
-            // CDN also failed — show plain text gracefully
-            console.warn('[KaTeX] Not loaded, math will show as plain text');
+            // CDN fallback if local file not found
+            var script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js';
+            script.onload = renderMath;
+            script.onerror = function() {
+              console.warn('[KaTeX] Not loaded, math will show as plain text');
+            };
+            document.head.appendChild(script);
             return;
           }
           var els = document.querySelectorAll('[data-katex]');
@@ -600,17 +610,8 @@ export function generateKaTeXScript(): string {
 }
 
 export function getKaTeXCSSTag(): string {
-  const useCDN = isServerless();
-  
-  // Use CDN in serverless for reliable loading
-  if (useCDN) {
-    return `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">`;
-  }
-  
-  const katexCSS = getKaTeXCSS(); // returns '' in browser, full CSS on server
+  const katexCSS = getKaTeXCSS();
   return katexCSS
     ? `<style>${katexCSS}</style>`
-    // Relative path works with Android base URL file:///android_asset/public/
-    // CDN onerror fallback for environments without the local file
-    : `<link rel="stylesheet" href="lib/katex/katex.min.css" onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css'">`;
+    : `<link rel="stylesheet" href="lib/katex/katex.min.css">`;
 }

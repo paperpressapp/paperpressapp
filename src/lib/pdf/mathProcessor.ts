@@ -124,8 +124,9 @@ export function escapeHtml(text: string): string {
     .replace(/'/g, '&#039;');
 }
 
-export function escapeAttr(str: string): string {
-  return str
+export function escapeAttr(str: unknown): string {
+  const s = String(str ?? '');
+  return s
     .replace(/&/g, '&amp;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');

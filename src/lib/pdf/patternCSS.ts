@@ -8,6 +8,13 @@ export function generatePatternCSS(): string {
   return `
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
+    html, body {
+      width: 794px;
+      max-width: 794px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
     @page {
       size: A4;
       margin: 13mm 13mm 13mm 13mm;
@@ -441,6 +448,113 @@ export function generatePatternCSS(): string {
         page-break-before: always;
         page-break-after: avoid;
       }
+    }
+
+    /* ════════════ OMR BUBBLE SHEET ════════════ */
+
+    .pp-page-break { page-break-before: always; }
+
+    .omr-sheet {
+      padding: 20px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .omr-header {
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+    }
+
+    .omr-header h3 {
+      font-size: 18px;
+      margin: 0 0 5px 0;
+      text-transform: uppercase;
+    }
+
+    .omr-header p {
+      font-size: 10px;
+      color: #666;
+      margin: 0;
+    }
+
+    .omr-info {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 15px;
+      font-size: 11px;
+    }
+
+    .omr-field {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .omr-field span { font-weight: bold; }
+
+    .omr-line {
+      width: 100px;
+      border-bottom: 1px solid #333;
+    }
+
+    .omr-instructions {
+      font-size: 10px;
+      margin-bottom: 15px;
+      padding: 8px;
+      background: #f5f5f5;
+      border-radius: 4px;
+    }
+
+    .omr-bubbles-container {
+      border: 1px solid #333;
+      padding: 10px;
+    }
+
+    .omr-row {
+      display: flex;
+      align-items: center;
+      padding: 4px 0;
+      border-bottom: 0.5pt solid #ddd;
+    }
+
+    .omr-range {
+      width: 45px;
+      font-size: 9px;
+      font-weight: bold;
+      color: #666;
+    }
+
+    .omr-q {
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+    }
+
+    .omr-num {
+      width: 20px;
+      font-size: 9px;
+      text-align: right;
+      margin-right: 5px;
+    }
+
+    .omr-bubbles {
+      display: flex;
+      gap: 3px;
+    }
+
+    .omr-letter {
+      width: 12px;
+      font-size: 8px;
+      text-align: center;
+    }
+
+    .omr-circle {
+      width: 14px;
+      height: 14px;
+      border: 1px solid #333;
+      border-radius: 50%;
+      display: inline-block;
     }
   `;
 }

@@ -30,6 +30,7 @@ export interface PaperTemplateData {
   longs: LongQuestion[];
   customHeader?: string;
   showLogo?: boolean;
+  showWatermark?: boolean;
   showBubbles?: boolean;
   attemptRules?: {
     shortAttempt?: number;
@@ -92,13 +93,15 @@ export function generatePaperTemplate(data: PaperTemplateData): TemplateResult {
     config
   );
 
+  const watermarkHtml = data.showWatermark !== false ? `<div class="watermark">PaperPress App - paperpressapp@gmail.com</div>` : '';
+  
   const bodyContent = `
     ${headerModule}
     ${mcqSection}
     <div class="page-break"></div>
     ${shortSection}
     ${longSection}
-    <div class="watermark">PaperPress App - paperpressapp@gmail.com</div>
+    ${watermarkHtml}
   `;
 
   const estimatedPageCount = estimatePageCount(data, marks);
@@ -107,6 +110,7 @@ export function generatePaperTemplate(data: PaperTemplateData): TemplateResult {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=794, initial-scale=1.0, maximum-scale=1.0">
   <title>${escapeHtml(data.subject)} - Class ${escapeHtml(data.classId)}</title>
   ${getKaTeXCSSTag()}
   <style>

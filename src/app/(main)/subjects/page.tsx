@@ -15,16 +15,15 @@ import { SUBJECTS } from "@/constants/subjects";
 import { CLASSES } from "@/constants/classes";
 import { usePaperStore } from "@/stores";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 // Subject icons mapping
 const subjectIcons: Record<string, React.ReactNode> = {
-  physics: <Atom className="w-8 h-8" />,
-  chemistry: <FlaskConical className="w-8 h-8" />,
-  biology: <Leaf className="w-8 h-8" />,
-  mathematics: <Calculator className="w-8 h-8" />,
-  computer: <Laptop className="w-8 h-8" />,
-  english: <BookText className="w-8 h-8" />,
+  physics: <Atom className="w-5 h-5" />,
+  chemistry: <FlaskConical className="w-5 h-5" />,
+  biology: <Leaf className="w-5 h-5" />,
+  mathematics: <Calculator className="w-5 h-5" />,
+  computer: <Laptop className="w-5 h-5" />,
+  english: <BookText className="w-5 h-5" />,
 };
 
 export default function SubjectsPage() {
@@ -58,176 +57,134 @@ export default function SubjectsPage() {
   const selectedSubject = SUBJECTS.find((s) => s.id === selectedSubjectId);
 
   return (
-    <MainLayout showBottomNav className="bg-gray-50" topSafe={false}>
-      <div className="min-h-screen flex flex-col">
-          <header className="fixed top-0 left-0 right-0 z-50">
-            {/* Safe Area Background */}
-            <div className="absolute inset-0 bg-white/90 backdrop-blur-xl border-b border-gray-100" />
-
-            <div className="mx-auto max-w-[428px] relative pt-safe">
-              <div className="px-4 h-14 flex items-center justify-between">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-10 w-10 rounded-xl hover:bg-gray-100"
-                  onClick={handleBack}
-                >
-                  <ArrowLeft className="w-5 h-5 text-gray-700" />
-                </Button>
-                <h1 className="font-bold text-lg text-gray-900">Select Subject</h1>
-                <div className="w-10" />
-              </div>
-            </div>
-          </header>
-
-          <ScrollView
-            className="flex-1"
-            style={{ paddingTop: 'calc(56px + env(safe-area-inset-top, 0px))' }}
+    <MainLayout showBottomNav className="bg-[#0A0A0A]">
+      <header className="bg-[#0A0A0A] border-b border-[#2A2A2A] sticky top-0 z-50">
+        <div className="max-w-md mx-auto px-4 h-12 flex items-center justify-between">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8"
+            onClick={handleBack}
           >
-            <div className="px-5 py-6">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg shadow-[#1E88E5]/30">
-                  <BookOpen className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-xl font-bold text-gray-900">Select Subject</h2>
-                  <p className="text-sm text-gray-500">Choose a subject to create paper</p>
-                </div>
-              </div>
-            </div>
+            <ArrowLeft className="w-4 h-4 text-white" />
+          </Button>
+          <h1 className="font-bold text-base text-white">Select Subject</h1>
+          <div className="w-8" />
+        </div>
+      </header>
 
-            <div className="px-5 pb-6">
-              <div className="grid grid-cols-2 gap-4">
-                {SUBJECTS.map((subject, index) => (
-                  <button
-                    key={subject.id}
-                    onClick={() => handleSubjectClick(subject.id)}
-                    className="group bg-white rounded-2xl p-5 border border-gray-100 shadow-sm active:scale-[0.98] transition-transform text-left"
-                  >
+      <ScrollView className="flex-1 pb-20">
+        <div className="px-4 pt-4">
+          <div className="flex items-center gap-2 mb-3">
+            <BookOpen className="w-5 h-5 text-[#B9FF66]" />
+            <h2 className="text-base font-bold text-white">Select Subject</h2>
+          </div>
+        </div>
+
+          <div className="px-4 pb-4">
+            <div className="grid grid-cols-2 gap-3">
+              {SUBJECTS.map((subject) => (
+                <Button
+                  key={subject.id}
+                  variant="ghost"
+                  onClick={() => handleSubjectClick(subject.id)}
+                  className="group justify-start h-auto bg-[#1A1A1A] rounded-[20px] p-4 border border-[#2A2A2A] shadow-[0px_8px_24px_rgba(0,0,0,0.4)] active:scale-[0.98] transition-all text-left"
+                >
+                <div
+                  className="w-10 h-10 rounded-[12px] flex items-center justify-center mb-2"
+                  style={{
+                    backgroundColor: `${subject.color}20`,
+                    color: subject.color
+                  }}
+                >
+                  {subjectIcons[subject.id]}
+                </div>
+                <h3 className="font-semibold text-sm text-white">{subject.name}</h3>
+                <p className="text-xs text-[#A0A0A0] mt-0.5">{subject.chapterCount} Chapters</p>
+              </Button>
+            ))}
+          </div>
+        </div>
+      </ScrollView>
+
+      {/* Class Selection Popup */}
+      <AnimatePresence>
+        {showClassPopup && selectedSubject && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <motion.div
+              className="absolute inset-0 bg-black/50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowClassPopup(false)}
+            />
+            <motion.div
+              className="relative bg-[#1A1A1A] rounded-[20px] w-full max-w-sm overflow-hidden border border-[#2A2A2A] shadow-[0px_8px_32px_rgba(0,0,0,0.5)]"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+            >
+              <div className="p-4 border-b border-[#2A2A2A]">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
                     <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-3 shadow-md"
+                      className="w-10 h-10 rounded-[12px] flex items-center justify-center"
                       style={{
-                        backgroundColor: `${subject.color}20`,
-                        color: subject.color
+                        backgroundColor: selectedSubject ? `${selectedSubject.color}20` : '#2A2A2A',
+                        color: selectedSubject?.color || '#A0A0A0'
                       }}
                     >
-                      {subjectIcons[subject.id]}
+                      {selectedSubject ? subjectIcons[selectedSubject.id] : null}
                     </div>
-
-                    <h3 className="font-semibold text-gray-900 text-sm">{subject.name}</h3>
-                    <p className="text-xs text-gray-500 mt-1">{subject.chapterCount} Chapters</p>
-
-                    <ChevronRight className="absolute top-4 right-4 w-4 h-4 text-gray-300" />
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom Spacer */}
-            <div className="h-24" />
-          </ScrollView>
-
-          {/* Class Selection Popup */}
-          <AnimatePresence>
-            {showClassPopup && selectedSubject && (
-              <div className="fixed inset-0 z-[100]">
-                {/* Backdrop */}
-                <motion.div
-                  className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  onClick={() => setShowClassPopup(false)}
-                />
-
-                {/* Popup */}
-                <div className="absolute inset-x-0 bottom-0 flex items-end justify-center sm:items-center">
-                  <motion.div
-                    className="w-full max-w-[428px] bg-white rounded-t-[32px] sm:rounded-[32px] max-h-[85vh] sm:max-h-[80vh] flex flex-col overflow-hidden shadow-2xl"
-                    initial={{ y: "100%", opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: "100%", opacity: 0 }}
-                    transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {/* Handle */}
-                    <div className="flex justify-center pt-4 pb-2 bg-white shrink-0">
-                      <div className="w-12 h-1.5 rounded-full bg-gray-200" />
+                    <div>
+                      <h3 className="font-bold text-base text-white">{selectedSubject?.name}</h3>
+                      <p className="text-xs text-[#A0A0A0]">Select your class</p>
                     </div>
-
-                    {/* Header */}
-                    <div className="px-6 pb-4 border-b border-gray-100 bg-white shrink-0">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div
-                            className="w-12 h-12 rounded-2xl flex items-center justify-center"
-                            style={{
-                              backgroundColor: `${selectedSubject.color}15`,
-                              color: selectedSubject.color
-                            }}
-                          >
-                            {subjectIcons[selectedSubject.id]}
-                          </div>
-                          <div>
-                            <h3 className="font-bold text-xl text-gray-900">{selectedSubject.name}</h3>
-                            <p className="text-sm text-gray-500">Select your class</p>
-                          </div>
-                        </div>
-                        <button
-                          onClick={() => setShowClassPopup(false)}
-                          className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
-                        >
-                          <X className="w-5 h-5 text-gray-600" />
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Class Options */}
-                    <div className="p-6 flex-1 overflow-y-auto">
-                      <p className="text-sm font-medium text-gray-500 mb-4">Available Classes</p>
-                      <div className="grid grid-cols-2 gap-3">
-                        {CLASSES.map((classInfo) => (
-                          <motion.button
-                            key={classInfo.id}
-                            onClick={() => handleClassSelect(classInfo.id)}
-                            className="group relative bg-gray-50 hover:bg-[#1E88E5] rounded-2xl p-5 border-2 border-transparent hover:border-[#1E88E5] transition-all text-left"
-                            whileTap={{ scale: 0.98 }}
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 rounded-xl bg-white group-hover:bg-white/20 flex items-center justify-center text-lg font-bold text-gray-700 group-hover:text-white transition-colors">
-                                {classInfo.id.replace(/\D/g, "")}
-                              </div>
-                              <div>
-                                <p className="font-bold text-gray-900 group-hover:text-white transition-colors">
-                                  {classInfo.name}
-                                </p>
-                                <p className="text-xs text-gray-500 group-hover:text-white/70 transition-colors">
-                                  {classInfo.subjectCount} Subjects
-                                </p>
-                              </div>
-                            </div>
-                            <ChevronRight className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-300 group-hover:text-white/50 transition-colors" />
-                          </motion.button>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Footer */}
-                    <div className="px-6 pb-6 bg-white shrink-0">
-                      <Button
-                        variant="outline"
-                        onClick={() => setShowClassPopup(false)}
-                        className="w-full h-14 rounded-xl border-2 border-gray-200 font-semibold text-gray-700"
-                      >
-                        Cancel
-                      </Button>
-                    </div>
-                  </motion.div>
+                  </div>
+                  <Button variant="ghost" size="icon" onClick={() => setShowClassPopup(false)} className="h-8 w-8 rounded-[12px]">
+                    <X className="w-4 h-4 text-[#A0A0A0]" />
+                  </Button>
                 </div>
               </div>
-            )}
-          </AnimatePresence>
-      </div>
+
+              <div className="p-4">
+                <p className="text-xs font-medium text-[#A0A0A0] mb-3">Available Classes</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {CLASSES.map((classInfo) => (
+                    <motion.button
+                      key={classInfo.id}
+                      onClick={() => handleClassSelect(classInfo.id)}
+                      className="group bg-[#2A2A2A] hover:bg-[#B9FF66] rounded-[12px] p-3 border border-transparent hover:border-[#B9FF66] transition-all text-left"
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-[8px] bg-[#1A1A1A] group-hover:bg-[#0A0A0A]/20 flex items-center justify-center text-sm font-bold text-white group-hover:text-[#0A0A0A] transition-colors">
+                          {classInfo.id.replace(/\D/g, "")}
+                        </div>
+                        <div>
+                          <p className="font-bold text-sm text-white group-hover:text-[#0A0A0A] transition-colors">
+                            {classInfo.name}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-4 border-t border-[#2A2A2A]">
+                <Button
+                  variant="outline"
+                  onClick={() => setShowClassPopup(false)}
+                  className="w-full h-10 rounded-[40px] border border-[#2A2A2A] font-medium text-white text-sm bg-transparent hover:bg-[#2A2A2A]"
+                >
+                  Cancel
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </MainLayout>
   );
 }

@@ -25,10 +25,10 @@ export default function WelcomePage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#1565C0] via-[#1976D2] to-[#1E88E5] flex items-center justify-center">
+      <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center">
         <div className="flex flex-col items-center">
-          <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mb-4">
-            <svg className="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <div className="w-16 h-16 rounded-[20px] bg-[#B9FF66] flex items-center justify-center mb-4">
+            <svg className="w-10 h-10 text-[#0A0A0A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
               <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
             </svg>
@@ -37,7 +37,7 @@ export default function WelcomePage() {
             {[0, 1, 2].map((i) => (
               <motion.div
                 key={i}
-                className="w-2 h-2 rounded-full bg-white/60"
+                className="w-2 h-2 rounded-full bg-[#B9FF66]/60"
                 animate={{ scale: [1, 1.3, 1], opacity: [0.4, 1, 0.4] }}
                 transition={{ duration: 1, repeat: Infinity, delay: i * 0.15 }}
               />
@@ -49,10 +49,10 @@ export default function WelcomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1565C0] via-[#1976D2] to-[#1E88E5] flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center p-4 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-[#B9FF66]/5 blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-[#B9FF66]/5 blur-3xl" />
       </div>
 
       <motion.div
@@ -61,7 +61,7 @@ export default function WelcomePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="glass-panel rounded-2xl p-6 shadow-2xl bg-white/95 backdrop-blur-xl">
+        <div className="bg-[#1A1A1A] rounded-[20px] p-6 border border-[#2A2A2A] shadow-[0px_8px_32px_rgba(0,0,0,0.5)]">
           <motion.div
             className="text-center mb-6"
             initial={{ scale: 0.9, opacity: 0 }}
@@ -77,13 +77,13 @@ export default function WelcomePage() {
                   onError={() => setLogoError(true)}
                 />
               ) : (
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow-lg">
-                  <span className="text-2xl font-bold text-white">P</span>
+                <div className="w-14 h-14 rounded-[16px] bg-gradient-to-br from-[#B9FF66] to-[#22c55e] flex items-center justify-center shadow-lg">
+                  <span className="text-2xl font-bold text-[#0A0A0A]">P</span>
                 </div>
               )}
             </div>
-            <h1 className="text-lg font-bold text-gray-900">Welcome to PaperPress</h1>
-            <p className="text-gray-500 text-sm mt-1">Generate Perfect Papers in Seconds</p>
+            <h1 className="text-lg font-bold text-white">Welcome to PaperPress</h1>
+            <p className="text-[#A0A0A0] text-sm mt-1">Generate Perfect Papers in Seconds</p>
           </motion.div>
 
           <motion.div
@@ -95,7 +95,7 @@ export default function WelcomePage() {
             <Link href="/auth/login" className="block w-full">
               <Button
                 size="lg"
-                className="w-full h-12 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#1E88E5] to-[#1565C0] hover:opacity-90 shadow-lg shadow-[#1E88E5]/30 transition-all group"
+                className="w-full h-12 rounded-[40px] font-semibold text-sm bg-[#B9FF66] text-[#0A0A0A] hover:brightness-110 shadow-lg shadow-[#B9FF66]/30 transition-all group"
               >
                 <LogIn className="w-4 h-4 mr-2 group-hover:translate-x-0.5 transition-transform" />
                 Sign In
@@ -106,7 +106,7 @@ export default function WelcomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full h-12 rounded-xl font-semibold text-sm border-2 border-[#1E88E5] text-[#1E88E5] hover:bg-[#1E88E5]/5 transition-all group"
+                className="w-full h-12 rounded-[40px] font-semibold text-sm border-2 border-[#B9FF66] text-[#B9FF66] hover:bg-[#B9FF66]/10 transition-all group"
               >
                 <UserPlus className="w-4 h-4 mr-2 group-hover:scale-105 transition-transform" />
                 Create Account
@@ -115,15 +115,15 @@ export default function WelcomePage() {
           </motion.div>
 
           <div className="my-5 flex items-center gap-3">
-            <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-sm text-gray-400">or</span>
-            <div className="flex-1 h-px bg-gray-200" />
+            <div className="flex-1 h-px bg-[#2A2A2A]" />
+            <span className="text-sm text-[#A0A0A0]">or</span>
+            <div className="flex-1 h-px bg-[#2A2A2A]" />
           </div>
 
           <div className="text-center">
             <Link
               href="/home"
-              className="text-sm text-gray-500 hover:text-gray-700 inline-flex items-center gap-1"
+              className="text-sm text-[#A0A0A0] hover:text-[#B9FF66] inline-flex items-center gap-1"
             >
               Continue as Guest
               <ArrowRight className="w-4 h-4" />

@@ -4,6 +4,7 @@
  * SafeArea Component
  * 
  * Wrapper that adds safe area insets for notched devices.
+ * Uses CSS env() with fallbacks for older WebViews.
  */
 
 import { cn } from "@/lib/utils";
@@ -33,6 +34,12 @@ export function SafeArea({
         bottom && "pb-safe",
         className
       )}
+      style={{
+        paddingTop: top ? 'max(16px, env(safe-area-inset-top, 16px))' : undefined,
+        paddingBottom: bottom ? 'max(16px, env(safe-area-inset-bottom, 16px))' : undefined,
+        paddingLeft: 'max(16px, env(safe-area-inset-left, 16px))',
+        paddingRight: 'max(16px, env(safe-area-inset-right, 16px))',
+      }}
     >
       {children}
     </div>

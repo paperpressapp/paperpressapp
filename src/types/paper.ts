@@ -24,6 +24,7 @@ export interface PaperSettings {
   customHeader?: string;
   customSubHeader?: string;
   showLogo?: boolean;
+  showWatermark?: boolean;
   customMarks: CustomMarks;
   includeAnswerSheet: boolean;
   includeMarkingScheme: boolean;
@@ -59,6 +60,7 @@ export interface GeneratedPaper {
   instituteName: string;
   instituteLogo?: string | null;
   showLogo?: boolean;
+  showWatermark?: boolean;
   customHeader?: string;
   customSubHeader?: string;
   includeAnswerSheet?: boolean;
@@ -69,6 +71,7 @@ export interface GeneratedPaper {
   instituteEmail?: string;
   institutePhone?: string;
   instituteWebsite?: string;
+  includeBubbleSheet?: boolean;
 }
 
 export interface PaperData {

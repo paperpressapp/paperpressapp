@@ -9,7 +9,7 @@
 import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Filter, FileText, Plus, ArrowLeft } from "lucide-react";
+import { Search, FileText, Plus, ArrowLeft, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MainLayout, ScrollView } from "@/components/layout";
@@ -19,6 +19,9 @@ import { useDebounce, useToast } from "@/hooks";
 import { getPapers, deletePaper } from "@/lib/storage/papers";
 import { fetchAndDownloadPDF } from "@/lib/pdf/download";
 import { getQuestionsByIds } from "@/data";
+import { Capacitor } from '@capacitor/core';
+import { Share } from '@capacitor/share';
+import { DEFAULT_MARKS } from "@/constants/paper";
 import type { GeneratedPaper, MCQQuestion, ShortQuestion, LongQuestion } from "@/types";
 
 export default function MyPapersPage() {
@@ -93,7 +96,7 @@ export default function MyPapersPage() {
       const shorts: ShortQuestion[] = [];
       const longs: LongQuestion[] = [];
 
-      const allQuestions = getQuestionsByIds(
+      const allQuestions = await getQuestionsByIds(
         paper.classId,
         paper.subject,
         [...paper.mcqIds, ...paper.shortIds, ...paper.longIds]
@@ -120,6 +123,7 @@ export default function MyPapersPage() {
         customHeader: paper.customHeader || '',
         customSubHeader: paper.customSubHeader || '',
         showLogo: paper.showLogo && !!paper.instituteLogo,
+        customMarks: paper.customMarks || { ...DEFAULT_MARKS },
       };
 
       const result = await fetchAndDownloadPDF(settings, mcqs, shorts, longs);
@@ -136,8 +140,23 @@ export default function MyPapersPage() {
 
   // Handle share
   const handleShare = useCallback(async (paper: GeneratedPaper) => {
-    toast.info("Share feature coming soon!");
-  }, [toast]);
+    const text = `${paper.title}\nClass: ${paper.classId} | Subject: ${paper.subject}\nMarks: ${paper.totalMarks} | Questions: ${paper.questionCount}\n\nCreated with PaperPress`;
+
+    try {
+      if (Capacitor.isNativePlatform()) {
+        await Share.share({
+          title: paper.title,
+          text,
+          dialogTitle: 'Share Paper',
+        });
+      } else {
+        const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank');
+      }
+    } catch {
+      // User cancelled
+    }
+  }, []);
 
   // Handle delete
   const handleDelete = useCallback((paperId: string) => {
@@ -156,12 +175,12 @@ export default function MyPapersPage() {
   }
 
   return (
-    <MainLayout showBottomNav className="bg-gray-50" topSafe={false}>
+    <MainLayout showBottomNav className="bg-[#0A0A0A]" topSafe={false}>
       <div className="min-h-screen pb-24">
           {/* App Bar */}
           <div className="fixed top-0 left-0 right-0 z-50">
             {/* Safe Area Background */}
-            <div className="absolute inset-0 bg-white/90 backdrop-blur-xl border-b border-gray-100" />
+            <div className="absolute inset-0 bg-[#0A0A0A]/90 backdrop-blur-xl border-b border-[#2A2A2A]" />
 
             <div className="mx-auto max-w-[428px] relative pt-safe">
               <div className="px-4 h-14 flex items-center justify-between">
@@ -169,29 +188,21 @@ export default function MyPapersPage() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                    className="h-10 w-10 rounded-[12px] hover:bg-[#2A2A2A]"
                     onClick={() => router.push("/home")}
                   >
-                    <ArrowLeft className="w-5 h-5 text-gray-700" />
+                    <ArrowLeft className="w-5 h-5 text-white" />
                   </Button>
-                  <h1 className="font-bold text-lg text-gray-900">My Papers</h1>
+                  <h1 className="font-bold text-lg text-white">My Papers</h1>
                 </div>
                 <div className="flex items-center gap-1">
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-10 w-10 rounded-xl hover:bg-gray-100"
+                    className="h-10 w-10 rounded-[12px] hover:bg-[#2A2A2A]"
                     onClick={showSearch ? () => setShowSearch(false) : handleShowSearch}
                   >
-                    <Search className="w-5 h-5 text-gray-700" />
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-10 w-10 rounded-xl hover:bg-gray-100"
-                    onClick={() => toast.info("Filters coming soon!")}
-                  >
-                    <Filter className="w-5 h-5 text-gray-700" />
+                    <Search className="w-5 h-5 text-white" />
                   </Button>
                 </div>
               </div>
@@ -202,7 +213,7 @@ export default function MyPapersPage() {
           <AnimatePresence>
             {showSearch && (
               <motion.div
-                className="fixed left-0 right-0 z-40 px-4 py-3 bg-white/95 backdrop-blur-xl border-b border-gray-100"
+                className="fixed left-0 right-0 z-40 px-4 py-3 bg-[#0A0A0A]/95 backdrop-blur-xl border-b border-[#2A2A2A]"
                 style={{ top: 'calc(56px + env(safe-area-inset-top, 0px))' }}
                 initial={{ height: 0, opacity: 0, y: -10 }}
                 animate={{ height: "auto", opacity: 1, y: 0 }}
@@ -210,13 +221,13 @@ export default function MyPapersPage() {
               >
                 <div className="mx-auto max-w-[428px]">
                   <div className="relative">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0A0A0]" />
                     <Input
                       ref={searchInputRef}
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder="Search papers..."
-                      className="pl-10 h-12 rounded-xl border-gray-200 bg-gray-50 text-sm"
+                      className="pl-10 h-12 rounded-[12px] border-[#2A2A2A] bg-[#1A1A1A] text-sm text-white"
                     />
                     {searchQuery && (
                       <Button
@@ -249,15 +260,15 @@ export default function MyPapersPage() {
               animate={{ opacity: 1, y: 0 }}
               className="px-4 py-3"
             >
-              <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+              <div className="bg-[#1A1A1A] rounded-[20px] p-4 border border-[#2A2A2A] shadow-[0px_8px_24px_rgba(0,0,0,0.4)]">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center shadow">
-                      <FileText className="w-4 h-4 text-white" />
+                    <div className="w-9 h-9 rounded-[12px] bg-gradient-to-br from-[#B9FF66] to-[#22c55e] flex items-center justify-center shadow">
+                      <FileText className="w-4 h-4 text-[#0A0A0A]" />
                     </div>
                     <div>
-                      <p className="text-lg font-bold text-gray-900">{papers.length}</p>
-                      <p className="text-xs text-gray-500">Total Papers</p>
+                      <p className="text-lg font-bold text-white">{papers.length}</p>
+                      <p className="text-xs text-[#A0A0A0]">Total Papers</p>
                     </div>
                   </div>
                   <Button

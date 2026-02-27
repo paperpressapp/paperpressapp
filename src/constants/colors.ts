@@ -66,7 +66,7 @@ export const COLORS = {
   
   textPrimary: '#1E293B',
   textSecondary: '#64748B',
-  textMuted: '#94A3B8',
+  textMuted: '#6B7280',
 } as const;
 
 export const GRADIENTS = {

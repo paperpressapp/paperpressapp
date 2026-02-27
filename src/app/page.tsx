@@ -139,7 +139,7 @@ export default function SplashPage() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            Professional Exam Paper Generator
+            PaperPress By Hamza Khan.
           </motion.p>
         </div>
       </motion.div>

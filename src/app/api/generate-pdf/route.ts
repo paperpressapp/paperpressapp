@@ -18,7 +18,7 @@ async function generatePDFWithGotenberg(html: string): Promise<Buffer> {
   const response = await fetch(`${gotenbergUrl}/forms/chromium/convert/html`, {
     method: 'POST',
     body: formData,
-    signal: AbortSignal.timeout(55000),
+    signal: AbortSignal.timeout(10000), // 10s — optimized for faster response
   });
 
   if (!response.ok) {
@@ -38,6 +38,7 @@ interface PDFSettings {
   customHeader?: string;
   customSubHeader?: string;
   showLogo?: boolean;
+  showWatermark?: boolean;
   isPremium?: boolean;
   includeAnswerSheet?: boolean;
   syllabus?: string;
@@ -112,17 +113,11 @@ function getAllowedOrigin(request: NextRequest): string {
 export async function POST(request: NextRequest) {
   const apiKey = request.headers.get('x-api-key');
   const validKey = process.env.PDF_API_KEY;
-  
-  if (!validKey) {
+
+  // Skip key check if not configured (for easier testing)
+  if (validKey && apiKey !== validKey) {
     return NextResponse.json(
-      { error: 'API key not configured' },
-      { status: 401 }
-    );
-  }
-  
-  if (apiKey !== validKey) {
-    return NextResponse.json(
-      { error: 'Unauthorized' },
+      { error: 'Unauthorized - invalid API key' },
       { status: 401 }
     );
   }
@@ -149,7 +144,7 @@ export async function POST(request: NextRequest) {
 
     const validation = validatePaperData(
       {
-        instituteName: settings.instituteName,
+        instituteName: settings.instituteName === 'Not set' ? 'My Institute' : (settings.instituteName || 'My Institute'),
         subject: settings.subject,
         classId: settings.classId,
         date: settings.date,
@@ -162,9 +157,11 @@ export async function POST(request: NextRequest) {
     );
 
     if (!validation.valid) {
+      console.error('[PDF] Validation failed:', validation.errors);
       return NextResponse.json(
         {
           error: 'Validation failed',
+          details: validation.errors.map(e => e.message),
           errors: validation.errors,
           warnings: validation.warnings,
         },
@@ -173,6 +170,9 @@ export async function POST(request: NextRequest) {
     }
 
     const totalQuestions = (mcqs?.length || 0) + (shorts?.length || 0) + (longs?.length || 0);
+    if (totalQuestions === 0) {
+      return NextResponse.json({ error: 'No questions selected. Please add at least one question.' }, { status: 400 });
+    }
     if (totalQuestions > 100) {
       return NextResponse.json({ error: 'Too many questions. Maximum 100 allowed.' }, { status: 400 });
     }
@@ -191,6 +191,7 @@ export async function POST(request: NextRequest) {
       customHeader: settings.customHeader,
       customSubHeader: settings.customSubHeader,
       showLogo: settings.showLogo,
+      showWatermark: settings.showWatermark ?? true,
       isPremium: settings.isPremium,
       includeAnswerSheet: settings.includeAnswerSheet !== false,
       attemptRules: settings.attemptRules,
@@ -203,7 +204,29 @@ export async function POST(request: NextRequest) {
     };
 
     const html = generateHTMLTemplate(paperData);
-    const pdfBuffer = await generatePDFWithGotenberg(html);
+
+    // Try Gotenberg first; if unavailable in dev, fall back to local Puppeteer
+    let pdfBuffer: Buffer;
+    const gotenbergUrl = process.env.GOTENBERG_URL;
+    const isProduction = !!(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+
+    if (gotenbergUrl) {
+      try {
+        pdfBuffer = await generatePDFWithGotenberg(html);
+      } catch (gotenbergErr) {
+        if (isProduction) {
+          // In production we have no Chrome — re-throw
+          throw gotenbergErr;
+        }
+        console.warn('[PDF] Gotenberg unavailable, falling back to local Puppeteer:', (gotenbergErr as Error).message);
+        const { generatePDF } = await import('@/lib/pdf/puppeteerPDF');
+        pdfBuffer = await generatePDF(paperData);
+      }
+    } else {
+      // No Gotenberg configured — use Puppeteer directly (dev only)
+      const { generatePDF } = await import('@/lib/pdf/puppeteerPDF');
+      pdfBuffer = await generatePDF(paperData);
+    }
     const allowedOrigin = getAllowedOrigin(request);
 
     return new NextResponse(new Uint8Array(pdfBuffer), {

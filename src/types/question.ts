@@ -25,12 +25,12 @@ export type QuestionType = 'mcq' | 'short' | 'long';
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
 /**
- * Marks for each question type
+ * Marks for each question type (Punjab Board standard)
  */
 export const QUESTION_MARKS = {
   mcq: 1,
-  short: 5,
-  long: 10,
+  short: 2,
+  long: 5,
 } as const;
 
 /**

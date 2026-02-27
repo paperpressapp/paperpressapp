@@ -66,27 +66,31 @@ export function QuestionModal({
   useEffect(() => {
     if (!isOpen) return;
 
-    setIsLoading(true);
-    let loadedQuestions: Question[] = [];
+    const loadQuestions = async () => {
+      setIsLoading(true);
+      let loadedQuestions: Question[] = [];
 
-    switch (type) {
-      case "mcq":
-        loadedQuestions = getMcqsByChapterIds(classId, subject, chapterIds);
-        break;
-      case "short":
-        loadedQuestions = getShortsByChapterIds(classId, subject, chapterIds);
-        break;
-      case "long":
-        loadedQuestions = getLongsByChapterIds(classId, subject, chapterIds);
-        break;
-    }
+      switch (type) {
+        case "mcq":
+          loadedQuestions = await getMcqsByChapterIds(classId, subject, chapterIds);
+          break;
+        case "short":
+          loadedQuestions = await getShortsByChapterIds(classId, subject, chapterIds);
+          break;
+        case "long":
+          loadedQuestions = await getLongsByChapterIds(classId, subject, chapterIds);
+          break;
+      }
 
-    setQuestions(loadedQuestions);
+      setQuestions(loadedQuestions);
 
-    const chapterSet = new Set(loadedQuestions.map((q) => q.chapterName || ""));
-    setExpandedChapters(Array.from(chapterSet));
+      const chapterSet = new Set(loadedQuestions.map((q) => q.chapterName || ""));
+      setExpandedChapters(Array.from(chapterSet));
 
-    setIsLoading(false);
+      setIsLoading(false);
+    };
+
+    loadQuestions();
   }, [isOpen, type, classId, subject, chapterIds]);
 
   useEffect(() => {

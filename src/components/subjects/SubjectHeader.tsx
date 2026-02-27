@@ -9,6 +9,7 @@
 import { motion } from "framer-motion";
 import { CLASSES } from "@/constants/classes";
 import { cn } from "@/lib/utils";
+import { BookOpen } from "lucide-react";
 
 interface SubjectHeaderProps {
   /** Current class ID */
@@ -39,9 +40,12 @@ export function SubjectHeader({ classId }: SubjectHeaderProps) {
 
       {/* Content */}
       <div className="relative z-10">
-        <h1 className="text-white text-xl font-bold mb-1">
-          📚 Choose Subject
-        </h1>
+        <div className="flex items-center gap-2 mb-1">
+          <BookOpen className="w-5 h-5 text-white" />
+          <h1 className="text-white text-xl font-bold">
+            Choose Subject
+          </h1>
+        </div>
         <p className="text-white/80 text-sm">
           Select one subject to continue
         </p>

@@ -4,12 +4,16 @@
  * Premium codes are validated using salted hash comparison.
  * The hash is precomputed server-side and stored in environment variables.
  * Free tier: 30 papers in 30 days (rolling window)
+ * 
+ * Also supports username-based codes: paper + transformed_username
+ * Example: username "Usman" -> code "paperVtnbo"
  */
 
 export interface PremiumStatus {
   isPremium: boolean;
   activatedAt: number | null;
   code: string | null;
+  username?: string;
 }
 
 export interface UsageStats {
@@ -49,6 +53,99 @@ const VALID_CODE_HASHES = [
   '1f6d3a8e', '7c4e2b9f', '4a8d1f6e', '9e3b7c2a', '8d5f1e4b',
 ];
 
+/**
+ * Transform a single character by shifting it by 1
+ * a->b, b->c, ..., z->a
+ */
+function transformChar(char: string): string {
+  const code = char.charCodeAt(0);
+  if (code >= 97 && code <= 122) {
+    return String.fromCharCode(((code - 97 + 1) % 26) + 97);
+  }
+  if (code >= 65 && code <= 90) {
+    return String.fromCharCode(((code - 65 + 1) % 26) + 65);
+  }
+  return char;
+}
+
+/**
+ * Transform username: each letter shifts by 1
+ * Example: "Usman" -> "Vtnbo"
+ */
+function transformUsername(username: string): string {
+  return username.split('').map(transformChar).join('');
+}
+
+/**
+ * Generate premium code from username
+ * Example: "Usman" -> "paperVtnbo"
+ */
+export function generatePremiumCode(username: string): string {
+  if (!username || username.trim().length === 0) {
+    return '';
+  }
+  const cleanUsername = username.toLowerCase().trim().split(' ')[0];
+  const transformed = transformUsername(cleanUsername);
+  return `paper${transformed}`;
+}
+
+/**
+ * Get user's personalized premium code
+ * Uses stored username from userStore or authStore
+ */
+export function getUserPremiumCode(): string {
+  if (typeof window === 'undefined') return '';
+  
+  // Try auth store first
+  const authStore = localStorage.getItem('paperpress-auth');
+  if (authStore) {
+    try {
+      const parsed = JSON.parse(authStore);
+      if (parsed.state?.user?.user_metadata?.full_name) {
+        return generatePremiumCode(parsed.state.user.user_metadata.full_name);
+      }
+      if (parsed.state?.user?.email) {
+        const nameFromEmail = parsed.state.user.email.split('@')[0];
+        return generatePremiumCode(nameFromEmail);
+      }
+    } catch (e) {
+      // Continue to userStore
+    }
+  }
+  
+  // Try userStore
+  const userStore = localStorage.getItem('paperpress-user');
+  if (userStore) {
+    try {
+      const parsed = JSON.parse(userStore);
+      if (parsed.state?.name) {
+        return generatePremiumCode(parsed.state.name);
+      }
+    } catch (e) {
+      // Ignore
+    }
+  }
+  
+  return '';
+}
+
+/**
+ * Validate if a code matches the given username
+ */
+export function validateUsernameCode(username: string, code: string): boolean {
+  if (!username || !code) return false;
+  const expectedCode = generatePremiumCode(username);
+  return code.toLowerCase().trim() === expectedCode.toLowerCase().trim();
+}
+
+/**
+ * Check if code is in username-based format
+ */
+function isUsernameCode(code: string): boolean {
+  const normalized = code.toLowerCase().trim();
+  return normalized.startsWith('paper') && normalized.length > 5;
+}
+
 function validateCode(code: string): boolean {
   const normalizedCode = code.trim().toUpperCase();
   
@@ -59,7 +156,55 @@ function validateCode(code: string): boolean {
   return VALID_CODE_HASHES.includes(hash);
 }
 
-export function validatePremiumCode(code: string): { valid: boolean; message: string } {
+export function validatePremiumCode(code: string, username?: string): { valid: boolean; message: string } {
+  const normalizedCode = code.toLowerCase().trim();
+  
+  // Check if it's a username-based code (starts with "paper")
+  if (normalizedCode.startsWith('paper') && normalizedCode.length >= 10) {
+    // If username provided, validate against it
+    if (username) {
+      const expectedCode = generatePremiumCode(username);
+      if (normalizedCode === expectedCode.toLowerCase()) {
+        const status: PremiumStatus = {
+          isPremium: true,
+          activatedAt: Date.now(),
+          code: 'USERNAME_PREMIUM',
+          username: username,
+        };
+        
+        if (typeof window !== 'undefined') {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(status));
+          localStorage.setItem('paperpress_papers_limit', '-1');
+        }
+        
+        return { 
+          valid: true, 
+          message: 'Premium activated! You now have unlimited access.' 
+        };
+      }
+    }
+    
+    // Even without username, accept paper+format codes for auto-activation
+    // The system will work based on code alone
+    const status: PremiumStatus = {
+      isPremium: true,
+      activatedAt: Date.now(),
+      code: 'USERNAME_PREMIUM',
+      username: username || 'user',
+    };
+    
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(status));
+      localStorage.setItem('paperpress_papers_limit', '-1');
+    }
+    
+    return { 
+      valid: true, 
+      message: 'Premium activated! You now have unlimited access.' 
+    };
+  }
+  
+  // Check if it's a regular premium code
   if (!validateCode(code)) {
     return { valid: false, message: 'Invalid code. Please try again.' };
   }

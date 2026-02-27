@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider } from "@/components/auth/AuthProvider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -27,6 +28,7 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
   themeColor: "#1E88E5",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -36,9 +38,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable} data-scroll-behavior="smooth">
+      <head>
+        <link rel="preconnect" href="https://paperpressapp.vercel.app" />
+        <link rel="dns-prefetch" href="https://paperpressapp.vercel.app" />
+      </head>
       <body className={`${inter.className} antialiased`}>
         <AuthProvider>
-          {children}
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
         </AuthProvider>
         <Toaster
           position="top-center"

@@ -17,14 +17,17 @@
     {
       "name": "Chemistry",
       "chapters": [
-        { "id": "9_chem_ch1", "number": 1, "name": "Fundamentals of Chemistry" },
-        { "id": "9_chem_ch2", "number": 2, "name": "Structure of Atoms" },
-        { "id": "9_chem_ch3", "number": 3, "name": "Periodic Table and Periodicity of Properties" },
-        { "id": "9_chem_ch4", "number": 4, "name": "Structure of Molecules" },
-        { "id": "9_chem_ch5", "number": 5, "name": "Physical States of Matter" },
-        { "id": "9_chem_ch6", "number": 6, "name": "Solutions" },
-        { "id": "9_chem_ch7", "number": 7, "name": "Electrochemistry" },
-        { "id": "9_chem_ch8", "number": 8, "name": "Chemical Reactivity" }
+        { "id": "9_chem_ch1", "number": 1, "name": "States of Matter and Phase Changes" },
+        { "id": "9_chem_ch2", "number": 2, "name": "Atomic Structure" },
+        { "id": "9_chem_ch3", "number": 3, "name": "Chemical Bonding" },
+        { "id": "9_chem_ch4", "number": 4, "name": "Stoichiometry" },
+        { "id": "9_chem_ch5", "number": 5, "name": "Energetics" },
+        { "id": "9_chem_ch6", "number": 6, "name": "Equilibria" },
+        { "id": "9_chem_ch7", "number": 7, "name": "Acid Base Chemistry" },
+        { "id": "9_chem_ch8", "number": 8, "name": "Periodic Table and Periodicity" },
+        { "id": "9_chem_ch9", "number": 9, "name": "Group Properties and Elements" },
+        { "id": "9_chem_ch10", "number": 10, "name": "Environmental Chemistry" },
+        { "id": "9_chem_ch11", "number": 11, "name": "Hydrocarbons" }
       ]
     },
     {

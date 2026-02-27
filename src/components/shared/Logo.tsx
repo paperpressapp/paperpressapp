@@ -6,8 +6,6 @@
  * Renders the PaperPress logo with configurable size and color variant.
  */
 
-import { FileText } from "lucide-react";
-
 interface LogoProps {
   /** Logo size variant */
   size?: "sm" | "md" | "lg";
@@ -18,28 +16,19 @@ interface LogoProps {
 }
 
 const sizeClasses = {
-  sm: "text-xl",
-  md: "text-2xl",
-  lg: "text-[32px]",
-};
-
-const variantClasses = {
-  light: "text-white",
-  dark: "text-primary",
+  sm: "w-6 h-6",
+  md: "w-8 h-8",
+  lg: "w-12 h-12",
 };
 
 export function Logo({ size = "md", variant = "dark", className = "" }: LogoProps) {
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      <FileText 
-        className={`${sizeClasses[size]} ${variantClasses[variant]}`} 
-        strokeWidth={2.5}
+      <img 
+        src="/logo.png" 
+        alt="PaperPress" 
+        className={sizeClasses[size]} 
       />
-      <span
-        className={`font-bold tracking-tight ${sizeClasses[size]} ${variantClasses[variant]}`}
-      >
-        PaperPress
-      </span>
     </div>
   );
 }

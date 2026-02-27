@@ -7,6 +7,7 @@ import { useAuthStore } from "@/stores/authStore";
 import { cn } from "@/lib/utils";
 import { AppLayout } from "./AppLayout";
 import { BottomNavigation } from "./BottomNavigation";
+import { Header } from "@/components/Header";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -14,6 +15,8 @@ interface MainLayoutProps {
   className?: string;
   requireOnboarding?: boolean;
   topSafe?: boolean;
+  showHeader?: boolean;
+  headerTitle?: string;
 }
 
 export function MainLayout({
@@ -22,6 +25,8 @@ export function MainLayout({
   className = "",
   requireOnboarding = false,
   topSafe = true,
+  showHeader = true,
+  headerTitle = "PaperPress",
 }: MainLayoutProps) {
   const router = useRouter();
   const loadUser = useUserStore((state) => state.loadFromStorage);
@@ -39,9 +44,10 @@ export function MainLayout({
   }, [router, loadUser, requireOnboarding]);
 
   return (
-    <AppLayout topSafe={topSafe}>
-      <div className={cn("h-full flex flex-col overflow-hidden", className)}>
-        <div className="flex-1 overflow-auto">
+    <AppLayout topSafe={topSafe} bottomSafe={false}>
+      <div className={cn("h-full flex flex-col bg-[#0A0A0A]", className)}>
+        {showHeader && <Header title={headerTitle} />}
+        <div className="flex-1 overflow-y-auto">
           {children}
         </div>
         {showBottomNav && <BottomNavigation />}

@@ -22,12 +22,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { MainLayout, ScrollView } from "@/components/layout";
-import { ConfirmDialog } from "@/components/shared";
+import { ConfirmDialog, AppLoader } from "@/components/shared";
+import Skeleton from "react-loading-skeleton";
 import { useToast } from "@/hooks";
 import { getPapers, exportPapers, importPapers } from "@/lib/storage/papers";
 import { PremiumModal } from "@/components/premium/PremiumModal";
 import { checkPremiumStatus, getUsageStats, type PremiumStatus } from "@/lib/premium";
 import { useAuthStore } from "@/stores/authStore";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import Link from "next/link";
 
 export default function SettingsPage() {
@@ -55,8 +57,11 @@ export default function SettingsPage() {
   const [premiumStatus, setPremiumStatus] = useState<PremiumStatus>({ isPremium: false, activatedAt: null, code: null });
   const [showPremiumModal, setShowPremiumModal] = useState(false);
   const [usageStats, setUsageStats] = useState({ used: 0, limit: 30, isPremium: false });
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
+    
     // Load local user data
     const localName = localStorage.getItem("paperpress_user_name");
     const localInstitute = localStorage.getItem("paperpress_user_institute");
@@ -85,6 +90,8 @@ export default function SettingsPage() {
 
     const stats = getUsageStats();
     setUsageStats(stats);
+    
+    setIsLoading(false);
   }, [isAuthenticated, profile, user]);
 
   const papersCount = getPapers().length;
@@ -145,7 +152,18 @@ export default function SettingsPage() {
   };
 
   const handleReset = useCallback(() => {
-    localStorage.clear();
+    // Clear only PaperPress-specific data, not all localStorage
+    const paperpressKeys = [
+      'paperpress_user_name',
+      'paperpress_user_institute',
+      'paperpress_user_logo',
+      'paperpress_user_email',
+      'paperpress_papers',
+      'paperpress_settings',
+      'paperpress_premium',
+      'paperpress_usage',
+    ];
+    paperpressKeys.forEach(key => localStorage.removeItem(key));
     setShowResetConfirm(false);
     router.push("/welcome");
     toast.success("All data cleared");
@@ -233,180 +251,162 @@ export default function SettingsPage() {
 
   const userInitial = userName.charAt(0).toUpperCase();
 
+  if (isLoading) {
+    return (
+      <MainLayout showBottomNav headerTitle="Settings" className="bg-[#0A0A0A]">
+        <div className="p-4 space-y-4">
+          <Skeleton height={120} borderRadius={16} className="bg-[#2A2A2A]" />
+          <Skeleton height={200} borderRadius={16} className="bg-[#2A2A2A]" />
+          <Skeleton height={80} borderRadius={16} className="bg-[#2A2A2A]" />
+        </div>
+      </MainLayout>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1E88E5] via-[#1976D2] to-[#1565C0]">
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
-      </div>
-
-      <MainLayout showBottomNav topSafe={false}>
+    <MainLayout showBottomNav headerTitle="Settings" className="bg-[#0A0A0A]">
         <div className="min-h-screen pb-24">
-          {/* Header */}
-          <div className="fixed top-0 left-0 right-0 z-50">
-            {/* Safe Area Background */}
-            <div className="absolute inset-0 bg-white/90 backdrop-blur-xl border-b border-gray-100" />
-
-            <div className="mx-auto max-w-[428px] relative pt-safe">
-              <div className="px-4 h-14 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-10 w-10 rounded-xl hover:bg-gray-100"
-                    onClick={() => router.back()}
-                  >
-                    <ArrowLeft className="w-5 h-5 text-gray-700" />
-                  </Button>
-                  <h1 className="font-bold text-lg text-gray-900">Settings</h1>
-                </div>
-                {!isEditing && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setIsEditing(true)}
-                    className="text-[#1E88E5] hover:bg-[#1E88E5]/10 font-bold"
-                  >
-                    <Edit3 className="w-4 h-4 mr-1" />
-                    Edit
-                  </Button>
-                )}
-              </div>
-            </div>
-          </div>
-
           <ScrollView
             className="flex-1"
-            style={{ paddingTop: 'calc(56px + env(safe-area-inset-top, 0px))' }}
+            style={{ paddingTop: '16px' }}
           >
             {/* Auth Status Section */}
             <motion.div
-              className="px-5 mb-6"
+              className="px-4 mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className={`glass-panel rounded-3xl overflow-hidden ${isAuthenticated ? 'bg-gradient-to-br from-green-50/50 to-emerald-50/50' : ''}`}>
+              <div className="bg-[#1A1A1A] rounded-[20px] overflow-hidden border border-[#2A2A2A] shadow-[0px_8px_24px_rgba(0,0,0,0.4)]">
                 {isEditing ? (
-                  <div className="p-5 space-y-4">
+                  <div className="p-4 space-y-3">
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-bold text-gray-900">Edit Profile</h3>
-                      <button onClick={() => setIsEditing(false)} className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                        <X className="w-4 h-4 text-gray-600" />
-                      </button>
+                      <h3 className="font-bold text-white">Edit Profile</h3>
+                      <Button variant="ghost" size="icon" onClick={() => setIsEditing(false)} className="h-8 w-8 rounded-full bg-[#2A2A2A]">
+                        <X className="w-3 h-3 text-[#A0A0A0]" />
+                      </Button>
                     </div>
 
                     <div className="space-y-2">
-                      <Label className="text-gray-700">Your Name</Label>
+                      <Label className="text-[#A0A0A0]">Your Name</Label>
                       <Input
                         value={editForm.name}
                         onChange={(e) => setEditForm({ ...editForm, name: e.target.value })}
-                        className="h-12 rounded-xl"
+                        className="h-10 rounded-[12px] text-sm bg-[#2A2A2A] border-[#2A2A2A] text-white"
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label className="text-gray-700">Institute Name</Label>
+                      <Label className="text-[#A0A0A0]">Institute Name</Label>
                       <Input
                         value={editForm.institute}
                         onChange={(e) => setEditForm({ ...editForm, institute: e.target.value })}
-                        className="h-12 rounded-xl"
+                        className="h-10 rounded-[12px] text-sm bg-[#2A2A2A] border-[#2A2A2A] text-white"
                       />
                     </div>
 
                     {!isAuthenticated && (
                       <div className="space-y-2">
-                        <Label className="text-gray-700">Email (optional)</Label>
+                        <Label className="text-[#A0A0A0]">Email (optional)</Label>
                         <Input
                           type="email"
                           value={editForm.email}
                           onChange={(e) => setEditForm({ ...editForm, email: e.target.value })}
-                          className="h-12 rounded-xl"
+                          className="h-10 rounded-[12px] text-sm bg-[#2A2A2A] border-[#2A2A2A] text-white"
                           placeholder="your@email.com"
                         />
                       </div>
                     )}
 
-                    <Button onClick={handleSave} className="w-full h-12 rounded-xl bg-gradient-to-r from-[#1E88E5] to-[#1565C0]">
-                      <Check className="w-4 h-4 mr-2" />
+                    <Button onClick={handleSave} className="w-full h-10 rounded-[40px] bg-[#B9FF66] text-[#0A0A0A] font-semibold text-sm">
+                      <Check className="w-3 h-3 mr-1" />
                       Save Changes
                     </Button>
                   </div>
                 ) : (
-                  <div className="p-6 flex flex-col items-center text-center">
+                  <div className="p-4 flex flex-col items-center text-center">
                     {/* Avatar */}
-                    <div className="relative mb-4">
+                    <div className="relative mb-3">
                       {instituteLogo ? (
-                        <div className="w-24 h-24 rounded-2xl bg-white border-2 border-gray-100 flex items-center justify-center overflow-hidden shadow-lg">
-                          <img src={instituteLogo} alt="Logo" className="w-full h-full object-contain p-2" />
+                        <div className="w-16 h-16 rounded-[16px] bg-[#2A2A2A] border border-[#2A2A2A] flex items-center justify-center overflow-hidden shadow-lg">
+                          <img src={instituteLogo} alt="Logo" className="w-full h-full object-contain p-1" />
                         </div>
                       ) : (
-                        <div className={`w-24 h-24 rounded-2xl flex items-center justify-center text-4xl font-bold text-white shadow-lg ${isAuthenticated
-                            ? 'bg-gradient-to-br from-green-400 to-emerald-500'
-                            : 'bg-gradient-to-br from-[#1E88E5] to-[#1565C0]'
+                        <div className={`w-16 h-16 rounded-[16px] flex items-center justify-center text-2xl font-bold text-white shadow-lg ${isAuthenticated
+                            ? 'bg-gradient-to-br from-[#B9FF66] to-[#22c55e]'
+                            : 'bg-gradient-to-br from-[#B9FF66] to-[#22c55e]'
                           }`}>
                           {userInitial}
                         </div>
                       )}
-                      <button
+                      <Button
+                        variant="ghost"
+                        size="icon"
                         onClick={instituteLogo ? handleRemoveLogo : handleLogoSelect}
-                        className={`absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center shadow-md ${instituteLogo
-                            ? 'bg-red-500 text-white hover:bg-red-600'
-                            : 'bg-white text-[#1E88E5] hover:bg-gray-50'
+                        className={`absolute -bottom-1 -right-1 h-7 w-7 rounded-full shadow-md ${instituteLogo
+                            ? 'bg-[#FF4D4D] text-white hover:bg-[#FF4D4D]/80'
+                            : 'bg-[#B9FF66] text-[#0A0A0A] hover:bg-[#B9FF66]/80'
                           }`}
                       >
-                        {instituteLogo ? <X className="w-4 h-4" /> : <ImagePlus className="w-4 h-4" />}
-                      </button>
+                        {instituteLogo ? <X className="w-3 h-3" /> : <ImagePlus className="w-3 h-3" />}
+                      </Button>
 
                       {/* Auth Status Badge */}
                       {isAuthenticated && (
-                        <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center shadow-md">
-                          <Check className="w-4 h-4 text-white" />
+                        <div className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#22c55e] flex items-center justify-center shadow-md">
+                          <Check className="w-3 h-3 text-white" />
                         </div>
                       )}
                     </div>
 
                     {/* User Info */}
-                    <h2 className="text-xl font-bold text-gray-900 mb-1">{userName}</h2>
-                    <p className="text-sm text-gray-500 mb-1">{instituteName}</p>
+                    <h2 className="text-lg font-bold text-white mb-1">{userName}</h2>
+                    <p className="text-xs text-[#A0A0A0] mb-1">{instituteName}</p>
                     {email && (
-                      <div className="flex items-center gap-1 text-xs text-gray-400">
+                      <div className="flex items-center gap-1 text-xs text-[#A0A0A0]">
                         <Mail className="w-3 h-3" />
                         {email}
                       </div>
                     )}
 
                     {/* Auth Status Badge */}
-                    <div className="mt-4 flex flex-wrap justify-center gap-2">
+                    <div className="mt-3 flex flex-wrap justify-center gap-1">
                       {isAuthenticated ? (
-                        <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium flex items-center gap-1">
-                          <Check className="w-3 h-3" />
+                        <span className="px-2 py-1 rounded-full bg-[#22c55e]/20 text-[#22c55e] text-xs font-medium flex items-center gap-1">
+                          <Check className="w-2 h-2" />
                           Signed In
                         </span>
                       ) : (
-                        <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium">
+                        <span className="px-2 py-1 rounded-full bg-[#2A2A2A] text-[#A0A0A0] text-xs font-medium">
                           Guest Mode
                         </span>
                       )}
 
                       {isPremium && (
-                        <span className="px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-medium flex items-center gap-1">
-                          <Crown className="w-3 h-3" />
+                        <span className="px-2 py-1 rounded-full bg-[#B9FF66]/20 text-[#B9FF66] text-xs font-medium flex items-center gap-1">
+                          <Crown className="w-2 h-2" />
                           Premium
                         </span>
                       )}
 
                       {isAdmin && (
-                        <span className="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-medium flex items-center gap-1">
-                          <Shield className="w-3 h-3" />
+                        <span className="px-2 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-medium flex items-center gap-1">
+                          <Shield className="w-2 h-2" />
                           Admin
                         </span>
                       )}
                     </div>
 
+                    {/* Theme Toggle */}
+                    <div className="mt-3 flex items-center justify-center gap-2">
+                      <span className="text-xs text-[#A0A0A0]">Dark</span>
+                      <ThemeToggle />
+                      <span className="text-xs text-[#A0A0A0]">Light</span>
+                    </div>
+
                     {/* Papers Count */}
-                    <div className="flex items-center gap-2 bg-gray-50 rounded-xl px-4 py-2 mt-4">
-                      <FileText className="w-4 h-4 text-[#1E88E5]" />
-                      <span className="text-sm font-medium">{papersCount} Papers Created</span>
+                    <div className="flex items-center gap-2 bg-[#2A2A2A] rounded-[12px] px-3 py-2 mt-3">
+                      <FileText className="w-3 h-3 text-[#B9FF66]" />
+                      <span className="text-xs font-medium text-white">{papersCount} Papers</span>
                     </div>
                   </div>
                 )}
@@ -418,24 +418,24 @@ export default function SettingsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 }}
-              className="px-5 mb-6"
+              className="px-4 mb-4"
             >
               {isAuthenticated ? (
                 /* Logged In - Show Logout Button */
-                <div className="glass-panel rounded-2xl overflow-hidden">
-                  <div className="px-4 py-3 border-b border-gray-100">
-                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Account</p>
+                <div className="bg-[#1A1A1A] rounded-[20px] overflow-hidden border border-[#2A2A2A] shadow-[0px_8px_24px_rgba(0,0,0,0.4)]">
+                  <div className="px-4 py-3 border-b border-[#2A2A2A]">
+                    <p className="text-xs font-semibold text-[#A0A0A0] uppercase tracking-wide">Account</p>
                   </div>
 
-                  <div className="p-4 hover:bg-red-50 cursor-pointer" onClick={() => setShowLogoutConfirm(true)}>
+                  <div className="p-3 hover:bg-[#FF4D4D]/10 cursor-pointer" onClick={() => setShowLogoutConfirm(true)}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center">
-                          <LogOut className="w-5 h-5 text-red-500" />
+                        <div className="w-8 h-8 rounded-[8px] bg-[#FF4D4D]/20 flex items-center justify-center">
+                          <LogOut className="w-4 h-4 text-[#FF4D4D]" />
                         </div>
                         <div>
-                          <span className="font-medium text-red-600 block">Sign Out</span>
-                          <span className="text-xs text-red-400">Log out of your account</span>
+                          <span className="font-medium text-[#FF4D4D] block">Sign Out</span>
+                          <span className="text-xs text-[#A0A0A0]">Log out of your account</span>
                         </div>
                       </div>
                     </div>
@@ -443,41 +443,41 @@ export default function SettingsPage() {
                 </div>
               ) : (
                 /* Not Logged In - Show Login/Signup */
-                <div className="glass-panel rounded-2xl overflow-hidden">
-                  <div className="px-4 py-3 border-b border-gray-100">
-                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Account</p>
+                <div className="bg-[#1A1A1A] rounded-[20px] overflow-hidden border border-[#2A2A2A] shadow-[0px_8px_24px_rgba(0,0,0,0.4)]">
+                  <div className="px-4 py-3 border-b border-[#2A2A2A]">
+                    <p className="text-xs font-semibold text-[#A0A0A0] uppercase tracking-wide">Account</p>
                   </div>
 
                   <Link href="/auth/login">
-                    <div className="p-4 hover:bg-blue-50 cursor-pointer border-b border-gray-100">
+                    <div className="p-3 hover:bg-[#2A2A2A] cursor-pointer border-b border-[#2A2A2A]">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
-                            <LogIn className="w-5 h-5 text-blue-600" />
+                          <div className="w-8 h-8 rounded-[8px] bg-[#1E88E5]/20 flex items-center justify-center">
+                            <LogIn className="w-4 h-4 text-[#1E88E5]" />
                           </div>
                           <div>
-                            <span className="font-medium text-gray-700 block">Sign In</span>
-                            <span className="text-xs text-gray-500">Access your account</span>
+                            <span className="font-medium text-white block">Sign In</span>
+                            <span className="text-xs text-[#A0A0A0]">Access your account</span>
                           </div>
                         </div>
-                        <ChevronRight className="w-5 h-5 text-gray-400" />
+                        <ChevronRight className="w-4 h-4 text-[#A0A0A0]" />
                       </div>
                     </div>
                   </Link>
 
                   <Link href="/auth/signup">
-                    <div className="p-4 hover:bg-green-50 cursor-pointer">
+                    <div className="p-3 hover:bg-[#2A2A2A] cursor-pointer">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center">
-                            <UserPlus className="w-5 h-5 text-green-600" />
+                          <div className="w-8 h-8 rounded-[8px] bg-[#22c55e]/20 flex items-center justify-center">
+                            <UserPlus className="w-4 h-4 text-[#22c55e]" />
                           </div>
                           <div>
-                            <span className="font-medium text-gray-700 block">Create Account</span>
-                            <span className="text-xs text-gray-500">Join PaperPress today</span>
+                            <span className="font-medium text-white block">Create Account</span>
+                            <span className="text-xs text-[#A0A0A0]">Join PaperPress today</span>
                           </div>
                         </div>
-                        <ChevronRight className="w-5 h-5 text-gray-400" />
+                        <ChevronRight className="w-4 h-4 text-[#A0A0A0]" />
                       </div>
                     </div>
                   </Link>
@@ -491,22 +491,22 @@ export default function SettingsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="px-5 mb-6"
+className="px-4 mb-4"
               >
                 <Link href="/admin">
-                  <div className="glass-panel rounded-2xl overflow-hidden bg-gradient-to-r from-purple-50 to-indigo-50 border-purple-200">
+                  <div className="bg-[#1A1A1A] rounded-[20px] overflow-hidden border border-purple-500/30 shadow-[0px_8px_24px_rgba(0,0,0,0.4)]">
                     <div className="p-4">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg">
+                          <div className="w-12 h-12 rounded-[16px] bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg">
                             <Shield className="w-6 h-6 text-white" />
                           </div>
                           <div>
-                            <h3 className="font-bold text-gray-900">Admin Dashboard</h3>
-                            <p className="text-sm text-gray-600">Manage users, questions & analytics</p>
+                            <h3 className="font-bold text-white">Admin Dashboard</h3>
+                            <p className="text-sm text-[#A0A0A0]">Manage users, questions & analytics</p>
                           </div>
                         </div>
-                        <ChevronRight className="w-5 h-5 text-purple-400" />
+                        <ChevronRight className="w-5 h-5 text-[#A0A0A0]" />
                       </div>
                     </div>
                   </div>
@@ -519,26 +519,26 @@ export default function SettingsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
-              className="px-5 mb-6"
+              className="px-4 mb-4"
             >
               {!isPremium && !premiumStatus.isPremium ? (
-                <div className="glass-panel rounded-2xl overflow-hidden bg-gradient-to-r from-yellow-50 to-orange-50 border-yellow-200">
+                <div className="bg-[#1A1A1A] rounded-[20px] overflow-hidden border border-[#B9FF66]/30 shadow-[0px_8px_24px_rgba(0,0,0,0.4)]">
                   <div className="p-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-lg">
-                          <Crown className="w-6 h-6 text-white" />
+                        <div className="w-12 h-12 rounded-[16px] bg-gradient-to-br from-[#B9FF66] to-[#22c55e] flex items-center justify-center shadow-lg">
+                          <Crown className="w-6 h-6 text-[#0A0A0A]" />
                         </div>
                         <div>
-                          <h3 className="font-bold text-gray-900">Go Premium</h3>
-                          <p className="text-sm text-gray-600">
+                          <h3 className="font-bold text-white">Go Premium</h3>
+                          <p className="text-sm text-[#A0A0A0]">
                             {usageStats.isPremium ? 'Unlimited papers' : `${Math.max(0, usageStats.limit - usageStats.used)} papers remaining this month`}
                           </p>
                         </div>
                       </div>
                       <Button
                         onClick={() => setShowPremiumModal(true)}
-                        className="h-10 px-4 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold shadow-lg shadow-yellow-500/30"
+                        className="h-10 px-4 rounded-[40px] bg-[#B9FF66] text-[#0A0A0A] font-semibold shadow-lg shadow-[#B9FF66]/30"
                       >
                         Upgrade
                       </Button>
@@ -546,15 +546,15 @@ export default function SettingsPage() {
                   </div>
                 </div>
               ) : (
-                <div className="glass-panel rounded-2xl overflow-hidden bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
+                <div className="bg-[#1A1A1A] rounded-[20px] overflow-hidden border border-[#22c55e]/30 shadow-[0px_8px_24px_rgba(0,0,0,0.4)]">
                   <div className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg">
+                      <div className="w-12 h-12 rounded-[16px] bg-gradient-to-br from-[#22c55e] to-[#16a34a] flex items-center justify-center shadow-lg">
                         <Crown className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-gray-900">Premium Active</h3>
-                        <p className="text-sm text-gray-600">
+                        <h3 className="font-bold text-white">Premium Active</h3>
+                        <p className="text-sm text-[#A0A0A0]">
                           {premiumStatus.activatedAt 
                             ? `Active since ${new Date(premiumStatus.activatedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}`
                             : 'You have unlimited access'}
@@ -571,53 +571,53 @@ export default function SettingsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="px-5 mb-6"
+              className="px-4 mb-4"
             >
-              <div className="glass-panel rounded-2xl overflow-hidden">
-                <div className="px-4 py-3 border-b border-gray-100">
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Data Management</p>
+              <div className="bg-[#1A1A1A] rounded-[20px] overflow-hidden border border-[#2A2A2A] shadow-[0px_8px_24px_rgba(0,0,0,0.4)]">
+                <div className="px-4 py-3 border-b border-[#2A2A2A]">
+                  <p className="text-xs font-semibold text-[#A0A0A0] uppercase tracking-wide">Data Management</p>
                 </div>
 
-                <div className="p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100" onClick={handleExportData}>
+                <div className="p-4 hover:bg-[#2A2A2A] cursor-pointer border-b border-[#2A2A2A]" onClick={handleExportData}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
-                        <Download className="w-5 h-5 text-blue-600" />
+                      <div className="w-10 h-10 rounded-[12px] bg-[#1E88E5]/20 flex items-center justify-center">
+                        <Download className="w-5 h-5 text-[#1E88E5]" />
                       </div>
                       <div>
-                        <span className="font-medium text-gray-700 block">Export Papers</span>
-                        <span className="text-xs text-gray-500">Backup to JSON file</span>
+                        <span className="font-medium text-white block">Export Papers</span>
+                        <span className="text-xs text-[#A0A0A0]">Backup to JSON file</span>
                       </div>
                     </div>
-                    <ChevronRight className="w-5 h-5 text-gray-400" />
+                    <ChevronRight className="w-5 h-5 text-[#A0A0A0]" />
                   </div>
                 </div>
 
-                <label className="p-4 block hover:bg-gray-50 cursor-pointer border-b border-gray-100">
+                <label className="p-4 block hover:bg-[#2A2A2A] cursor-pointer border-b border-[#2A2A2A]">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center">
-                        <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <div className="w-10 h-10 rounded-[12px] bg-[#22c55e]/20 flex items-center justify-center">
+                        <svg className="w-5 h-5 text-[#22c55e]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                         </svg>
                       </div>
                       <div>
-                        <span className="font-medium text-gray-700 block">Import Papers</span>
-                        <span className="text-xs text-gray-500">Restore from backup</span>
+                        <span className="font-medium text-white block">Import Papers</span>
+                        <span className="text-xs text-[#A0A0A0]">Restore from backup</span>
                       </div>
                     </div>
-                    <ChevronRight className="w-5 h-5 text-gray-400" />
+                    <ChevronRight className="w-5 h-5 text-[#A0A0A0]" />
                   </div>
                   <input type="file" accept=".json" className="hidden" onChange={handleImportData} />
                 </label>
 
-                <div className="p-4 hover:bg-red-50 cursor-pointer" onClick={() => setShowClearConfirm(true)}>
+                <div className="p-4 hover:bg-[#FF4D4D]/10 cursor-pointer" onClick={() => setShowClearConfirm(true)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center">
-                        <Trash2 className="w-5 h-5 text-red-500" />
+                      <div className="w-10 h-10 rounded-[12px] bg-[#FF4D4D]/20 flex items-center justify-center">
+                        <Trash2 className="w-5 h-5 text-[#FF4D4D]" />
                       </div>
-                      <span className="font-medium text-red-600">Clear All Papers</span>
+                      <span className="font-medium text-[#FF4D4D]">Clear All Papers</span>
                     </div>
                   </div>
                 </div>
@@ -629,24 +629,24 @@ export default function SettingsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25 }}
-              className="px-5 mb-6"
+              className="px-4 mb-4"
             >
-              <div className="bg-white/95 rounded-2xl border border-red-100 shadow-sm overflow-hidden">
+              <div className="bg-[#1A1A1A] rounded-[20px] border border-[#FF4D4D]/30 shadow-[0px_8px_24px_rgba(0,0,0,0.4)] overflow-hidden">
                 {/* Danger Zone Header */}
-                <div className="px-4 py-3 border-b border-red-100 bg-red-50/50">
-                  <p className="text-xs font-semibold text-red-400 uppercase tracking-wide flex items-center gap-2">
-                    <span>⚠</span> Danger Zone
+                <div className="px-4 py-3 border-b border-[#FF4D4D]/20 bg-[#FF4D4D]/5">
+                  <p className="text-xs font-semibold text-[#FF4D4D] uppercase tracking-wide">
+                    Danger Zone
                   </p>
                 </div>
-                <div className="p-4 hover:bg-red-50 cursor-pointer" onClick={() => setShowResetConfirm(true)}>
+                <div className="p-4 hover:bg-[#FF4D4D]/10 cursor-pointer" onClick={() => setShowResetConfirm(true)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center">
-                        <Trash2 className="w-5 h-5 text-red-500" />
+                      <div className="w-10 h-10 rounded-[12px] bg-[#FF4D4D]/20 flex items-center justify-center">
+                        <Trash2 className="w-5 h-5 text-[#FF4D4D]" />
                       </div>
                       <div>
-                        <span className="font-medium text-red-600 block">Reset App</span>
-                        <span className="text-xs text-red-400">Delete everything and start over</span>
+                        <span className="font-medium text-[#FF4D4D] block">Reset App</span>
+                        <span className="text-xs text-[#A0A0A0]">Delete everything and start over</span>
                       </div>
                     </div>
                   </div>
@@ -708,6 +708,5 @@ export default function SettingsPage() {
           />
         </div>
       </MainLayout>
-    </div>
   );
 }

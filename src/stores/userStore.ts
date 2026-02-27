@@ -2,6 +2,7 @@
  * Simple User Store - MVP Version
  * 
  * No auth! Just simple localStorage for user name and institute.
+ * Optimized for performance with minimal re-renders.
  */
 
 import { create } from 'zustand';
@@ -22,24 +23,46 @@ interface UserState {
 // Helper to safely access localStorage (for SSR)
 const getStorageItem = (key: string): string | null => {
   if (typeof window === 'undefined') return null;
-  return localStorage.getItem(key);
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
 };
 
 const setStorageItem = (key: string, value: string): void => {
   if (typeof window === 'undefined') return;
-  localStorage.setItem(key, value);
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Ignore storage errors
+  }
 };
 
 const removeStorageItem = (key: string): void => {
   if (typeof window === 'undefined') return;
-  localStorage.removeItem(key);
+  try {
+    localStorage.removeItem(key);
+  } catch {
+    // Ignore storage errors
+  }
+};
+
+// Pre-load initial values at store creation time
+const getInitialState = () => {
+  if (typeof window === 'undefined') {
+    return { name: '', instituteName: '', isLoading: true };
+  }
+  return {
+    name: getStorageItem('paperpress_user_name') || '',
+    instituteName: getStorageItem('paperpress_user_institute') || '',
+    isLoading: false,
+  };
 };
 
 export const useUserStore = create<UserState>()((set) => ({
-  // Initial state
-  name: '',
-  instituteName: '',
-  isLoading: true,
+  // Initial state - loaded synchronously once
+  ...getInitialState(),
 
   // Actions
   setName: (name: string) => {
@@ -53,9 +76,8 @@ export const useUserStore = create<UserState>()((set) => ({
   },
 
   loadFromStorage: () => {
-    const name = getStorageItem('paperpress_user_name') || '';
-    const instituteName = getStorageItem('paperpress_user_institute') || '';
-    set({ name, instituteName, isLoading: false });
+    // Already loaded at init, just ensure isLoading is false
+    set({ isLoading: false });
   },
 
   clearUser: () => {

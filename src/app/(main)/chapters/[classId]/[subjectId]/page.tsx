@@ -15,11 +15,6 @@ export function generateStaticParams() {
   return params;
 }
 
-export default async function ChaptersPage({ 
-  params 
-}: { 
-  params: Promise<{ classId: string; subjectId: string }> 
-}) {
-  await params;
+export default function ChaptersPage() {
   return <ChaptersClient />;
 }

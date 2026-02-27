@@ -11,6 +11,7 @@ import { persist } from 'zustand/middleware';
 import logger from '@/lib/utils/logger';
 import type { ClassName, SubjectName, PaperSettings } from '@/types';
 import { format } from 'date-fns';
+import { DEFAULT_MARKS } from '@/constants/paper';
 
 interface PaperState {
   // Selection State
@@ -72,7 +73,7 @@ const getDefaultSettings = (): PaperSettings => ({
   customHeader: '',
   customSubHeader: '',
   showLogo: true,
-  customMarks: { mcq: 1, short: 5, long: 10 },
+  customMarks: { ...DEFAULT_MARKS },
   includeAnswerSheet: false,
   includeMarkingScheme: false,
   syllabus: '',
@@ -275,7 +276,7 @@ export const usePaperStore = create<PaperState>()(
         );
       },
 
-      getTotalMarks: (mcqMarks = 1, shortMarks = 5, longMarks = 10) => {
+      getTotalMarks: (mcqMarks = DEFAULT_MARKS.mcq, shortMarks = DEFAULT_MARKS.short, longMarks = DEFAULT_MARKS.long) => {
         const state = get();
         return (
           state.selectedMcqIds.length * mcqMarks +

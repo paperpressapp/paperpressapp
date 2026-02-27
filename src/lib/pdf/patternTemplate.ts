@@ -24,6 +24,7 @@ export interface PatternTemplateInput {
   instituteWebsite?: string;
   logoUrl?: string | null;
   showLogo?: boolean;
+  showWatermark?: boolean;
   classId: string;
   subject: string;
   examType?: string;
@@ -44,6 +45,7 @@ export interface PatternTemplateInput {
     shortAttempt?: number;
     longAttempt?: number;
   };
+  includeBubbleSheet?: boolean;
 }
 
 export function generatePatternHTML(input: PatternTemplateInput): string {
@@ -55,7 +57,7 @@ export function generatePatternHTML(input: PatternTemplateInput): string {
   // Fall back to pattern.totalMarks only if no questions selected
   const mcqMark = input.customMarks?.mcq ?? 1;
   const shortMark = input.customMarks?.short ?? 2;
-  const longMark = input.customMarks?.long ?? 9;
+  const longMark = input.customMarks?.long ?? 5;
 
   const actualMarks =
     input.mcqs.length > 0 || input.shorts.length > 0 || input.longs.length > 0
@@ -122,15 +124,17 @@ export function generatePatternHTML(input: PatternTemplateInput): string {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=794, initial-scale=1.0, maximum-scale=1.0">
   <title>${escapeHtml(input.subject)} — Class ${escapeHtml(input.classId)}</title>
   ${getKaTeXCSSTag()}
   <style>${generatePatternCSS()}</style>
 </head>
 <body>
   ${renderHeader(input, timeAllowed, totalMarks)}
-  ${renderStudentMeta(input)}
+  ${renderStudentMeta(input, totalMarks)}
   ${sectionsHTML}
-  <div class="pp-footer">PaperPress App &mdash; paperpressapp@gmail.com</div>
+  ${input.includeBubbleSheet ? renderOMRBubbleSheet(input.mcqs.length) : ''}
+  ${input.showWatermark !== false ? `<div class="pp-footer">PaperPress App &mdash; paperpressapp@gmail.com</div>` : ''}
   ${generateKaTeXScript()}
 </body>
 </html>`;
@@ -178,9 +182,8 @@ function renderHeader(
   </div>`;
 }
 
-function renderStudentMeta(input: PatternTemplateInput): string {
+function renderStudentMeta(input: PatternTemplateInput, totalMarks: number): string {
   const pattern = resolvePaperPattern(input.classId, input.subject);
-  const totalMarks = pattern.totalMarks;
   const timeAllowed = input.timeAllowed || pattern.timeAllowed;
 
   return `
@@ -415,6 +418,53 @@ function renderWriting(section: QuestionSection): string {
       ? `<div class="pp-writing-prompt">${escapeHtml(section.writingPrompt)}</div>`
       : ''}
     <div class="pp-lines">${lines}</div>
+  </div>`;
+}
+
+function renderOMRBubbleSheet(mcqCount: number): string {
+  const rows = Math.ceil(mcqCount / 10);
+  let bubbles = '';
+  
+  for (let row = 0; row < rows; row++) {
+    const startNum = row * 10 + 1;
+    const endNum = Math.min(startNum + 9, mcqCount);
+    const questionsInRow = endNum - startNum + 1;
+    
+    let rowHTML = `<div class="omr-row"><span class="omr-range">${startNum}-${endNum}</span>`;
+    
+    for (let q = 0; q < questionsInRow; q++) {
+      const qNum = startNum + q;
+      rowHTML += `
+        <div class="omr-q">
+          <span class="omr-num">${qNum}</span>
+          <div class="omr-bubbles">
+            <span class="omr-letter">A</span><span class="omr-circle"></span>
+            <span class="omr-letter">B</span><span class="omr-circle"></span>
+            <span class="omr-letter">C</span><span class="omr-circle"></span>
+            <span class="omr-letter">D</span><span class="omr-circle"></span>
+          </div>
+        </div>`;
+    }
+    rowHTML += '</div>';
+    bubbles += rowHTML;
+  }
+
+  return `
+  <div class="pp-page-break"></div>
+  <div class="omr-sheet">
+    <div class="omr-header">
+      <h3>OMR Answer Sheet</h3>
+      <p>Fill bubbles completely. Use only blue/black ball point pen.</p>
+    </div>
+    <div class="omr-info">
+      <div class="omr-field"><span>Name:</span><div class="omr-line"></div></div>
+      <div class="omr-field"><span>Roll No:</span><div class="omr-line"></div></div>
+      <div class="omr-field"><span>Class:</span><div class="omr-line"></div></div>
+    </div>
+    <div class="omr-instructions">
+      <strong>Instructions:</strong> Darken the correct bubble completely. Do not make stray marks.
+    </div>
+    <div class="omr-bubbles-container">${bubbles}</div>
   </div>`;
 }
 

@@ -20,6 +20,7 @@ export interface PaperData {
   customHeader?: string;
   customSubHeader?: string;
   showLogo?: boolean;
+  showWatermark?: boolean;
   inlineKaTeX?: boolean;
   isPremium?: boolean;
   includeAnswerSheet?: boolean;
@@ -37,6 +38,7 @@ export interface PaperData {
   instituteEmail?: string;
   institutePhone?: string;
   instituteWebsite?: string;
+  includeBubbleSheet?: boolean;
 }
 
 export function generateHTMLTemplate(data: PaperData): string {
@@ -44,6 +46,7 @@ export function generateHTMLTemplate(data: PaperData): string {
     instituteName:    data.instituteName,
     logoUrl:          data.logoUrl,
     showLogo:         data.showLogo,
+    showWatermark:    data.showWatermark ?? true,
     classId:          data.classId,
     subject:          data.subject,
     examType:         data.examType,
@@ -61,6 +64,7 @@ export function generateHTMLTemplate(data: PaperData): string {
     instituteWebsite: data.instituteWebsite,
     customMarks:      data.customMarks,
     attemptRules:     data.attemptRules,
+    includeBubbleSheet: data.includeBubbleSheet,
   };
   return generatePatternHTML(input);
 }
