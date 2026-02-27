@@ -174,6 +174,39 @@ html.light {
   box-shadow: 0px 4px 12px rgba(185, 255, 102, 0.2);
 }
 
+/* Pull to Refresh */
+.pull-to-refresh {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--pull-distance, 0px);
+  background: linear-gradient(180deg, var(--accent-primary) 0%, transparent 100%);
+  opacity: var(--pull-opacity, 0);
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.2s ease;
+}
+
+.pull-to-refresh::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-primary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  opacity: var(--pull-opacity, 0);
+}
+
+@keyframes spin {
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
 /* Custom Animations */
 @keyframes fadeIn {
   from { opacity: 0; }

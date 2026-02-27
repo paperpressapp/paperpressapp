@@ -273,7 +273,7 @@ export default function MyPapersPage() {
                   </div>
                   <Button
                     onClick={() => router.push("/home")}
-                    className="h-9 rounded-lg bg-gradient-to-r from-[#1E88E5] to-[#1565C0] font-medium text-sm"
+                    className="h-9 rounded-lg bg-gradient-to-r from-[#B9FF66] to-[#22c55e] text-[#0A0A0A] font-medium text-sm"
                   >
                     <Plus className="w-3.5 h-3.5 mr-1" />
                     Create

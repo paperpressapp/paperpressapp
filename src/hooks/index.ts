@@ -18,3 +18,12 @@ export { useMobile, useWindowWidth } from "./useMobile";
 
 // PDF Generation
 export { usePDFGenerator, downloadPDF, openPDFInNewTab } from "./usePDFGenerator";
+
+// Pull to refresh
+export { usePullToRefresh } from "./usePullToRefresh";
+
+// Haptics
+export { triggerHaptic, useHaptic } from "./useHaptics";
+
+// Swipe gestures
+export { useSwipeGesture } from "./useSwipeGesture";

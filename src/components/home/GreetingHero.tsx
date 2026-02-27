@@ -20,10 +20,10 @@ export function GreetingHero({ userName, instituteName }: GreetingHeroProps) {
       {/* Full Width Hero Container */}
       <div className="relative h-48 overflow-hidden rounded-b-3xl">
         {/* Background - gradient instead of external image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1E88E5] to-[#1565C0]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A1A] to-[#0A0A0A]" />
         
-        {/* Dark overlay - 60% to make text readable */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1E88E5]/80 via-[#1976D2]/70 to-[#1565C0]/80" />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A1A]/90 via-[#1A1A1A]/80 to-[#0A0A0A]/90" />
         
         {/* Only 10% visible gradient at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-white to-transparent" />
@@ -37,10 +37,10 @@ export function GreetingHero({ userName, instituteName }: GreetingHeroProps) {
         <div className="relative z-10 px-6 pt-12">
           {/* Decorative Icon */}
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-              <GraduationCap className="w-5 h-5 text-white" />
+            <div className="w-10 h-10 rounded-xl bg-[#B9FF66]/20 backdrop-blur-sm flex items-center justify-center">
+              <GraduationCap className="w-5 h-5 text-[#B9FF66]" />
             </div>
-            <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">
+            <span className="text-xs font-semibold text-[#B9FF66] uppercase tracking-wider">
               PaperPress
             </span>
           </div>

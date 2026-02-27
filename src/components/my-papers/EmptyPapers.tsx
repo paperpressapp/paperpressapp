@@ -36,10 +36,10 @@ export function EmptyPapers({ onCreate }: EmptyPapersProps) {
         <rect x="30" y="62" width="40" height="4" rx="2" fill="#D1D5DB" />
         <rect x="30" y="78" width="35" height="4" rx="2" fill="#9CA3AF" />
         <rect x="30" y="90" width="25" height="4" rx="2" fill="#9CA3AF" />
-        <circle cx="85" cy="85" r="20" fill="#1E88E5" opacity="0.2" />
+        <circle cx="85" cy="85" r="20" fill="#B9FF66" opacity="0.2" />
         <path 
           d="M78 85L82 89L92 79" 
-          stroke="#1E88E5" 
+          stroke="#B9FF66" 
           strokeWidth="3" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
@@ -59,7 +59,7 @@ export function EmptyPapers({ onCreate }: EmptyPapersProps) {
       {/* Create Button */}
       <Button
         onClick={onCreate}
-        className="bg-[#1E88E5] hover:bg-[#1565C0] h-12 px-8"
+        className="bg-[#B9FF66] hover:bg-[#22c55e] text-[#0A0A0A] h-12 px-8"
       >
         Create Paper
       </Button>

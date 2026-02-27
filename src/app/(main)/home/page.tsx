@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { MainLayout } from "@/components/layout";
 import { AppLoader } from "@/components/shared";
+import { HomeSkeleton } from "@/components/ui/loading-skeletons";
 import { Button } from "@/components/ui/button";
 import { getFromLocalStorage } from "@/lib/utils/storage";
 import { useAuthStore } from "@/stores/authStore";
@@ -80,7 +81,7 @@ export default function HomePage() {
     }
   }, [isAuthenticated, user, profile]);
 
-  if (isLoading) return <AppLoader message="Loading..." />;
+  if (isLoading) return <HomeSkeleton />;
 
   const recentPaper = recentPapers[0] || null;
   const remainingPapers = usageStats.isPremium ? 'Unlimited' : Math.max(0, usageStats.limit - usageStats.used);

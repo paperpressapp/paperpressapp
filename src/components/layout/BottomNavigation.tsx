@@ -86,7 +86,7 @@ export function BottomNavigation() {
 
   const classColors: Record<string, string> = {
     '9th': 'from-emerald-400 to-green-500',
-    '10th': 'from-[#1E88E5] to-[#1565C0]',
+    '10th': 'from-[#B9FF66] to-[#22c55e]',
     '11th': 'from-amber-400 to-orange-500',
     '12th': 'from-violet-500 to-purple-600',
   };
@@ -169,7 +169,7 @@ export function BottomNavigation() {
                     <div className="space-y-2 max-h-[50vh] overflow-y-auto">
                       {SUBJECTS.map((subject, index) => {
                         const colors = [
-                          'from-[#1E88E5] to-[#1565C0]',
+                          'from-[#B9FF66] to-[#22c55e]',
                           'from-emerald-400 to-green-500',
                           'from-violet-500 to-purple-600',
                           'from-amber-400 to-orange-500',

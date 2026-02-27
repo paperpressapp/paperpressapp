@@ -15,8 +15,8 @@ export function HomeHeader({ onSettingsClick }: HomeHeaderProps) {
       <div className="mx-auto max-w-[428px]">
         <div className="h-14 px-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#1E88E5] flex items-center justify-center">
-              <FileText className="w-4 h-4 text-white" />
+            <div className="w-8 h-8 rounded-lg bg-[#B9FF66] flex items-center justify-center">
+              <FileText className="w-4 h-4 text-[#0A0A0A]" />
             </div>
             <span className="font-bold text-lg text-[#111827]">PaperPress</span>
           </div>
@@ -56,7 +56,7 @@ export function HeroSection({ userName, instituteName }: HeroSectionProps) {
       
       <Button
         onClick={() => router.push('/subjects')}
-        className="w-full h-14 mt-6 rounded-2xl bg-gradient-to-r from-[#1E88E5] to-[#1565C0] text-white font-semibold text-base flex items-center justify-center gap-2 shadow-lg shadow-[#1E88E5]/25"
+        className="w-full h-14 mt-6 rounded-2xl bg-gradient-to-r from-[#B9FF66] to-[#22c55e] text-[#0A0A0A] font-semibold text-base flex items-center justify-center gap-2 shadow-lg shadow-[#B9FF66]/25"
       >
         <Plus className="w-5 h-5" />
         Create New Paper
@@ -101,7 +101,7 @@ export function RecentPapers({ papers }: RecentPapersProps) {
           </div>
           <button 
             onClick={() => router.push(`/paper?id=${recentPaper.id}`)}
-            className="w-10 h-10 rounded-xl bg-[#1E88E5] flex items-center justify-center"
+            className="w-10 h-10 rounded-xl bg-[#B9FF66] flex items-center justify-center"
           >
             <ChevronRight className="w-5 h-5 text-white" />
           </button>
