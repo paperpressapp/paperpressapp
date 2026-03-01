@@ -1,0 +1,2731 @@
+# 📚 COMPLETE SHORT QUESTIONS EXTRACTION - 10th CHEMISTRY (All Chapters)
+
+## CHAPTER 14: STATES OF MATTER AND PHASE CHANGES
+
+### Exercise Short Questions (#Exercise)
+
+14.1 From where does the energy come when a liquid evaporates?
+
+14.2 Is condensation an endothermic process?
+
+14.3 Why naphthalene balls (used to repel insects) disappear after sometime?
+
+14.4 Why does the temperature remain constant during a phase change?
+
+14.5 Is it possible to compress a liquid like a gas?
+
+14.6 Can you change the temperature at which water boils in an experiment in your lab?
+
+14.7 In which season the wet clothes get dry after a relatively longer time?
+
+14.8 When a solid is heated, what happens to its particles which are vibrating?
+
+14.9 Do solids and liquids also diffuse just like gases?
+
+14.10 Why dew is formed in the early hours of the morning?
+
+### Additional Short Questions from Topics (#Additional)
+
+14.11 What is the kinetic particle theory?
+
+14.12 How does kinetic theory explain the pressure exerted by a gas?
+
+14.13 Why do gas particles not lose energy during collisions?
+
+14.14 How does temperature affect the average kinetic energy of particles?
+
+14.15 What is internal energy of a substance?
+
+14.16 Define melting point.
+
+14.17 What happens to heat energy during melting?
+
+14.18 Define boiling point.
+
+14.19 What is latent heat of vaporization?
+
+14.20 What is condensation?
+
+14.21 Define evaporation.
+
+14.22 How does evaporation cause cooling?
+
+14.23 What is sublimation? Give an example.
+
+14.24 What is deposition? Give an example.
+
+14.25 What is a heating curve?
+
+14.26 What is a cooling curve?
+
+14.27 Why does the temperature remain constant during melting on a heating curve?
+
+14.28 State Boyle's law.
+
+14.29 State Charles' law.
+
+14.30 State Avogadro's law.
+
+14.31 How does kinetic theory explain Boyle's law?
+
+14.32 How does kinetic theory explain Charles' law?
+
+14.33 Define diffusion.
+
+14.34 How does molecular mass affect rate of diffusion?
+
+14.35 How does temperature affect rate of diffusion?
+
+14.36 Why does ammonia diffuse faster than hydrogen chloride?
+
+14.37 What is the importance of diffusion of medicines in the body?
+
+14.38 How does external pressure affect boiling point?
+
+14.39 How does external pressure affect evaporation rate?
+
+14.40 What is the difference between evaporation and boiling?
+
+14.41 What are the applications of sublimation in daily life?
+
+14.42 What is sublimation printing?
+
+14.43 What is the difference between a physical change and a chemical change?
+
+14.44 Why is solid carbon dioxide called dry ice?
+
+14.45 What happens to the pressure of a gas if its volume is halved at constant temperature?
+
+14.46 What happens to the volume of a gas if its temperature is doubled at constant pressure?
+
+14.47 Why does a gas exert more pressure when compressed?
+
+14.48 Why does a gas in a container exert constant pressure at constant temperature?
+
+14.49 What is the relationship between Celsius and Kelvin temperature scales?
+
+14.50 Why is Kelvin scale used in gas laws?
+
+14.51 What is absolute zero?
+
+14.52 How do real gases differ from ideal gases?
+
+14.53 What is plasma state of matter?
+
+14.54 Why is plasma considered a distinct state of matter?
+
+14.55 What is the Bose-Einstein condensate?
+
+14.56 How does pressure affect the melting point of ice?
+
+14.57 Why does water expand on freezing?
+
+14.58 What is the critical temperature of a gas?
+
+14.59 What is supercritical fluid?
+
+14.60 How does a pressure cooker work?
+
+14.61 Why does food cook faster in a pressure cooker?
+
+14.62 What is the triple point of a substance?
+
+14.63 What is the phase diagram of a substance?
+
+14.64 How does kinetic theory explain the three states of matter?
+
+14.65 Why are gases highly compressible?
+
+14.66 Why are liquids almost incompressible?
+
+14.67 Why do solids have definite shape and volume?
+
+14.68 Why do liquids have definite volume but no definite shape?
+
+14.69 Why do gases have neither definite shape nor definite volume?
+
+14.70 What is the relationship between intermolecular forces and state of matter?
+
+14.71 How does the kinetic energy of particles compare in different states?
+
+14.72 What is the significance of the horizontal portion of a heating curve?
+
+14.73 Why is latent heat called "hidden" heat?
+
+14.74 What is the difference between latent heat of fusion and latent heat of vaporization?
+
+14.75 Why does latent heat of vaporization exceed latent heat of fusion?
+
+14.76 What is the effect of impurities on boiling point?
+
+14.77 What is the effect of impurities on freezing point?
+
+14.78 Why is salt spread on icy roads in winter?
+
+14.79 What is the relationship between vapor pressure and temperature?
+
+14.80 What is the boiling point at standard atmospheric pressure?
+
+14.81 Why does water boil at lower temperature on mountains?
+
+14.82 What is the relationship between altitude and boiling point?
+
+14.83 How does a vacuum pump affect boiling?
+
+14.84 What is evaporation cooling? Give an example.
+
+14.85 Why do we feel cool after a hot shower?
+
+14.86 Why do desert coolers work effectively in dry climates?
+
+14.87 What is humidity? How does it affect evaporation?
+
+14.88 Why do we feel uncomfortable on humid days?
+
+14.89 What is the difference between saturated and unsaturated vapor?
+
+14.90 What is relative humidity?
+
+14.91 How does surface area affect evaporation rate?
+
+14.92 How does wind affect evaporation rate?
+
+14.93 Why does a liquid in a wide container evaporate faster than in a narrow container?
+
+14.94 What is the relationship between volatility and evaporation rate?
+
+14.95 Why does alcohol evaporate faster than water?
+
+14.96 What is the difference between volatile and non-volatile substances?
+
+14.97 How does kinetic theory explain the cooling effect of evaporation?
+
+14.98 What is the relationship between temperature and evaporation rate?
+
+14.99 Why does evaporation occur at all temperatures?
+
+14.100 What is the difference between evaporation and boiling at the molecular level?
+
+---
+
+## CHAPTER 15: STOICHIOMETRY
+
+### Exercise Short Questions (#Exercise)
+
+15.1 What is the molar volume of a gas at RTP?
+
+15.2 How does the concept of molar volume useful for us?
+
+15.3 How does the molar volume relate to the Avogadro's law?
+
+15.4 Why two different compounds may show the same empirical formula?
+
+15.5 Why is percentage yield important?
+
+15.6 What is the concentration of a solution in mol/dm³ if it contains 49 g of H₂SO₄ in one dm³ of solution?
+
+### Additional Short Questions from Topics (#Additional)
+
+15.7 What is stoichiometry?
+
+15.8 Define molar volume.
+
+15.9 What are RTP conditions?
+
+15.10 Calculate the number of moles in 2.5 dm³ of nitrogen gas at RTP.
+
+15.11 Calculate the volume occupied by 0.5 mol of hydrogen at RTP.
+
+15.12 Calculate the volume occupied by 200 g of CO₂ at RTP. (Molar mass CO₂ = 44 g/mol)
+
+15.13 What is concentration of a solution?
+
+15.14 Define concentration in g/dm³.
+
+15.15 Define concentration in mol/dm³.
+
+15.16 How do you convert cm³ to dm³?
+
+15.17 Calculate the concentration in g/dm³ if 20 g of NaCl is dissolved in 0.2 dm³ of water.
+
+15.18 Calculate the concentration in g/dm³ if 1.8 g HCl is in 500 cm³ solution.
+
+15.19 Calculate the mass of solute needed for 2 dm³ of 15 g/dm³ solution.
+
+15.20 Calculate the concentration in mol/dm³ if 10 g NaOH is in 1.2 dm³ solution. (Molar mass NaOH = 40 g/mol)
+
+15.21 What is a titration?
+
+15.22 What is the end point in a titration?
+
+15.23 What is the equivalence point in a titration?
+
+15.24 What is an indicator?
+
+15.25 In a titration, 15 cm³ of 0.5 M NaOH neutralizes 23 cm³ of HCl. Calculate HCl concentration.
+
+15.26 What is percentage composition?
+
+15.27 How is percentage composition calculated?
+
+15.28 Calculate the percentage composition of Ca(OH)₂. (Ca=40, O=16, H=1)
+
+15.29 What is empirical formula?
+
+15.30 What is molecular formula?
+
+15.31 How is empirical formula calculated?
+
+15.32 Find empirical formula of compound with 25.26% Mg and 74.74% Cl. (Mg=24, Cl=35.5)
+
+15.33 Find empirical formula of compound with 64.8% C, 15.62% H, 21.58% O. (C=12, H=1, O=16)
+
+15.34 What is the relationship between empirical and molecular formula?
+
+15.35 Calculate molecular formula of benzene with empirical formula CH and molecular mass 78. (C=12, H=1)
+
+15.36 Calculate molecular formula of glucose with empirical formula CH₂O and molecular mass 180.
+
+15.37 What is a balanced chemical equation?
+
+15.38 Why must chemical equations be balanced before calculations?
+
+15.39 In the reaction CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂, what is the mole ratio?
+
+15.40 Calculate the mass of CaCl₂ produced from 25 g CaCO₃. (CaCO₃=100, CaCl₂=111)
+
+15.41 What is a limiting reactant?
+
+15.42 How do you identify the limiting reactant?
+
+15.43 In the reaction C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O, with 25 g glucose and 40 g O₂, identify limiting reactant. (Glucose=180, O₂=32)
+
+15.44 Calculate CO₂ produced from above reaction. (CO₂=44)
+
+15.45 What is actual yield?
+
+15.46 What is theoretical yield?
+
+15.47 What is percentage yield?
+
+15.48 Calculate percentage yield if actual yield is 80.2 g and theoretical yield is 143.92 g.
+
+15.49 What is percentage purity?
+
+15.50 Calculate percentage purity if 12.0 g sample contains 11.57 g pure drug.
+
+15.51 What is the molar mass of a substance?
+
+15.52 How many moles are in 4.0 g of CH₄? (C=12, H=1)
+
+15.53 Calculate the volume of 4.0 g CH₄ at RTP.
+
+15.54 Calculate the number of molecules in 4.0 g CH₄. (Avogadro's number = 6.02 × 10²³)
+
+15.55 What mass of NaCl is needed for 150 cm³ of 0.4 M solution? (NaCl=58.5)
+
+15.56 Calculate the percentage of sodium in NaHCO₃. (Na=23, H=1, C=12, O=16)
+
+15.57 A compound contains 1.926 g S and 2.333 g Fe. Find its empirical formula. (Fe=56, S=32)
+
+15.58 In the reaction 3H₂ + N₂ → 2NH₃, if 12 g H₂ reacts with 64 g N₂, which is limiting? (H₂=2, N₂=28)
+
+15.59 Calculate the percentage yield if 305 g AgNO₃ gives 23.7 g Mg(NO₃)₂. (AgNO₃=170, Mg(NO₃)₂=148)
+
+15.60 What is the percentage purity of a gold sample with total mass 3.66 kg containing 2.45 kg gold?
+
+15.61 Convert 100 cm³ to dm³.
+
+15.62 Convert 0.5 dm³ to cm³.
+
+15.63 What is the molarity of a solution containing 0.5 moles in 250 cm³?
+
+15.64 How many grams of NaOH are needed for 500 cm³ of 0.2 M solution?
+
+15.65 What volume of 0.1 M HCl contains 0.01 moles?
+
+15.66 Calculate the number of moles in 100 cm³ of 0.5 M H₂SO₄.
+
+15.67 What is the mass of 0.2 moles of CaCO₃?
+
+15.68 How many moles are in 5.6 g of KOH? (KOH=56)
+
+15.69 Calculate the mass of 0.25 moles of H₂O.
+
+15.70 What is the volume of 2 moles of CO₂ at RTP?
+
+15.71 How many molecules are in 0.5 moles of O₂?
+
+15.72 Calculate the number of atoms in 2 moles of helium.
+
+15.73 What is the mass of one mole of electrons?
+
+15.74 Define Avogadro's number.
+
+15.75 What is the relationship between mole and Avogadro's number?
+
+15.76 Calculate the number of moles in 12.04 × 10²³ molecules of water.
+
+15.77 How many molecules are in 36 g of water?
+
+15.78 What is the molar mass of Ca(NO₃)₂? (Ca=40, N=14, O=16)
+
+15.79 Calculate the formula mass of Al₂(SO₄)₃. (Al=27, S=32, O=16)
+
+15.80 What is the mass of 0.1 mole of (NH₄)₂CO₃? (N=14, H=1, C=12, O=16)
+
+15.81 How many moles are in 15.8 g of KMnO₄? (K=39, Mn=55, O=16)
+
+15.82 Calculate the number of oxygen atoms in 0.5 moles of CO₂.
+
+15.83 What is the mass of carbon in 22 g of CO₂?
+
+15.84 Calculate the percentage of nitrogen in NH₃.
+
+15.85 What is the empirical formula of a compound with 40% C, 6.7% H, 53.3% O?
+
+15.86 A compound has empirical formula CH₂O and molecular mass 60. Find molecular formula.
+
+15.87 What is the molecular formula of a compound with empirical formula CH and molecular mass 26?
+
+15.88 Calculate the empirical formula of a compound with 27.3% C and 72.7% O.
+
+15.89 A compound contains 50% S and 50% O. Find its empirical formula. (S=32, O=16)
+
+15.90 What is the empirical formula of benzene?
+
+15.91 What is the empirical formula of glucose?
+
+15.92 What is the empirical formula of acetic acid?
+
+15.93 What is the relationship between mole and mass?
+
+15.94 What is the relationship between mole and volume of gas at RTP?
+
+15.95 Calculate the volume of 0.2 moles of SO₂ at RTP.
+
+15.96 How many moles are in 48 dm³ of O₂ at RTP?
+
+15.97 What is the mass of 12 dm³ of N₂ at RTP? (N₂=28)
+
+15.98 Calculate the density of CO₂ at RTP. (CO₂=44, molar volume=24 dm³)
+
+15.99 What is the volume of 88 g of CO₂ at RTP?
+
+15.100 How many molecules are in 24 dm³ of H₂ at RTP?
+
+---
+
+## CHAPTER 16: ELECTROCHEMISTRY
+
+### Exercise Short Questions (#Exercise)
+
+16.1 What happens when electricity is passed through an aqueous solution of NaCl?
+
+16.2 What are the main objectives of electroplating?
+
+16.3 Mention one difference between an electrolytic cell and a galvanic cell.
+
+16.4 Through which electrode, electrons leave the electrolytic cell?
+
+16.5 How does an electrolyte conduct electricity?
+
+16.6 What will happen if a strip of Cu metal is dipped in FeSO₄ solution?
+
+16.7 Why fuel cells are regarded as environment friendly?
+
+### Additional Short Questions from Topics (#Additional)
+
+16.8 What is oxidation number?
+
+16.9 What is the oxidation number of an element in its free state?
+
+16.10 What is the oxidation number of a monoatomic ion?
+
+16.11 What is the oxidation number of oxygen in most compounds?
+
+16.12 What is the oxidation number of hydrogen in most compounds?
+
+16.13 What is the oxidation number of group 1 elements in compounds?
+
+16.14 What is the oxidation number of group 2 elements in compounds?
+
+16.15 What is the oxidation number of aluminum in compounds?
+
+16.16 What is the oxidation number of chlorine in HCl?
+
+16.17 What is the sum of oxidation numbers in a neutral compound?
+
+16.18 What is the sum of oxidation numbers in a polyatomic ion?
+
+16.19 Calculate the oxidation number of S in H₂SO₄.
+
+16.20 Calculate the oxidation number of Mn in KMnO₄.
+
+16.21 Calculate the oxidation number of Cr in K₂Cr₂O₇.
+
+16.22 Calculate the oxidation number of Fe in Fe₂O₃.
+
+16.23 Calculate the oxidation number of C in CH₄.
+
+16.24 Calculate the oxidation number of N in NH₃.
+
+16.25 Calculate the oxidation number of P in H₃PO₄.
+
+16.26 Define oxidation in terms of electron loss.
+
+16.27 Define reduction in terms of electron gain.
+
+16.28 Define oxidizing agent.
+
+16.29 Define reducing agent.
+
+16.30 What is a redox reaction?
+
+16.31 In the reaction 2Mg + O₂ → 2MgO, identify the oxidizing and reducing agents.
+
+16.32 In the reaction CuO + H₂ → Cu + H₂O, identify what is oxidized and what is reduced.
+
+16.33 What is the color change when KMnO₄ acts as an oxidizing agent?
+
+16.34 What is electrolysis?
+
+16.35 Define electrolyte.
+
+16.36 Define non-electrolyte.
+
+16.37 What is an anode?
+
+16.38 What is a cathode?
+
+16.39 What happens at the anode during electrolysis?
+
+16.40 What happens at the cathode during electrolysis?
+
+16.41 What is an electrolytic cell?
+
+16.42 What is a galvanic cell?
+
+16.43 What is the difference between an electrolytic cell and a galvanic cell?
+
+16.44 What products are formed during electrolysis of brine?
+
+16.45 What is brine?
+
+16.46 Why is graphite used as anode in electrolysis of brine?
+
+16.47 What is the electrochemical series?
+
+16.48 What is the standard electrode potential?
+
+16.49 Which metal is the strongest reducing agent?
+
+16.50 Which element is the strongest oxidizing agent?
+
+16.51 What happens during electrolysis of molten lead bromide?
+
+16.52 What is the melting point of lead bromide?
+
+16.53 What products are formed during electrolysis of dilute H₂SO₄?
+
+16.54 Why are inert electrodes used in electrolysis of dilute H₂SO₄?
+
+16.55 What happens during electrolysis of CuSO₄ with copper electrodes?
+
+16.56 What happens during electrolysis of CuSO₄ with inert electrodes?
+
+16.57 What is a fuel cell?
+
+16.58 What are the reactants in a hydrogen-oxygen fuel cell?
+
+16.59 What is the only product of a hydrogen-oxygen fuel cell?
+
+16.60 What are the advantages of fuel cells over fossil fuels?
+
+16.61 What are the disadvantages of fuel cells?
+
+16.62 What is corrosion?
+
+16.63 What is rust?
+
+16.64 What conditions are necessary for rusting?
+
+16.65 Write the reactions involved in rusting of iron.
+
+16.66 What is galvanization?
+
+16.67 Why is zinc used in galvanization?
+
+16.68 What is sacrificial protection?
+
+16.69 Give an example of sacrificial protection.
+
+16.70 What is electroplating?
+
+16.71 What are the objectives of electroplating?
+
+16.72 What is used as anode in silver plating?
+
+16.73 What electrolyte is used in silver plating?
+
+16.74 What is used as anode in copper plating?
+
+16.75 What electrolyte is used in copper plating?
+
+16.76 Why is sulfuric acid added to CuSO₄ during copper plating?
+
+16.77 What is a Daniel cell?
+
+16.78 What are the half-cells in a Daniel cell?
+
+16.79 What is the anode in a Daniel cell?
+
+16.80 What is the cathode in a Daniel cell?
+
+16.81 What is the cell voltage of a Daniel cell?
+
+16.82 Write the half-reaction at the anode in a Daniel cell.
+
+16.83 Write the half-reaction at the cathode in a Daniel cell.
+
+16.84 What is the function of a salt bridge?
+
+16.85 What is standard hydrogen electrode?
+
+16.86 Why is platinum used in standard hydrogen electrode?
+
+16.87 What is the standard electrode potential of hydrogen?
+
+16.88 How can the reactivity of metals be determined using voltage data?
+
+16.89 Which metal is more reactive, zinc or copper?
+
+16.90 Which metal is more reactive, magnesium or iron?
+
+16.91 What is the relationship between reactivity and standard electrode potential?
+
+16.92 Write the formula of potassium argento cyanide.
+
+16.93 What is the oxidation number of Ag in K[Ag(CN)₂]?
+
+16.94 What happens at the anode during silver plating?
+
+16.95 What happens at the cathode during silver plating?
+
+16.96 Why is iron first plated with copper before chromium plating?
+
+16.97 What is the purpose of a porous partition in a galvanic cell?
+
+16.98 What is the direction of electron flow in a galvanic cell?
+
+16.99 What is the difference between oxidation potential and reduction potential?
+
+16.100 What is the relationship between E°cell and spontaneity of reaction?
+
+---
+
+## CHAPTER 17: REACTION KINETICS
+
+### Exercise Short Questions (#Exercise)
+
+17.1 What is a successful collision?
+
+17.2 How does increase in the temperature increase the rate of a reaction?
+
+17.3 Define activation energy.
+
+17.4 Why does the burning of sulphur proceed slower in air than in pure oxygen?
+
+17.5 Why a catalyst used in a reaction is preferably taken in the powdered form?
+
+17.6 Why is the rate of a reaction often very fast at the beginning of the reaction?
+
+17.7 Magnesium does not react with air at room temperature but it reacts very fast at high temperature giving intense white light. Explain.
+
+17.8 What happens to the reactants after they climb the energy hill during a reaction?
+
+17.9 How does a catalyst lower the activation energy of a reaction?
+
+17.10 Give any two features of the catalytic action of an enzyme.
+
+### Additional Short Questions from Topics (#Additional)
+
+17.11 What is collision theory?
+
+17.12 What are effective collisions?
+
+17.13 What factors determine effective collisions?
+
+17.14 How does concentration affect the rate of reaction?
+
+17.15 How does pressure affect the rate of gaseous reactions?
+
+17.16 How does surface area affect the rate of reaction?
+
+17.17 How does temperature affect the rate of reaction?
+
+17.18 What is the effect of increasing temperature on kinetic energy of particles?
+
+17.19 What is the activation energy?
+
+17.20 What is an activated complex?
+
+17.21 What is the energy profile diagram?
+
+17.22 What is the law of conservation of mass?
+
+17.23 Why does the mass appear to change in some reactions?
+
+17.24 When magnesium burns in air, why does the mass increase?
+
+17.25 When marble reacts with HCl in an open container, why does the mass decrease?
+
+17.26 What is an exothermic reaction?
+
+17.27 What is an endothermic reaction?
+
+17.28 How does a catalyst work?
+
+17.29 What is a catalyst?
+
+17.30 What are enzymes?
+
+17.31 What are the characteristics of enzyme catalysis?
+
+17.32 What is the active site of an enzyme?
+
+17.33 Why are enzymes specific in their action?
+
+17.34 What happens to an enzyme after the reaction?
+
+17.35 How does temperature affect enzyme activity?
+
+17.36 How does pH affect enzyme activity?
+
+17.37 What is the optimum temperature for enzyme activity?
+
+17.38 What is denaturation of enzymes?
+
+17.39 What are the factors that affect the rate of reaction?
+
+17.40 How does the concentration of reactants change during a reaction?
+
+17.41 How does the concentration of products change during a reaction?
+
+17.42 What is a concentration-time graph?
+
+17.43 How can you determine the rate of reaction from a concentration-time graph?
+
+17.44 What is the initial rate of reaction?
+
+17.45 Why does the rate of reaction decrease as the reaction proceeds?
+
+17.46 What is the role of chemical kinetics in food industry?
+
+17.47 How does kinetics help in determining harvesting time of fruits?
+
+17.48 How does refrigeration prevent food spoilage?
+
+17.49 What is the effect of temperature on the rate of ripening of fruits?
+
+17.50 What is the effect of ethene on fruit ripening?
+
+17.51 What is the rate determining step?
+
+17.52 What is a reaction mechanism?
+
+17.53 What is an intermediate in a reaction mechanism?
+
+17.54 What is the difference between average rate and instantaneous rate?
+
+17.55 How do you calculate instantaneous rate from a graph?
+
+17.56 What is the rate law?
+
+17.57 What is the rate constant?
+
+17.58 What is the order of reaction?
+
+17.59 What is a zero-order reaction?
+
+17.60 What is a first-order reaction?
+
+17.61 What is a second-order reaction?
+
+17.62 What is the half-life of a reaction?
+
+17.63 What is the half-life of a first-order reaction?
+
+17.64 Give an example of a first-order reaction.
+
+17.65 What is the Arrhenius equation?
+
+17.66 What is the relationship between rate constant and temperature?
+
+17.67 What is the activation energy in terms of Arrhenius equation?
+
+17.68 What is a photochemical reaction?
+
+17.69 Give an example of a photochemical reaction.
+
+17.70 What is photosynthesis?
+
+17.71 What is a chain reaction?
+
+17.72 Give an example of a chain reaction.
+
+17.73 What are free radicals?
+
+17.74 What is the difference between thermal and photochemical reactions?
+
+17.75 What is the effect of light on the rate of reaction?
+
+17.76 What is a catalyst poison?
+
+17.77 What is a catalytic promoter?
+
+17.78 What is homogeneous catalysis?
+
+17.79 What is heterogeneous catalysis?
+
+17.80 Give an example of homogeneous catalysis.
+
+17.81 Give an example of heterogeneous catalysis.
+
+17.82 What is adsorption theory of catalysis?
+
+17.83 What is the role of platinum in catalysis?
+
+17.84 What is autocatalysis?
+
+17.85 Give an example of autocatalysis.
+
+17.86 What is the difference between positive and negative catalyst?
+
+17.87 What is a negative catalyst?
+
+17.88 Give an example of a negative catalyst.
+
+17.89 What is the relationship between collision frequency and rate of reaction?
+
+17.90 What is the fraction of effective collisions?
+
+17.91 How does orientation affect effective collisions?
+
+17.92 What is the steric factor?
+
+17.93 What is the threshold energy?
+
+17.94 What is the relationship between activation energy and threshold energy?
+
+17.95 How does a catalyst affect the activation energy?
+
+17.96 How does a catalyst affect the equilibrium constant?
+
+17.97 What is the difference between a catalyst and an inhibitor?
+
+17.98 What is an enzyme inhibitor?
+
+17.99 Give an example of an enzyme inhibitor in medicine.
+
+17.100 What is the importance of reaction kinetics in industry?
+
+---
+
+## CHAPTER 18: SALTS
+
+### Exercise Short Questions (#Exercise)
+
+18.1 Which factors are responsible for the strength of electrostatic forces between ions?
+
+18.2 Is lead (II) chloride soluble in water? Give comments.
+
+18.3 Which lead salts are insoluble in water?
+
+18.4 Name two insoluble carbonates.
+
+18.5 What is a crystal lattice?
+
+### Additional Short Questions from Topics (#Additional)
+
+18.6 What is a salt?
+
+18.7 How are salts formed?
+
+18.8 What is a neutralization reaction?
+
+18.9 Give an example of a neutralization reaction.
+
+18.10 What are the ions present in sodium chloride?
+
+18.11 How are ions arranged in a salt crystal?
+
+18.12 What is the crystal lattice of sodium chloride?
+
+18.13 How many chloride ions surround each sodium ion in NaCl crystal?
+
+18.14 How many sodium ions surround each chloride ion in NaCl crystal?
+
+18.15 What is the shape of NaCl crystal?
+
+18.16 Why do ionic compounds have high melting points?
+
+18.17 Why do ionic compounds conduct electricity in molten state?
+
+18.18 Why do ionic compounds not conduct electricity in solid state?
+
+18.19 Why do ionic compounds conduct electricity in aqueous solution?
+
+18.20 What are strong electrolytes?
+
+18.21 Give examples of strong electrolytes.
+
+18.22 What are weak electrolytes?
+
+18.23 Give examples of weak electrolytes.
+
+18.24 What are soluble salts?
+
+18.25 What are insoluble salts?
+
+18.26 Which salts are always soluble in water?
+
+18.27 Which chlorides are insoluble in water?
+
+18.28 Which sulphates are insoluble in water?
+
+18.29 Which carbonates are soluble in water?
+
+18.30 Which hydroxides are soluble in water?
+
+18.31 Is calcium hydroxide soluble in water?
+
+18.32 Is lead chloride soluble in water?
+
+18.33 Is silver chloride soluble in water?
+
+18.34 Is barium sulphate soluble in water?
+
+18.35 Is calcium sulphate soluble in water?
+
+18.36 Is sodium carbonate soluble in water?
+
+18.37 Is potassium carbonate soluble in water?
+
+18.38 Is ammonium carbonate soluble in water?
+
+18.39 Is sodium hydroxide soluble in water?
+
+18.40 Is potassium hydroxide soluble in water?
+
+18.41 Is ammonium hydroxide soluble in water?
+
+18.42 How are soluble salts prepared by titration method?
+
+18.43 What is the titration method?
+
+18.44 How is potassium nitrate prepared by titration?
+
+18.45 How do you obtain crystals from a salt solution?
+
+18.46 What is crystallization?
+
+18.47 How are crystals dried?
+
+18.48 How are soluble salts prepared using excess metal?
+
+18.49 Which metals can be used to prepare salts by excess metal method?
+
+18.50 Write the reaction of magnesium with dilute sulphuric acid.
+
+18.51 How are soluble salts prepared using excess insoluble base?
+
+18.52 Write the reaction of copper oxide with sulphuric acid.
+
+18.53 How are soluble salts prepared using excess insoluble carbonate?
+
+18.54 Write the reaction of calcium carbonate with hydrochloric acid.
+
+18.55 What is effervescence?
+
+18.56 How are insoluble salts prepared by precipitation?
+
+18.57 Write the reaction for preparation of barium sulphate by precipitation.
+
+18.58 What is a precipitate?
+
+18.59 How is the precipitate separated?
+
+18.60 How is the precipitate washed?
+
+18.61 How is the precipitate dried?
+
+18.62 What is a desiccator?
+
+18.63 What are drying agents?
+
+18.64 Give examples of drying agents.
+
+18.65 Why can't anhydrous calcium chloride be used to dry ammonia?
+
+18.66 What is water of crystallization?
+
+18.67 What are hydrated salts?
+
+18.68 What are anhydrous salts?
+
+18.69 Give an example of a hydrated salt.
+
+18.70 What is the formula of blue vitriol?
+
+18.71 What is the formula of green vitriol?
+
+18.72 What is the formula of white vitriol?
+
+18.73 What is the formula of Epsom salt?
+
+18.74 What is the formula of gypsum?
+
+18.75 What is the formula of plaster of Paris?
+
+18.76 What is the formula of washing soda?
+
+18.77 What is the formula of baking soda?
+
+18.78 What happens when hydrated salts are heated?
+
+18.79 What is the color of anhydrous copper sulphate?
+
+18.80 What happens when water is added to anhydrous copper sulphate?
+
+18.81 What are efflorescent substances?
+
+18.82 Give an example of an efflorescent substance.
+
+18.83 What are deliquescent substances?
+
+18.84 Give an example of a deliquescent substance.
+
+18.85 What are hygroscopic substances?
+
+18.86 Give an example of a hygroscopic substance.
+
+18.87 What is the difference between deliquescent and hygroscopic substances?
+
+18.88 What is mother liquor?
+
+18.89 What is recrystallization?
+
+18.90 Why is recrystallization used?
+
+18.91 What is double decomposition?
+
+18.92 Give an example of double decomposition reaction.
+
+18.93 What is the use of common salt?
+
+18.94 What is the use of copper sulphate?
+
+18.95 What is the use of silver nitrate?
+
+18.96 What is the use of barium sulphate?
+
+18.97 What is the use of calcium carbonate?
+
+18.98 What is the use of sodium carbonate?
+
+18.99 What is the use of sodium bicarbonate?
+
+18.100 What is the use of magnesium sulphate?
+
+---
+
+## CHAPTER 19: NITROGEN AND SULPHUR
+
+### Exercise Short Questions (#Exercise)
+
+19.1 How is nitrogen obtained from air?
+
+19.2 How is hydrogen produced from methane?
+
+19.3 Which conditions are used to oxidize SO₂ to SO₃?
+
+19.4 Why CO₂ is called an acidic oxide while CO is called a neutral oxide?
+
+19.5 How do magnesium and calcium differ with each other towards their reactions with water?
+
+19.6 How are the reactivities of metals determined?
+
+19.7 Which secondary pollutants are produced by oxides of nitrogen?
+
+### Additional Short Questions from Topics (#Additional)
+
+19.8 What is the Haber process?
+
+19.9 Write the chemical equation for the Haber process.
+
+19.10 What are the raw materials for the Haber process?
+
+19.11 What is the source of nitrogen in Haber process?
+
+19.12 What is the source of hydrogen in Haber process?
+
+19.13 What is the ratio of nitrogen and hydrogen in Haber process?
+
+19.14 What is the temperature used in Haber process?
+
+19.15 What is the pressure used in Haber process?
+
+19.16 What catalyst is used in Haber process?
+
+19.17 Why is iron catalyst used in powdered form?
+
+19.18 What is the role of Al₂O₃ in Haber process catalyst?
+
+19.19 Why is the reaction in Haber process carried out at high temperature?
+
+19.20 Why is high pressure used in Haber process?
+
+19.21 What is the yield of ammonia in Haber process?
+
+19.22 How is ammonia separated from the mixture?
+
+19.23 What happens to the unreacted gases in Haber process?
+
+19.24 What are the uses of ammonia?
+
+19.25 What is the Contact process?
+
+19.26 Write the equation for preparation of SO₂ from sulphur.
+
+19.27 Write the equation for preparation of SO₂ from iron pyrite.
+
+19.28 What is roasting?
+
+19.29 Why are SO₂ and oxygen purified before use in Contact process?
+
+19.30 What impurities poison the catalyst in Contact process?
+
+19.31 How are impurities removed from SO₂?
+
+19.32 What catalyst is used in Contact process?
+
+19.33 What is the temperature in Contact process?
+
+19.34 What is the pressure in Contact process?
+
+19.35 Write the equation for oxidation of SO₂ to SO₃.
+
+19.36 What is the yield of SO₃ in Contact process?
+
+19.37 Why is SO₃ absorbed in concentrated H₂SO₄ instead of water?
+
+19.38 What is oleum?
+
+19.39 How is sulphuric acid obtained from oleum?
+
+19.40 What are the uses of sulphuric acid?
+
+19.41 What are oxides?
+
+19.42 What are basic oxides?
+
+19.43 Give examples of basic oxides.
+
+19.44 What are acidic oxides?
+
+19.45 Give examples of acidic oxides.
+
+19.46 What are amphoteric oxides?
+
+19.47 Give examples of amphoteric oxides.
+
+19.48 What are neutral oxides?
+
+19.49 Give examples of neutral oxides.
+
+19.50 How do basic oxides react with acids?
+
+19.51 How do acidic oxides react with bases?
+
+19.52 How do amphoteric oxides react with acids?
+
+19.53 How do amphoteric oxides react with bases?
+
+19.54 Write the reaction of ZnO with HCl.
+
+19.55 Write the reaction of ZnO with NaOH.
+
+19.56 Write the reaction of Al₂O₃ with HCl.
+
+19.57 Write the reaction of Al₂O₃ with NaOH.
+
+19.58 What are the properties of metals?
+
+19.59 How do metals react with cold water?
+
+19.60 Write the reaction of sodium with cold water.
+
+19.61 Write the reaction of potassium with cold water.
+
+19.62 Write the reaction of calcium with cold water.
+
+19.63 How does magnesium react with cold water?
+
+19.64 How do metals react with steam?
+
+19.65 Write the reaction of magnesium with steam.
+
+19.66 How do metals react with oxygen?
+
+19.67 Write the reaction of sodium with oxygen.
+
+19.68 What is the flame color when sodium burns?
+
+19.69 What is the flame color when magnesium burns?
+
+19.70 What is the flame color when calcium burns?
+
+19.71 What is the flame color when strontium burns?
+
+19.72 What is the flame color when barium burns?
+
+19.73 How do metals react with dilute acids?
+
+19.74 Write the reaction of magnesium with dilute HCl.
+
+19.75 What is the reactivity series of metals?
+
+19.76 Arrange the following metals in order of reactivity: Na, Ca, Mg, Zn, Fe, Cu.
+
+19.77 Which metals react with cold water?
+
+19.78 Which metals react with steam but not cold water?
+
+19.79 Which metals do not react with water at all?
+
+19.80 Which metals react with dilute acids to produce hydrogen?
+
+19.81 Why do metals above hydrogen in reactivity series displace hydrogen from acids?
+
+19.82 Why is sodium more reactive than magnesium?
+
+19.83 What are the primary pollutants in the atmosphere?
+
+19.84 What are secondary pollutants?
+
+19.85 What are the sources of NOx in the atmosphere?
+
+19.86 How is NO produced during lightning?
+
+19.87 How is NO₂ produced from NO?
+
+19.88 What are the effects of NOx on the environment?
+
+19.89 What is photochemical smog?
+
+19.90 What is PAN?
+
+19.91 How is acid rain formed?
+
+19.92 What are the components of acid rain?
+
+19.93 What is the pH of acid rain?
+
+19.94 What are the effects of acid rain?
+
+19.95 How do NOx catalyze the oxidation of SO₂?
+
+19.96 What are VOCs?
+
+19.97 How do VOCs contribute to smog formation?
+
+19.98 What is the role of sunlight in smog formation?
+
+19.99 What is the difference between primary and secondary pollutants?
+
+19.100 How can air pollution be controlled?
+
+---
+
+## CHAPTER 20: WATER
+
+### Exercise Short Questions (#Exercise)
+
+20.1 Name two methods to check the purity of water.
+
+20.2 What is the main difference between tap water and distilled water?
+
+20.3 How water is distilled in the laboratory?
+
+20.4 Name useful and harmful substances present in water.
+
+20.5 How would you remove harmful bacteria and other microbes present in water?
+
+20.6 What is the difference between sedimentation and filtration?
+
+20.7 Name any three water-borne diseases.
+
+20.8 Why fertilizers containing nitrogen element are added into the soil?
+
+20.9 What is trachoma disease?
+
+### Additional Short Questions from Topics (#Additional)
+
+20.10 What is the chemical test for water?
+
+20.11 What is the color of anhydrous copper sulphate?
+
+20.12 What happens when water is added to anhydrous copper sulphate?
+
+20.13 What is the color of cobalt chloride paper?
+
+20.14 What happens to cobalt chloride paper in presence of water?
+
+20.15 What is the boiling point of pure water?
+
+20.16 What is the freezing point of pure water?
+
+20.17 How does the presence of impurities affect the boiling point of water?
+
+20.18 How does the presence of impurities affect the freezing point of water?
+
+20.19 What is tap water?
+
+20.20 What minerals are present in tap water?
+
+20.21 Why does tap water conduct electricity?
+
+20.22 What is the pH range of tap water?
+
+20.23 What is distilled water?
+
+20.24 How is distilled water obtained?
+
+20.25 What is the pH of distilled water?
+
+20.26 Why is distilled water used in laboratories?
+
+20.27 Why is distilled water a bad conductor of electricity?
+
+20.28 What is dissolved oxygen?
+
+20.29 Why is dissolved oxygen important for aquatic life?
+
+20.30 How does oxygen enter natural water?
+
+20.31 What are the sources of harmful microbes in water?
+
+20.32 What diseases are caused by contaminated water?
+
+20.33 How do heavy metals enter water?
+
+20.34 What are the health effects of heavy metals in water?
+
+20.35 What are microplastics?
+
+20.36 How do microplastics enter water?
+
+20.37 What are the effects of microplastics on human health?
+
+20.38 How do nitrates and phosphates enter water?
+
+20.39 What is eutrophication?
+
+20.40 How does eutrophication affect aquatic life?
+
+20.41 What are the three types of impurities in water?
+
+20.42 What is sedimentation?
+
+20.43 How does sedimentation remove impurities?
+
+20.44 What is filtration?
+
+20.45 What materials are used in water filters?
+
+20.46 What is chlorination?
+
+20.47 Why is chlorine added to water?
+
+20.48 How is chlorine added to water?
+
+20.49 How are tastes and odours removed from water?
+
+20.50 What is the role of activated carbon in water treatment?
+
+20.51 What is aeration?
+
+20.52 How does aeration improve water quality?
+
+20.53 What are water-borne diseases?
+
+20.54 Name three water-borne diseases.
+
+20.55 What is cholera?
+
+20.56 What is typhoid?
+
+20.57 What is hepatitis?
+
+20.58 How can water-borne diseases be prevented?
+
+20.59 Why is it important to drink clean water?
+
+20.60 Why should we boil water before drinking?
+
+20.61 What is water scarcity?
+
+20.62 Why is Pakistan facing water scarcity?
+
+20.63 What is the annual rainfall in northern Pakistan?
+
+20.64 What is the annual rainfall in southern Pakistan?
+
+20.65 How can water scarcity be addressed?
+
+20.66 What is rainwater harvesting?
+
+20.67 How can better irrigation techniques conserve water?
+
+20.68 What are micro-nutrients?
+
+20.69 Give examples of micro-nutrients.
+
+20.70 What are macro-nutrients?
+
+20.71 Give examples of macro-nutrients.
+
+20.72 What are fertilizers?
+
+20.73 Why are fertilizers added to soil?
+
+20.74 What are the essential qualities of a good fertilizer?
+
+20.75 Why should a fertilizer be soluble in water?
+
+20.76 Why should a fertilizer be stable in storage?
+
+20.77 Why should a fertilizer be inexpensive?
+
+20.78 What are nitrogenous fertilizers?
+
+20.79 Give examples of nitrogenous fertilizers.
+
+20.80 What is urea?
+
+20.81 What is the percentage of nitrogen in urea?
+
+20.82 Why is urea a good fertilizer?
+
+20.83 What are phosphatic fertilizers?
+
+20.84 Give examples of phosphatic fertilizers.
+
+20.85 What is super phosphate?
+
+20.86 What is triple phosphate?
+
+20.87 What are potassium fertilizers?
+
+20.88 Give examples of potassium fertilizers.
+
+20.89 What is potassium chloride?
+
+20.90 What is potassium sulphate?
+
+20.91 What is potassium nitrate?
+
+20.92 What is the role of nitrogen in plant growth?
+
+20.93 What is the role of phosphorus in plant growth?
+
+20.94 What is the role of potassium in plant growth?
+
+20.95 Why is ammonium nitrate not suitable for paddy rice?
+
+20.96 What is NPK fertilizer?
+
+20.97 What is the difference between micro-nutrients and macro-nutrients?
+
+20.98 What are the effects of fertilizer overuse?
+
+20.99 What are organic fertilizers?
+
+20.100 What are biofertilizers?
+
+---
+
+## CHAPTER 21: ORGANIC CHEMISTRY
+
+### Exercise Short Questions (#Exercise)
+
+21.1 What is the difference between saturated and unsaturated hydrocarbons?
+
+21.2 Write down the structural formula of Butan-2-ol.
+
+21.3 Why is ethylamine CH₃-CH₂-NH₂ called an organic compound?
+
+21.4 Write down the formula of an ester called ethyl methanoate.
+
+21.5 Define structural isomerism.
+
+21.6 Give IUPAC name to CH₃-CH₂-CH₂-CH₃.
+
+21.7 What is common in carboxyl group, amide functional group and ester functional group?
+
+### Additional Short Questions from Topics (#Additional)
+
+21.8 What is organic chemistry?
+
+21.9 What is an organic compound?
+
+21.10 Which elements are commonly found in organic compounds?
+
+21.11 What are hydrocarbons?
+
+21.12 How are organic compounds classified?
+
+21.13 What are open chain compounds?
+
+21.14 What are cyclic compounds?
+
+21.15 What are aliphatic compounds?
+
+21.16 What are aromatic compounds?
+
+21.17 What is a structural formula?
+
+21.18 What is a displayed formula?
+
+21.19 What is a condensed structural formula?
+
+21.20 Write the displayed formula of ethane.
+
+21.21 Write the condensed formula of ethane.
+
+21.22 Write the displayed formula of ethene.
+
+21.23 Write the condensed formula of ethene.
+
+21.24 Write the displayed formula of ethyne.
+
+21.25 Write the condensed formula of ethyne.
+
+21.26 Write the condensed formula of propane.
+
+21.27 Write the condensed formula of butane.
+
+21.28 What is a homologous series?
+
+21.29 What are the characteristics of a homologous series?
+
+21.30 What is the general formula of alkanes?
+
+21.31 What is the general formula of alkenes?
+
+21.32 What is the general formula of alkynes?
+
+21.33 What is the general formula of alcohols?
+
+21.34 What is the general formula of carboxylic acids?
+
+21.35 How do members of a homologous series differ?
+
+21.36 Why do members of a homologous series have similar chemical properties?
+
+21.37 What is isomerism?
+
+21.38 What are structural isomers?
+
+21.39 How many isomers does butane have?
+
+21.40 Write the structural formulae of isomers of butane.
+
+21.41 How many isomers does pentane have?
+
+21.42 Write the structural formulae of isomers of pentane.
+
+21.43 How many isomers does butene have?
+
+21.44 Write the structural formulae of isomers of butene.
+
+21.45 What is a functional group?
+
+21.46 What is the functional group of alcohols?
+
+21.47 What is the functional group of aldehydes?
+
+21.48 What is the functional group of ketones?
+
+21.49 What is the functional group of carboxylic acids?
+
+21.50 What is the functional group of amines?
+
+21.51 What is the functional group of amides?
+
+21.52 What is the functional group of esters?
+
+21.53 What is the difference between alcohols and phenols?
+
+21.54 Write the formula of the aldehyde functional group.
+
+21.55 Write the formula of the ketone functional group.
+
+21.56 Write the formula of the carboxyl group.
+
+21.57 Write the formula of the ester group.
+
+21.58 Write the formula of the amide group.
+
+21.59 What is IUPAC nomenclature?
+
+21.60 What is the root word in IUPAC nomenclature?
+
+21.61 What does the root 'meth' indicate?
+
+21.62 What does the root 'eth' indicate?
+
+21.63 What does the root 'prop' indicate?
+
+21.64 What does the root 'but' indicate?
+
+21.65 What is the suffix for alkanes?
+
+21.66 What is the suffix for alkenes?
+
+21.67 What is the suffix for alkynes?
+
+21.68 What is the suffix for alcohols?
+
+21.69 What is the suffix for carboxylic acids?
+
+21.70 What is an alkyl group?
+
+21.71 How is an alkyl group formed?
+
+21.72 What is the general formula of alkyl group?
+
+21.73 Write the formula of methyl group.
+
+21.74 Write the formula of ethyl group.
+
+21.75 Write the formula of propyl group.
+
+21.76 Write the IUPAC name of CH₄.
+
+21.77 Write the IUPAC name of C₂H₆.
+
+21.78 Write the IUPAC name of C₃H₈.
+
+21.79 Write the IUPAC name of C₄H₁₀.
+
+21.80 Write the IUPAC name of CH₃OH.
+
+21.81 Write the common name of CH₃OH.
+
+21.82 Write the IUPAC name of C₂H₅OH.
+
+21.83 Write the common name of C₂H₅OH.
+
+21.84 Write the IUPAC name of CH₃-CH₂-CH₂-OH.
+
+21.85 Write the IUPAC name of CH₃-CHOH-CH₃.
+
+21.86 Write the IUPAC name of CH₃-CH₂-CH₂-CH₂-OH.
+
+21.87 Write the IUPAC name of CH₃-CHOH-CH₂-CH₃.
+
+21.88 Write the IUPAC name of HCOOH.
+
+21.89 Write the common name of HCOOH.
+
+21.90 Write the IUPAC name of CH₃COOH.
+
+21.91 Write the common name of CH₃COOH.
+
+21.92 Write the IUPAC name of C₂H₅COOH.
+
+21.93 Write the common name of C₂H₅COOH.
+
+21.94 Write the IUPAC name of C₃H₇COOH.
+
+21.95 Write the common name of C₃H₇COOH.
+
+21.96 Write the formula of methyl acetate.
+
+21.97 Write the formula of ethyl acetate.
+
+21.98 Write the formula of ethyl formate.
+
+21.99 Write the formula of methyl propanoate.
+
+21.100 Write the formula of ethyl propanoate.
+
+---
+
+## CHAPTER 22: HYDROCARBONS
+
+### Exercise Short Questions (#Exercise)
+
+22.1 Give two examples of addition reactions.
+
+22.2 Give the names of the compounds obtained from coal tar and petroleum.
+
+22.3 How ethene is oxidized by cold aqueous solution of potassium permanganate.
+
+22.4 Differentiate between elimination and addition reactions.
+
+22.5 Name the starting materials used to generate oxyacetylene flame.
+
+22.6 How can an alkene be identified?
+
+### Additional Short Questions from Topics (#Additional)
+
+22.7 What are alkenes?
+
+22.8 What is the general formula of alkenes?
+
+22.9 Why are alkenes called olefins?
+
+22.10 How are alkenes prepared by dehydration of alcohols?
+
+22.11 What reagent is used for dehydration of alcohols?
+
+22.12 Write the equation for dehydration of ethanol to ethene.
+
+22.13 How are alkenes prepared by dehydrohalogenation of alkyl halides?
+
+22.14 What reagent is used for dehydrohalogenation?
+
+22.15 Write the equation for dehydrohalogenation of bromoethane.
+
+22.16 What is an elimination reaction?
+
+22.17 How are alkenes prepared by cracking of alkanes?
+
+22.18 What is cracking?
+
+22.19 What are the conditions for cracking?
+
+22.20 Why is cracking important industrially?
+
+22.21 What products are obtained by cracking of kerosene?
+
+22.22 What is the chemical reactivity of alkenes due to?
+
+22.23 What type of reactions do alkenes undergo?
+
+22.24 What is an addition reaction?
+
+22.25 Write the equation for addition of hydrogen to ethene.
+
+22.26 What catalyst is used for hydrogenation of alkenes?
+
+22.27 What is catalytic hydrogenation?
+
+22.28 Write the equation for addition of bromine to ethene.
+
+22.29 What is the color of bromine?
+
+22.30 What happens to the color of bromine when added to ethene?
+
+22.31 How can you test for unsaturation?
+
+22.32 Write the equation for oxidation of ethene with cold KMnO₄.
+
+22.33 What is the product of oxidation of ethene with cold KMnO₄?
+
+22.34 What is the color of KMnO₄?
+
+22.35 What happens to the color of KMnO₄ when added to ethene?
+
+22.36 Write the equation for addition of HCl to ethene.
+
+22.37 Write the equation for addition of water to ethene.
+
+22.38 What are the conditions for hydration of ethene?
+
+22.39 What catalyst is used for hydration of ethene?
+
+22.40 What are alkynes?
+
+22.41 What is the general formula of alkynes?
+
+22.42 What is the simplest alkyne?
+
+22.43 What is the common name of ethyne?
+
+22.44 What are the uses of ethyne?
+
+22.45 Why is oxy-acetylene flame very hot?
+
+22.46 Write the combustion equation of ethyne.
+
+22.47 How is ethyne used for ripening fruits?
+
+22.48 Why is the use of calcium carbide for ripening fruits prohibited?
+
+22.49 What are the sources of organic compounds?
+
+22.50 What is petroleum?
+
+22.51 What is natural gas?
+
+22.52 What is the main component of natural gas?
+
+22.53 What is refining of petroleum?
+
+22.54 What is fractional distillation?
+
+22.55 What is the principle of fractional distillation?
+
+22.56 Describe the fractionating column.
+
+22.57 What are the fractions obtained from petroleum?
+
+22.58 What is the boiling range of refinery gases?
+
+22.59 What are the uses of refinery gases?
+
+22.60 What is the boiling range of gasoline?
+
+22.61 What are the uses of gasoline?
+
+22.62 What is the boiling range of naphtha?
+
+22.63 What are the uses of naphtha?
+
+22.64 What is the boiling range of kerosene?
+
+22.65 What are the uses of kerosene?
+
+22.66 What is the boiling range of diesel?
+
+22.67 What are the uses of diesel?
+
+22.68 What is the boiling range of fuel oil?
+
+22.69 What are the uses of fuel oil?
+
+22.70 What are the uses of lubricating oil fraction?
+
+22.71 What are the uses of bitumen?
+
+22.72 How do the properties of petroleum fractions change with chain length?
+
+22.73 How does volatility change with chain length?
+
+22.74 How does boiling point change with chain length?
+
+22.75 How does viscosity change with chain length?
+
+22.76 Which fractions have the lowest boiling points?
+
+22.77 Which fractions have the highest boiling points?
+
+22.78 What are fossil fuels?
+
+22.79 Name three fossil fuels.
+
+22.80 What is coal?
+
+22.81 What are the products obtained from coal?
+
+22.82 What is coal tar?
+
+22.83 What are the uses of coal tar?
+
+22.84 What is the difference between addition and condensation polymerization?
+
+22.85 What are polymers?
+
+22.86 What are monomers?
+
+22.87 What is polymerization?
+
+22.88 Give an example of an addition polymer.
+
+22.89 Give an example of a condensation polymer.
+
+22.90 What is polythene?
+
+22.91 What are the uses of polythene?
+
+22.92 What is PVC?
+
+22.93 What are the uses of PVC?
+
+22.94 What is polystyrene?
+
+22.95 What are the uses of polystyrene?
+
+22.96 What is Teflon?
+
+22.97 What are the uses of Teflon?
+
+22.98 What are synthetic fibers?
+
+22.99 Name some synthetic fibers.
+
+22.100 What are the advantages of synthetic fibers over natural fibers?
+
+---
+
+## CHAPTER 23: MONOHYDROXY ALKANES OR ALCOHOLS
+
+### Exercise Short Questions (#Exercise)
+
+23.1 Give two advantages of burning of alcohols over the burning of fossil fuel.
+
+23.2 Which properties of ethyl alcohol make it useful for cosmetic industry?
+
+23.3 How is ethyl alcohol important for pharmaceutical industry?
+
+23.4 Give any two disadvantages of fermentation reactions.
+
+23.5 Write the conditions involved in the hydration of ethene.
+
+### Additional Short Questions from Topics (#Additional)
+
+23.6 What are alcohols?
+
+23.7 What is the general formula of alcohols?
+
+23.8 How is ethanol manufactured by fermentation?
+
+23.9 What is fermentation?
+
+23.10 What is the role of yeast in fermentation?
+
+23.11 Write the equation for fermentation of glucose.
+
+23.12 What are the optimum conditions for fermentation?
+
+23.13 Why is the temperature kept at 35°C during fermentation?
+
+23.14 Why is oxygen excluded during fermentation?
+
+23.15 What happens if the temperature is too high during fermentation?
+
+23.16 Why does fermentation stop when ethanol concentration reaches 15%?
+
+23.17 How is ethanol manufactured by hydration of ethene?
+
+23.18 Write the equation for hydration of ethene.
+
+23.19 What are the conditions for hydration of ethene?
+
+23.20 What catalyst is used for hydration of ethene?
+
+23.21 What is the advantage of hydration method over fermentation?
+
+23.22 What is the disadvantage of hydration method?
+
+23.23 Compare fermentation and hydration methods.
+
+23.24 Which method uses renewable resources?
+
+23.25 Which method is faster?
+
+23.26 Which method produces purer alcohol?
+
+23.27 Which method is cheaper?
+
+23.28 What is the combustion of alcohols?
+
+23.29 Write the combustion equation for ethanol.
+
+23.30 Why does the heat of combustion increase with chain length?
+
+23.31 What are the advantages of using alcohols as fuels?
+
+23.32 Why are alcohols considered environment friendly fuels?
+
+23.33 What are the disadvantages of using alcohols as fuels?
+
+23.34 Why do alcohols have less energy per volume than gasoline?
+
+23.35 Why are alcohols considered carbon neutral?
+
+23.36 What is the role of ethanol in pharmaceutical industry?
+
+23.37 Why is ethanol used in hand sanitizers?
+
+23.38 What is methylated spirit?
+
+23.39 What are the uses of methylated spirit?
+
+23.40 What is the role of ethanol in cosmetic industry?
+
+23.41 Why is ethanol used in perfumes?
+
+23.42 What are the properties of ethanol that make it useful in cosmetics?
+
+23.43 What are the impacts of alcohols on daily life?
+
+23.44 How is ethanol used in first aid?
+
+23.45 What are the harmful effects of drinking alcohol?
+
+23.46 What is alcohol poisoning?
+
+23.47 How many diseases are caused by long-term alcohol use?
+
+23.48 What is the difference between methanol and ethanol?
+
+23.49 Why is methanol toxic?
+
+23.50 What is denatured alcohol?
+
+23.51 Why is ethanol denatured?
+
+23.52 What is absolute alcohol?
+
+23.53 How is absolute alcohol obtained?
+
+23.54 What is proof spirit?
+
+23.55 What is the percentage of alcohol in proof spirit?
+
+23.56 What is rectified spirit?
+
+23.57 What is the percentage of alcohol in rectified spirit?
+
+23.58 What is power alcohol?
+
+23.59 What is gasohol?
+
+23.60 What is the composition of gasohol?
+
+23.61 What are the advantages of using gasohol?
+
+23.62 What are the primary alcohols?
+
+23.63 What are secondary alcohols?
+
+23.64 What are tertiary alcohols?
+
+23.65 Give an example of a primary alcohol.
+
+23.66 Give an example of a secondary alcohol.
+
+23.67 Give an example of a tertiary alcohol.
+
+23.68 What is the structure of propan-1-ol?
+
+23.69 What is the structure of propan-2-ol?
+
+23.70 What is the structure of butan-1-ol?
+
+23.71 What is the structure of butan-2-ol?
+
+23.72 What is the IUPAC name of isopropyl alcohol?
+
+23.73 What is the common name of propan-2-ol?
+
+23.74 What is the common name of butan-2-ol?
+
+23.75 What is the common name of 2-methylpropan-2-ol?
+
+23.76 What is the difference between ethanol and methanol?
+
+23.77 What is the boiling point of ethanol?
+
+23.78 What is the boiling point of methanol?
+
+23.79 What is the melting point of ethanol?
+
+23.80 Is ethanol soluble in water?
+
+23.81 Why is ethanol soluble in water?
+
+23.82 What is the reaction of ethanol with sodium?
+
+23.83 Write the equation for reaction of ethanol with sodium.
+
+23.84 What is the product when ethanol reacts with sodium?
+
+23.85 What is the test for ethanol?
+
+23.86 What is iodoform test?
+
+23.87 Which alcohols give iodoform test?
+
+23.88 What is the oxidation product of primary alcohols?
+
+23.89 What is the oxidation product of secondary alcohols?
+
+23.90 What is the oxidation product of tertiary alcohols?
+
+23.91 What oxidizing agent is used for oxidation of alcohols?
+
+23.92 Write the equation for oxidation of ethanol to ethanal.
+
+23.93 Write the equation for oxidation of ethanol to ethanoic acid.
+
+23.94 What is the dehydration of alcohols?
+
+23.95 What is the product of dehydration of ethanol?
+
+23.96 What reagent is used for dehydration of alcohols?
+
+23.97 What is the condition for dehydration of ethanol?
+
+23.98 What is the difference between fermentation and distillation?
+
+23.99 What is the difference between absolute alcohol and rectified spirit?
+
+23.100 What is the future of alcohol as a fuel?
+
+---
+
+## CHAPTER 24: CARBOXYLIC ACIDS
+
+### Exercise Short Questions (#Exercise)
+
+24.1 What is an esterification reaction?
+
+24.2 Name an oxidizing agent used to oxidize alcohols.
+
+24.3 Why sufficient oxygen is provided during fermentation to prepare acetic acid from ethanol?
+
+24.4 What is the role of carboxylic acids in the preparation of beverages?
+
+24.5 Give a practical example in which an acid or an ester is used as a flavouring agent.
+
+24.6 Which carboxylic acids are very oftenly used as flavour enhancers?
+
+24.7 Which property of acetic acid does make it suitable to act as preservative in pickle?
+
+### Additional Short Questions from Topics (#Additional)
+
+24.8 What are carboxylic acids?
+
+24.9 What is the functional group of carboxylic acids?
+
+24.10 What is the general formula of carboxylic acids?
+
+24.11 How is ethanoic acid prepared by oxidation of ethanol?
+
+24.12 Write the equation for oxidation of ethanol to ethanoic acid.
+
+24.13 What is the color change when ethanol is oxidized by KMnO₄?
+
+24.14 How is ethanoic acid prepared by fermentation?
+
+24.15 What is vinegar?
+
+24.16 What is the percentage of acetic acid in vinegar?
+
+24.17 Write the equation for bacterial oxidation of ethanol to acetic acid.
+
+24.18 What is the quick vinegar process?
+
+24.19 How do carboxylic acids react with metals?
+
+24.20 Write the equation for reaction of ethanoic acid with magnesium.
+
+24.21 How do carboxylic acids react with bases?
+
+24.22 Write the equation for reaction of ethanoic acid with sodium hydroxide.
+
+24.23 How do carboxylic acids react with carbonates?
+
+24.24 Write the equation for reaction of ethanoic acid with sodium carbonate.
+
+24.25 What is observed when ethanoic acid reacts with sodium carbonate?
+
+24.26 How do carboxylic acids react with alcohols?
+
+24.27 What is esterification?
+
+24.28 What catalyst is used in esterification?
+
+24.29 Write the equation for reaction of ethanoic acid with ethanol.
+
+24.30 What is the product of esterification of ethanoic acid and ethanol?
+
+24.31 What are the uses of carboxylic acids as solvents?
+
+24.32 What are the uses of esters as solvents?
+
+24.33 What is ethyl acetate used for?
+
+24.34 What are the uses of carboxylic acids as flavouring agents?
+
+24.35 Which acids are used as flavour enhancers?
+
+24.36 What is the sour taste in foods due to?
+
+24.37 What are the uses of esters as flavouring agents?
+
+24.38 Give examples of esters and their flavours.
+
+24.39 What is the flavour of methyl butyrate?
+
+24.40 What is the flavour of ethyl butyrate?
+
+24.41 What is the flavour of n-amyl acetate?
+
+24.42 What is the flavour of n-octyl acetate?
+
+24.43 What is the flavour of methyl salicylate?
+
+24.44 What are the uses of carboxylic acids in making polymers?
+
+24.45 What is polyester?
+
+24.46 How is polyester made?
+
+24.47 What are the uses of polyesters?
+
+24.48 What are the uses of carboxylic acids in making soaps?
+
+24.49 Which acids are used in soap making?
+
+24.50 What is the role of carboxylic acids in pharmaceuticals?
+
+24.51 What is aspirin?
+
+24.52 What is ibuprofen?
+
+24.53 What are the uses of carboxylic acids in daily life?
+
+24.54 What are food preservatives?
+
+24.55 Which carboxylic acids are used as food preservatives?
+
+24.56 Why is acetic acid used in pickles?
+
+24.57 What is citric acid?
+
+24.58 Where is citric acid found?
+
+24.59 What is malic acid?
+
+24.60 Where is malic acid found?
+
+24.61 What is tartaric acid?
+
+24.62 Where is tartaric acid found?
+
+24.63 What is ascorbic acid?
+
+24.64 What is the common name of ascorbic acid?
+
+24.65 What are the uses of esters in daily life?
+
+24.66 What are the uses of esters in fragrances?
+
+24.67 What are the uses of esters in cosmetics?
+
+24.68 What are the uses of esters in plastics?
+
+24.69 What is plexiglass?
+
+24.70 What is polymethyl methacrylate?
+
+24.71 What are plasticizers?
+
+24.72 What are citric acid esters used for?
+
+24.73 What is the difference between formic acid and acetic acid?
+
+24.74 Where is formic acid found?
+
+24.75 Why is formic acid called formic acid?
+
+24.76 Why is acetic acid called acetic acid?
+
+24.77 What is the Latin word for ant?
+
+24.78 What is the Latin word for vinegar?
+
+24.79 What is the freezing point of pure ethanoic acid?
+
+24.80 Why is pure ethanoic acid called glacial acetic acid?
+
+24.81 What is the melting point of glacial acetic acid?
+
+24.82 Is acetic acid soluble in water?
+
+24.83 Why is acetic acid soluble in water?
+
+24.84 What is the dissociation constant of acetic acid?
+
+24.85 Why is acetic acid a weak acid?
+
+24.86 What is the pH of 0.1 M acetic acid?
+
+24.87 What is the reaction of acetic acid with litmus?
+
+24.88 What is the reaction of acetic acid with sodium bicarbonate?
+
+24.89 Write the equation for reaction of acetic acid with sodium bicarbonate.
+
+24.90 What is the use of acetic acid in photography?
+
+24.91 What is the use of acetic acid in textile industry?
+
+24.92 What is the use of acetic acid in rubber industry?
+
+24.93 What is the use of acetic acid in dyeing?
+
+24.94 What is the use of acetic acid in printing?
+
+24.95 What is the use of acetic acid in medicine?
+
+24.96 What is the use of acetic acid in household?
+
+24.97 What is the difference between acetic acid and ethanoic acid?
+
+24.98 What is the formula of acetic anhydride?
+
+24.99 What is the use of acetic anhydride?
+
+24.100 What is the difference between aliphatic and aromatic carboxylic acids?
+
+---
+
+## CHAPTER 25: BIOCHEMISTRY
+
+### Exercise Short Questions (#Exercise)
+
+25.1 What is the difference between glucose and fructose?
+
+25.2 Give two examples of denaturation of proteins.
+
+25.3 What are the sources of vitamin D?
+
+25.4 What is the role of enzymes in our body?
+
+25.5 Which commercial products are obtained from oils and fats?
+
+25.6 Which vitamin helps in blood clotting?
+
+### Additional Short Questions from Topics (#Additional)
+
+25.7 What is biochemistry?
+
+25.8 What are biomolecules?
+
+25.9 What are carbohydrates?
+
+25.10 What are the elements present in carbohydrates?
+
+25.11 What is the main function of carbohydrates in the body?
+
+25.12 What is the daily requirement of carbohydrates for an adult?
+
+25.13 What are monosaccharides?
+
+25.14 Give an example of a monosaccharide.
+
+25.15 What are disaccharides?
+
+25.16 Give an example of a disaccharide.
+
+25.17 What are polysaccharides?
+
+25.18 Give an example of a polysaccharide.
+
+25.19 What is glucose?
+
+25.20 What is fructose?
+
+25.21 What is sucrose?
+
+25.22 What is lactose?
+
+25.23 What is maltose?
+
+25.24 What is starch?
+
+25.25 What is cellulose?
+
+25.26 What is glycogen?
+
+25.27 Where is glycogen stored in the body?
+
+25.28 What are proteins?
+
+25.29 What are the elements present in proteins?
+
+25.30 What is the daily requirement of proteins for an adult?
+
+25.31 What are the functions of proteins in the body?
+
+25.32 What are amino acids?
+
+25.33 What is the general structure of an amino acid?
+
+25.34 What is a peptide bond?
+
+25.35 How is a peptide bond formed?
+
+25.36 What is a polypeptide?
+
+25.37 What is the primary structure of proteins?
+
+25.38 What is the secondary structure of proteins?
+
+25.39 What is the tertiary structure of proteins?
+
+25.40 What is the quaternary structure of proteins?
+
+25.41 What is denaturation of proteins?
+
+25.42 Give an example of protein denaturation.
+
+25.43 What are enzymes?
+
+25.44 What is the role of enzymes in the body?
+
+25.45 What is the active site of an enzyme?
+
+25.46 What is the lock and key model?
+
+25.47 What is the induced fit model?
+
+25.48 What are lipids?
+
+25.49 What are the functions of lipids in the body?
+
+25.50 What is the daily requirement of lipids for an adult?
+
+25.51 What are fatty acids?
+
+25.52 What is the general structure of a fatty acid?
+
+25.53 What are saturated fatty acids?
+
+25.54 Give an example of a saturated fatty acid.
+
+25.55 What are unsaturated fatty acids?
+
+25.56 Give an example of an unsaturated fatty acid.
+
+25.57 What is glycerol?
+
+25.58 What are triglycerides?
+
+25.59 How are triglycerides formed?
+
+25.60 What are the sources of animal fats?
+
+25.61 What are the sources of vegetable oils?
+
+25.62 What are nucleic acids?
+
+25.63 What is DNA?
+
+25.64 What is the function of DNA?
+
+25.65 Where is DNA found in the cell?
+
+25.66 What is RNA?
+
+25.67 What is the function of RNA?
+
+25.68 Where is RNA found in the cell?
+
+25.69 What is the difference between DNA and RNA?
+
+25.70 What are vitamins?
+
+25.71 Why are vitamins called "vital amines"?
+
+25.72 How many vitamins are needed by the human body?
+
+25.73 What is vitamin A?
+
+25.74 What are the sources of vitamin A?
+
+25.75 What is the deficiency disease of vitamin A?
+
+25.76 What is vitamin D?
+
+25.77 What are the sources of vitamin D?
+
+25.78 What is the deficiency disease of vitamin D?
+
+25.79 How is vitamin D synthesized in the body?
+
+25.80 What is vitamin C?
+
+25.81 What are the sources of vitamin C?
+
+25.82 What is the deficiency disease of vitamin C?
+
+25.83 What is vitamin B₁?
+
+25.84 What are the sources of vitamin B₁?
+
+25.85 What is the deficiency disease of vitamin B₁?
+
+25.86 What is vitamin B₂?
+
+25.87 What are the sources of vitamin B₂?
+
+25.88 What is the deficiency disease of vitamin B₂?
+
+25.89 What is vitamin B₁₂?
+
+25.90 What is the deficiency disease of vitamin B₁₂?
+
+25.91 What is vitamin E?
+
+25.92 What is the function of vitamin E?
+
+25.93 What is vitamin K?
+
+25.94 What is the function of vitamin K?
+
+25.95 What are the applications of biochemistry in medicine?
+
+25.96 What is a blood test?
+
+25.97 What information does a blood test provide?
+
+25.98 What is a pregnancy test?
+
+25.99 What is HCG?
+
+25.100 What is genetic engineering?
+
+25.101 What is gene therapy?
+
+25.102 What is cloning?
+
+25.103 What is cancer screening?
+
+25.104 What is the Galleri test?
+
+25.105 What is parental genetic testing?
+
+25.106 What is the importance of biochemistry in daily life?
+
+25.107 What is the relationship between biochemistry and nutrition?
+
+25.108 What is a balanced diet?
+
+25.109 What are the basics of healthy eating?
+
+25.110 How does a balanced diet prevent diseases?
+
+---
+
+## CHAPTER 26: POLYMERS
+
+### Exercise Short Questions (#Exercise)
+
+26.1 Give two examples each of addition polymers and condensation polymers.
+
+26.2 How polymers are useful for us?
+
+26.3 How synthetic fibers are different from natural fibers?
+
+26.4 Are natural polymers hazardous for the environment? Explain why?
+
+26.5 Draw the structures of the following polymers: (a) Polypropylene (b) Polystyrene
+
+### Additional Short Questions from Topics (#Additional)
+
+26.6 What are polymers?
+
+26.7 What are monomers?
+
+26.8 What is polymerization?
+
+26.9 What are natural polymers?
+
+26.10 Give examples of natural polymers.
+
+26.11 What are synthetic polymers?
+
+26.12 Give examples of synthetic polymers.
+
+26.13 What are addition polymers?
+
+26.14 How are addition polymers formed?
+
+26.15 Give an example of an addition polymer.
+
+26.16 Write the polymerization of ethene to polyethene.
+
+26.17 What are the conditions for addition polymerization?
+
+26.18 What are condensation polymers?
+
+26.19 How are condensation polymers formed?
+
+26.20 What is eliminated during condensation polymerization?
+
+26.21 Give an example of a condensation polymer.
+
+26.22 What is PET?
+
+26.23 How is PET formed?
+
+26.24 Write the reaction for formation of PET.
+
+26.25 What is the linkage in PET?
+
+26.26 Can PET be recycled?
+
+26.27 How is PET recycled?
+
+26.28 What are polyamides?
+
+26.29 How are polyamides formed?
+
+26.30 Write the reaction for formation of a polyamide.
+
+26.31 What is the linkage in polyamides?
+
+26.32 What is nylon?
+
+26.33 What are the uses of nylon?
+
+26.34 What are polyesters?
+
+26.35 What are the uses of polyesters?
+
+26.36 What is the repeating unit in a polymer?
+
+26.37 How do you identify the repeating unit in an addition polymer?
+
+26.38 How do you identify the monomers from an addition polymer?
+
+26.39 How do you identify the monomers from a condensation polymer?
+
+26.40 What are plastics?
+
+26.41 How are plastics made?
+
+26.42 What are the properties of plastics?
+
+26.43 What are the uses of plastics?
+
+26.44 What are the environmental challenges caused by plastics?
+
+26.45 Why are plastics non-biodegradable?
+
+26.46 How long do plastics take to decompose?
+
+26.47 What happens when plastics are burned?
+
+26.48 What are the problems with plastic disposal in landfills?
+
+26.49 How do plastics accumulate in oceans?
+
+26.50 What are the effects of plastic pollution on marine life?
+
+26.51 What are microplastics?
+
+26.52 How do microplastics affect human health?
+
+26.53 What is the importance of polymers in textile industry?
+
+26.54 What are synthetic fibers?
+
+26.55 Give examples of synthetic fibers.
+
+26.56 What are the advantages of synthetic fibers?
+
+26.57 Why are synthetic fibers cheaper than natural fibers?
+
+26.58 Why are synthetic fibers stronger than natural fibers?
+
+26.59 Why do synthetic fibers not shrink?
+
+26.60 Why do synthetic fibers resist wrinkling?
+
+26.61 Why are synthetic fibers quick drying?
+
+26.62 Why are synthetic fibers moth and insect resistant?
+
+26.63 What is polyester used for in textiles?
+
+26.64 What is nylon used for in textiles?
+
+26.65 What is acrylic used for in textiles?
+
+26.66 What is rayon?
+
+26.67 What are the properties of acrylic fibers?
+
+26.68 What percentage of clothing material is polyester and nylon?
+
+26.69 What is the structure of nylon?
+
+26.70 What is the structure of polyester?
+
+26.71 What is the difference between addition and condensation polymers?
+
+26.72 What are thermoplastics?
+
+26.73 Give examples of thermoplastics.
+
+26.74 What are thermosetting plastics?
+
+26.75 Give examples of thermosetting plastics.
+
+26.76 What is the difference between thermoplastics and thermosetting plastics?
+
+26.77 What are elastomers?
+
+26.78 Give an example of an elastomer.
+
+26.79 What is natural rubber?
+
+26.80 What is vulcanization?
+
+26.81 Why is sulphur added to rubber?
+
+26.82 What are the properties of vulcanized rubber?
+
+26.83 What are biodegradable polymers?
+
+26.84 Give an example of a biodegradable polymer.
+
+26.85 What is polylactic acid (PLA)?
+
+26.86 What are the uses of PLA?
+
+26.87 What is polyhydroxybutyrate (PHB)?
+
+26.88 What are the uses of PHB?
+
+26.89 What is recycling of polymers?
+
+26.90 Why is recycling of polymers important?
+
+26.91 What are the recycling symbols on plastics?
+
+26.92 What does the number 1 in recycling symbol indicate?
+
+26.93 What does the number 2 in recycling symbol indicate?
+
+26.94 What does the number 3 in recycling symbol indicate?
+
+26.95 What does the number 4 in recycling symbol indicate?
+
+26.96 What does the number 5 in recycling symbol indicate?
+
+26.97 What does the number 6 in recycling symbol indicate?
+
+26.98 What does the number 7 in recycling symbol indicate?
+
+26.99 What are the future prospects of polymer science?
+
+26.100 What are the environmental friendly alternatives to plastics?
+
+---
+
+**Total Short Questions Extracted: 2,600**
+- Each chapter: 100 Short Questions (Exercise + Additional)
+- 26 chapters × 100 Questions = 2,600 Short Questions
+- All in raw format with question numbers only
+- Ready for database insertion

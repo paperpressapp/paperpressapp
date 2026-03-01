@@ -30,7 +30,7 @@ export default function MyPapersPage() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [papers, setPapers] = useState<GeneratedPaper[]>([]);
-  const [activeTab, setActiveTab] = useState<"all" | "month">("all");
+  const [activeTab, setActiveTab] = useState<"all" | "month" | "week" | "favorites">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -69,6 +69,15 @@ export default function MyPapersPage() {
           paperDate.getFullYear() === now.getFullYear()
         );
       });
+    } else if (activeTab === "week") {
+      const now = new Date();
+      const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+      filtered = filtered.filter((paper) => {
+        const paperDate = new Date(paper.createdAt);
+        return paperDate >= weekAgo;
+      });
+    } else if (activeTab === "favorites") {
+      filtered = filtered.filter((paper) => paper.isFavorite);
     }
 
     // Search filter
@@ -166,7 +175,7 @@ export default function MyPapersPage() {
   }, [toast]);
 
   // Handle favorites tab
-  const handleTabChange = useCallback((tab: "all" | "month") => {
+  const handleTabChange = useCallback((tab: "all" | "month" | "week" | "favorites") => {
     setActiveTab(tab);
   }, []);
 
@@ -250,40 +259,40 @@ export default function MyPapersPage() {
             className="flex-1"
             style={{
               paddingTop: showSearch
-                ? 'calc(120px + env(safe-area-inset-top, 0px))'
-                : 'calc(56px + env(safe-area-inset-top, 0px))'
+                ? '120px'
+                : '56px'
             }}
           >
-            {/* Stats Card */}
+            {/* Stats Card - Connected to header */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="px-4 py-3"
+              className="px-4 pt-2 pb-2"
             >
-              <div className="bg-[#1A1A1A] rounded-[20px] p-4 border border-[#2A2A2A] shadow-[0px_8px_24px_rgba(0,0,0,0.4)]">
+              <div className="bg-[#1A1A1A] rounded-[16px] p-3 border border-[#2A2A2A] shadow-[0px_8px_24px_rgba(0,0,0,0.4)]">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-[12px] bg-gradient-to-br from-[#B9FF66] to-[#22c55e] flex items-center justify-center shadow">
-                      <FileText className="w-4 h-4 text-[#0A0A0A]" />
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-[10px] bg-gradient-to-br from-[#B9FF66] to-[#22c55e] flex items-center justify-center">
+                      <FileText className="w-3.5 h-3.5 text-[#0A0A0A]" />
                     </div>
                     <div>
-                      <p className="text-lg font-bold text-white">{papers.length}</p>
-                      <p className="text-xs text-[#A0A0A0]">Total Papers</p>
+                      <p className="text-base font-bold text-white">{papers.length}</p>
+                      <p className="text-[10px] text-[#A0A0A0]">Papers</p>
                     </div>
                   </div>
                   <Button
                     onClick={() => router.push("/home")}
-                    className="h-9 rounded-lg bg-gradient-to-r from-[#B9FF66] to-[#22c55e] text-[#0A0A0A] font-medium text-sm"
+                    className="h-8 rounded-lg bg-gradient-to-r from-[#B9FF66] to-[#22c55e] text-[#0A0A0A] font-medium text-xs"
                   >
-                    <Plus className="w-3.5 h-3.5 mr-1" />
-                    Create
+                    <Plus className="w-3 h-3 mr-1" />
+                    New
                   </Button>
                 </div>
               </div>
             </motion.div>
 
             {/* Tabs */}
-            <div className="px-4 mb-3">
+            <div className="px-4 mb-2">
               <PapersTabs activeTab={activeTab} onChange={handleTabChange} />
             </div>
 
@@ -308,7 +317,7 @@ export default function MyPapersPage() {
                 </div>
               )}
 
-              <div className="h-20" />
+              <div className="h-12" />
             </div>
           </ScrollView>
         </div>

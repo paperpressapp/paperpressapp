@@ -44,6 +44,7 @@ export default function PaperPreviewContent() {
   const [questions, setQuestions] = useState<{ mcqs: MCQQuestion[]; shorts: ShortQuestion[]; longs: LongQuestion[] }>({ mcqs: [], shorts: [], longs: [] });
   const [showShareSheet, setShowShareSheet] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [isPdfDownloaded, setIsPdfDownloaded] = useState(false);
 
   const loadedRef = useRef(false);
   const loadingIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -106,6 +107,50 @@ export default function PaperPreviewContent() {
           }
         });
 
+        // Add custom questions from editedQuestions (IDs starting with 'custom_')
+        const editedQuestions = paperData.editedQuestions || {};
+        
+        // Add custom MCQs
+        paperData.mcqIds?.forEach((id: string) => {
+          if (id.startsWith('custom_') && editedQuestions[id]) {
+            mcqs.push({
+              id,
+              questionText: editedQuestions[id].questionText || "Custom MCQ",
+              options: editedQuestions[id].options || ["Option 1", "Option 2", "Option 3", "Option 4"],
+              correctOption: 0,
+              difficulty: editedQuestions[id].difficulty || 'medium',
+              chapterNumber: 0,
+              marks: paperData.customMarks?.mcq || 1
+            } as unknown as MCQQuestion);
+          }
+        });
+
+        // Add custom Short questions
+        paperData.shortIds?.forEach((id: string) => {
+          if (id.startsWith('custom_') && editedQuestions[id]) {
+            shorts.push({
+              id,
+              questionText: editedQuestions[id].questionText || "Custom Short Question",
+              difficulty: editedQuestions[id].difficulty || 'medium',
+              chapterNumber: 0,
+              marks: paperData.customMarks?.short || 2
+            } as unknown as ShortQuestion);
+          }
+        });
+
+        // Add custom Long questions
+        paperData.longIds?.forEach((id: string) => {
+          if (id.startsWith('custom_') && editedQuestions[id]) {
+            longs.push({
+              id,
+              questionText: editedQuestions[id].questionText || "Custom Long Question",
+              difficulty: editedQuestions[id].difficulty || 'medium',
+              chapterNumber: 0,
+              marks: paperData.customMarks?.long || 5
+            } as unknown as LongQuestion);
+          }
+        });
+
         setQuestions({ mcqs, shorts, longs });
         setIsLoading(false);
       } catch (error) {
@@ -141,6 +186,9 @@ export default function PaperPreviewContent() {
       institutePhone: paper.institutePhone || '',
       instituteWebsite: paper.instituteWebsite || '',
       includeBubbleSheet: paper.includeBubbleSheet ?? false,
+      fontSize: paper.fontSize || 12,
+      editedQuestions: paper?.editedQuestions || {} || {},
+      questionOrder: paper?.questionOrder || {} || { mcqs: [], shorts: [], longs: [] },
     };
   }, [paper, isPremium]);
 
@@ -150,7 +198,7 @@ export default function PaperPreviewContent() {
 
     setIsGenerating(true);
     startLoadingAnimation();
-    
+
     try {
       const response = await fetch('/api/generate-pdf', {
         method: 'POST',
@@ -158,11 +206,13 @@ export default function PaperPreviewContent() {
           'Content-Type': 'application/json',
           'x-api-key': process.env.NEXT_PUBLIC_PDF_API_KEY || '',
         },
-        body: JSON.stringify({ 
-          settings, 
-          mcqs: questions.mcqs, 
-          shorts: questions.shorts, 
-          longs: questions.longs 
+        body: JSON.stringify({
+          settings,
+          mcqs: questions.mcqs,
+          shorts: questions.shorts,
+          longs: questions.longs,
+          editedQuestions: paper?.editedQuestions || {},
+          questionOrder: paper?.questionOrder || {}
         }),
       });
 
@@ -172,7 +222,7 @@ export default function PaperPreviewContent() {
       }
 
       const blob = await response.blob();
-      
+
       if (blob.size === 0) {
         throw new Error("Server returned empty PDF");
       }
@@ -189,6 +239,7 @@ export default function PaperPreviewContent() {
             directory: Directory.Documents,
           });
           toast.success("PDF saved to Documents/PaperPress");
+          setIsPdfDownloaded(true);
         };
       } else {
         const url = URL.createObjectURL(blob);
@@ -200,6 +251,7 @@ export default function PaperPreviewContent() {
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
         toast.success("PDF downloaded!");
+        setIsPdfDownloaded(true);
       }
     } catch (error) {
       console.error('Download error:', error);
@@ -216,7 +268,7 @@ export default function PaperPreviewContent() {
 
     setIsGenerating(true);
     startLoadingAnimation();
-    
+
     try {
       const response = await fetch('/api/preview-paper', {
         method: 'POST',
@@ -224,11 +276,13 @@ export default function PaperPreviewContent() {
           'Content-Type': 'application/json',
           'x-api-key': process.env.NEXT_PUBLIC_PDF_API_KEY || '',
         },
-        body: JSON.stringify({ 
-          settings, 
-          mcqs: questions.mcqs, 
-          shorts: questions.shorts, 
-          longs: questions.longs 
+        body: JSON.stringify({
+          settings,
+          mcqs: questions.mcqs,
+          shorts: questions.shorts,
+          longs: questions.longs,
+          editedQuestions: paper?.editedQuestions || {},
+          questionOrder: paper?.questionOrder || {}
         }),
       });
 
@@ -255,7 +309,7 @@ export default function PaperPreviewContent() {
 
     setIsGenerating(true);
     startLoadingAnimation();
-    
+
     try {
       const response = await fetch('/api/generate-docx', {
         method: 'POST',
@@ -263,11 +317,13 @@ export default function PaperPreviewContent() {
           'Content-Type': 'application/json',
           'x-api-key': process.env.NEXT_PUBLIC_PDF_API_KEY || '',
         },
-        body: JSON.stringify({ 
-          settings, 
-          mcqs: questions.mcqs, 
-          shorts: questions.shorts, 
-          longs: questions.longs 
+        body: JSON.stringify({
+          settings,
+          mcqs: questions.mcqs,
+          shorts: questions.shorts,
+          longs: questions.longs,
+          editedQuestions: paper?.editedQuestions || {},
+          questionOrder: paper?.questionOrder || {}
         }),
       });
 
@@ -276,7 +332,7 @@ export default function PaperPreviewContent() {
       }
 
       const blob = await response.blob();
-      
+
       if (Capacitor.isNativePlatform()) {
         const reader = new FileReader();
         reader.readAsDataURL(blob);
@@ -326,11 +382,13 @@ export default function PaperPreviewContent() {
           'Content-Type': 'application/json',
           'x-api-key': process.env.NEXT_PUBLIC_PDF_API_KEY || '',
         },
-        body: JSON.stringify({ 
-          settings, 
-          mcqs: questions.mcqs, 
-          shorts: questions.shorts, 
-          longs: questions.longs 
+        body: JSON.stringify({
+          settings,
+          mcqs: questions.mcqs,
+          shorts: questions.shorts,
+          longs: questions.longs,
+          editedQuestions: paper?.editedQuestions || {},
+          questionOrder: paper?.questionOrder || {}
         }),
       });
 
@@ -354,76 +412,146 @@ export default function PaperPreviewContent() {
   }, [questions, getSettings]);
 
   const handleWhatsAppShare = useCallback(async () => {
+    if (!isPdfDownloaded) {
+      toast.info("Please download the PDF first, then click share again");
+      return;
+    }
+
+    setShowShareSheet(false);
     setIsGenerating(true);
     try {
       const blob = await generateAndGetPDFBlob();
-      
-      if (blob) {
-        if (Capacitor.isNativePlatform()) {
-          const reader = new FileReader();
-          reader.readAsDataURL(blob);
-          reader.onloadend = async () => {
-            const base64 = (reader.result as string).split(',')[1];
-            const fileName = `${paper?.classId}_${paper?.subject}_${paper?.date}.pdf`;
+
+      if (!blob) {
+        setIsGenerating(false);
+        return;
+      }
+
+      if (Capacitor.isNativePlatform()) {
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onloadend = async () => {
+          const base64 = (reader.result as string).split(',')[1];
+          const fileName = `PaperPress_${paper?.classId}_${paper?.subject}_${paper?.date}.pdf`;
+
+          try {
             await Filesystem.writeFile({
               path: fileName,
               data: base64,
               directory: Directory.Cache,
             });
             const fileUri = await Filesystem.getUri({ path: fileName, directory: Directory.Cache });
-            
-            await Share.share({
-              title: paper?.title || "Paper",
+
+            const shareResult = await Share.share({
+              title: paper?.title || "Exam Paper",
+              text: getShareText(),
               url: fileUri.uri,
               dialogTitle: 'Share via WhatsApp',
             });
-          };
-        } else {
-          const text = getShareText();
-          const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
-          window.open(whatsappUrl, '_blank');
-          toast.success("Opening WhatsApp...");
+
+            if (!shareResult) {
+              toast.info("Share cancelled");
+            } else {
+              toast.success("Shared via WhatsApp");
+            }
+          } catch (shareError: any) {
+            if (shareError?.message?.includes('User did not share')) {
+              toast.info("Share cancelled");
+            } else {
+              console.error('Share error:', shareError);
+              toast.error("Failed to share");
+            }
+          }
+          setIsGenerating(false);
+        };
+      } else {
+        const file = new File([blob], `${paper?.title || 'Exam Paper'}.pdf`, { type: "application/pdf" });
+
+        if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+          try {
+            await navigator.share({
+              files: [file],
+              title: paper?.title || "Exam Paper",
+              text: getShareText(),
+            });
+            toast.success("Shared successfully!");
+            setIsGenerating(false);
+            return;
+          } catch (error) {
+            if ((error as Error).name !== 'AbortError') {
+              console.error('Share error:', error);
+            }
+          }
         }
+
+        toast.info("Please download the PDF and share it via WhatsApp");
+        setIsGenerating(false);
       }
     } catch (error) {
       console.error('WhatsApp share error:', error);
       toast.error("Failed to share");
+      setIsGenerating(false);
     }
-    setIsGenerating(false);
-    setShowShareSheet(false);
-  }, [paper, generateAndGetPDFBlob, getShareText]);
+  }, [paper, generateAndGetPDFBlob, getShareText, isPdfDownloaded]);
 
   const handleEmailShare = useCallback(async () => {
+    if (!isPdfDownloaded) {
+      toast.info("Please download the PDF first, then click share again");
+      return;
+    }
+
     setIsGenerating(true);
     try {
       const blob = await generateAndGetPDFBlob();
-      
-      if (blob) {
-        if (Capacitor.isNativePlatform()) {
-          const reader = new FileReader();
-          reader.readAsDataURL(blob);
-          reader.onloadend = async () => {
-            const base64 = (reader.result as string).split(',')[1];
-            const fileName = `${paper?.classId}_${paper?.subject}_${paper?.date}.pdf`;
-            await Filesystem.writeFile({
-              path: fileName,
-              data: base64,
-              directory: Directory.Cache,
+
+      if (!blob) {
+        setIsGenerating(false);
+        return;
+      }
+
+      if (Capacitor.isNativePlatform()) {
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onloadend = async () => {
+          const base64 = (reader.result as string).split(',')[1];
+          const fileName = `${paper?.classId}_${paper?.subject}_${paper?.date}.pdf`;
+          await Filesystem.writeFile({
+            path: fileName,
+            data: base64,
+            directory: Directory.Cache,
+          });
+          const fileUri = await Filesystem.getUri({ path: fileName, directory: Directory.Cache });
+
+          await Share.share({
+            title: paper?.title || "Paper",
+            text: getShareText(),
+            url: fileUri.uri,
+            dialogTitle: 'Share via Email',
+          });
+        };
+      } else {
+        const file = new File([blob], `${paper?.title || 'Exam Paper'}.pdf`, { type: "application/pdf" });
+
+        if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+          try {
+            await navigator.share({
+              files: [file],
+              title: paper?.title || "Exam Paper",
+              text: getShareText(),
             });
-            const fileUri = await Filesystem.getUri({ path: fileName, directory: Directory.Cache });
-            
-            await Share.share({
-              title: paper?.title || "Paper",
-              url: fileUri.uri,
-              dialogTitle: 'Share via Email',
-            });
-          };
-        } else {
-          const subject = encodeURIComponent(paper?.title || "Exam Paper");
-          const body = encodeURIComponent(getShareText());
-          const mailtoUrl = `mailto:?subject=${subject}&body=${body}`;
-          window.location.href = mailtoUrl;
+            toast.success("Shared successfully!");
+            setIsGenerating(false);
+            return;
+          } catch (error) {
+            if ((error as Error).name !== 'AbortError') {
+              console.error('Share error:', error);
+            }
+          }
         }
+
+        const subject = encodeURIComponent(paper?.title || "Exam Paper");
+        const body = encodeURIComponent(`${getShareText()}\n\n(Please find the PDF attached)`);
+        window.location.href = `mailto:?subject=${subject}&body=${body}`;
       }
     } catch (error) {
       console.error('Email share error:', error);
@@ -431,7 +559,7 @@ export default function PaperPreviewContent() {
     }
     setIsGenerating(false);
     setShowShareSheet(false);
-  }, [paper, generateAndGetPDFBlob, getShareText]);
+  }, [paper, generateAndGetPDFBlob, getShareText, isPdfDownloaded]);
 
   const handleCopyLink = useCallback(async () => {
     try {
@@ -595,9 +723,9 @@ export default function PaperPreviewContent() {
         <div className="px-4 py-3">
           <p className="text-xs font-semibold text-[#A0A0A0] uppercase mb-3">Quick Share</p>
           <div className="grid grid-cols-3 gap-3">
-            <motion.button 
+            <motion.button
               whileTap={{ scale: 0.95 }}
-              onClick={handleWhatsAppShare} 
+              onClick={handleWhatsAppShare}
               disabled={isGenerating}
               className="bg-[#1A1A1A] rounded-[20px] p-3 flex flex-col items-center gap-2 border border-[#2A2A2A] disabled:opacity-50"
             >
@@ -606,9 +734,9 @@ export default function PaperPreviewContent() {
               </div>
               <span className="text-xs font-medium text-white">WhatsApp</span>
             </motion.button>
-            <motion.button 
+            <motion.button
               whileTap={{ scale: 0.95 }}
-              onClick={handleEmailShare} 
+              onClick={handleEmailShare}
               disabled={isGenerating}
               className="bg-[#1A1A1A] rounded-[20px] p-3 flex flex-col items-center gap-2 border border-[#2A2A2A] disabled:opacity-50"
             >
@@ -617,9 +745,9 @@ export default function PaperPreviewContent() {
               </div>
               <span className="text-xs font-medium text-white">Email</span>
             </motion.button>
-            <motion.button 
+            <motion.button
               whileTap={{ scale: 0.95 }}
-              onClick={handleCopyLink} 
+              onClick={handleCopyLink}
               className="bg-[#1A1A1A] rounded-[20px] p-3 flex flex-col items-center gap-2 border border-[#2A2A2A]"
             >
               <div className={`w-10 h-10 rounded-[12px] flex items-center justify-center ${copied ? 'bg-[#22c55e]' : 'bg-[#2A2A2A]'}`}>
@@ -674,32 +802,32 @@ export default function PaperPreviewContent() {
 
       <AnimatePresence>
         {isGenerating && (
-          <motion.div 
+          <motion.div
             className="fixed inset-0 z-[100] bg-[#0A0A0A]/95 backdrop-blur-sm flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <motion.div 
+            <motion.div
               className="text-center"
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               transition={{ type: "spring", damping: 20, stiffness: 300 }}
             >
-              <motion.div 
+              <motion.div
                 className="w-24 h-24 mx-auto mb-6 relative"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               >
                 <div className="absolute inset-0 rounded-full border-4 border-[#2A2A2A]" />
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 rounded-full border-4 border-transparent border-t-[#B9FF66]"
                 />
                 <div className="absolute inset-2 rounded-full bg-[#1A1A1A] flex items-center justify-center">
                   <FileSpreadsheet className="w-10 h-10 text-[#B9FF66]" />
                 </div>
               </motion.div>
-              <motion.h2 
+              <motion.h2
                 className="text-xl font-bold text-white mb-2"
                 key={loadingStep}
                 initial={{ opacity: 0, y: 10 }}
@@ -708,7 +836,7 @@ export default function PaperPreviewContent() {
               >
                 {LOADING_MESSAGES[loadingStep as keyof typeof LOADING_MESSAGES] || 'Generating...'}
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-sm text-[#A0A0A0]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -716,7 +844,7 @@ export default function PaperPreviewContent() {
               >
                 Please wait while we create your paper...
               </motion.p>
-              
+
               <motion.button
                 className="mt-6 px-6 py-2 text-sm text-[#A0A0A0] hover:text-white font-medium"
                 initial={{ opacity: 0 }}
@@ -730,8 +858,8 @@ export default function PaperPreviewContent() {
               >
                 Cancel
               </motion.button>
-              
-              <motion.div 
+
+              <motion.div
                 className="mt-6 flex justify-center gap-1"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -753,3 +881,4 @@ export default function PaperPreviewContent() {
     </MainLayout>
   );
 }
+

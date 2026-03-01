@@ -197,7 +197,7 @@ export function QuestionModal({
             style={{ zIndex: 99999 }}
           >
             <motion.div
-              className="relative w-full max-w-[428px] bg-white rounded-t-[32px] sm:rounded-[32px] max-h-[85vh] sm:max-h-[80vh] flex flex-col shadow-2xl overflow-hidden mx-auto pointer-events-auto"
+              className="relative w-full max-w-[428px] bg-white rounded-t-[20px] sm:rounded-[20px] max-h-[85vh] sm:max-h-[80vh] flex flex-col shadow-2xl overflow-hidden mx-auto pointer-events-auto"
               style={{ marginBottom: 'env(safe-area-inset-bottom, 0px)' }}
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -206,20 +206,20 @@ export function QuestionModal({
               onClick={(e) => e.stopPropagation()}
             >
               {/* Handle bar */}
-              <div className="flex justify-center pt-4 pb-2 bg-white">
-                <div className="w-12 h-1.5 rounded-full bg-gray-200" />
+              <div className="flex justify-center pt-3 pb-1.5 bg-white">
+                <div className="w-10 h-1 rounded-full bg-gray-200" />
               </div>
 
               {/* Header */}
-              <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 bg-white">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-white">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#1E88E5] to-[#1565C0] flex items-center justify-center">
                     <span className="text-white font-bold text-sm">
                       {localSelectedIds.length}
                     </span>
                   </div>
                   <div>
-                    <h2 className="text-lg font-bold text-gray-900">{getModalTitle()}</h2>
+                    <h2 className="text-base font-bold text-gray-900">{getModalTitle()}</h2>
                     <p className="text-xs text-gray-500">{questions.length} available</p>
                   </div>
                 </div>
@@ -228,7 +228,7 @@ export function QuestionModal({
                     onClick={handleSave}
                     disabled={localSelectedIds.length === 0}
                     className={cn(
-                      "h-10 px-4 rounded-xl font-semibold text-sm transition-all",
+                      "h-9 px-3.5 rounded-lg font-semibold text-sm transition-all",
                       localSelectedIds.length > 0
                         ? "bg-gradient-to-r from-[#1E88E5] to-[#1565C0] hover:opacity-90 shadow-md"
                         : "bg-gray-200 text-gray-400 cursor-not-allowed"
@@ -238,15 +238,15 @@ export function QuestionModal({
                   </Button>
                   <button
                     onClick={handleCancel}
-                    className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
+                    className="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
                   >
-                    <X className="w-5 h-5 text-gray-600" />
+                    <X className="w-4 h-4 text-gray-600" />
                   </button>
                 </div>
               </div>
 
               {/* Search & Filter Bar */}
-              <div className="px-5 py-3 border-b border-gray-100 bg-gray-50/50">
+              <div className="px-4 py-2.5 border-b border-gray-100 bg-gray-50/50">
                 <div className="flex gap-2">
                   <div className="relative flex-1">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -254,7 +254,7 @@ export function QuestionModal({
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder="Search questions..."
-                      className="pl-10 h-11 rounded-xl border-gray-200 bg-white"
+                      className="pl-9 h-10 rounded-lg border-gray-200 bg-white text-sm"
                     />
                     {searchQuery && (
                       <button
@@ -268,7 +268,7 @@ export function QuestionModal({
                   <button
                     onClick={() => setShowFilters(!showFilters)}
                     className={cn(
-                      "w-11 h-11 rounded-xl flex items-center justify-center transition-colors",
+                      "w-10 h-10 rounded-lg flex items-center justify-center transition-colors",
                       showFilters
                         ? "bg-[#1E88E5] text-white"
                         : "bg-white border border-gray-200 text-gray-600"

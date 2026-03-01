@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 import { ChapterItem } from "./ChapterItem";
 
 interface ChapterListProps {
-  /** Array of chapters with counts */
   chapters: Array<{
     id: string;
     number: number;
@@ -19,21 +18,19 @@ interface ChapterListProps {
     shortCount: number;
     longCount: number;
   }>;
-  /** Selected chapter IDs */
   selectedIds: string[];
-  /** Toggle handler */
   onToggle: (chapterId: string) => void;
 }
 
 export function ChapterList({ chapters, selectedIds, onToggle }: ChapterListProps) {
   return (
-    <div className="divide-y divide-gray-100/50 glass-panel rounded-2xl overflow-hidden">
+    <div className="space-y-1">
       {chapters.map((chapter, index) => (
         <motion.div
           key={chapter.id}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.03 }}
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: index * 0.02 }}
         >
           <ChapterItem
             chapter={chapter}

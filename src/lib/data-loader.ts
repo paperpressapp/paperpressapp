@@ -342,10 +342,84 @@ export async function getRandomQuestions(
     return shuffled;
   }
 
+  function getTopicQuestions<T extends { topic?: string; chapterNumber?: number }>(
+    questions: T[],
+    topic: string
+  ): T[] {
+    return questions.filter(q => q.topic === topic);
+  }
+
+  function getChapterQuestions<T extends { chapterNumber?: number }>(
+    questions: T[],
+    chapterNumber: number
+  ): T[] {
+    return questions.filter(q => q.chapterNumber === chapterNumber);
+  }
+
+  function selectFromChapters<T extends { topic?: string; chapterNumber?: number }>(
+    questions: T[],
+    count: number,
+    chapterIds: string[],
+    exercisePriority: number = 0.5
+  ): T[] {
+    if (questions.length === 0) return [];
+    if (count === 0) return [];
+
+    const chapterNumbers = chapterIds.map(id => {
+      const parts = id.split('_');
+      return parseInt(parts[parts.length - 1], 10);
+    }).filter(n => !isNaN(n));
+
+    if (chapterNumbers.length === 0) {
+      return shuffle(questions).slice(0, Math.min(count, questions.length));
+    }
+
+    const exerciseQuestions = getTopicQuestions(questions, 'Exercise');
+    const additionalQuestions = getTopicQuestions(questions, 'Additional');
+
+    const exerciseCount = Math.ceil(count * exercisePriority);
+    const additionalCount = count - exerciseCount;
+
+    const perChapterExercise = Math.ceil(exerciseCount / chapterNumbers.length);
+    const perChapterAdditional = Math.ceil(additionalCount / chapterNumbers.length);
+
+    const selected: T[] = [];
+
+    for (const chapterNum of chapterNumbers) {
+      const chapterExercise = getChapterQuestions(exerciseQuestions, chapterNum);
+      const chapterAdditional = getChapterQuestions(additionalQuestions, chapterNum);
+
+      const shuffledExercise = shuffle(chapterExercise);
+      const shuffledAdditional = shuffle(chapterAdditional);
+
+      selected.push(...shuffledExercise.slice(0, perChapterExercise));
+      selected.push(...shuffledAdditional.slice(0, perChapterAdditional));
+    }
+
+    const finalShuffled = shuffle(selected);
+    return finalShuffled.slice(0, Math.min(count, questions.length));
+  }
+
+  const selectedMcqs = selectFromChapters(mcqs, mcqCount, chapterIds, 0.5);
+  const selectedShorts = selectFromChapters(shorts, shortCount, chapterIds, 0.5);
+  const selectedLongs = selectFromChapters(longs, longCount, chapterIds, 0.5);
+
+  const remainingMcqs = mcqCount - selectedMcqs.length;
+  const remainingShorts = shortCount - selectedShorts.length;
+  const remainingLongs = longCount - selectedLongs.length;
+
+  const availableMcqIds = new Set(selectedMcqs.map(q => q.id));
+  const availableShortIds = new Set(selectedShorts.map(q => q.id));
+  const availableLongIds = new Set(selectedLongs.map(q => q.id));
+
+  const fallbackMcqs = shuffle(mcqs.filter(q => !availableMcqIds.has(q.id))).slice(0, remainingMcqs);
+  const fallbackShorts = shuffle(shorts.filter(q => !availableShortIds.has(q.id))).slice(0, remainingShorts);
+  const fallbackLongs = shuffle(longs.filter(q => !availableLongIds.has(q.id))).slice(0, remainingLongs);
+
   return {
-    mcqs: shuffle(mcqs).slice(0, Math.min(mcqCount, mcqs.length)),
-    shorts: shuffle(shorts).slice(0, Math.min(shortCount, shorts.length)),
-    longs: shuffle(longs).slice(0, Math.min(longCount, longs.length)),
+    mcqs: [...selectedMcqs, ...fallbackMcqs],
+    shorts: [...selectedShorts, ...fallbackShorts],
+    longs: [...selectedLongs, ...fallbackLongs],
   };
 }
 

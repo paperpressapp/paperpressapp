@@ -23,16 +23,25 @@ export interface PaperSettings {
   instituteLogo?: string | null;
   customHeader?: string;
   customSubHeader?: string;
+  customFooter?: string;
   showLogo?: boolean;
   showWatermark?: boolean;
   customMarks: CustomMarks;
   includeAnswerSheet: boolean;
   includeMarkingScheme: boolean;
+  fontSize?: number;
   syllabus?: string;
   instituteAddress?: string;
   instituteEmail?: string;
   institutePhone?: string;
   instituteWebsite?: string;
+  logoPosition?: 'left' | 'center' | 'right';
+  showQuestionNumbers?: boolean;
+  showInstructions?: boolean;
+  showPageNumbers?: boolean;
+  includeInstructionsText?: string;
+  pdfStyle?: 'standard' | 'modern' | 'classic' | 'minimal';
+  logoSize: number;
   attemptRules?: {
     shortAttempt?: number;
     longAttempt?: number;
@@ -67,11 +76,16 @@ export interface GeneratedPaper {
   includeMarkingScheme?: boolean;
   customMarks?: CustomMarks;
   syllabus?: string;
+  isFavorite?: boolean;
   instituteAddress?: string;
   instituteEmail?: string;
   institutePhone?: string;
   instituteWebsite?: string;
   includeBubbleSheet?: boolean;
+  fontSize?: number;
+  logoSize?: number;
+  editedQuestions?: Record<string, any>; // Tracks customized question text/options
+  questionOrder?: { mcqs: string[]; shorts: string[]; longs: string[] };
 }
 
 export interface PaperData {
@@ -81,6 +95,8 @@ export interface PaperData {
   mcqs: MCQQuestion[];
   shorts: ShortQuestion[];
   longs: LongQuestion[];
+  editedQuestions?: Record<string, any>;
+  questionOrder?: { mcqs: string[]; shorts: string[]; longs: string[] };
 }
 
 /**

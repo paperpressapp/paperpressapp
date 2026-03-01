@@ -51,10 +51,10 @@ export function RecentPapers({ papers }: RecentPapersProps) {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between bg-white rounded-3xl p-4 shadow-sm border border-gray-100 active:scale-[0.99] transition-all"
+        className="w-full flex items-center justify-between bg-white rounded-xl p-4 shadow-sm border border-gray-100 active:scale-[0.99] transition-all"
       >
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1E40AF] to-[#2563EB] flex items-center justify-center shadow-lg shadow-blue-500/30">
+          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#1E40AF] to-[#2563EB] flex items-center justify-center shadow-lg shadow-blue-500/30">
             <FileText className="w-6 h-6 text-white" />
           </div>
           <div className="text-left">
@@ -101,10 +101,10 @@ export function RecentPapers({ papers }: RecentPapersProps) {
                       router.push(`/paper?id=${paper.id}`);
                       setIsOpen(false);
                     }}
-                    className="w-full flex items-center justify-between bg-gray-50 rounded-2xl p-4 active:bg-gray-100 transition-all group"
+                    className="w-full flex items-center justify-between bg-gray-50 rounded-lg p-4 active:bg-gray-100 transition-all group"
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${colorClass} flex items-center justify-center shadow-md group-active:scale-95 transition-transform`}>
+                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${colorClass} flex items-center justify-center shadow-md group-active:scale-95 transition-transform`}>
                         <FileText className="w-6 h-6 text-white" />
                       </div>
                       <div className="text-left">

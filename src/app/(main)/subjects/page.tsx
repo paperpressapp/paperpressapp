@@ -45,7 +45,7 @@ export default function SubjectsPage() {
     if (subject) {
       setClass(classId as "9th" | "10th" | "11th" | "12th");
       setSubject(subject.name as "Physics" | "Chemistry" | "Biology" | "Mathematics" | "Computer" | "English");
-      router.push(`/chapters/${classId}/${selectedSubjectId}`);
+      router.push(`/templates?class=${classId}&subject=${selectedSubjectId}`);
     }
   };
 

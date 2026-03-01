@@ -64,6 +64,8 @@ interface PDFRequest {
   mcqs: MCQQuestion[];
   shorts: ShortQuestion[];
   longs: LongQuestion[];
+  editedQuestions?: Record<string, any>;
+  questionOrder?: { mcqs: string[]; shorts: string[]; longs: string[] };
 }
 
 const RATE_LIMIT_WINDOW = 60 * 1000;
@@ -140,7 +142,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const body: PDFRequest = await request.json();
-    const { settings, mcqs, shorts, longs } = body;
+    const { settings, mcqs, shorts, longs, editedQuestions, questionOrder } = body;
 
     const validation = validatePaperData(
       {
@@ -201,6 +203,8 @@ export async function POST(request: NextRequest) {
       instituteEmail: settings.instituteEmail,
       institutePhone: settings.institutePhone,
       instituteWebsite: settings.instituteWebsite,
+      editedQuestions,
+      questionOrder,
     };
 
     const html = generateHTMLTemplate(paperData);

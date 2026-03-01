@@ -20,6 +20,25 @@ export type SubjectName = 'Physics' | 'Chemistry' | 'Biology' | 'Mathematics' | 
 export type QuestionType = 'mcq' | 'short' | 'long';
 
 /**
+ * Custom question types (predefined)
+ */
+export type CustomQuestionType =
+  | 'essay'
+  | 'letter'
+  | 'story'
+  | 'application'
+  | 'translation'
+  | 'pair_of_words'
+  | 'punctuation'
+  | 'fill_in_blanks'
+  | 'user_defined';
+
+/**
+ * Combined question type
+ */
+export type CombinedQuestionType = QuestionType | CustomQuestionType;
+
+/**
  * Difficulty levels for questions
  */
 export type Difficulty = 'easy' | 'medium' | 'hard';
@@ -39,34 +58,34 @@ export const QUESTION_MARKS = {
 export interface MCQQuestion {
   /** Unique identifier */
   id: string;
-  
+
   /** Question text */
   questionText: string;
-  
+
   /** Array of 4 options */
   options: [string, string, string, string];
-  
+
   /** Index of correct option (0-3) */
   correctOption: number;
-  
+
   /** Difficulty level */
   difficulty: Difficulty;
-  
+
   /** Marks for this question (default: 1) */
   marks: number;
-  
+
   /** Custom marks (override default marks) */
   customMarks?: number;
-  
+
   /** Chapter number (optional) */
   chapterNumber?: number;
-  
+
   /** Chapter name (optional) */
   chapterName?: string;
-  
+
   /** Topic (optional) */
   topic?: string;
-  
+
   /** Subtopics (optional) */
   subtopics?: string[];
 }
@@ -77,28 +96,28 @@ export interface MCQQuestion {
 export interface ShortQuestion {
   /** Unique identifier */
   id: string;
-  
+
   /** Question text */
   questionText: string;
-  
+
   /** Difficulty level */
   difficulty: Difficulty;
-  
+
   /** Marks for this question (default: 5) */
   marks: number;
-  
+
   /** Custom marks (override default marks) */
   customMarks?: number;
-  
+
   /** Chapter number (optional) */
   chapterNumber?: number;
-  
+
   /** Chapter name (optional) */
   chapterName?: string;
-  
+
   /** Topic (optional) */
   topic?: string;
-  
+
   /** Subtopics (optional) */
   subtopics?: string[];
 }
@@ -109,28 +128,28 @@ export interface ShortQuestion {
 export interface LongQuestion {
   /** Unique identifier */
   id: string;
-  
+
   /** Question text */
   questionText: string;
-  
+
   /** Difficulty level */
   difficulty: Difficulty;
-  
+
   /** Marks for this question (default: 10) */
   marks: number;
-  
+
   /** Custom marks (override default marks) */
   customMarks?: number;
-  
+
   /** Chapter number (optional) */
   chapterNumber?: number;
-  
+
   /** Chapter name (optional) */
   chapterName?: string;
-  
+
   /** Topic (optional) */
   topic?: string;
-  
+
   /** Subtopics (optional) */
   subtopics?: string[];
 }
@@ -151,12 +170,12 @@ export function isMCQQuestion(question: Question): question is MCQQuestion {
  * Type guard to check if a question is a Short question
  */
 export function isShortQuestion(question: Question): question is ShortQuestion {
-  return !isMCQQuestion(question) && question.marks === 5;
+  return !isMCQQuestion(question) && question.marks === QUESTION_MARKS.short;
 }
 
 /**
  * Type guard to check if a question is a Long question
  */
 export function isLongQuestion(question: Question): question is LongQuestion {
-  return !isMCQQuestion(question) && question.marks === 10;
+  return !isMCQQuestion(question) && question.marks === QUESTION_MARKS.long;
 }

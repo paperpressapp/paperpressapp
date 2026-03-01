@@ -11,7 +11,7 @@ export function UsageBar({ used, limit }: UsageBarProps) {
   const isLow = remaining <= 5;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E5E7EB] p-4 shadow-sm">
+    <div className="bg-white rounded-lg border border-[#E5E7EB] p-4 shadow-sm">
       <div className="flex items-center justify-between mb-2">
         <span className="text-sm text-[#6B7280]">Free Papers Used</span>
         <span className={`text-sm font-semibold ${isLow ? "text-red-500" : "text-[#111827]"}`}>

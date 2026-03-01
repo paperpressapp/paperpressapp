@@ -47,7 +47,7 @@ export function MainLayout({
     <AppLayout topSafe={topSafe} bottomSafe={false}>
       <div className={cn("h-full flex flex-col bg-[#0A0A0A]", className)}>
         {showHeader && <Header title={headerTitle} />}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto pb-20">
           {children}
         </div>
         {showBottomNav && <BottomNavigation />}

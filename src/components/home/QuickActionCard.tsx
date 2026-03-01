@@ -31,7 +31,7 @@ export function QuickActionCard({
     <motion.button
       onClick={onPress}
       className={cn(
-        "flex-shrink-0 w-[100px] h-[110px] rounded-2xl flex flex-col items-center justify-center gap-3",
+        "flex-shrink-0 w-[100px] h-[110px] rounded-lg flex flex-col items-center justify-center gap-3",
         "transition-all duration-200",
         isPrimary 
           ? "bg-gradient-to-br from-[#1E88E5] to-[#1565C0] text-white shadow-lg shadow-[#1E88E5]/30 border border-white/20" 

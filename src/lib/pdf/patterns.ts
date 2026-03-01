@@ -1479,8 +1479,15 @@ export function distributeShorts(pattern: PaperPattern, questions: ShortQuestion
   const shortSections = pattern.sections.filter(s => s.type === 'short');
   const result: { section: QuestionSection; questions: ShortQuestion[] }[] = [];
   
+  // Use all selected questions, distribute them across sections
+  // Each section gets up to section.totalQuestions, but we use all questions
+  let remainingQuestions = [...questions];
+  
   shortSections.forEach(section => {
-    const sectionQuestions = questions.slice(0, section.totalQuestions);
+    // Take questions for this section (up to totalQuestions needed)
+    const sectionQuestions = remainingQuestions.slice(0, section.totalQuestions);
+    // Remove taken questions for next section
+    remainingQuestions = remainingQuestions.slice(section.totalQuestions);
     result.push({ section, questions: sectionQuestions });
   });
   
@@ -1491,8 +1498,12 @@ export function distributeLongs(pattern: PaperPattern, questions: LongQuestion[]
   const longSections = pattern.sections.filter(s => s.type === 'long');
   const result: { section: QuestionSection; questions: LongQuestion[] }[] = [];
   
+  // Use all selected questions, distribute them across sections
+  let remainingQuestions = [...questions];
+  
   longSections.forEach(section => {
-    const sectionQuestions = questions.slice(0, section.totalQuestions);
+    const sectionQuestions = remainingQuestions.slice(0, section.totalQuestions);
+    remainingQuestions = remainingQuestions.slice(section.totalQuestions);
     result.push({ section, questions: sectionQuestions });
   });
   

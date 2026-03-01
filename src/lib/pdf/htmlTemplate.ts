@@ -39,32 +39,36 @@ export interface PaperData {
   institutePhone?: string;
   instituteWebsite?: string;
   includeBubbleSheet?: boolean;
+  editedQuestions?: Record<string, any>;
+  questionOrder?: { mcqs: string[]; shorts: string[]; longs: string[] };
 }
 
 export function generateHTMLTemplate(data: PaperData): string {
   const input: PatternTemplateInput = {
-    instituteName:    data.instituteName,
-    logoUrl:          data.logoUrl,
-    showLogo:         data.showLogo,
-    showWatermark:    data.showWatermark ?? true,
-    classId:          data.classId,
-    subject:          data.subject,
-    examType:         data.examType,
-    date:             data.date,
-    timeAllowed:      data.timeAllowed,
-    mcqs:             data.mcqs,
-    shorts:           data.shorts,
-    longs:            data.longs,
-    customHeader:     data.customHeader,
-    customSubHeader:  data.customSubHeader,
-    syllabus:         data.syllabus,
+    instituteName: data.instituteName,
+    logoUrl: data.logoUrl,
+    showLogo: data.showLogo,
+    showWatermark: data.showWatermark ?? true,
+    classId: data.classId,
+    subject: data.subject,
+    examType: data.examType,
+    date: data.date,
+    timeAllowed: data.timeAllowed,
+    mcqs: data.mcqs,
+    shorts: data.shorts,
+    longs: data.longs,
+    customHeader: data.customHeader,
+    customSubHeader: data.customSubHeader,
+    syllabus: data.syllabus,
     instituteAddress: data.instituteAddress,
-    instituteEmail:   data.instituteEmail,
-    institutePhone:   data.institutePhone,
+    instituteEmail: data.instituteEmail,
+    institutePhone: data.institutePhone,
     instituteWebsite: data.instituteWebsite,
-    customMarks:      data.customMarks,
-    attemptRules:     data.attemptRules,
+    customMarks: data.customMarks,
+    attemptRules: data.attemptRules,
     includeBubbleSheet: data.includeBubbleSheet,
+    editedQuestions: data.editedQuestions,
+    questionOrder: data.questionOrder,
   };
   return generatePatternHTML(input);
 }

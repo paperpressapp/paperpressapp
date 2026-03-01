@@ -3,9 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Home, FileText, BookOpen, Settings, LogOut, ChevronRight, User as UserIcon, Crown, FileQuestion } from "lucide-react";
+import { Menu, X, Home, FileText, BookOpen, Settings, LogOut, ChevronRight, Crown, FileQuestion, Sparkles } from "lucide-react";
 import { checkPremiumStatus, getUserPremiumCode } from "@/lib/premium";
 import { useAuthStore } from "@/stores/authStore";
+import { PremiumModal } from "@/components/premium/PremiumModal";
 
 interface HeaderProps {
   title?: string;
@@ -17,13 +18,20 @@ export function Header({ title = "PaperPress", showBack = false, onBack }: Heade
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [showPremiumModal, setShowPremiumModal] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const profileRef = useRef<HTMLDivElement>(null);
   
   const { isAuthenticated, user, signOut } = useAuthStore();
   const [userName, setUserName] = useState("User");
   const [userEmail, setUserEmail] = useState("");
-  const isPremium = checkPremiumStatus().isPremium;
+  const [isPremium, setIsPremium] = useState(false);
   const userPremiumCode = getUserPremiumCode();
+
+  useEffect(() => {
+    setMounted(true);
+    setIsPremium(checkPremiumStatus().isPremium);
+  }, []);
 
   useEffect(() => {
     if (isAuthenticated && user) {
@@ -65,26 +73,37 @@ export function Header({ title = "PaperPress", showBack = false, onBack }: Heade
     <>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#2A2A2A]">
-        <div className="flex items-center justify-between px-4 h-16">
+        <div className="flex items-center justify-between px-3 h-14">
           {/* Left - Hamburger */}
           <button
             onClick={() => setSidebarOpen(true)}
-            className="w-10 h-10 rounded-[12px] bg-[#1A1A1A] flex items-center justify-center hover:bg-[#2A2A2A] transition-colors"
+            className="w-9 h-9 rounded-lg bg-[#1A1A1A] flex items-center justify-center hover:bg-[#2A2A2A] transition-colors"
           >
             <Menu className="w-5 h-5 text-white" />
           </button>
 
           {/* Center - Title */}
-          <h1 className="text-lg font-bold text-white">{title}</h1>
+          <h1 className="text-base font-bold text-white">{title}</h1>
 
           {/* Right - Profile */}
           <div className="relative" ref={profileRef}>
             <button
               onClick={() => setProfileOpen(!profileOpen)}
-              className="w-10 h-10 rounded-[12px] bg-[#B9FF66] flex items-center justify-center hover:brightness-110 transition-all"
+              className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${
+                mounted && isPremium 
+                  ? 'bg-gradient-to-br from-[#B9FF66] to-[#22C55E] shadow-[0_0_20px_rgba(185,255,102,0.4)]' 
+                  : 'bg-[#B9FF66] hover:brightness-110'
+              }`}
             >
-              <span className="text-[#0A0A0A] font-bold">{userName.charAt(0).toUpperCase()}</span>
+              <span className="text-[#0A0A0A] text-sm font-bold">{userName.charAt(0).toUpperCase()}</span>
             </button>
+            
+            {/* Premium Crown Badge */}
+            {mounted && isPremium && (
+              <div className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-[#0A0A0A] flex items-center justify-center border-2 border-[#B9FF66]">
+                <Crown className="w-2 h-2 text-[#B9FF66]" />
+              </div>
+            )}
 
             {/* Profile Dropdown */}
             <AnimatePresence>
@@ -99,8 +118,17 @@ export function Header({ title = "PaperPress", showBack = false, onBack }: Heade
                   {/* User Info */}
                   <div className="p-4 border-b border-[#2A2A2A]">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-[12px] bg-[#B9FF66] flex items-center justify-center">
+                      <div className={`relative w-12 h-12 rounded-[12px] flex items-center justify-center ${
+                        mounted && isPremium 
+                          ? 'bg-gradient-to-br from-[#B9FF66] to-[#22C55E] shadow-[0_0_15px_rgba(185,255,102,0.3)]' 
+                          : 'bg-[#B9FF66]'
+                      }`}>
                         <span className="text-[#0A0A0A] font-bold text-lg">{userName.charAt(0).toUpperCase()}</span>
+                        {mounted && isPremium && (
+                          <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#0A0A0A] flex items-center justify-center border border-[#B9FF66]">
+                            <Crown className="w-2 h-2 text-[#B9FF66]" />
+                          </div>
+                        )}
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="font-semibold text-white truncate">{userName}</p>
@@ -108,13 +136,31 @@ export function Header({ title = "PaperPress", showBack = false, onBack }: Heade
                           <p className="text-xs text-[#A0A0A0] truncate">{userEmail}</p>
                         )}
                       </div>
-                      {isPremium && (
-                        <div className="w-8 h-8 rounded-[8px] bg-[#B9FF66]/20 flex items-center justify-center">
-                          <Crown className="w-4 h-4 text-[#B9FF66]" />
+                      {mounted && isPremium && (
+                        <div className="px-2 py-1 rounded-full bg-[#B9FF66]/20 flex items-center gap-1">
+                          <Sparkles className="w-3 h-3 text-[#B9FF66]" />
+                          <span className="text-xs text-[#B9FF66] font-medium">Premium</span>
                         </div>
                       )}
                     </div>
                   </div>
+
+                  {/* Premium Upgrade (if not premium) */}
+                      {!mounted || !isPremium && (
+                    <div className="p-3 border-b border-[#2A2A2A]">
+                      <button
+                        onClick={() => { setProfileOpen(false); setShowPremiumModal(true); }}
+                        className="w-full flex items-center gap-3 px-3 py-3 rounded-[12px] bg-gradient-to-r from-[#B9FF66]/10 to-[#22C55E]/10 border border-[#B9FF66]/20 hover:border-[#B9FF66]/40 transition-colors"
+                      >
+                        <Crown className="w-5 h-5 text-[#B9FF66]" />
+                        <div className="text-left">
+                          <p className="text-sm font-medium text-[#B9FF66]">Upgrade to Premium</p>
+                          <p className="text-xs text-[#A0A0A0]">Unlock unlimited papers</p>
+                        </div>
+                        <ChevronRight className="w-4 h-4 text-[#B9FF66] ml-auto" />
+                      </button>
+                    </div>
+                  )}
 
                   {/* Menu Items */}
                   <div className="p-2">
@@ -179,7 +225,7 @@ export function Header({ title = "PaperPress", showBack = false, onBack }: Heade
               </div>
 
               {/* Premium Badge */}
-              {isPremium && (
+              {mounted && isPremium && (
                 <div className="mx-4 mt-4 p-3 bg-[#B9FF66]/10 rounded-[12px] border border-[#B9FF66]/20">
                   <div className="flex items-center gap-2">
                     <Crown className="w-4 h-4 text-[#B9FF66]" />
@@ -213,7 +259,7 @@ export function Header({ title = "PaperPress", showBack = false, onBack }: Heade
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-white font-medium truncate">{userName}</p>
-                    {isPremium ? (
+                    {mounted && isPremium ? (
                       <p className="text-xs text-[#B9FF66]">Premium Member</p>
                     ) : userPremiumCode ? (
                       <p className="text-xs text-[#A0A0A0]">Code: {userPremiumCode.toUpperCase()}</p>
@@ -225,6 +271,9 @@ export function Header({ title = "PaperPress", showBack = false, onBack }: Heade
           </>
         )}
       </AnimatePresence>
+
+      {/* Premium Modal */}
+      <PremiumModal isOpen={showPremiumModal} onClose={() => setShowPremiumModal(false)} />
 
       {/* Spacer for fixed header */}
       <div className="h-16" />

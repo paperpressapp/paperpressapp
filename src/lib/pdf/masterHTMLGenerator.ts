@@ -53,6 +53,9 @@ export interface MasterPaperData {
     longAttempt?: number;
   };
   
+  // Font Size
+  fontSize?: number;
+  
   // Premium
   isPremium?: boolean;
   
@@ -119,6 +122,7 @@ export function generateMasterHTML(data: MasterPaperData): string {
     customMarks: data.customMarks,
     attemptRules: data.attemptRules,
     includeBubbleSheet: data.includeBubbleSheet,
+    fontSize: data.fontSize,
   };
   
   // Generate the inner HTML content

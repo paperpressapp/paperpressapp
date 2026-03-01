@@ -19,7 +19,7 @@ export function LastPaperCard({ paper, onOpen, onCreateFirst }: LastPaperCardPro
       {paper ? (
         <button
           onClick={() => onOpen(paper.id)}
-          className="w-full bg-[#1A1A1A] rounded-2xl border border-[#2A2A2A] p-4 text-left flex items-center gap-4 shadow-sm active:scale-[0.99] transition-transform"
+          className="w-full bg-[#1A1A1A] rounded-lg border border-[#2A2A2A] p-4 text-left flex items-center gap-4 shadow-sm active:scale-[0.99] transition-transform"
         >
           {/* Subject icon */}
           <div className="w-12 h-12 rounded-xl bg-[#B9FF66]/10 flex items-center justify-center flex-shrink-0">
@@ -49,8 +49,8 @@ export function LastPaperCard({ paper, onOpen, onCreateFirst }: LastPaperCardPro
           </div>
         </button>
       ) : (
-        <div className="bg-[#1A1A1A] rounded-2xl border border-dashed border-[#2A2A2A] p-8 text-center">
-          <div className="w-14 h-14 rounded-2xl bg-[#2A2A2A] flex items-center justify-center mx-auto mb-3">
+        <div className="bg-[#1A1A1A] rounded-lg border border-dashed border-[#2A2A2A] p-8 text-center">
+          <div className="w-14 h-14 rounded-lg bg-[#2A2A2A] flex items-center justify-center mx-auto mb-3">
             <FileText className="w-7 h-7 text-[#6B6B6B]" />
           </div>
           <p className="text-sm font-medium text-[#A0A0A0]">No papers yet</p>

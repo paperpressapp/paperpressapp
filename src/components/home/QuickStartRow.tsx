@@ -29,7 +29,7 @@ export function QuickStartRow({ onSubjectPress }: QuickStartRowProps) {
           <button
             key={id}
             onClick={() => onSubjectPress(name)}
-            className="flex flex-col items-center gap-2 bg-white rounded-2xl border border-[#E5E7EB] p-3 min-w-[76px] shadow-sm active:scale-95 transition-transform flex-shrink-0"
+            className="flex flex-col items-center gap-2 bg-white rounded-lg border border-[#E5E7EB] p-3 min-w-[76px] shadow-sm active:scale-95 transition-transform flex-shrink-0"
           >
             <div
               className="w-11 h-11 rounded-xl flex items-center justify-center"

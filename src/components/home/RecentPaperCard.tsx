@@ -25,7 +25,7 @@ export function RecentPaperCard({ paper, onPress }: RecentPaperCardProps) {
     <motion.button
       onClick={onPress}
       className={cn(
-        "flex-shrink-0 w-[220px] glass-panel rounded-2xl p-4",
+        "flex-shrink-0 w-[220px] glass-panel rounded-lg p-4",
         "shadow-sm hover:shadow-lg transition-all duration-300 text-left"
       )}
       whileTap={{ scale: 0.97 }}

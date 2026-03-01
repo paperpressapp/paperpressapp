@@ -24,7 +24,7 @@ export function Skeleton({
   className = "",
   animate = true,
 }: SkeletonProps) {
-  const baseClasses = animate ? "animate-pulse bg-gray-200" : "bg-gray-200";
+  const baseClasses = animate ? "animate-pulse bg-[#2A2A2A]" : "bg-[#2A2A2A]";
 
   const variantClasses = {
     text: "rounded",
@@ -54,11 +54,11 @@ export function Skeleton({
   );
 }
 
-export function TextSkeleton({ 
-  lines = 3, 
-  className = '' 
-}: { 
-  lines?: number; 
+export function TextSkeleton({
+  lines = 3,
+  className = ''
+}: {
+  lines?: number;
   className?: string;
 }) {
   return (
@@ -78,7 +78,7 @@ export function TextSkeleton({
 
 export function CardSkeleton({ className = '' }: { className?: string }) {
   return (
-    <div className={`glass-panel rounded-2xl p-4 ${className}`}>
+    <div className={`glass-panel-dark border border-white/5 rounded-2xl p-4 ${className}`}>
       <div className="flex items-center gap-3 mb-4">
         <Skeleton variant="circle" width={48} height={48} />
         <div className="flex-1 space-y-2">
@@ -93,7 +93,7 @@ export function CardSkeleton({ className = '' }: { className?: string }) {
 
 export function QuestionCardSkeleton({ className = '' }: { className?: string }) {
   return (
-    <div className={`glass-panel rounded-xl p-4 ${className}`}>
+    <div className={`glass-panel-dark border border-white/5 rounded-xl p-4 ${className}`}>
       <div className="flex items-start gap-3">
         <Skeleton variant="rect" width={32} height={32} className="rounded-lg" />
         <div className="flex-1 space-y-3">
@@ -141,14 +141,14 @@ export function PaperPreviewSkeleton() {
 
 export function ChapterListSkeleton({ count = 6 }: { count?: number }) {
   return (
-    <div className="space-y-3 px-5">
+    <div className="space-y-2 px-5">
       {Array.from({ length: count }).map((_, i) => (
         <motion.div
           key={i}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.05 }}
-          className="glass-panel rounded-xl p-4"
+          className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[12px] px-4 py-3 w-full flex items-center gap-3 mb-2"
         >
           <div className="flex items-center gap-3">
             <Skeleton variant="rect" width={40} height={40} className="rounded-xl" />
@@ -173,7 +173,7 @@ export function SubjectGridSkeleton({ count = 6 }: { count?: number }) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: i * 0.05 }}
-          className="glass-panel rounded-2xl p-4 aspect-square"
+          className="glass-panel-dark border border-white/5 rounded-2xl p-4 aspect-square"
         >
           <div className="flex flex-col items-center justify-center h-full gap-3">
             <Skeleton variant="rect" width={48} height={48} className="rounded-xl" />
@@ -187,7 +187,7 @@ export function SubjectGridSkeleton({ count = 6 }: { count?: number }) {
 
 export function ProfileSkeleton() {
   return (
-    <div className="glass-panel rounded-3xl p-6 flex flex-col items-center text-center">
+    <div className="glass-panel-dark border border-white/5 rounded-3xl p-6 flex flex-col items-center text-center">
       <Skeleton variant="circle" width={96} height={96} className="mb-4" />
       <Skeleton className="h-6 w-32 mb-2" />
       <Skeleton className="h-4 w-40 mb-1" />

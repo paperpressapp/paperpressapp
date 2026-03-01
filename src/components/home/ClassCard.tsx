@@ -55,7 +55,7 @@ export function ClassCard({ classInfo }: ClassCardProps) {
       <motion.button
         onClick={() => setShowSubjectPopup(true)}
         className={cn(
-          "relative w-full bg-white rounded-2xl overflow-hidden",
+          "relative w-full bg-white rounded-lg overflow-hidden",
           "shadow-sm hover:shadow-xl transition-all duration-300",
           "flex flex-col p-4 text-left border border-gray-100",
           "group h-[160px] justify-between"
@@ -115,7 +115,7 @@ export function ClassCard({ classInfo }: ClassCardProps) {
             {/* Popup */}
             <div className="absolute inset-x-0 bottom-0 top-0 flex items-end justify-center sm:items-center">
               <motion.div
-                className="w-full max-w-[428px] glass-panel rounded-t-[32px] sm:rounded-[32px] overflow-hidden shadow-2xl max-h-[80vh] flex flex-col"
+                className="w-full max-w-[428px] glass-panel rounded-t-xl sm:rounded-xl overflow-hidden shadow-2xl max-h-[80vh] flex flex-col"
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "100%", opacity: 0 }}

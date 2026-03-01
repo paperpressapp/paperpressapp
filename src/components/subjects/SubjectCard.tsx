@@ -31,7 +31,7 @@ export function SubjectCard({ subject, chapterCount, onPress }: SubjectCardProps
     <motion.button
       onClick={onPress}
       className={cn(
-        "relative w-full h-[120px] bg-card rounded-2xl border overflow-hidden",
+        "relative w-full h-[120px] bg-card rounded-lg border overflow-hidden",
         "shadow-sm hover:shadow-md transition-shadow",
         "flex flex-col items-center justify-center p-4 text-center"
       )}

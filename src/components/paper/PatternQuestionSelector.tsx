@@ -170,7 +170,7 @@ export function PatternQuestionSelector({
   const getTotalMarks = (type: "mcq" | "short" | "long") => {
     const sections = patternSections[type];
     if (!sections.length) return 0;
-    return sections.reduce((sum, s) => sum + s.totalMarks, 0);
+    return sections.reduce((sum, s) => sum + (s.attemptCount * s.marksPerQuestion), 0);
   };
 
   if (!pattern) {

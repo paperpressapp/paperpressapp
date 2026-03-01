@@ -41,6 +41,17 @@ function getAllowedOrigin(request: NextRequest): string {
 }
 
 export async function POST(request: NextRequest) {
+    const apiKey = request.headers.get('x-api-key');
+    const validKey = process.env.PDF_API_KEY || process.env.NEXT_PUBLIC_PDF_API_KEY;
+
+    // Security check - Skip if not configured
+    if (validKey && apiKey !== validKey) {
+        return NextResponse.json(
+            { error: 'Unauthorized - invalid API key' },
+            { status: 401 }
+        );
+    }
+
     try {
         const body: DOCXRequest = await request.json();
         const { settings, mcqs, shorts, longs } = body;

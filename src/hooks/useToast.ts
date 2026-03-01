@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 /**
  * useToast Hook
  * 
@@ -13,6 +15,8 @@ interface ToastOptions {
   duration?: number;
   /** Toast position */
   position?: "top-center" | "top-right" | "top-left" | "bottom-center" | "bottom-right" | "bottom-left";
+  /** Optional icon to display */
+  icon?: React.ReactNode;
 }
 
 const defaultOptions: ToastOptions = {

@@ -2,9 +2,9 @@
  * PaperPress — Board-Exam Quality Print CSS
  *
  * A4, narrow margins, Times New Roman, clean table borders.
- * Works for Puppeteer (Vercel) and Android WebView PrintManager.
+ * Compact, dense layout resembling traditional board papers.
  */
-export function generatePatternCSS(): string {
+export function generatePatternCSS(baseFontSize: number = 12): string {
   return `
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
@@ -17,13 +17,13 @@ export function generatePatternCSS(): string {
 
     @page {
       size: A4;
-      margin: 13mm 13mm 13mm 13mm;
+      margin: 6mm 7mm 6mm 7mm;
     }
 
     body {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 9.5pt;
-      line-height: 1.25;
+      font-size: ${baseFontSize}pt;
+      line-height: 1.2;
       color: #000;
       background: #fff;
     }
@@ -31,7 +31,7 @@ export function generatePatternCSS(): string {
     /* ════════════ HEADER ════════════ */
 
     .pp-header {
-      border: 1.5pt solid #000;
+      border: 1px solid #000;
       margin-bottom: 0;
     }
 
@@ -39,28 +39,28 @@ export function generatePatternCSS(): string {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 4pt 8pt 3pt;
+      padding: 3pt 6pt 2pt;
       text-align: center;
     }
 
     .pp-logo {
-      width: 44pt;
-      height: 44pt;
+      width: 36pt;
+      height: 36pt;
       object-fit: contain;
-      margin-bottom: 2pt;
+      margin-bottom: 1pt;
     }
 
     .pp-school-name {
-      font-size: 15pt;
+      font-size: 18pt;
       font-weight: bold;
-      letter-spacing: 0.4pt;
+      letter-spacing: 0.3pt;
       text-transform: uppercase;
       line-height: 1.1;
     }
 
     .pp-school-sub {
-      font-size: 8pt;
-      margin-top: 1pt;
+      font-size: 7pt;
+      margin-top: 0.5pt;
     }
 
     .pp-contact-bar {
@@ -69,26 +69,26 @@ export function generatePatternCSS(): string {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 2.5pt 6pt;
-      font-size: 7pt;
-      gap: 4pt;
+      padding: 2pt 4pt;
+      font-size: 6pt;
+      gap: 3pt;
       flex-wrap: wrap;
     }
 
     .pp-contact-bar span { text-align: center; }
 
-    /* ════════════ STUDENT META ════════════ */
+    /* ════════════ STUDENT META - COMPACT BOARD STYLE ════════════ */
 
     .pp-meta {
-      border-left: 1.5pt solid #000;
-      border-right: 1.5pt solid #000;
-      border-bottom: 1.5pt solid #000;
-      margin-bottom: 5pt;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+      margin-bottom: 3pt;
     }
 
     .pp-meta-row {
       display: flex;
-      border-bottom: 0.75pt solid #aaa;
+      border-bottom: 0.5pt solid #000;
     }
 
     .pp-meta-row:last-child { border-bottom: none; }
@@ -97,9 +97,23 @@ export function generatePatternCSS(): string {
       flex: 1;
       display: flex;
       align-items: center;
-      padding: 2.5pt 5pt;
-      border-right: 0.75pt solid #aaa;
-      font-size: 8.5pt;
+      padding: 4pt 5pt;
+      border-right: 0.5pt solid #000;
+      font-size: 9pt;
+    }
+
+    .pp-meta-line {
+      flex: 1;
+      border-bottom: 0.5pt solid #333;
+      height: 14pt;
+      min-width: 60pt;
+    }
+
+    .pp-meta-line {
+      flex: 1;
+      border-bottom: 0.5pt solid #333;
+      height: 10pt;
+      min-width: 50pt;
     }
 
     .pp-meta-cell:last-child { border-right: none; }
@@ -107,14 +121,11 @@ export function generatePatternCSS(): string {
     .pp-meta-label {
       font-weight: bold;
       white-space: nowrap;
-      margin-right: 3pt;
+      margin-right: 2pt;
     }
 
-    .pp-meta-line {
-      flex: 1;
-      border-bottom: 0.5pt solid #555;
-      height: 8pt;
-      min-width: 40pt;
+    .pp-meta-value {
+      margin-left: 2pt;
     }
 
     /* ════════════ SECTION HEADER BAR ════════════ */
@@ -122,38 +133,37 @@ export function generatePatternCSS(): string {
     .pp-sec-bar {
       display: flex;
       align-items: baseline;
-      background: #ebebeb;
-      border: 1pt solid #000;
-      padding: 2.5pt 5pt;
-      margin-bottom: 2pt;
-      gap: 4pt;
+      border: 0.5pt solid #000;
+      padding: 1.5pt 3pt;
+      margin-bottom: 0;
+      gap: 3pt;
       page-break-inside: avoid;
       page-break-after: avoid;
     }
 
     .pp-sec-qnum {
       font-weight: bold;
-      font-size: 10pt;
+      font-size: 9pt;
       white-space: nowrap;
       flex-shrink: 0;
     }
 
     .pp-sec-title {
       font-weight: bold;
-      font-size: 10pt;
+      font-size: 9pt;
       flex: 2;
     }
 
     .pp-sec-instr {
       font-style: italic;
-      font-size: 8.5pt;
+      font-size: 8pt;
       flex: 3;
       text-align: center;
     }
 
     .pp-sec-marks {
       font-weight: bold;
-      font-size: 9pt;
+      font-size: 8pt;
       white-space: nowrap;
       flex-shrink: 0;
       text-align: right;
@@ -162,23 +172,23 @@ export function generatePatternCSS(): string {
     .pp-sec-note {
       background: #fffbe6;
       border: 0.5pt solid #e0c000;
-      border-left: 3pt solid #e0c000;
-      padding: 2pt 5pt;
-      font-size: 7.5pt;
+      border-left: 2pt solid #e0c000;
+      padding: 1pt 3pt;
+      font-size: 7pt;
       font-style: italic;
-      margin-bottom: 3pt;
+      margin-bottom: 2pt;
     }
 
     /* ════════════ PAGE DIVIDER (Objective → Subjective) ════════════ */
 
     .pp-divider {
-      border: 1.5pt solid #000;
+      border: 1px solid #000;
       text-align: center;
-      padding: 3pt 0;
-      font-size: 10pt;
+      padding: 2pt 0;
+      font-size: 9pt;
       font-weight: bold;
-      letter-spacing: 3pt;
-      margin: 6pt 0 4pt;
+      letter-spacing: 2pt;
+      margin: 4pt 0 3pt;
       background: #ebebeb;
       page-break-before: always;
       page-break-after: avoid;
@@ -187,51 +197,51 @@ export function generatePatternCSS(): string {
     /* ════════════ MCQ — BUBBLE GRID ════════════ */
 
     .pp-bubbles {
-      border: 0.75pt solid #000;
-      padding: 4pt 5pt 3pt;
-      margin-bottom: 4pt;
+      border: 0.5pt solid #000;
+      padding: 2pt 3pt 2pt;
+      margin-bottom: 2pt;
       display: flex;
       flex-wrap: wrap;
-      gap: 3pt 8pt;
+      gap: 2pt 6pt;
       page-break-inside: avoid;
     }
 
     .pp-bub-item {
       display: flex;
       align-items: center;
-      gap: 2pt;
+      gap: 1pt;
     }
 
     .pp-bub-num {
-      font-size: 8pt;
+      font-size: 7pt;
       font-weight: bold;
-      min-width: 13pt;
+      min-width: 11pt;
       text-align: right;
     }
 
     .pp-bub-opts {
       display: flex;
-      gap: 2pt;
+      gap: 1pt;
     }
 
     .pp-bub-opt {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1pt;
+      gap: 0.5pt;
     }
 
     .pp-bub-letter {
-      font-size: 6pt;
+      font-size: 8pt;
       font-weight: bold;
       line-height: 1;
     }
 
     .pp-bub-circle {
       display: block;
-      width: 9pt;
-      height: 9pt;
-      border: 0.75pt solid #000;
+      width: 11pt;
+      height: 11pt;
+      border: 0.5pt solid #000;
       border-radius: 50%;
     }
 
@@ -240,44 +250,46 @@ export function generatePatternCSS(): string {
     .pp-mcq-table {
       width: 100%;
       border-collapse: collapse;
-      border: 0.75pt solid #000;
-      font-size: 9pt;
+      border: 0.5pt solid #000;
+      font-size: 8.5pt;
     }
 
     .pp-mcq-tr {
-      border-bottom: 0.4pt solid #ccc;
+      border-bottom: 0.3pt solid #999;
       page-break-inside: avoid;
     }
 
     .pp-mcq-tr:last-child { border-bottom: none; }
 
     .pp-mcq-num {
-      width: 15pt;
+      width: 12pt;
       vertical-align: top;
-      padding: 2pt 2pt 1pt 3pt;
+      padding: 1pt 1pt 1pt 2pt;
       font-weight: bold;
-      font-size: 8.5pt;
-      border-right: 0.4pt solid #ccc;
+      font-size: 8pt;
+      border-right: 0.3pt solid #999;
     }
 
     .pp-mcq-body {
-      padding: 2pt 3pt 2pt 3pt;
+      padding: 1pt 2pt 1pt 2pt;
     }
 
     .pp-mcq-qtext {
       display: block;
-      line-height: 1.35;
-      margin-bottom: 2pt;
+      line-height: 1.25;
+      margin-bottom: 1pt;
     }
 
     .pp-mcq-opts {
       display: flex;
-      gap: 0;
+      gap: 4pt;
+      margin-top: 1.5pt;
     }
 
     .pp-mcq-opt {
       flex: 1;
-      font-size: 8.5pt;
+      font-size: 8pt;
+      line-height: 1.2;
     }
 
     .pp-mcq-opt-lbl { font-weight: bold; }
@@ -289,31 +301,32 @@ export function generatePatternCSS(): string {
     .pp-short-row {
       display: flex;
       align-items: flex-start;
-      padding: 2pt 4pt;
-      border-bottom: 0.3pt solid #ddd;
+      padding: 1.5pt 3pt;
+      border-bottom: 0.3pt solid #ccc;
       page-break-inside: avoid;
-      min-height: 13pt;
+      min-height: 12pt;
+      margin-bottom: 4pt;
     }
 
     .pp-short-row:last-child { border-bottom: none; }
 
     .pp-short-num {
       font-weight: bold;
-      font-size: 9pt;
-      min-width: 22pt;
+      font-size: 8.5pt;
+      min-width: 18pt;
       flex-shrink: 0;
     }
 
     .pp-short-text {
       flex: 1;
-      font-size: 9pt;
-      line-height: 1.3;
+      font-size: 8.5pt;
+      line-height: 1.2;
     }
 
     .pp-short-marks {
-      font-size: 7.5pt;
+      font-size: 7pt;
       color: #333;
-      margin-left: 4pt;
+      margin-left: 3pt;
       flex-shrink: 0;
     }
 
@@ -322,9 +335,10 @@ export function generatePatternCSS(): string {
     .pp-longs { }
 
     .pp-long-item {
-      padding: 3pt 4pt;
-      border-bottom: 0.75pt solid #888;
+      padding: 2pt 3pt;
+      border-bottom: 0.5pt solid #666;
       page-break-inside: avoid;
+      margin-bottom: 4pt;
     }
 
     .pp-long-item:last-child { border-bottom: none; }
@@ -332,55 +346,55 @@ export function generatePatternCSS(): string {
     .pp-long-header {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 2pt;
+      margin-bottom: 1pt;
     }
 
     .pp-long-qnum {
       font-weight: bold;
-      font-size: 10pt;
-      min-width: 26pt;
+      font-size: 9pt;
+      min-width: 22pt;
       flex-shrink: 0;
     }
 
     .pp-long-text {
       flex: 1;
-      font-size: 9pt;
-      line-height: 1.35;
+      font-size: 8.5pt;
+      line-height: 1.25;
     }
 
     .pp-long-marks {
-      font-size: 8pt;
+      font-size: 7.5pt;
       font-weight: bold;
-      margin-left: 4pt;
+      margin-left: 3pt;
       flex-shrink: 0;
     }
 
-    .pp-long-parts { padding-left: 24pt; }
+    .pp-long-parts { padding-left: 20pt; }
 
     .pp-long-part {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 2pt;
+      margin-bottom: 1pt;
       page-break-inside: avoid;
     }
 
     .pp-long-part-lbl {
       font-weight: bold;
-      font-size: 9pt;
-      min-width: 18pt;
+      font-size: 8.5pt;
+      min-width: 15pt;
       flex-shrink: 0;
     }
 
     .pp-long-part-text {
       flex: 1;
-      font-size: 9pt;
-      line-height: 1.3;
+      font-size: 8.5pt;
+      line-height: 1.2;
     }
 
     .pp-long-part-marks {
-      font-size: 7.5pt;
+      font-size: 7pt;
       color: #444;
-      margin-left: 3pt;
+      margin-left: 2pt;
       flex-shrink: 0;
     }
 
@@ -388,11 +402,11 @@ export function generatePatternCSS(): string {
 
     .pp-writing-prompt {
       font-style: italic;
-      font-size: 9pt;
-      padding: 2pt 4pt;
-      border: 0.5pt dashed #888;
+      font-size: 8.5pt;
+      padding: 1pt 3pt;
+      border: 0.5pt dashed #666;
       background: #fafafa;
-      margin-bottom: 3pt;
+      margin-bottom: 2pt;
     }
 
     .pp-lines {
@@ -402,28 +416,28 @@ export function generatePatternCSS(): string {
 
     .pp-line {
       border-bottom: 0.5pt solid #bbb;
-      height: 14pt;
+      height: 12pt;
     }
 
     /* ════════════ FOOTER WATERMARK ════════════ */
 
     .pp-footer {
       text-align: center;
-      font-size: 6.5pt;
+      font-size: 6pt;
       color: #666;
-      padding: 2pt 0;
+      padding: 1pt 0;
       border-top: 0.25pt solid #ccc;
-      margin-top: 4pt;
+      margin-top: 3pt;
     }
 
     /* ════════════ MATH (KaTeX) ════════════ */
 
     .math-inline { display: inline; margin: 0 1pt; }
-    .math-display { display: block; text-align: center; margin: 2pt 0; }
+    .math-display { display: block; text-align: center; margin: 1pt 0; }
 
     .katex {
       font-size: 0.95em;
-      line-height: 1.25;
+      line-height: 1.2;
       font-family: 'KaTeX_Main', 'Times New Roman', serif;
     }
 
@@ -455,72 +469,72 @@ export function generatePatternCSS(): string {
     .pp-page-break { page-break-before: always; }
 
     .omr-sheet {
-      padding: 20px;
+      padding: 15px;
       font-family: 'Arial', sans-serif;
     }
 
     .omr-header {
       text-align: center;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #333;
-      padding-bottom: 10px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 8px;
     }
 
     .omr-header h3 {
-      font-size: 18px;
-      margin: 0 0 5px 0;
+      font-size: 16px;
+      margin: 0 0 4px 0;
       text-transform: uppercase;
     }
 
     .omr-header p {
-      font-size: 10px;
+      font-size: 9px;
       color: #666;
       margin: 0;
     }
 
     .omr-info {
       display: flex;
-      gap: 20px;
-      margin-bottom: 15px;
-      font-size: 11px;
+      gap: 15px;
+      margin-bottom: 12px;
+      font-size: 10px;
     }
 
     .omr-field {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px .omr-field span { font-weight;
     }
 
-    .omr-field span { font-weight: bold; }
+   : bold; }
 
     .omr-line {
-      width: 100px;
+      width: 80px;
       border-bottom: 1px solid #333;
     }
 
     .omr-instructions {
-      font-size: 10px;
-      margin-bottom: 15px;
-      padding: 8px;
+      font-size: 9px;
+      margin-bottom: 12px;
+      padding: 6px;
       background: #f5f5f5;
-      border-radius: 4px;
+      border-radius: 3px;
     }
 
     .omr-bubbles-container {
       border: 1px solid #333;
-      padding: 10px;
+      padding: 8px;
     }
 
     .omr-row {
       display: flex;
       align-items: center;
-      padding: 4px 0;
-      border-bottom: 0.5pt solid #ddd;
+      padding: 3px 0;
+      border-bottom: 0.3pt solid #ddd;
     }
 
     .omr-range {
-      width: 45px;
-      font-size: 9px;
+      width: 40px;
+      font-size: 8px;
       font-weight: bold;
       color: #666;
     }
@@ -528,30 +542,30 @@ export function generatePatternCSS(): string {
     .omr-q {
       display: flex;
       align-items: center;
-      margin-right: 15px;
+      margin-right: 12px;
     }
 
     .omr-num {
-      width: 20px;
-      font-size: 9px;
+      width: 18px;
+      font-size: 8px;
       text-align: right;
-      margin-right: 5px;
+      margin-right: 4px;
     }
 
     .omr-bubbles {
       display: flex;
-      gap: 3px;
+      gap: 2px;
     }
 
     .omr-letter {
-      width: 12px;
-      font-size: 8px;
+      width: 10px;
+      font-size: 7px;
       text-align: center;
     }
 
     .omr-circle {
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       border: 1px solid #333;
       border-radius: 50%;
       display: inline-block;

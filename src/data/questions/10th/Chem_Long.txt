@@ -1,0 +1,490 @@
+# 📚 COMPLETE LONG/DESCRIPTIVE QUESTIONS EXTRACTION - 10th CHEMISTRY (All Chapters)
+
+## CHAPTER 14: STATES OF MATTER AND PHASE CHANGES
+
+### Exercise Long Questions (#Exercise)
+
+14.1 Explain the difference in the rates of diffusion of two gases based on kinetic theory.
+
+14.2 How does the process of sublimation helpful in printing and in the usage of air freshner?
+
+14.3 Draw heating curve for the physical changes water undergoes with change in temperature.
+
+### Additional Important Long Questions for Exams (#Additional)
+
+14.4 State and explain kinetic molecular theory of gases. How does it explain the behavior of gases?
+
+14.5 Explain the interconversion of three states of matter with the help of a labeled diagram. Discuss melting, boiling, condensation and freezing.
+
+14.6 What is Boyle's law? Explain it with experimental verification. Also give its mathematical form and graphical representation.
+
+14.7 What is Charles's law? Explain it with experimental verification. Also give its mathematical form and graphical representation.
+
+14.8 Explain the effect of temperature and pressure on the volume of a gas with reference to kinetic molecular theory.
+
+14.9 Differentiate between evaporation and boiling. Explain the factors affecting the rate of evaporation.
+
+14.10 What is diffusion? Explain the factors affecting rate of diffusion. Why ammonia diffuses faster than hydrogen chloride?
+
+14.11 Explain heating and cooling curves with the help of a diagram. Why temperature remains constant during phase change?
+
+14.12 Describe the applications of sublimation in daily life including solid air fresheners and sublimation printing.
+
+---
+
+## CHAPTER 15: STOICHIOMETRY
+
+### Exercise Long Questions (#Exercise)
+
+15.1 Explain with examples how the formula of ionic compound can be written using oxidation numbers.
+
+15.2 Find the oxidation numbers of the indicated elements in the following compounds: Al(NO₃)₃, H₂S₂O₇, Na₂S₂O₃
+
+15.3 Write down the formulae of the following compounds using ionic charges: Sodium hypochlorite, calcium oxalate, ammonium phosphate and calcium nitrite
+
+### Additional Important Long Questions for Exams (#Additional)
+
+15.4 Define stoichiometry. Calculate the number of moles, mass and volume at RTP of 4.0 g of CH₄.
+
+15.5 What is molar volume? Calculate the volume occupied by 200 g of CO₂ at RTP. (C=12, O=16)
+
+15.6 Define concentration of solution. Calculate the concentration in mol/dm³ if 10 g of NaOH is dissolved in 1.2 dm³ of water. (Na=23, O=16, H=1)
+
+15.7 Explain the concept of limiting reactant with a suitable example. In the reaction 3H₂ + N₂ → 2NH₃, if 12 g of H₂ reacts with 64 g of N₂, find the limiting reactant.
+
+15.8 What is percentage yield? When 305 g of AgNO₃ is reacted with excess MgCl₂, it produces 23.7 g of Mg(NO₃)₂. Calculate the percentage yield. (AgNO₃=170, Mg(NO₃)₂=148)
+
+15.9 Define empirical formula and molecular formula. A compound contains 40.0% C, 6.71% H and 53.3% O. 0.320 mole of this compound weighs 28.8 g. Find its molecular formula.
+
+15.10 What is titration? Explain how the concentration of a solution can be determined by titration method with an example.
+
+15.11 Explain the law of conservation of mass and law of definite proportions with examples.
+
+15.12 Describe the concept of percentage purity. A 12.0 g sample of a pharmaceutical product contains 11.57 g of active drug. Calculate its percentage purity.
+
+---
+
+## CHAPTER 16: ELECTROCHEMISTRY
+
+### Exercise Long Questions (#Exercise)
+
+16.1 Explain with examples how the formula of ionic compound can be written using oxidation numbers.
+
+16.2 Find the oxidation numbers of the indicated elements in the following compounds: Al(NO₃)₃, H₂S₂O₇, Na₂S₂O₃
+
+16.3 Write down the formulae of the following compounds using ionic charges: Sodium hypochlorite, calcium oxalate, ammonium phosphate and calcium nitrite
+
+16.4 Describe the working of a fuel cell.
+
+16.5 Discuss the electrolysis of concentrated solutions of metal halides.
+
+16.6 Explain electroplating giving examples.
+
+16.7 What is corrosion? Explain the reactions involved in corrosion of iron.
+
+### Additional Important Long Questions for Exams (#Additional)
+
+16.8 Define oxidation and reduction in terms of loss/gain of electrons, increase/decrease in oxidation number, and addition/removal of oxygen/hydrogen. Give examples.
+
+16.9 What are oxidation numbers? State the rules for assigning oxidation numbers. Calculate the oxidation number of Mn in KMnO₄, Cr in K₂Cr₂O₇, and S in H₂SO₄.
+
+16.10 What is electrolysis? Explain the electrolysis of molten lead bromide with labeled diagram. Write reactions at cathode and anode.
+
+16.11 Explain the electrolysis of brine (concentrated NaCl solution) with reactions. What products are formed at cathode and anode?
+
+16.12 Describe the electrolysis of dilute and concentrated solutions of metal halides. Why different products are obtained at different concentrations?
+
+16.13 What is a galvanic cell? Explain the construction and working of Daniel cell with labeled diagram. Write cell reactions and calculate EMF.
+
+16.14 What is electrochemical series? Explain its applications. How can the reactivity of metals be determined using electrochemical series?
+
+16.15 What is corrosion? Explain the mechanism of rusting of iron. Discuss various methods to prevent corrosion.
+
+16.16 What is electroplating? Describe the process of silver plating and copper plating with diagram. What are the objectives of electroplating?
+
+---
+
+## CHAPTER 17: REACTION KINETICS
+
+### Exercise Long Questions (#Exercise)
+
+17.1 Explain the effect of surface area on the rate of a reaction.
+
+17.2 Describe the main points of the collision theory of reaction rate.
+
+17.3 Discuss the following factors affecting the rate of a reaction:
+(a) Effect of concentrations of the reactants
+(b) Effect of temperature at which a reaction is carried out
+
+17.4 How does chemical kinetics play an important role in the food industry?
+
+17.5 Write briefly about the role enzymes play in our body as biological catalysts.
+
+### Additional Important Long Questions for Exams (#Additional)
+
+17.6 State and explain collision theory of reaction rates. What are effective collisions? Discuss the factors that affect the rate of a reaction.
+
+17.7 What is activation energy? Explain the concept of activation energy with the help of energy profile diagram for exothermic and endothermic reactions.
+
+17.8 Explain the effect of temperature on rate of reaction. Why does the rate of reaction approximately double for every 10°C rise in temperature?
+
+17.9 What is a catalyst? Explain the mechanism of catalysis. How does a catalyst lower the activation energy of a reaction?
+
+17.10 What are enzymes? Explain the characteristics of enzyme catalysis. Discuss the lock and key model of enzyme action.
+
+17.11 Explain the effect of concentration on rate of reaction. Describe an activity to study the effect of concentration on reaction between HCl and marble chips.
+
+17.12 Explain the effect of surface area on rate of reaction. Why do finely divided solids react faster than larger pieces?
+
+17.13 Explain the importance of chemical kinetics in food industry. How does it help in determining harvesting time and preventing spoilage?
+
+17.14 Describe the factors affecting rate of reaction with examples: concentration, temperature, surface area, and catalyst.
+
+17.15 What is the law of mass action? Explain how it relates to reaction rate.
+
+---
+
+## CHAPTER 18: SALTS
+
+### Exercise Long Questions (#Exercise)
+
+18.1 Explain the formation of sodium chloride crystal.
+
+18.2 Explain the methods of preparation of two soluble salts.
+
+18.3 How are the following salts prepared? K₂SO₄, CuCl₂, CaCl₂
+
+18.4 Describe which salts are soluble in water and which are insoluble.
+
+### Additional Important Long Questions for Exams (#Additional)
+
+18.5 What are salts? Explain the arrangement of ions in sodium chloride crystal lattice with diagram.
+
+18.6 Why do ionic compounds have high melting points? Why do they conduct electricity in molten state but not in solid state?
+
+18.7 State the general solubility rules for salts. Give examples of soluble and insoluble salts for each category.
+
+18.8 Describe the preparation of soluble salts by titration method using acid-alkali reaction. How are pure crystals obtained?
+
+18.9 Describe the preparation of soluble salts by excess metal method and excess insoluble base method with examples.
+
+18.10 Describe the preparation of soluble salts by excess insoluble carbonate method. Write equations for reaction of HCl with CaCO₃.
+
+18.11 What are hydrated salts? Explain water of crystallization with examples of blue vitriol, green vitriol, white vitriol and Epsom salt.
+
+18.12 What are efflorescence, deliquescence and hygroscopy? Explain with examples.
+
+18.13 How are insoluble salts prepared by precipitation method? Describe the preparation of BaSO₄.
+
+18.14 What is crystal lattice? Explain the properties of ionic compounds due to their lattice structure.
+
+---
+
+## CHAPTER 19: NITROGEN AND SULPHUR
+
+### Exercise Long Questions (#Exercise)
+
+19.1 Explain the production of ammonia on industrial scale.
+
+19.2 Describe the contact process for the production of sulphuric acid.
+
+19.3 Explain the formation and properties of acidic and basic oxides.
+
+19.4 Differentiate between first and second group metals based on their reactivities with oxygen and water.
+
+19.5 Describe the role of oxides of nitrogen in the formation of PAN and the acid rain.
+
+### Additional Important Long Questions for Exams (#Additional)
+
+19.6 What is Haber process? Explain the industrial preparation of ammonia with labeled diagram. Discuss optimum conditions of temperature, pressure and catalyst.
+
+19.7 What is Contact process? Explain the industrial preparation of sulphuric acid with labeled diagram. Discuss the steps involved and conditions used.
+
+19.8 Explain the reactivity series of metals. Discuss the reactions of metals with water, steam, oxygen and dilute acids.
+
+19.9 What are oxides? Classify oxides into acidic, basic, amphoteric and neutral oxides. Give examples and reactions of each type.
+
+19.10 Explain the formation of photochemical smog. What is PAN? How do oxides of nitrogen contribute to smog formation?
+
+19.11 What is acid rain? Explain the role of oxides of nitrogen and sulphur in the formation of acid rain. Discuss its effects.
+
+19.12 Compare the reactivity of Group 1 and Group 2 metals towards water and oxygen. Write chemical equations.
+
+19.13 Describe the sources and preparation of nitrogen and hydrogen for Haber process.
+
+19.14 Explain the purification steps in Contact process. Why is purification necessary before oxidation of SO₂?
+
+19.15 Discuss the environmental pollution caused by oxides of nitrogen and sulphur. How can it be controlled?
+
+---
+
+## CHAPTER 20: WATER
+
+### Exercise Long Questions (#Exercise)
+
+20.1 How domestic water supply can be made fit for drinking?
+
+20.2 Which measures should be taken to avoid water-borne disease?
+
+20.3 What are fertilizers? Mention the essential qualities of a good fertilizer.
+
+20.4 What are the main functions of nitrogenous, phosphatic and potassium fertilizers?
+
+20.5 How can you avoid the negative effects of pollutants present in water?
+
+### Additional Important Long Questions for Exams (#Additional)
+
+20.6 What is water? Describe the chemical tests for presence of water using anhydrous copper sulphate.
+
+20.7 How can the purity of water be checked? Distinguish between distilled water and tap water.
+
+20.8 What substances are present in natural water? Distinguish between useful and harmful substances.
+
+20.9 Explain the treatment of domestic water supply. Describe sedimentation, filtration, chlorination and removal of odours.
+
+20.10 What are water-borne diseases? Name them and explain the steps to prevent them.
+
+20.11 Discuss water scarcity in Pakistan. What are its causes and how can it be resolved?
+
+20.12 What are fertilizers? Explain the use of NPK fertilizers for plant growth. Give examples of nitrogenous, phosphatic and potassium fertilizers.
+
+20.13 Explain eutrophication. How do nitrates and phosphates cause deoxygenation of water and damage aquatic life?
+
+20.14 Discuss the harmful effects of pollutants in water: heavy metals, plastics, sewage, and harmful microbes.
+
+20.15 What is the importance of dissolved oxygen in water? How does it support aquatic life?
+
+---
+
+## CHAPTER 21: ORGANIC CHEMISTRY
+
+### Exercise Long Questions (#Exercise)
+
+21.1 What is an organic compound? How organic compounds are classified based on the type of carbon chain present in them?
+
+21.2 Explain structural formula giving examples.
+
+21.3 Write down five characteristics of a homologous series.
+
+21.4 Give IUPAC rules for naming alcohols.
+
+21.5 Name the following compounds:
+(a) CH₃-CH₂-CH₂OH
+(b) CH₃-CH₂-CHO
+(c) CH₃-CH₂-CH₂-COOH
+(d) CH₃-CH₂-CO-O-CH₃
+
+### Additional Important Long Questions for Exams (#Additional)
+
+21.6 Define organic chemistry. Explain the classification of organic compounds into open chain and closed chain compounds with examples.
+
+21.7 What is a homologous series? Explain its characteristics. Write general formulas of alkanes, alkenes, alkynes, alcohols and carboxylic acids.
+
+21.8 What is structural isomerism? Explain with examples of butane and pentane. Write structures of all isomers of C₄H₁₀ and C₅H₁₂.
+
+21.9 What is a functional group? Explain the following functional groups with examples: hydroxyl, aldehyde, ketone, carboxyl, amino, amide and ester.
+
+21.10 Explain IUPAC nomenclature of organic compounds. Give rules for naming alkanes, alkenes and alcohols.
+
+21.11 Write structural formulas and IUPAC names of: methanol, ethanol, propan-1-ol, propan-2-ol, butan-1-ol and butan-2-ol.
+
+21.12 What are carboxylic acids? Write structural formulas and IUPAC names of formic acid, acetic acid, propionic acid and butyric acid.
+
+21.13 What are esters? How are they formed? Write formulas and IUPAC names of methyl acetate, ethyl acetate and ethyl formate.
+
+21.14 Explain displayed formula and condensed structural formula with examples of ethane, ethene, ethyne and ethanol.
+
+21.15 Distinguish between saturated and unsaturated hydrocarbons. Give examples of each type.
+
+---
+
+## CHAPTER 22: HYDROCARBONS
+
+### Exercise Long Questions (#Exercise)
+
+22.1 Describe two methods of preparation for ethene.
+
+22.2 Describe the fractional distillation of petroleum.
+
+22.3 Which properties of petroleum fractions change with their boiling points?
+
+22.4 Explain with examples the cracking of alkanes.
+
+22.5 Give uses of acetylene.
+
+### Additional Important Long Questions for Exams (#Additional)
+
+22.6 What are alkenes? Describe the preparation of ethene by dehydration of ethanol and dehydrohalogenation of bromoethane.
+
+22.7 Explain the chemical properties of alkenes. Discuss addition reactions with hydrogen, halogens, hydrogen halides and water.
+
+22.8 How can you distinguish between saturated and unsaturated hydrocarbons? Describe tests using bromine water and KMnO₄ solution.
+
+22.9 What is cracking? Explain the cracking of alkanes to produce alkenes. Why is cracking important industrially?
+
+22.10 What is acetylene? Describe its preparation from calcium carbide. Discuss its uses in welding and ripening of fruits.
+
+22.11 Describe fractional distillation of petroleum with labeled diagram. Explain the fractions obtained and their uses.
+
+22.12 Explain how the properties of petroleum fractions (chain length, volatility, boiling point, viscosity) change from top to bottom of fractionating column.
+
+22.13 Name the fractions obtained from petroleum and write their uses: refinery gas, gasoline, naphtha, kerosene, diesel, fuel oil, lubricating oil, bitumen.
+
+22.14 What are fossil fuels? Name them. Discuss petroleum as a source of organic compounds.
+
+22.15 Write short notes on: (a) Cracking (b) Reforming (c) Octane number (d) Cetane number
+
+---
+
+## CHAPTER 23: MONOHYDROXY ALKANES OR ALCOHOLS
+
+### Exercise Long Questions (#Exercise)
+
+23.1 Give a comparison of fermentation reaction and catalytic hydration of ethene for the preparation of ethanol.
+
+23.2 Describe the preparation of ethanol by fermentation process.
+
+23.3 Describe the applications of ethanol in pharmaceutical and cosmetic industries.
+
+### Additional Important Long Questions for Exams (#Additional)
+
+23.4 What are alcohols? Describe the industrial preparation of ethanol by fermentation of glucose. Discuss conditions and chemical equation.
+
+23.5 Describe the preparation of ethanol by hydration of ethene. Write the chemical equation and discuss conditions of temperature, pressure and catalyst.
+
+23.6 Compare the fermentation and hydration methods for the preparation of ethanol in terms of raw materials, conditions, yield and cost.
+
+23.7 Discuss the combustion of alcohols. Explain why heat of combustion increases with increase in chain length.
+
+23.8 What are the applications of alcohols as fuels? Discuss advantages and disadvantages of using alcohols over fossil fuels.
+
+23.9 Explain the role of ethanol in pharmaceutical industry. How is it used as disinfectant, solvent and preservative?
+
+23.10 Explain the role of ethanol in cosmetic industry. What properties make it suitable for use in perfumes, deodorants and toiletries?
+
+23.11 Discuss the impact of alcohols on daily life. Explain its use in first aid, as solvent, and in methylated spirit.
+
+23.12 Write chemical equations for combustion of methanol, ethanol and propanol. Explain why ethanol is considered environment friendly.
+
+23.13 What are the disadvantages of using alcohols as fuels? Discuss the effect on engine components and energy content.
+
+23.14 Explain why alcohols are considered carbon neutral. How do they reduce greenhouse gas emissions?
+
+---
+
+## CHAPTER 24: CARBOXYLIC ACIDS
+
+### Exercise Long Questions (#Exercise)
+
+24.1 Explain fermentation reaction which is used to prepare acetic acid on commercial scale.
+
+24.2 Describe the industrial applications of carboxylic acids and esters.
+
+24.3 What are flavouring agents? Which carboxylic acids are used as flavouring agents?
+
+24.4 Explain the reactions of carboxylic acids with metals and carbonates.
+
+24.5 Describe applications of esters in daily life.
+
+### Additional Important Long Questions for Exams (#Additional)
+
+24.6 What are carboxylic acids? Describe the preparation of ethanoic acid by oxidation of ethanol using acidified KMnO₄.
+
+24.7 Describe the preparation of ethanoic acid by bacterial oxidation during vinegar production. Write the chemical equation.
+
+24.8 Explain the reactions of carboxylic acids with metals, bases and carbonates. Write chemical equations for each reaction.
+
+24.9 What is esterification? Explain the reaction of carboxylic acids with alcohols using acid catalyst. Write the equation for formation of ethyl acetate.
+
+24.10 Discuss the industrial applications of carboxylic acids as solvents, flavouring agents and in the production of polymers.
+
+24.11 Discuss the industrial applications of esters as solvents, flavours, fragrances and plasticizers.
+
+24.12 Explain the role of carboxylic acids and esters in daily life as food preservatives, in cosmetics and pharmaceuticals.
+
+24.13 Write short notes on: (a) Aspirin (b) Polyester (c) Plexiglass (d) Citric acid esters as plasticizers
+
+24.14 Name the carboxylic acids present in: vinegar, lemons, apples, grapes, and carrots. Write their formulas.
+
+24.15 Name the esters responsible for the flavour of: apple, pineapple, banana, orange, and apricot.
+
+---
+
+## CHAPTER 25: BIOCHEMISTRY
+
+### Exercise Long Questions (#Exercise)
+
+25.1 What are the sources of fructose, maltose and lactose?
+
+25.2 Draw open chain structures of glucose and fructose.
+
+25.3 Construct peptide linkage and explain the structure of a polypeptide.
+
+25.4 What are DNA and RNA? Describe the role played by them in our body.
+
+25.5 Compare the roles played by carbohydrates, proteins and lipids in our body.
+
+### Additional Important Long Questions for Exams (#Additional)
+
+25.6 What are carbohydrates? Explain their classification into monosaccharides, disaccharides and polysaccharides with examples.
+
+25.7 What are proteins? Explain their structure. Describe the formation of peptide linkage and polypeptide chain.
+
+25.8 What are lipids? Explain the structure of fats and oils. Write the general structure of a triglyceride.
+
+25.9 What are nucleic acids? Explain the structure and functions of DNA and RNA. Differentiate between them.
+
+25.10 What are vitamins? Explain the sources and importance of vitamins A, C, D, B₁ and B₂.
+
+25.11 Discuss the importance of nutrition. Explain the role of carbohydrates, proteins and lipids in human body.
+
+25.12 What are enzymes? Explain their role as biological catalysts. Discuss factors affecting enzyme activity.
+
+25.13 Explain the applications of biochemistry in: blood tests, pregnancy tests, cancer screening, and genetic testing.
+
+25.14 What is genetic engineering? Explain its applications in medicine and agriculture.
+
+25.15 What is gene therapy? Explain how it can be used to treat genetic disorders.
+
+25.16 Explain denaturation of proteins. Give examples of denaturation by heat, change in pH, and oxidation.
+
+---
+
+## CHAPTER 26: POLYMERS
+
+### Exercise Long Questions (#Exercise)
+
+26.1 How is PET formed? Can you recycle this polymer?
+
+26.2 Differentiate between addition and condensation polymerizations.
+
+26.3 Write down reactions along with the conditions to prepare polyamide and polyester.
+
+26.4 Describe the role of synthetic polymers in the textile industry.
+
+26.5 Describe the effects of synthetic polymers on the environment.
+
+### Additional Important Long Questions for Exams (#Additional)
+
+26.6 What are polymers? Explain addition polymerization with example of polythene. Discuss conditions and mechanism.
+
+26.7 What is condensation polymerization? Explain with examples of polyester (PET) and polyamide (nylon).
+
+26.8 Compare addition and condensation polymerization in terms of monomers, products, by-products and examples.
+
+26.9 Deduce the structure of monomer from given polymer: [CH₂-CHCl]ₙ and [CH₂-CHCN]ₙ.
+
+26.10 What are plastics? Explain the properties of plastics. Discuss the environmental challenges caused by plastic disposal.
+
+26.11 Discuss the importance of polymers in textile industry. Explain the properties and uses of nylon, polyester and acrylic.
+
+26.12 What is PET? Explain its structure. How can PET be recycled by converting back into monomers?
+
+26.13 Explain the environmental issues caused by plastics: landfill disposal, ocean accumulation, and toxic gases from burning.
+
+26.14 Write short notes on: (a) Nylon (b) Polyester (c) PET (d) Biodegradable polymers
+
+26.15 What are the advantages of synthetic fibers over natural fibers? Explain with examples.
+
+---
+

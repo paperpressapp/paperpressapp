@@ -18,3 +18,6 @@ export { McqOptions } from "./McqOptions";
 export { GeneratingOverlay } from "./GeneratingOverlay";
 export { QuestionPickerModal } from "./QuestionPickerModal";
 export { PatternQuestionSelector } from "./PatternQuestionSelector";
+export { LivePaperPreview } from "./LivePaperPreview";
+export { ReorderQuestions } from "./ReorderQuestions";
+export { VirtualQuestionList } from "./VirtualQuestionList";

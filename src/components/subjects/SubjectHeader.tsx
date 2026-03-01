@@ -24,7 +24,7 @@ export function SubjectHeader({ classId }: SubjectHeaderProps) {
   return (
     <motion.div
       className={cn(
-        "relative h-[100px] rounded-2xl overflow-hidden mb-6",
+        "relative h-[100px] rounded-lg overflow-hidden mb-6",
         "flex items-center px-6"
       )}
       style={{ background: `linear-gradient(135deg, ${classColor}, ${classColor}dd)` }}

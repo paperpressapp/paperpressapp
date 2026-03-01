@@ -33,7 +33,7 @@ export function ProceedButton({ selectedCount, disabled, onProceed }: ProceedBut
       transition={{ delay: 0.2, type: "spring", stiffness: 300, damping: 30 }}
     >
       <div className="mx-auto max-w-[428px]">
-        <div className="bg-[var(--background-card)] backdrop-blur-xl rounded-2xl shadow-lg border border-[var(--border-color)] p-4">
+        <div className="bg-[var(--background-card)] backdrop-blur-xl rounded-lg shadow-lg border border-[var(--border-color)] p-4">
           <Button
             onClick={onProceed}
             disabled={!isEnabled}

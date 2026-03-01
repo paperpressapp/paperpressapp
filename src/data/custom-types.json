@@ -1,0 +1,69 @@
+{
+  "types": [
+    {
+      "id": "essay",
+      "name": "Essay",
+      "icon": "📝",
+      "defaultPrompt": "Write an essay on the given topic:",
+      "defaultMarks": 10
+    },
+    {
+      "id": "letter",
+      "name": "Letter",
+      "icon": "✉️",
+      "subTypes": ["formal", "informal"],
+      "defaultPrompt": "Write a letter:",
+      "defaultMarks": 8
+    },
+    {
+      "id": "story",
+      "name": "Story",
+      "icon": "📖",
+      "defaultPrompt": "Write a story on the given outline:",
+      "defaultMarks": 8
+    },
+    {
+      "id": "application",
+      "name": "Application",
+      "icon": "📄",
+      "defaultPrompt": "Write an application to the Principal:",
+      "defaultMarks": 8
+    },
+    {
+      "id": "translation",
+      "name": "Translation",
+      "icon": "🌐",
+      "subTypes": ["urdu_to_english", "english_to_urdu"],
+      "defaultPrompt": "Translate the following into English:",
+      "defaultMarks": 5
+    },
+    {
+      "id": "pair_of_words",
+      "name": "Pair of Words",
+      "icon": "🔗",
+      "defaultPrompt": "Make meaningful sentences using the following pairs of words:",
+      "defaultMarks": 3
+    },
+    {
+      "id": "punctuation",
+      "name": "Punctuation",
+      "icon": "❕",
+      "defaultPrompt": "Punctuate the following:",
+      "defaultMarks": 3
+    },
+    {
+      "id": "fill_in_blanks",
+      "name": "Fill in the Blanks",
+      "icon": "⬜",
+      "defaultPrompt": "Fill in the blanks with appropriate words:",
+      "defaultMarks": 2
+    },
+    {
+      "id": "user_defined",
+      "name": "Custom Type",
+      "icon": "⚙️",
+      "defaultPrompt": "",
+      "defaultMarks": 5
+    }
+  ]
+}

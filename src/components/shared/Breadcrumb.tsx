@@ -30,8 +30,8 @@ export function Breadcrumb({ steps, className = "", variant = "default" }: Bread
   const isHero = variant === "hero";
 
   return (
-    <div className={cn("w-full overflow-x-auto", className)}>
-      <div className="flex items-center min-w-max px-2 py-4">
+    <div className={cn("w-full flex justify-center", className)}>
+      <div className="flex items-center gap-1">
         {steps.map((step, index) => {
           const isLast = index === steps.length - 1;
 
@@ -42,16 +42,16 @@ export function Breadcrumb({ steps, className = "", variant = "default" }: Bread
                 {/* Circle */}
                 <motion.div
                   className={cn(
-                    "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors",
+                    "w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-medium transition-colors",
                     // Default Variant
                     !isHero && step.status === "completed" && "bg-green-500 text-white",
                     !isHero && step.status === "current" && "bg-primary text-primary-foreground",
-                    !isHero && step.status === "pending" && "border-2 border-muted-foreground/30 text-muted-foreground bg-background",
+                    !isHero && step.status === "pending" && "border border-[#A0A0A0]/30 text-[#A0A0A0]",
 
                     // Hero Variant
-                    isHero && step.status === "completed" && "bg-white text-[#1E88E5]",
-                    isHero && step.status === "current" && "bg-white text-[#1E88E5] shadow-lg",
-                    isHero && step.status === "pending" && "bg-white/20 text-white/50 border border-white/30"
+                    isHero && step.status === "completed" && "bg-[#B9FF66] text-[#0A0A0A]",
+                    isHero && step.status === "current" && "bg-[#B9FF66] text-[#0A0A0A]",
+                    isHero && step.status === "pending" && "bg-[#2A2A2A] text-[#A0A0A0] border border-[#3A3A3A]"
                   )}
                   initial={false}
                   animate={{
@@ -60,7 +60,7 @@ export function Breadcrumb({ steps, className = "", variant = "default" }: Bread
                   transition={{ duration: 0.2 }}
                 >
                   {step.status === "completed" ? (
-                    <Check className="w-4 h-4" />
+                    <Check className="w-2.5 h-2.5" />
                   ) : (
                     index + 1
                   )}
@@ -69,16 +69,16 @@ export function Breadcrumb({ steps, className = "", variant = "default" }: Bread
                 {/* Label */}
                 <span
                   className={cn(
-                    "mt-2 text-xs font-medium whitespace-nowrap transition-colors",
+                    "mt-1 text-[9px] font-medium whitespace-nowrap transition-colors",
                     // Default Variant
                     !isHero && step.status === "completed" && "text-green-600",
                     !isHero && step.status === "current" && "text-primary",
-                    !isHero && step.status === "pending" && "text-muted-foreground",
+                    !isHero && step.status === "pending" && "text-[#A0A0A0]",
 
                     // Hero Variant
-                    isHero && step.status === "completed" && "text-white/90",
-                    isHero && step.status === "current" && "text-white font-bold",
-                    isHero && step.status === "pending" && "text-white/50"
+                    isHero && step.status === "completed" && "text-[#A0A0A0]",
+                    isHero && step.status === "current" && "text-white font-semibold",
+                    isHero && step.status === "pending" && "text-[#A0A0A0]"
                   )}
                 >
                   {step.label}
@@ -87,18 +87,7 @@ export function Breadcrumb({ steps, className = "", variant = "default" }: Bread
 
               {/* Connector line */}
               {!isLast && (
-                <div className="flex items-center mx-2 mb-6">
-                  <div
-                    className={cn(
-                      "w-8 sm:w-12 h-0.5 rounded-full transition-colors",
-                      // Default Variant
-                      !isHero && step.status === "completed" ? "bg-green-500" : !isHero && "bg-muted-foreground/30",
-
-                      // Hero Variant
-                      isHero && step.status === "completed" ? "bg-white" : isHero && "bg-white/20"
-                    )}
-                  />
-                </div>
+                <div className="w-4 h-0.5 mx-1 bg-[#3A3A3A] rounded-full" />
               )}
             </div>
           );

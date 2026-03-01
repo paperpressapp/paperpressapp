@@ -8,7 +8,7 @@ interface PrimaryActionCardProps {
 
 export function PrimaryActionCard({ onPress }: PrimaryActionCardProps) {
   return (
-    <div className="bg-[#1A1A1A] rounded-2xl border border-[#2A2A2A] shadow-md border-l-4 border-l-[#B9FF66] p-5 overflow-hidden relative">
+    <div className="bg-[#1A1A1A] rounded-lg border border-[#2A2A2A] shadow-md border-l-4 border-l-[#B9FF66] p-5 overflow-hidden relative">
       {/* Subtle background pattern */}
       <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#B9FF66]/5 opacity-50 -translate-y-8 translate-x-8 pointer-events-none" />
 
