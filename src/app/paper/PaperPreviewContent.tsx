@@ -112,7 +112,7 @@ export default function PaperPreviewContent() {
         
         // Add custom MCQs
         paperData.mcqIds?.forEach((id: string) => {
-          if (id.startsWith('custom_') && editedQuestions[id]) {
+          if (typeof id === 'string' && id.startsWith('custom_') && editedQuestions[id]) {
             mcqs.push({
               id,
               questionText: editedQuestions[id].questionText || "Custom MCQ",
@@ -127,7 +127,7 @@ export default function PaperPreviewContent() {
 
         // Add custom Short questions
         paperData.shortIds?.forEach((id: string) => {
-          if (id.startsWith('custom_') && editedQuestions[id]) {
+          if (typeof id === 'string' && id.startsWith('custom_') && editedQuestions[id]) {
             shorts.push({
               id,
               questionText: editedQuestions[id].questionText || "Custom Short Question",
@@ -140,7 +140,7 @@ export default function PaperPreviewContent() {
 
         // Add custom Long questions
         paperData.longIds?.forEach((id: string) => {
-          if (id.startsWith('custom_') && editedQuestions[id]) {
+          if (typeof id === 'string' && id.startsWith('custom_') && editedQuestions[id]) {
             longs.push({
               id,
               questionText: editedQuestions[id].questionText || "Custom Long Question",

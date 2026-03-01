@@ -283,8 +283,14 @@ export default function CreatePaperPage() {
           }
         }
 
-        // Apply pattern defaults for marks
-        if (pattern) {
+        // Apply marks from template or pattern
+        if (paperSettings.customMarks) {
+          // Use marks from template
+          setCustomMcqMarks(paperSettings.customMarks.mcq || 1);
+          setCustomShortMarks(paperSettings.customMarks.short || 2);
+          setCustomLongMarks(paperSettings.customMarks.long || 5);
+        } else if (pattern) {
+          // Use marks from default pattern
           const mcqSection = pattern.sections.find(s => s.type === 'mcq');
           const shortSections = pattern.sections.filter(s => s.type === 'short');
           const longSections = pattern.sections.filter(s => s.type === 'long');
@@ -432,11 +438,11 @@ export default function CreatePaperPage() {
   const customQuestionsForPicker = useMemo(() => {
     let customIds: string[] = [];
     if (activeTab === 'mcq') {
-      customIds = selectedMcqIds.filter(id => id.startsWith('custom_'));
+      customIds = selectedMcqIds.filter((id): id is string => typeof id === 'string' && id.startsWith('custom_'));
     } else if (activeTab === 'short') {
-      customIds = selectedShortIds.filter(id => id.startsWith('custom_'));
+      customIds = selectedShortIds.filter((id): id is string => typeof id === 'string' && id.startsWith('custom_'));
     } else {
-      customIds = selectedLongIds.filter(id => id.startsWith('custom_'));
+      customIds = selectedLongIds.filter((id): id is string => typeof id === 'string' && id.startsWith('custom_'));
     }
     return customIds.map(id => {
       if (activeTab === 'mcq') {
@@ -1381,9 +1387,13 @@ export default function CreatePaperPage() {
                         </div>
                         <ReorderQuestions
                           type={tab.key}
-                          items={tab.selected.map(id => tab.all.find(q => q.id === id)!).filter(Boolean)}
+                          items={tab.selected.map(id => tab.all.find(q => q.id === id)).filter((q): q is NonNullable<typeof q> => q !== undefined)}
                           onOrderChange={(newOrder) => {
+                            // Update both questionOrder and the selected IDs
                             setQuestionOrder(tab.key, newOrder);
+                            if (tab.key === 'mcq') setMcqs(newOrder);
+                            else if (tab.key === 'short') setShorts(newOrder);
+                            else setLongs(newOrder);
                             triggerHaptic('light');
                           }}
                           onRemove={(id) => {
