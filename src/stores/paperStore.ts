@@ -25,7 +25,7 @@ interface PaperState {
   selectedShortIds: string[];
   selectedLongIds: string[];
 
-  // Template State (NEW)
+  // Template State
   selectedTemplateId: string | null;
   selectedTemplate: PaperTemplate | null;
   activeTemplateId: string | null;
@@ -39,6 +39,10 @@ interface PaperState {
   // Edited Questions (Customization)
   editedQuestions: Record<string, any>;
   questionOrder: { mcqs: string[]; shorts: string[]; longs: string[] };
+
+  // Step Tracking (for 5-step flow)
+  currentStep: 'templates' | 'chapters' | 'questions' | 'details' | 'preview';
+  previousStep: 'templates' | 'chapters' | 'questions' | 'details' | 'preview' | null;
 
   // Class and Subject Actions
   setClass: (classId: ClassName) => void;
@@ -84,6 +88,12 @@ interface PaperState {
   // Reset Actions
   resetQuestions: () => void;
   resetAll: () => void;
+
+  // Step Navigation
+  setStep: (step: 'templates' | 'chapters' | 'questions' | 'details' | 'preview') => void;
+  nextStep: () => void;
+  prevStep: () => void;
+  resetFlow: () => void;
 
   // Computed Values (as getters)
   getTotalQuestions: () => number;
@@ -135,6 +145,9 @@ const initialState = {
   editedQuestions: {} as Record<string, any>,
   questionOrder: { mcqs: [], shorts: [], longs: [] } as { mcqs: string[]; shorts: string[]; longs: string[] },
   _hasHydrated: false,
+  // Step tracking
+  currentStep: 'templates' as const,
+  previousStep: null as 'templates' | 'chapters' | 'questions' | 'details' | 'preview' | null,
 };
 
 export const usePaperStore = create<PaperState>()(
@@ -436,6 +449,60 @@ export const usePaperStore = create<PaperState>()(
         });
       },
 
+      // Step Navigation
+      setStep: (step: 'templates' | 'chapters' | 'questions' | 'details' | 'preview') => {
+        const state = get();
+        set({
+          previousStep: state.currentStep,
+          currentStep: step,
+        });
+      },
+
+      nextStep: () => {
+        const state = get();
+        const stepOrder: Array<'templates' | 'chapters' | 'questions' | 'details' | 'preview'> = 
+          ['templates', 'chapters', 'questions', 'details', 'preview'];
+        const currentIndex = stepOrder.indexOf(state.currentStep);
+        if (currentIndex < stepOrder.length - 1) {
+          set({
+            previousStep: state.currentStep,
+            currentStep: stepOrder[currentIndex + 1],
+          });
+        }
+      },
+
+      prevStep: () => {
+        const state = get();
+        if (state.previousStep) {
+          set({
+            currentStep: state.previousStep,
+            previousStep: null,
+          });
+        } else if (state.currentStep !== 'templates') {
+          // Default back to previous step based on current
+          const stepOrder: Record<string, 'templates' | 'chapters' | 'questions' | 'details' | 'preview'> = {
+            chapters: 'templates',
+            questions: 'chapters',
+            details: 'questions',
+            preview: 'details',
+          };
+          set({
+            currentStep: stepOrder[state.currentStep] || 'templates',
+            previousStep: null,
+          });
+        }
+      },
+
+      // Reset entire flow when template changes
+      resetFlow: () => {
+        set({
+          ...initialState,
+          paperSettings: getDefaultSettings(),
+          currentStep: 'templates',
+          previousStep: null,
+        });
+      },
+
       // Computed Values
       getTotalQuestions: () => {
         const state = get();
@@ -507,6 +574,8 @@ export const usePaperStore = create<PaperState>()(
         paperSettings: state.paperSettings,
         editedQuestions: state.editedQuestions,
         questionOrder: state.questionOrder,
+        currentStep: state.currentStep,
+        previousStep: state.previousStep,
       } as unknown as PaperState),
       onRehydrateStorage: (state) => {
         return () => {
