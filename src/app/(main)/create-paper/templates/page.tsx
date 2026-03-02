@@ -95,6 +95,10 @@ export default function CreatePaperTemplatesPage() {
       }
     }
 
+    // Ensure class/subject is set in store before navigating
+    setClass(selectedClassId as any);
+    setSubject(selectedSubjectId as any);
+
     if (mode === 'auto') {
       // Auto generate - go directly to questions with auto-selected questions
       selectAllChapters(chapterIdsToUse);
